@@ -1,0 +1,44 @@
+DeviceMaxThroughput
+				Access Mode: RO
+				Desc: Maximum bandwidth of the data  that can be streamed out of the device.
+				Children: 
+					MaxThroughput_Bps
+						Access Mode: RO
+						Desc: 
+						Children: 
+							DeviceThroughputMax_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Fmt7RegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					MinThroughput_Bps
+						Access Mode: RO
+						Desc: 
+						Children: 
+							DeviceThroughputMin_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Fmt7RegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 

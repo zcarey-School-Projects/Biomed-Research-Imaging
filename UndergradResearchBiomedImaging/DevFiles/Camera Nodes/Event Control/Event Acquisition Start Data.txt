@@ -1,0 +1,76 @@
+EventAcquisitionStartData
+				Access Mode: RO
+				Desc: Category that contains all the data features related to the AcquisitionStart Event.
+				Children: 
+					EventAcquisitionStart
+						Access Mode: NA
+						Desc: Returns the unique identifier of the AcquisitionStart type of Event.
+						Children: 
+							EventControl_Inq
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							EventAcquisitionStart_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									EventAcquisitionStartPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					EventAcquisitionStartTimestamp
+						Access Mode: NA
+						Desc: Returns the Timestamp of the AcquisitionStart Event.
+						Children: 
+							EventControl_Inq
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							EventAcquisitionStartTimestamp_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									EventAcquisitionStartPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					EventAcquisitionStartFrameID
+						Access Mode: NA
+						Desc: Returns the unique Identifier of the Frame (or image) that generated the AcquisitionStart Event.
+						Children: 
+							EventControl_Inq
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							EventAcquisitionStartFrameID_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									EventAcquisitionStartPort
+										Access Mode: NA
+										Desc: 
+										Children: 

@@ -1,0 +1,128 @@
+TriggerOverlap
+				Access Mode: NI
+				Desc: Specifies the type trigger overlap permitted with the previous frame.
+				Children: 
+					TriggerMode14Inq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					TriggerOverlap_Available_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							TriggerSelector_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									TriggerModeCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									TriggerSelector_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											TriggerOverlap_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													TriggerModeCtrlVal_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+													TriggerOverlap_Int_ConvertTo
+														Access Mode: RO
+														Desc: 
+														Children: 
+													TriggerOverlap_Int_ConvertFrom
+														Access Mode: RO
+														Desc: 
+														Children: 
+									TriggerSelector_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											TriggerOverlap_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													TriggerModeCtrlVal_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+													TriggerOverlap_Int_ConvertTo
+														Access Mode: RO
+														Desc: 
+														Children: 
+													TriggerOverlap_Int_ConvertFrom
+														Access Mode: RO
+														Desc: 
+														Children: 
+							TriggerModeOnOff_Bit
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					TriggerOverlap_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							TriggerModeCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							TriggerOverlap_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+							TriggerOverlap_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 

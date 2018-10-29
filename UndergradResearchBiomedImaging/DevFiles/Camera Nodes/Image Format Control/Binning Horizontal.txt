@@ -1,0 +1,48 @@
+BinningHorizontal
+				Access Mode: RO
+				Desc: Number of horizontal pixels to combine together.
+				Children: 
+					BinningHorizontalLocked
+						Access Mode: RW
+						Desc: 
+						Children: 
+					BinningCols_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							BinningCols_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							BinningCols_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+							BinningCols_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+					BinningMaxCols_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							BinningMaxCols_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 

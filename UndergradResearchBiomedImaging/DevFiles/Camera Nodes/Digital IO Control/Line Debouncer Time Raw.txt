@@ -1,0 +1,156 @@
+LineDebouncerTimeRaw
+				Access Mode: RW
+				Desc: Sets the raw value of the selected line debouncer time in microseconds.
+				Children: 
+					LineDebouncerTimeRaw_InqPresence
+						Access Mode: RO
+						Desc: 
+						Children: 
+							LineSelected_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+							LineDebouncerTimeRaw_Ctrl_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					LineDebouncerTimeRaw_InqAvailable
+						Access Mode: RO
+						Desc: 
+						Children: 
+							LineDebouncerTimeRaw_LineSelect_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									LineDebouncerTimeRaw_LineSelect_adrCalc
+										Access Mode: RO
+										Desc: 
+										Children: 
+											LineSelected_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							GPIOPinMode_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									GPIOCtrlPinRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											LineSelected_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					LineDebouncerTimeRaw_CtrlValue
+						Access Mode: RW
+						Desc: 
+						Children: 
+							LineDebouncerTimeRaw_LineSelect_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									LineDebouncerTimeRaw_LineSelect_adrCalc
+										Access Mode: RO
+										Desc: 
+										Children: 
+											LineSelected_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							LineDebouncerTimeRaw_CtrlValue_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									LineDebouncerTimeRaw_LineSelect_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											LineDebouncerTimeRaw_LineSelect_adrCalc
+												Access Mode: RO
+												Desc: 
+												Children: 
+													LineSelected_Int
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							LineDebouncerTimeRaw_CtrlValue_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									LineDebouncerTimeRaw_LineSelect_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											LineDebouncerTimeRaw_LineSelect_adrCalc
+												Access Mode: RO
+												Desc: 
+												Children: 
+													LineSelected_Int
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					LineDebouncerTimeRaw_MinValue
+						Access Mode: RO
+						Desc: 
+						Children: 
+							LineDebouncerTimeRaw_Ctrl_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					LineDebouncerTimeRaw_MaxValue
+						Access Mode: RO
+						Desc: 
+						Children: 
+							LineDebouncerTimeRaw_Ctrl_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 

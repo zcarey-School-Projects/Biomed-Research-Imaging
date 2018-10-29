@@ -1,0 +1,2064 @@
+ImageFormatControl
+				Access Mode: RO
+				Desc: Category for image format control features.
+				Children: 
+					PixelFormat
+						Access Mode: RO
+						Desc: Format of the pixel data.
+						Children: 
+							TLParamsLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							PixelFormatCtrlVal_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									ColorCodingID_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelFormatCtrlVal_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ColorFilterRG_Int
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ColorFilterId_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															Fmt7RegBaseAddress
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											ColorFilterBG_Int
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ColorFilterId_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															Fmt7RegBaseAddress
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											ColorFilterGB_Int
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ColorFilterId_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															Fmt7RegBaseAddress
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											ColorFilterGR_Int
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ColorFilterId_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															Fmt7RegBaseAddress
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+									PixelFormatCtrlVal_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ColorFilterRG_Int
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ColorFilterId_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															Fmt7RegBaseAddress
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											ColorFilterBG_Int
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ColorFilterId_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															Fmt7RegBaseAddress
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											ColorFilterGB_Int
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ColorFilterId_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															Fmt7RegBaseAddress
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											ColorFilterGR_Int
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ColorFilterId_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															Fmt7RegBaseAddress
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+					PixelCoding
+						Access Mode: RO
+						Desc: Coding of the pixels in the image.
+						Children: 
+							PixelCoding_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ColorCodingID_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					OnBoardColorProcessEnabled
+						Access Mode: NI
+						Desc: Enables the on board color process for the sensor output image data.
+						Children: 
+							OBCP_PresInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							OBCP_AvailableInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							OBCPLocked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									TLParamsLocked
+										Access Mode: RW
+										Desc: 
+										Children: 
+									ColorCodingID_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									OBCP_Mono8Inq_Bit
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									OBCP_Mono16Inq_Bit
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									OBCP_Mono12pInq_Bit
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							OBCPEnabled_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									OBCP_Enabled_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									OBCPEnabled_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											OBCP_Enabled_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											ColorCodingID_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									OBCPEnabled_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											OBCP_Enabled_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											ColorCodingID_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+					Width
+						Access Mode: RO
+						Desc: Width of the image provided by the device (in pixels).
+						Children: 
+							TLParamsLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							WidthCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									Fmt7RegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							WidthInc_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Hunit_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							WidthMax_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									OffsetXCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									WidthMax_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Hunit_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					Height
+						Access Mode: RO
+						Desc: Height of the image provided by the device (in pixels).
+						Children: 
+							TLParamsLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							HeightCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									Fmt7RegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							HeightInc_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Vunit_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							HeightMax_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									OffsetYCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									HeightMax_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Vunit_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					OffsetX
+						Access Mode: RW
+						Desc: Vertical offset from the origin to the AOI (in pixels).
+						Children: 
+							OffsetXCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									Fmt7RegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							OffsetXMax_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									WidthCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									WidthMax_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							OffsetXInc_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Hposunit_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					OffsetY
+						Access Mode: RW
+						Desc: Horizontal offset from the origin to the AOI (in pixels).
+						Children: 
+							OffsetYCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									Fmt7RegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							OffsetYMax_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									HeightCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									HeightMax_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							OffsetYInc_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Vposunit_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					SensorWidth
+						Access Mode: RO
+						Desc: Effective width of the sensor in pixels.
+						Children: 
+							SensorWidth_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					SensorHeight
+						Access Mode: RO
+						Desc: Effective height of the sensor in pixels.
+						Children: 
+							SensorHeight_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					WidthMax
+						Access Mode: RO
+						Desc: Maximum width of the image (in pixels).
+						Children: 
+							WidthMax_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Fmt7RegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					HeightMax
+						Access Mode: RO
+						Desc: Maximum height of the image (in pixels).
+						Children: 
+							HeightMax_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Fmt7RegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					VideoMode
+						Access Mode: RO
+						Desc: Current video mode.
+						Children: 
+							TLParamsLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							CurrentVideoMode_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					BinningHorizontal
+						Access Mode: RO
+						Desc: Number of horizontal pixels to combine together.
+						Children: 
+							BinningHorizontalLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							BinningCols_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									BinningCols_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									BinningCols_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+									BinningCols_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+							BinningMaxCols_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									BinningMaxCols_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					BinningVertical
+						Access Mode: RO
+						Desc: Number of vertical pixels to combine together.
+						Children: 
+							TLParamsLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							BinningRows_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									Binning_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									BinningRows_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Binning_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									BinningRows_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Binning_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+							BinningMaxRows_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									BinningMaxRows_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					DecimationHorizontal
+						Access Mode: NI
+						Desc: Horizontal sub-sampling of the image. This reduces the horizontal resolution (width) of the image by the specified horizontal decimation factor. A value of 1 indicates that the camera performs no horizontal decimation.
+						Children: 
+							Decimation_PresInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							Decimation_Available_Bit
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							DecimationHorizontalLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							DecimationCols_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									DecimationCols_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									DecimationCols_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+									DecimationCols_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+							DecimationMaxCols_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									DecimationMaxCols_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					DecimationVertical
+						Access Mode: NI
+						Desc: Vertical sub-sampling of the image. This reduces the vertical resolution (height) of the image by the specified vertical decimation factor. A value of 1 indicates that the camera performs no vertical decimation.
+						Children: 
+							Decimation_PresInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							Decimation_Available_Bit
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							TLParamsLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							DecimationRows_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									Decimation_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									DecimationRows_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Decimation_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									DecimationRows_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Decimation_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+							DecimationMaxRows_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									DecimationMaxRows_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					ReverseX
+						Access Mode: RO
+						Desc: Flip horizontally the image sent by the device. The AOI is applied after the flip.
+						Children: 
+							ReverseXInq_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							TLParamsLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							ReverseXCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					PixelSize
+						Access Mode: RO
+						Desc: Size of a pixel in bits.
+						Children: 
+							PixelSize_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									PixelFormatCtrlVal_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											ColorCodingID_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											PixelFormatCtrlVal_Int_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ColorFilterRG_Int
+														Access Mode: RO
+														Desc: 
+														Children: 
+															ColorFilterId_Reg
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	Fmt7RegBaseAddress
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+																			CamRegBaseAddress
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+													ColorFilterBG_Int
+														Access Mode: RO
+														Desc: 
+														Children: 
+															ColorFilterId_Reg
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	Fmt7RegBaseAddress
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+																			CamRegBaseAddress
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+													ColorFilterGB_Int
+														Access Mode: RO
+														Desc: 
+														Children: 
+															ColorFilterId_Reg
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	Fmt7RegBaseAddress
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+																			CamRegBaseAddress
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+													ColorFilterGR_Int
+														Access Mode: RO
+														Desc: 
+														Children: 
+															ColorFilterId_Reg
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	Fmt7RegBaseAddress
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+																			CamRegBaseAddress
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+											PixelFormatCtrlVal_Int_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ColorFilterRG_Int
+														Access Mode: RO
+														Desc: 
+														Children: 
+															ColorFilterId_Reg
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	Fmt7RegBaseAddress
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+																			CamRegBaseAddress
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+													ColorFilterBG_Int
+														Access Mode: RO
+														Desc: 
+														Children: 
+															ColorFilterId_Reg
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	Fmt7RegBaseAddress
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+																			CamRegBaseAddress
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+													ColorFilterGB_Int
+														Access Mode: RO
+														Desc: 
+														Children: 
+															ColorFilterId_Reg
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	Fmt7RegBaseAddress
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+																			CamRegBaseAddress
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+													ColorFilterGR_Int
+														Access Mode: RO
+														Desc: 
+														Children: 
+															ColorFilterId_Reg
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	Fmt7RegBaseAddress
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+																			CamRegBaseAddress
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+					PixelColorFilter
+						Access Mode: RO
+						Desc: Type of color filter that is applied to the image.
+						Children: 
+							ColorFilterId_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Fmt7RegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					PixelDynamicRangeMin
+						Access Mode: RO
+						Desc: Indicates the minimum pixel value transferred from the camera.
+						Children: 
+							pgrPixelDynamicRangeMin_Value
+								Access Mode: RO
+								Desc: 
+								Children: 
+					PixelDynamicRangeMax
+						Access Mode: RO
+						Desc: Indicates the maximum pixel value transferred from the camera.
+						Children: 
+							pgrPixelDynamicRangeMax_Value
+								Access Mode: RO
+								Desc: 
+								Children: 
+									pgrPixelDepth_Value
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					TestImageSelector
+						Access Mode: RW
+						Desc: Selects the type of test image that is sent by the camera.
+						Children: 
+							TestImageInq_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							TestImageCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					TestPattern
+						Access Mode: RW
+						Desc: Selects the type of test pattern that is generated by the device as image source.
+						Children: 
+							TestImageInq_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							TestImageCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					PixelDefectControl
+						Access Mode: RO
+						Desc: 
+						Children: 
+							pgrDefectPixelCorrectionType
+								Access Mode: RO
+								Desc: Specifies the current defect pixel correction type.
+								Children: 
+									PixelDefectCtrl_Imp
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectType_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							pgrDefectPixelCorrectionEnable
+								Access Mode: RW
+								Desc: Enable or disable pixel correction.
+								Children: 
+									PixelDefectCtrl_Imp
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefect_Locked_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CurrentVideoMode_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									PixelDefectEnable_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							pgrDefectPixelCorrectionTestMode
+								Access Mode: NA
+								Desc: Controls whether or not the defect pixel correction test mode is active.
+								Children: 
+									PixelDefectCtrl_Imp
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectEnable_Available_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											PixelDefectType_Int
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											PixelDefectEnable_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									PixelDefect_Locked_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CurrentVideoMode_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									PixelDefectTestMode_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							pgrCurrentCorrectedPixelCount
+								Access Mode: NA
+								Desc: Current number of pixels that are being corrected.
+								Children: 
+									PixelDefectCtrl_Imp
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectEnable_Available_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											PixelDefectType_Int
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											PixelDefectEnable_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									PixelDefect_Locked_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CurrentVideoMode_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									PixelDefectCurCnt_Val
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectMax_Val
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							pgrCurrentCorrectedPixelIndex
+								Access Mode: NA
+								Desc: Control the index of the defected pixels to be corrected.
+								Children: 
+									PixelDefectCtrl_Imp
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectIndex_Available_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											PixelDefectType_Int
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											PixelDefectEnable_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											PixelDefectCurCnt_Val
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									PixelDefect_Locked_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CurrentVideoMode_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									PixelDefectIndex_Val
+										Access Mode: RW
+										Desc: 
+										Children: 
+									PixelDefectIndexMax_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											PixelDefectCurCnt_Val
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+							pgrCurrentCorrectedPixelOffsetX
+								Access Mode: NA
+								Desc: Control the X offset of the defect pixel specified by the index.
+								Children: 
+									PixelDefectCtrl_Imp
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectIndex_Available_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											PixelDefectType_Int
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											PixelDefectEnable_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											PixelDefectCurCnt_Val
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									PixelDefect_Locked_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CurrentVideoMode_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									PixelDefectCur_X
+										Access Mode: RW
+										Desc: 
+										Children: 
+											PixelDefectCoordinateRegAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													PixelDefectIndex_Val
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectOffsetXMax_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											SensorWidth_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+							pgrCurrentCorrectedPixelOffsetY
+								Access Mode: NA
+								Desc: Control the Y offset of the defect pixel specified by the index.
+								Children: 
+									PixelDefectCtrl_Imp
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectIndex_Available_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											PixelDefectType_Int
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											PixelDefectEnable_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											PixelDefectCurCnt_Val
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									PixelDefect_Locked_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CurrentVideoMode_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									PixelDefectCur_Y
+										Access Mode: RW
+										Desc: 
+										Children: 
+											PixelDefectCoordinateRegAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													PixelDefectIndex_Val
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectOffsetYMax_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											SensorHeight_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+							pgrCurrentCorrectedPixelSave
+								Access Mode: NA
+								Desc: Save the Current Corrected Pixels to the non-volatile memory of the device.
+								Children: 
+									PixelDefectCtrl_Imp
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectIndex_Available_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											PixelDefectType_Int
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											PixelDefectEnable_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											PixelDefectCurCnt_Val
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									PixelDefect_Locked_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CurrentVideoMode_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									PixelDefectCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectSaveVal_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											PixelDefectCurCnt_Val
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+			

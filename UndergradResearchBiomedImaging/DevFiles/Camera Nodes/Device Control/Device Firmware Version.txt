@@ -1,0 +1,12 @@
+DeviceFirmwareVersion
+				Access Mode: RO
+				Desc: Version of the firmware in the device.
+				Children: 
+					CamRegBaseAddress
+						Access Mode: RW
+						Desc: 
+						Children: 
+					Device
+						Access Mode: RW
+						Desc: 
+						Children: 

@@ -1,0 +1,220 @@
+LUTValueAll
+				Access Mode: NA
+				Desc: Accesses the entire content of the selected LUT in one chunk access.
+				Children: 
+					LUTCtrl_InqPresence_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					LUTEnable_CtrlValue
+						Access Mode: RW
+						Desc: 
+						Children: 
+							LUTEnableCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									LUTRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											LUTRegOffset_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							LUTEnable_CtrlValue_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									LUTEnableCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											LUTRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													LUTRegOffset_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							LUTEnable_CtrlValue_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									LUTEnableCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											LUTRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													LUTRegOffset_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					LUTRegChannelBaseAddress
+						Access Mode: RO
+						Desc: 
+						Children: 
+							LUTRegBankBaseAddress
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									LUTBankOffset_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											LUTRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													LUTRegOffset_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							LUTSelector_CtrlValue
+								Access Mode: RW
+								Desc: 
+								Children: 
+							LUT_InputDataBitDepth_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									LUTRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											LUTRegOffset_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					LUTValueAll_InqLen
+						Access Mode: RO
+						Desc: 
+						Children: 
+							LUT_InputDataBitDepth_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									LUTRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											LUTRegOffset_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					Device
+						Access Mode: RW
+						Desc: 
+						Children: 

@@ -1,0 +1,100 @@
+LineInverter
+				Access Mode: NA
+				Desc: Controls the inversion of the signal of the selected input or output line.
+				Children: 
+					GPIOImplemented_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							GPIOPinCount_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					LineInverterAvailable_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							GPIOPinPresInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									GPIOCtrlPinRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											LineSelected_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							GPIOPinMode_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									GPIOCtrlPinRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											LineSelected_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					StrobeLinePolarity_Bit
+						Access Mode: RW
+						Desc: 
+						Children: 
+							StrobeLineCntCtrlAddress
+								Access Mode: RO
+								Desc: 
+								Children: 
+									StrobeRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											StrobeRegOffset_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									LineSelected_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

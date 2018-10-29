@@ -1,0 +1,88 @@
+ExposureMode
+				Access Mode: RW
+				Desc: Sets the operation mode of the Exposure (or shutter).
+				Children: 
+					TriggerPresInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					ExposureMode_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							TriggerModeCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ExposureMode_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									TriggerOverlap_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											TriggerModeCtrlVal_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											TriggerOverlap_Int_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+											TriggerOverlap_Int_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+							ExposureMode_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									TriggerOverlap_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											TriggerModeCtrlVal_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											TriggerOverlap_Int_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+											TriggerOverlap_Int_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children:

@@ -1,0 +1,64 @@
+SharpnessEnabled
+				Access Mode: RW
+				Desc: Enables/disables sharpness adjustment.
+				Children: 
+					SharpnessOnOffInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					SharpnessEnabled_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							SharpnessCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							SharpnessEnabled_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									SharpnessCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							SharpnessEnabled_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									SharpnessCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children:

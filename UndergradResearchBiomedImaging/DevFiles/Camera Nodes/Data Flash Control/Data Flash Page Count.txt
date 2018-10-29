@@ -1,0 +1,32 @@
+DataFlashPageCount
+				Access Mode: RO
+				Desc: Number of the data flash pages.
+				Children: 
+					DataFlashCtrl_Imp
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					DataFlashPageCount_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							DF_PageCountDepth_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 

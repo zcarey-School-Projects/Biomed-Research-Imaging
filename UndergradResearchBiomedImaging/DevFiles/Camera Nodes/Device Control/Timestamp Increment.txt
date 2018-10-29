@@ -1,0 +1,12 @@
+TimestampIncrement
+				Access Mode: RO
+				Desc: Indicates the timestamp increment in ns/tick.
+				Children: 
+					TimestampIncrement_reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

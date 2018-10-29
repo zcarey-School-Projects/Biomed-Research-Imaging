@@ -1,0 +1,16 @@
+AcquisitionStop
+				Access Mode: WO
+				Desc: Stops the acquisition of the device at the end of the current frame.
+				Children: 
+					AcquisitionStop_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

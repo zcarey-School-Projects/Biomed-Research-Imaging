@@ -1,0 +1,28 @@
+EventSelector
+				Access Mode: RW
+				Desc: Selects which Event to enable or control
+				Children: 
+					EventControl_Inq
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					EventSelector_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

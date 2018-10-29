@@ -1,0 +1,32 @@
+DataFlashPageSize
+				Access Mode: RO
+				Desc: Size of the data flash page.
+				Children: 
+					DataFlashCtrl_Imp
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					DataFlashPageSize_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							DF_PageSizeDepth_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 

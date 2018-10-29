@@ -1,0 +1,8 @@
+DeviceUserID
+				Access Mode: RW
+				Desc: User Defined Name.
+				Children: 
+					Device
+						Access Mode: RW
+						Desc: 
+						Children: 

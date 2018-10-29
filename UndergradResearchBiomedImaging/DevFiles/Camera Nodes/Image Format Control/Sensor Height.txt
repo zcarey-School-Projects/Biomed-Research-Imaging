@@ -1,0 +1,16 @@
+SensorHeight
+				Access Mode: RO
+				Desc: Effective height of the sensor in pixels.
+				Children: 
+					SensorHeight_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

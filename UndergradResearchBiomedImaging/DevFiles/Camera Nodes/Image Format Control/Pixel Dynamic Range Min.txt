@@ -1,0 +1,8 @@
+PixelDynamicRangeMin
+				Access Mode: RO
+				Desc: Indicates the minimum pixel value transferred from the camera.
+				Children: 
+					pgrPixelDynamicRangeMin_Value
+						Access Mode: RO
+						Desc: 
+						Children: 

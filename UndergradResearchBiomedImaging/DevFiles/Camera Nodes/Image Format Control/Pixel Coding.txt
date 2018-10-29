@@ -1,0 +1,20 @@
+PixelCoding
+				Access Mode: RO
+				Desc: Coding of the pixels in the image.
+				Children: 
+					PixelCoding_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							ColorCodingID_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 

@@ -1,0 +1,40 @@
+ActivePageNumber
+				Access Mode: RW
+				Desc: Control the number of the active data flash page.
+				Children: 
+					DataFlashCtrl_Imp
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					ActivePageNumber_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+					ActivePageNumber_Max
+						Access Mode: RO
+						Desc: 
+						Children: 
+							DataFlashPageCount_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									DF_PageCountDepth_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 

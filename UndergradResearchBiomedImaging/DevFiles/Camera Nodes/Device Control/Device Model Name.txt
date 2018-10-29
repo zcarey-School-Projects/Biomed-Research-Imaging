@@ -1,0 +1,8 @@
+DeviceModelName
+				Access Mode: RO
+				Desc: Model name of the device.
+				Children: 
+					Device
+						Access Mode: RW
+						Desc: 
+						Children:

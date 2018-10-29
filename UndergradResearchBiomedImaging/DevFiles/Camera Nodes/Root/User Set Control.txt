@@ -1,0 +1,196 @@
+UserSetControl
+				Access Mode: RO
+				Desc: Category that contains the User Set control features.
+				Children: 
+					UserSetCurrent
+						Access Mode: RO
+						Desc: Indicates the user set that is currently in use.  At initialization time, the camera loads the most recently saved user set.
+						Children: 
+							CurMemCh_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					UserSetSelector
+						Access Mode: RW
+						Desc: Selects the feature User Set to load, save or configure.
+						Children: 
+							UserSet1Implemented_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									MemoryChannelMax_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							UserSetVal_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									MemSaveCh_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									UserSetVal_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+									UserSetVal_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+					UserSetLoad
+						Access Mode: NA
+						Desc: Loads the User Set specified by UserSetSelector to the device and makes it active.
+						Children: 
+							TLParamsLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							UserSetLoad_CtrlValueReg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							UserSetVal_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									MemSaveCh_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									UserSetVal_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+									UserSetVal_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+					UserSetSave
+						Access Mode: NA
+						Desc: Save the User Set specified by UserSetSelector to the non-volatile memory of the device.
+						Children: 
+							UserSetSaveLock_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									TLParamsLocked
+										Access Mode: RW
+										Desc: 
+										Children: 
+									UserSetVal_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											MemSaveCh_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											UserSetVal_Int_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+											UserSetVal_Int_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+							MemorySave_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					UserSetDefault
+						Access Mode: RO
+						Desc: Selects the feature User Set to load and make active by default when the device is reset.
+						Children: 
+							TLParamsLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							UserSetDefaultSelector_CtrlValueReg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					UserSetDefaultSelector
+						Access Mode: RO
+						Desc: Selects the feature User Set to load, save or configure.
+						Children: 
+							TLParamsLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							UserSetDefaultSelector_CtrlValueReg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+			

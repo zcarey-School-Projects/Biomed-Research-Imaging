@@ -1,0 +1,12 @@
+TimestampLatch
+				Access Mode: WO
+				Desc: Latches the curretn device time into the timstamp register.
+				Children: 
+					TimestampLatch_reg
+						Access Mode: WO
+						Desc: 
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children:

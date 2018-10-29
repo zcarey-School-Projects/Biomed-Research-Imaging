@@ -1,0 +1,80 @@
+GainAuto
+				Access Mode: RW
+				Desc: Sets the automatic gain control (AGC) mode.
+				Children: 
+					GainAutoInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					GainAutoLocked_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							GainCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					GainCtrlVal_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							GainCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							GainCtrlVal_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									GainCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							GainCtrlVal_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									GainCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 

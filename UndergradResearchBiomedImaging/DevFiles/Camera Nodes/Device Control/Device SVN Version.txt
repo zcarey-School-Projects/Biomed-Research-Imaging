@@ -1,0 +1,12 @@
+DeviceSVNVersion
+				Access Mode: RO
+				Desc: SVN Version of the device.
+				Children: 
+					CamRegBaseAddress
+						Access Mode: RW
+						Desc: 
+						Children: 
+					Device
+						Access Mode: RW
+						Desc: 
+						Children: 

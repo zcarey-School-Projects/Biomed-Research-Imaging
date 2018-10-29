@@ -1,0 +1,76 @@
+EventTestData
+				Access Mode: RO
+				Desc: Category that contains all the data features related to the Test Event.
+				Children: 
+					EventTest
+						Access Mode: NA
+						Desc: Returns the unique identifier of the ExposureEnd type of Event.
+						Children: 
+							EventControl_Inq
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							EventTest_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									TestEventPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					EventTestTimestamp
+						Access Mode: NA
+						Desc: Returns the Timestamp of the ExposureEnd Event.
+						Children: 
+							EventControl_Inq
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							EventTestTimestamp_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									TestEventPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					EventTestFrameID
+						Access Mode: NA
+						Desc: Returns the unique Identifier of the Frame (or image) that generated the Test Event.
+						Children: 
+							EventControl_Inq
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							EventTestFrameID_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									TestEventPort
+										Access Mode: NA
+										Desc: 
+										Children: 

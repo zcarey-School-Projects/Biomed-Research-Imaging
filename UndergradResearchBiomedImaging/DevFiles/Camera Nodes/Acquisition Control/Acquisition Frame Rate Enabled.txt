@@ -1,0 +1,96 @@
+AcquisitionFrameRateEnabled
+				Access Mode: RW
+				Desc: Enables manual control of the camera frame rate.
+				Children: 
+					AcqFrameRateImplemented_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							AcqFrameRatePresInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AcqFrameRateAbsCtrlInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					AcqFrameRateEnAvail_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							TriggerModeOnOff_Bit
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					AcqFrameRateEnCtrlVal_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							AcqFrameRateEnCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AcqFrameRateEnCtrlVal_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AcqFrameRateEnCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							AcqFrameRateEnCtrlVal_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AcqFrameRateEnCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 

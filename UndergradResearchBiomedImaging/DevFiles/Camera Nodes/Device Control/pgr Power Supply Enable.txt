@@ -1,0 +1,40 @@
+pgrPowerSupplyEnable
+				Access Mode: NI
+				Desc: Enables or disables the selected power supply.
+				Children: 
+					DevicePowerSupply_Imp
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					PwrSrc_Enable_Available_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					PowerSupplyEnable_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

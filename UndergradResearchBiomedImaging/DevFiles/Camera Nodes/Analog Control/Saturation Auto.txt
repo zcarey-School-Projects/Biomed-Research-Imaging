@@ -1,0 +1,80 @@
+SaturationAuto
+				Access Mode: RW
+				Desc: Controls the mode for automatic saturation adjustment.
+				Children: 
+					SaturationAutoInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					SaturationAutoLocked_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							SaturationCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					SaturationAuto_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							SaturationCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							SaturationAuto_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									SaturationCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							SaturationAuto_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									SaturationCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 

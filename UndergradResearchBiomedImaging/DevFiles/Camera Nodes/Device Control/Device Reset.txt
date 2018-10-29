@@ -1,0 +1,28 @@
+DeviceReset
+				Access Mode: WO
+				Desc: This is a command that immediately resets and reboots the device.
+				Children: 
+					DeviceReset_InqPresenceReg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					DeviceReset_CtrlValueReg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

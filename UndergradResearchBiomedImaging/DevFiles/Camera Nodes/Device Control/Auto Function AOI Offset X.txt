@@ -1,0 +1,176 @@
+AutoFunctionAOIOffsetX
+				Access Mode: NA
+				Desc: Vertical offset from the origin to the auto function area of interest in pixels.
+				Children: 
+					AE_AOI_Implemented_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					AE_AOI_OnOff_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							AE_AOI_Control_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AE_AOI_OnOff_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AE_AOI_Control_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							AE_AOI_OnOff_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AE_AOI_Control_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					TLParamsLocked
+						Access Mode: RW
+						Desc: 
+						Children: 
+					AE_OffsetXCtrlVal_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							AE_AOIRegBaseAddress
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									AE_AOIRegBaseAddr_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					AE_OffsetXMax_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							AE_WidthCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AE_AOIRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											AE_AOIRegBaseAddr_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							WidthMax_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Fmt7RegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					AE_OffsetXInc_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							AE_Hposunit_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AE_AOIRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											AE_AOIRegBaseAddr_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 

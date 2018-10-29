@@ -1,0 +1,20 @@
+VideoMode
+				Access Mode: RO
+				Desc: Current video mode.
+				Children: 
+					TLParamsLocked
+						Access Mode: RW
+						Desc: 
+						Children: 
+					CurrentVideoMode_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

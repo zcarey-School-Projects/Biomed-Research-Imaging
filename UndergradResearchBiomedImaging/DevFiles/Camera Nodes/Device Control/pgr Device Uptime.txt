@@ -1,0 +1,16 @@
+pgrDeviceUptime
+				Access Mode: RO
+				Desc: Time since the device was powered up.
+				Children: 
+					DeviceUptime_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

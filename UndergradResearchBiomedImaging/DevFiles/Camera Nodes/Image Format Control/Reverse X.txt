@@ -1,0 +1,32 @@
+ReverseX
+				Access Mode: RO
+				Desc: Flip horizontally the image sent by the device. The AOI is applied after the flip.
+				Children: 
+					ReverseXInq_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					TLParamsLocked
+						Access Mode: RW
+						Desc: 
+						Children: 
+					ReverseXCtrlVal_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

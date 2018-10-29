@@ -1,0 +1,380 @@
+TransportLayerControl
+		Access Mode: RO
+		Desc: Category that contains the transport layer control features.
+		Children: 
+			U3VMaxDeviceResponseTime
+				Access Mode: RO
+				Desc: Max Resonse Time in ms.
+				Children: 
+					U3VMaxResponseTime_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			U3VDeviceConfigurationHigh
+				Access Mode: RW
+				Desc: Describes Device Configuration.
+				Children: 
+					DeviceConfigurationHigh_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			U3VDeviceConfigurationLow
+				Access Mode: RW
+				Desc: Describes Device Configuration.
+				Children: 
+					DeviceConfigurationLow_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			U3VMessageChannelID
+				Access Mode: RW
+				Desc: Channel ID Used For The Message Channel.
+				Children: 
+					MessageChannelSupported_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					MessageChannelID_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			U3VAccessPrivilege
+				Access Mode: RW
+				Desc: Access Privilege.
+				Children: 
+					AccessPrivilege_reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			U3VVersionMajor
+				Access Mode: RO
+				Desc: U3V Version.
+				Children: 
+					U3VVersionMajor_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							SBRMOffset
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			U3VVersionMinor
+				Access Mode: RO
+				Desc: U3V Version.
+				Children: 
+					U3VVersionMinor_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							SBRMOffset
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			U3VCPCapability
+				Access Mode: RO
+				Desc: Indicates additional features on the control channel.
+				Children: 
+			U3VCPSIRMAvailable
+				Access Mode: RO
+				Desc: Set if the device supports at least one device streaming interface.
+				Children: 
+					U3VCPSIRMAvailable_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							SBRMOffset
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			U3VCPEIRMAvailable
+				Access Mode: RO
+				Desc: Set if the device supports at least one device event interface.
+				Children: 
+					U3VCPEIRMAvailable_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							SBRMOffset
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			U3VCPIIDC2Available
+				Access Mode: RO
+				Desc: Set if the device supports IIDC2 register map.
+				Children: 
+					U3VCPIIDC2Available_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							SBRMOffset
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			U3VCPCapabilityHigh
+				Access Mode: RO
+				Desc: Indicates additional features on the control channel.
+				Children: 
+					U3VCPCapabilityHigh_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							SBRMOffset
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			U3VCPCapabilityLow
+				Access Mode: RO
+				Desc: Indicates additional features on the control channel.
+				Children: 
+					U3VCPCapabilityLow_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							SBRMOffset
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			U3VCPConfigurationHigh
+				Access Mode: RW
+				Desc: Configure additional features on the control channel.
+				Children: 
+					U3VCPConfigurationHigh_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							SBRMOffset
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			U3VCPConfigurationLow
+				Access Mode: RW
+				Desc: Configures additional features on the control channel.
+				Children: 
+					U3VCPConfigurationLow_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							SBRMOffset
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			U3VMaxCommandTransferLength
+				Access Mode: RO
+				Desc: Specifies the max suuported command transfer length of the device.
+				Children: 
+					MaxCommandTansferLength_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							SBRMOffset
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			U3VMaxAcknowledgeTransferLength
+				Access Mode: RO
+				Desc: Specifies the max suuported ack transfer length of the device.
+				Children: 
+					MaxAcknowledgeTansferLength_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							SBRMOffset
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			U3VNumberOfStreamChannels
+				Access Mode: RO
+				Desc: Number of Stream Channels and its Corresponding Streaming Interface Register Maps.
+				Children: 
+					NumberOfStreamChannels_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							SBRMOffset
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			U3VCurrentSpeed
+				Access Mode: RO
+				Desc: Specifies the current speed of the USB link.
+				Children: 
+					CurrentSpeed_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CurrentSpeed_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									SBRMOffset
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+			TLParamsLocked
+				Access Mode: RW
+				Desc: 
+				Children: 
+			PayloadSize
+				Access Mode: RO
+				Desc: Number of bytes transferred for each image or chunk on the stream channel.
+				Children: 
+					PayloadSizeVal_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			TransmitFailureCount
+				Access Mode: RO
+				Desc: Number of failed frame transmissions that have occurred since the last reset.
+				Children: 
+					TransmitFailureCount_Imp
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					TransmitFailureCount_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			TransmitFailureCountReset
+				Access Mode: WO
+				Desc: Reset the transmit failure count.
+				Children: 
+					TransmitFailureCount_Imp
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					TransmitFailureCount_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			USB3LinkRecoveryCount
+				Access Mode: RO
+				Desc: USB3 Link Recovery Count.
+				Children: 
+					USB3LinkRecoveryCount_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

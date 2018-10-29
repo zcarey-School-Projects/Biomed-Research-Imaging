@@ -1,0 +1,112 @@
+U3VDeviceCapability
+				Access Mode: RO
+				Desc: Describes Device Capability.
+				Children: 
+					UserNameAvailable
+						Access Mode: RO
+						Desc: Set if User Defined Name available.
+						Children: 
+							UserNameAvailable_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					AccessPrivilegeAvailable
+						Access Mode: RO
+						Desc: Set if Heartbeat/Access Privilege is available.
+						Children: 
+							AccessPrivilegeAvailable_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					MessageChannelSupported
+						Access Mode: RO
+						Desc: Set if the device supports a Message Channel.
+						Children: 
+							MessageChannelSupported_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					TimestampSupported
+						Access Mode: RO
+						Desc: Set if the device supports a timestamp register.
+						Children: 
+							TimestampSupported_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					StringEncoding
+						Access Mode: RO
+						Desc: String Encoding of the BRM.
+						Children: 
+							StringEncoding_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					FamilyRegisterAvailable
+						Access Mode: RO
+						Desc: Set if the device supports the Family Name register.
+						Children: 
+							FamilyRegisterAvailable_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					SBRMSupported
+						Access Mode: RO
+						Desc: Set if the device supports a SBRM.
+						Children: 
+							SBRMSupported_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					EndianessRegistersSupported
+						Access Mode: RO
+						Desc: Set if the device supports the Protocol Endianess and Implementation Endianess registers.
+						Children: 
+							EndianessRegistersSupported_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					WrittenLengthFieldSupported
+						Access Mode: RO
+						Desc: Set to 1 if the device sends the length_written field in the SCD section of the WriteMemAck command.
+						Children: 
+							WrittenLengthFieldSupported_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 

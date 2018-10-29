@@ -1,0 +1,20 @@
+UserSetDefault
+				Access Mode: RO
+				Desc: Selects the feature User Set to load and make active by default when the device is reset.
+				Children: 
+					TLParamsLocked
+						Access Mode: RW
+						Desc: 
+						Children: 
+					UserSetDefaultSelector_CtrlValueReg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

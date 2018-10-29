@@ -1,0 +1,4 @@
+GainSelector
+				Access Mode: RO
+				Desc: Selects which Gain is controlled by the various Gain features.
+				Children: 

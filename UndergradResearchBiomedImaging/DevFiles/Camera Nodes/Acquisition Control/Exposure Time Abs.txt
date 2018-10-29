@@ -1,0 +1,316 @@
+ExposureTimeAbs
+				Access Mode: RO
+				Desc: Exposure time in microseconds when Exposure Mode is Timed and ExposureAuto is Off.
+				Children: 
+					ExposureLocked_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							ExposureCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ExposureMode_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									TriggerModeCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									ExposureMode_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											TriggerOverlap_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													TriggerModeCtrlVal_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+													TriggerOverlap_Int_ConvertTo
+														Access Mode: RO
+														Desc: 
+														Children: 
+													TriggerOverlap_Int_ConvertFrom
+														Access Mode: RO
+														Desc: 
+														Children: 
+									ExposureMode_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											TriggerOverlap_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													TriggerModeCtrlVal_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+													TriggerOverlap_Int_ConvertTo
+														Access Mode: RO
+														Desc: 
+														Children: 
+													TriggerOverlap_Int_ConvertFrom
+														Access Mode: RO
+														Desc: 
+														Children: 
+					ExposureUsCtrl_Float
+						Access Mode: RW
+						Desc: 
+						Children: 
+							ExposureAbsValueCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ExposureUsCtrl_Float_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+							ExposureUsCtrl_Float_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+					ExposureMinAbsVal_Float
+						Access Mode: RO
+						Desc: 
+						Children: 
+							ExposureAutoCtrl_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									ExposureCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									ExposureAutoCtrl_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureCtrl_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									ExposureAutoCtrl_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureCtrl_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+							ExposureMinUsInq_Float
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ExposureAbsMinInq_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									ExposureMinUsInq_Float_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+									ExposureMinUsInq_Float_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+							AutoExposureLowerLimitVal_Float
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AutoExposureLowerLimitVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AutoExposureLowerLimitVal_Float_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+									AutoExposureLowerLimitVal_Float_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+					ExposureMaxAbsVal_Float
+						Access Mode: RO
+						Desc: 
+						Children: 
+							ExposureAutoCtrl_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									ExposureCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									ExposureAutoCtrl_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureCtrl_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									ExposureAutoCtrl_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureCtrl_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+							ExposureMaxUsInq_Float
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ExposureAbsMaxInq_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									ExposureMaxUsInq_Float_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+									ExposureMaxUsInq_Float_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+							AutoExposureUpperLimitVal_Float
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AutoExposureUpperLimitVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AutoExposureUpperLimitVal_Float_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+									AutoExposureUpperLimitVal_Float_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children:

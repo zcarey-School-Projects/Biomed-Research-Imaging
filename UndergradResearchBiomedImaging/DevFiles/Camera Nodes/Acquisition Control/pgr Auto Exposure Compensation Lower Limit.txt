@@ -1,0 +1,60 @@
+pgrAutoExposureCompensationLowerLimit
+				Access Mode: RW
+				Desc: Lower limit of the auto exposure compensation value(EV) parameter
+				Children: 
+					ExposureCompRangeLocked_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							ExposureCompLocked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ExposureCompCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					AutoExposureCompLowerLimitVal_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					AutoExposureCompValueRangeMin_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					AutoExposureCompUpperLimitVal_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

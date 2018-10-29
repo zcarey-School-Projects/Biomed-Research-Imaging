@@ -1,0 +1,28 @@
+TriggerMode
+				Access Mode: RW
+				Desc: Controls whether or not the selected trigger is active.
+				Children: 
+					TriggerOnOffInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					TriggerModeOnOff_Bit
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

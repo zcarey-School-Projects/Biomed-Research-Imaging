@@ -1,0 +1,20 @@
+HeightMax
+				Access Mode: RO
+				Desc: Maximum height of the image (in pixels).
+				Children: 
+					HeightMax_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							Fmt7RegBaseAddress
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children:

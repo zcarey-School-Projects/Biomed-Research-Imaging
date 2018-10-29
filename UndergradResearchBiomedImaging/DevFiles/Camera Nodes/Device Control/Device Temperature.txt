@@ -1,0 +1,20 @@
+DeviceTemperature
+				Access Mode: RO
+				Desc: Device temperature in degrees Celcius (C).
+				Children: 
+					TemperatureC_Float
+						Access Mode: RO
+						Desc: 
+						Children: 
+							Temperature_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 

@@ -1,0 +1,44 @@
+UserSetLoad
+				Access Mode: NA
+				Desc: Loads the User Set specified by UserSetSelector to the device and makes it active.
+				Children: 
+					TLParamsLocked
+						Access Mode: RW
+						Desc: 
+						Children: 
+					UserSetLoad_CtrlValueReg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					UserSetVal_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							MemSaveCh_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							UserSetVal_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+							UserSetVal_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 

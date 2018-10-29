@@ -1,0 +1,28 @@
+TriggerActivation
+				Access Mode: RW
+				Desc: Specifies the activation mode of the trigger.
+				Children: 
+					TriggerPolarityInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					TriggerPolarityCtrlVal_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children:

@@ -1,0 +1,76 @@
+OffsetY
+				Access Mode: RW
+				Desc: Horizontal offset from the origin to the AOI (in pixels).
+				Children: 
+					OffsetYCtrlVal_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							Fmt7RegBaseAddress
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					OffsetYMax_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							HeightCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									Fmt7RegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							HeightMax_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Fmt7RegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					OffsetYInc_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							Vposunit_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Fmt7RegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 

@@ -1,0 +1,248 @@
+StrobeDelay
+				Access Mode: NA
+				Desc: Sets the duration (in microseconds) of the delay before starting the Strobe Signal.
+				Children: 
+					GPIOImplemented_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							GPIOPinCount_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					StrobeEnabledAvailable_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							GPIOPinPresInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									GPIOCtrlPinRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											LineSelected_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							GPIOPinMode_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									GPIOCtrlPinRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											LineSelected_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					StrobeCntLock_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							StrobeLineOnOff_Bit
+								Access Mode: RW
+								Desc: 
+								Children: 
+									StrobeLineCntCtrlAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											StrobeRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													StrobeRegOffset_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											LineSelected_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					StrobeDelayVal_Float
+						Access Mode: RW
+						Desc: 
+						Children: 
+							StrobeLineDelay_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									StrobeLineCnt16Address
+										Access Mode: RO
+										Desc: 
+										Children: 
+											StrobeRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													StrobeRegOffset_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											LineSelected_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							StrobeDelayVal_Float_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									StrobeLineDelay_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											StrobeLineCnt16Address
+												Access Mode: RO
+												Desc: 
+												Children: 
+													StrobeRegBaseAddress
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															StrobeRegOffset_Reg
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+													LineSelected_Int
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							StrobeDelayVal_Float_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									StrobeLineDelay_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											StrobeLineCnt16Address
+												Access Mode: RO
+												Desc: 
+												Children: 
+													StrobeRegBaseAddress
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															StrobeRegOffset_Reg
+																Access Mode: RO
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+													LineSelected_Int
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					StrobeAbsMin_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					StrobeAbsMax_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

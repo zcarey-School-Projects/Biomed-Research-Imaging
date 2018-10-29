@@ -1,0 +1,120 @@
+BalanceRatio
+				Access Mode: NA
+				Desc: This value sets the selected balance ratio control as an integer.
+				Children: 
+					BalanceRatio_InqAvailable
+						Access Mode: RO
+						Desc: 
+						Children: 
+							BalanceWhiteAuto_CtrlValue_Calc
+								Access Mode: RW
+								Desc: 
+								Children: 
+									BalanceWhiteAuto_CtrlValue
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									BalanceWhiteAuto_CtrlValue_Calc_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											BalanceWhiteAuto_CtrlValue
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									BalanceWhiteAuto_CtrlValue_Calc_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											BalanceWhiteAuto_CtrlValue
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+							BalanceRatio_AbsAvailable
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							BalanceWhiteAuto_OnOff_InqAvailable
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					BalanceRatioVal_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							BalanceRatioVal_ColorReg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									BalanceRatioSelector_CtrlValue
+										Access Mode: RW
+										Desc: 
+										Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					BalanceRatioMin_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					BalanceRatioMax_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children:

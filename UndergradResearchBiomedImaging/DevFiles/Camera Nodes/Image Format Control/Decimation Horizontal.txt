@@ -1,0 +1,72 @@
+DecimationHorizontal
+				Access Mode: NI
+				Desc: Horizontal sub-sampling of the image. This reduces the horizontal resolution (width) of the image by the specified horizontal decimation factor. A value of 1 indicates that the camera performs no horizontal decimation.
+				Children: 
+					Decimation_PresInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					Decimation_Available_Bit
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					DecimationHorizontalLocked
+						Access Mode: RW
+						Desc: 
+						Children: 
+					DecimationCols_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							DecimationCols_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							DecimationCols_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+							DecimationCols_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+					DecimationMaxCols_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							DecimationMaxCols_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 

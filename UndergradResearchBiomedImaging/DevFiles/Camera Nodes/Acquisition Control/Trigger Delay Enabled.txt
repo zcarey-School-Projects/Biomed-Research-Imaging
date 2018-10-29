@@ -1,0 +1,64 @@
+TriggerDelayEnabled
+				Access Mode: RW
+				Desc: Specifies whether or not the Trigger Delay is enabled.
+				Children: 
+					TriggerDelayPresInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					TriggerDelayOnOff_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							TriggerDelay_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							TriggerDelayOnOff_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									TriggerDelay_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							TriggerDelayOnOff_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									TriggerDelay_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 

@@ -1,0 +1,16 @@
+AcquisitionStatusSelector
+				Access Mode: RW
+				Desc: Selects the internal acquisition signal to read using AcquisitionStatus.
+				Children: 
+					AcquisitionStatusSelector_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

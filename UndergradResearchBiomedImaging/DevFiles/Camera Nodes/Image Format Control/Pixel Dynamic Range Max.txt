@@ -1,0 +1,20 @@
+PixelDynamicRangeMax
+				Access Mode: RO
+				Desc: Indicates the maximum pixel value transferred from the camera.
+				Children: 
+					pgrPixelDynamicRangeMax_Value
+						Access Mode: RO
+						Desc: 
+						Children: 
+							pgrPixelDepth_Value
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 

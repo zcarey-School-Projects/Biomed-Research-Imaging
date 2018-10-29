@@ -1,0 +1,64 @@
+SaturationEnabled
+				Access Mode: RW
+				Desc: Enables/disables saturation adjustment.
+				Children: 
+					SaturationOnOffInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					SaturationEnabled_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							SaturationCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							SaturationEnabled_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									SaturationCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							SaturationEnabled_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									SaturationCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 

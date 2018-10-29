@@ -1,0 +1,80 @@
+AcquisitionFrameRateAuto
+				Access Mode: RW
+				Desc: Controls the mode for automatic frame rate adjustment.
+				Children: 
+					AcqFrameRateAutoInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					AcqFrameRateAutoLocked_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							AcqFrameRateEnCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					AcqFrameRateAuto_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							AcqFrameRateEnCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AcqFrameRateAuto_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AcqFrameRateEnCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							AcqFrameRateAuto_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AcqFrameRateEnCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 

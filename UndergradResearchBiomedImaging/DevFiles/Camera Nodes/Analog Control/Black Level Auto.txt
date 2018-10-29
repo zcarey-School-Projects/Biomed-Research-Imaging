@@ -1,0 +1,80 @@
+BlackLevelAuto
+				Access Mode: RW
+				Desc: Controls the mode for automatic black level adjustment. The exact algorithm used to implement this adjustment is device-specific.
+				Children: 
+					BlackLevelAutoInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					BlackLevelAutoLocked_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							BlackLevelCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					BlackLevelAuto_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							BlackLevelCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							BlackLevelAuto_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									BlackLevelCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							BlackLevelAuto_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									BlackLevelCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 

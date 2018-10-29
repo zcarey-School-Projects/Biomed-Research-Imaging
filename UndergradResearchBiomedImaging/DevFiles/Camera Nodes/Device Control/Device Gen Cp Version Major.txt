@@ -1,0 +1,12 @@
+DeviceGenCpVersionMajor
+				Access Mode: RO
+				Desc: Major version of the GenCP protocol supported by the device.
+				Children: 
+					GenCPVersionMajor_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

@@ -1,0 +1,12 @@
+pgrSensorDescription
+				Access Mode: RO
+				Desc: Description of the sensor of the device.
+				Children: 
+					CamRegBaseAddress
+						Access Mode: RW
+						Desc: 
+						Children: 
+					Device
+						Access Mode: RW
+						Desc: 
+						Children: 

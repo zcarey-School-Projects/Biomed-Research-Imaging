@@ -1,0 +1,76 @@
+EventAcquisitionEndData
+				Access Mode: RO
+				Desc: Category that contains all the data features related to the AcquisitionEnd Event.
+				Children: 
+					EventAcquisitionEnd
+						Access Mode: NA
+						Desc: Returns the unique identifier of the AcquisitionEnd type of Event.
+						Children: 
+							EventControl_Inq
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							EventAcquisitionEnd_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									EventAcquisitionEndPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					EventAcquisitionEndTimestamp
+						Access Mode: NA
+						Desc: Returns the Timestamp of the AcquisitionEnd Event.
+						Children: 
+							EventControl_Inq
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							EventAcquisitionEndTimestamp_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									EventAcquisitionEndPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					EventAcquisitionEndFrameID
+						Access Mode: NA
+						Desc: Returns the unique Identifier of the Frame (or image) that generated the AcquisitionEnd Event.
+						Children: 
+							EventControl_Inq
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							EventAcquisitionEndFrameID_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									EventAcquisitionEndPort
+										Access Mode: NA
+										Desc: 
+										Children: 

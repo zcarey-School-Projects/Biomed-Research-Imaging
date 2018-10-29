@@ -1,0 +1,96 @@
+DecimationVertical
+				Access Mode: NI
+				Desc: Vertical sub-sampling of the image. This reduces the vertical resolution (height) of the image by the specified vertical decimation factor. A value of 1 indicates that the camera performs no vertical decimation.
+				Children: 
+					Decimation_PresInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					Decimation_Available_Bit
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					TLParamsLocked
+						Access Mode: RW
+						Desc: 
+						Children: 
+					DecimationRows_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							Decimation_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							DecimationRows_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Decimation_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							DecimationRows_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Decimation_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					DecimationMaxRows_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							DecimationMaxRows_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 

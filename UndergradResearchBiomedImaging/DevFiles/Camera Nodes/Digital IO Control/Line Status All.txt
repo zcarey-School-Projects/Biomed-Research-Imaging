@@ -1,0 +1,32 @@
+LineStatusAll
+				Access Mode: RO
+				Desc: Returns the current status of all available Line signals at time of polling in a single bitfield.
+				Children: 
+					GPIOImplemented_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							GPIOPinCount_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					GPIOPinVal_Reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

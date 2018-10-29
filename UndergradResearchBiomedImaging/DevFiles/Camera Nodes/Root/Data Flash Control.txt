@@ -1,0 +1,248 @@
+DataFlashControl
+				Access Mode: RO
+				Desc: Category that controls access to the camera's onboard flash memory that is available for nonvolatile user data storage.
+				Children: 
+					DataFlashPageSize
+						Access Mode: RO
+						Desc: Size of the data flash page.
+						Children: 
+							DataFlashCtrl_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							DataFlashPageSize_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									DF_PageSizeDepth_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					DataFlashPageCount
+						Access Mode: RO
+						Desc: Number of the data flash pages.
+						Children: 
+							DataFlashCtrl_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							DataFlashPageCount_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									DF_PageCountDepth_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					ActivePageNumber
+						Access Mode: RW
+						Desc: Control the number of the active data flash page.
+						Children: 
+							DataFlashCtrl_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ActivePageNumber_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+							ActivePageNumber_Max
+								Access Mode: RO
+								Desc: 
+								Children: 
+									DataFlashPageCount_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											DF_PageCountDepth_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+					ActivePageOffset
+						Access Mode: RW
+						Desc: Control the offset of the coefficient to access in the active data flash page.
+						Children: 
+							DataFlashCtrl_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ActivePageOffset_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+							ActivePageOffset_Max
+								Access Mode: RO
+								Desc: 
+								Children: 
+									DataFlashPageSize_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											DF_PageSizeDepth_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+					ActivePageValue
+						Access Mode: RW
+						Desc: Returns the value at entry ActivePageOffset of the active data flash page.
+						Children: 
+							DataFlashCtrl_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ActivePageValue_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									DataFlashValue_Offset
+										Access Mode: RO
+										Desc: 
+										Children: 
+											DataFlashBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													DataFlashBaseAddress_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											ActivePageNumber_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+											DataFlashPageSize_Int
+												Access Mode: RO
+												Desc: 
+												Children: 
+													DF_PageSizeDepth_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											ActivePageOffset_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					ActivePageSave
+						Access Mode: WO
+						Desc: Save the data in the active page to the data flash.
+						Children: 
+							DataFlashCtrl_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ActivePageSave_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+			

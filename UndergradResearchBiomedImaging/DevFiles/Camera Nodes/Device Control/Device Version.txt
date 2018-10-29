@@ -1,0 +1,8 @@
+DeviceVersion
+				Access Mode: RO
+				Desc: Version of the device.
+				Children: 
+					Device
+						Access Mode: RW
+						Desc: 
+						Children: 

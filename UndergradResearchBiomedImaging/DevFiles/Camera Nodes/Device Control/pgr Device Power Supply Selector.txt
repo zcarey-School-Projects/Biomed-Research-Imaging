@@ -1,0 +1,28 @@
+pgrDevicePowerSupplySelector
+				Access Mode: NI
+				Desc: Selects the power supply or source to control or read.
+				Children: 
+					DevicePowerSupply_Imp
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					PowerSupplySelector_Val
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

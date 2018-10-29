@@ -1,0 +1,68 @@
+AutoFunctionAOIsControl
+				Access Mode: RO
+				Desc: ON or OFF for the feature of the Auto Function AOIs.
+				Children: 
+					AE_AOI_Implemented_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					TLParamsLocked
+						Access Mode: RW
+						Desc: 
+						Children: 
+					AE_AOI_OnOff_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							AE_AOI_Control_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AE_AOI_OnOff_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AE_AOI_Control_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							AE_AOI_OnOff_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AE_AOI_Control_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 

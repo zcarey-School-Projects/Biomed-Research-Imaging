@@ -1,0 +1,64 @@
+BalanceWhiteAuto
+				Access Mode: RW
+				Desc: Balance White Auto is the 'automatic' counterpart of the manual white balance feature.
+				Children: 
+					BalanceWhiteAuto_OnOff_InqAvailable
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					BalanceWhiteAuto_CtrlValue_Calc
+						Access Mode: RW
+						Desc: 
+						Children: 
+							BalanceWhiteAuto_CtrlValue
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							BalanceWhiteAuto_CtrlValue_Calc_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									BalanceWhiteAuto_CtrlValue
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							BalanceWhiteAuto_CtrlValue_Calc_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									BalanceWhiteAuto_CtrlValue
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children:

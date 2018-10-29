@@ -1,0 +1,8 @@
+DeviceID
+				Access Mode: RO
+				Desc: Device identifier (serial number).
+				Children: 
+					Device
+						Access Mode: RW
+						Desc: 
+						Children: 

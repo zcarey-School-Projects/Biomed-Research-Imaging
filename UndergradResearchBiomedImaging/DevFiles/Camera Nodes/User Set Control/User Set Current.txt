@@ -1,0 +1,16 @@
+UserSetCurrent
+				Access Mode: RO
+				Desc: Indicates the user set that is currently in use.  At initialization time, the camera loads the most recently saved user set.
+				Children: 
+					CurMemCh_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

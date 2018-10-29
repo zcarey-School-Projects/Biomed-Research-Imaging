@@ -1,0 +1,20 @@
+UserSetDefaultSelector
+				Access Mode: RO
+				Desc: Selects the feature User Set to load, save or configure.
+				Children: 
+					TLParamsLocked
+						Access Mode: RW
+						Desc: 
+						Children: 
+					UserSetDefaultSelector_CtrlValueReg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children:

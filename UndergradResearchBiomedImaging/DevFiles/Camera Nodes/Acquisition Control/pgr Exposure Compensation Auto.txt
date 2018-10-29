@@ -1,0 +1,64 @@
+pgrExposureCompensationAuto
+				Access Mode: RW
+				Desc: Sets the automatic exposure compensation value mode.
+				Children: 
+					ExposureCompAutoInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					ExposureCompAutoCtrl_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							ExposureCompCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ExposureCompAutoCtrl_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ExposureCompCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							ExposureCompAutoCtrl_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ExposureCompCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 

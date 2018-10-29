@@ -1,0 +1,4 @@
+DeviceScanType
+				Access Mode: RO
+				Desc: Scan type of the sensor.
+				Children: 

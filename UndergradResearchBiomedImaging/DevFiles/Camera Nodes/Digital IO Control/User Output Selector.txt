@@ -1,0 +1,24 @@
+UserOutputSelector
+				Access Mode: RW
+				Desc: Selects the physical line (or pin) of the external device connector to configure.
+				Children: 
+					GPIOImplemented_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							GPIOPinCount_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					UserOutputSelector_Int
+						Access Mode: RW
+						Desc: 
+						Children: 

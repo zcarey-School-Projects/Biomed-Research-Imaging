@@ -1,0 +1,176 @@
+LUTEnable
+				Access Mode: RW
+				Desc: Activates the selected LUT.
+				Children: 
+					LUTEnable_InqPresence_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							LUTRegBaseAddress
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									LUTRegOffset_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					LUTEnable_Avl
+						Access Mode: RO
+						Desc: 
+						Children: 
+							PixrlFormat_LUT_Enable
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ColorCodingID_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							LUTCtrl_OnOffAvailable_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									LUTRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											LUTRegOffset_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					LUTEnable_CtrlValue
+						Access Mode: RW
+						Desc: 
+						Children: 
+							LUTEnableCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									LUTRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											LUTRegOffset_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							LUTEnable_CtrlValue_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									LUTEnableCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											LUTRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													LUTRegOffset_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							LUTEnable_CtrlValue_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									LUTEnableCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											LUTRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													LUTRegOffset_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 

@@ -1,0 +1,72 @@
+RemoveParameterLimits
+		Access Mode: RO
+		Desc: Category that removes parameter limits.
+		Children: 
+			ParameterSelector
+				Access Mode: RW
+				Desc: Selects which parameter whose limit will be removed.
+				Children: 
+					ParameterSelector_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+			RemoveLimits
+				Access Mode: RW
+				Desc: Specifies whether or not the parameter limit is removed.
+				Children: 
+					RemoveLimits_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							RemoveLimits_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							RemoveLimits_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ParameterSelector_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							RemoveLimits_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ParameterSelector_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 

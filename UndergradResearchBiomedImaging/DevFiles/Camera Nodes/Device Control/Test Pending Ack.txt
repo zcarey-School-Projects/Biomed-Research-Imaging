@@ -1,0 +1,12 @@
+TestPendingAck
+				Access Mode: RW
+				Desc: Test PENDING_ACK feature.
+				Children: 
+					TestPendingAck_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

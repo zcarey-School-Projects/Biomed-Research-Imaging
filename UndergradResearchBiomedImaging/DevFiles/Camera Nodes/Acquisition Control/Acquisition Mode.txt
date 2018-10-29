@@ -1,0 +1,16 @@
+AcquisitionMode
+				Access Mode: RW
+				Desc: Sets the acquisition mode of the device.
+				Children: 
+					AcquisitionMode_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

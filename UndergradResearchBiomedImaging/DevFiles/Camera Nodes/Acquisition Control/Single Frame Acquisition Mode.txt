@@ -1,0 +1,16 @@
+SingleFrameAcquisitionMode
+				Access Mode: RW
+				Desc: Selects type of single acquisition mode
+				Children: 
+					SingleFrameAcquisitionMode_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

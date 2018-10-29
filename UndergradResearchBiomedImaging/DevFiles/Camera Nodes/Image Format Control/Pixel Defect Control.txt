@@ -1,0 +1,640 @@
+PixelDefectControl
+				Access Mode: RO
+				Desc: 
+				Children: 
+					pgrDefectPixelCorrectionType
+						Access Mode: RO
+						Desc: Specifies the current defect pixel correction type.
+						Children: 
+							PixelDefectCtrl_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PixelDefectType_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					pgrDefectPixelCorrectionEnable
+						Access Mode: RW
+						Desc: Enable or disable pixel correction.
+						Children: 
+							PixelDefectCtrl_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PixelDefect_Locked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CurrentVideoMode_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							PixelDefectEnable_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					pgrDefectPixelCorrectionTestMode
+						Access Mode: NA
+						Desc: Controls whether or not the defect pixel correction test mode is active.
+						Children: 
+							PixelDefectCtrl_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PixelDefectEnable_Available_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									PixelDefectType_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectEnable_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							PixelDefect_Locked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CurrentVideoMode_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							PixelDefectTestMode_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					pgrCurrentCorrectedPixelCount
+						Access Mode: NA
+						Desc: Current number of pixels that are being corrected.
+						Children: 
+							PixelDefectCtrl_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PixelDefectEnable_Available_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									PixelDefectType_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectEnable_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							PixelDefect_Locked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CurrentVideoMode_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							PixelDefectCurCnt_Val
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PixelDefectMax_Val
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					pgrCurrentCorrectedPixelIndex
+						Access Mode: NA
+						Desc: Control the index of the defected pixels to be corrected.
+						Children: 
+							PixelDefectCtrl_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PixelDefectIndex_Available_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									PixelDefectType_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectEnable_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectCurCnt_Val
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							PixelDefect_Locked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CurrentVideoMode_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							PixelDefectIndex_Val
+								Access Mode: RW
+								Desc: 
+								Children: 
+							PixelDefectIndexMax_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									PixelDefectCurCnt_Val
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					pgrCurrentCorrectedPixelOffsetX
+						Access Mode: NA
+						Desc: Control the X offset of the defect pixel specified by the index.
+						Children: 
+							PixelDefectCtrl_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PixelDefectIndex_Available_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									PixelDefectType_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectEnable_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectCurCnt_Val
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							PixelDefect_Locked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CurrentVideoMode_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							PixelDefectCur_X
+								Access Mode: RW
+								Desc: 
+								Children: 
+									PixelDefectCoordinateRegAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											PixelDefectIndex_Val
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PixelDefectOffsetXMax_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									SensorWidth_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					pgrCurrentCorrectedPixelOffsetY
+						Access Mode: NA
+						Desc: Control the Y offset of the defect pixel specified by the index.
+						Children: 
+							PixelDefectCtrl_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PixelDefectIndex_Available_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									PixelDefectType_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectEnable_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectCurCnt_Val
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							PixelDefect_Locked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CurrentVideoMode_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							PixelDefectCur_Y
+								Access Mode: RW
+								Desc: 
+								Children: 
+									PixelDefectCoordinateRegAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											PixelDefectIndex_Val
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PixelDefectOffsetYMax_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									SensorHeight_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					pgrCurrentCorrectedPixelSave
+						Access Mode: NA
+						Desc: Save the Current Corrected Pixels to the non-volatile memory of the device.
+						Children: 
+							PixelDefectCtrl_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PixelDefectIndex_Available_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									PixelDefectType_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectEnable_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									PixelDefectCurCnt_Val
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							PixelDefect_Locked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CurrentVideoMode_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							PixelDefectCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PixelDefectSaveVal_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									PixelDefectCurCnt_Val
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 

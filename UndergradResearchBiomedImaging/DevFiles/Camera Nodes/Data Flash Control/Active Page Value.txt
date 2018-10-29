@@ -1,0 +1,72 @@
+ActivePageValue
+				Access Mode: RW
+				Desc: Returns the value at entry ActivePageOffset of the active data flash page.
+				Children: 
+					DataFlashCtrl_Imp
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					ActivePageValue_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							DataFlashValue_Offset
+								Access Mode: RO
+								Desc: 
+								Children: 
+									DataFlashBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											DataFlashBaseAddress_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									ActivePageNumber_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+									DataFlashPageSize_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											DF_PageSizeDepth_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									ActivePageOffset_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

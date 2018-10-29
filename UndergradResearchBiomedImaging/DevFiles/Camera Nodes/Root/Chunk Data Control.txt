@@ -1,0 +1,452 @@
+ChunkDataControl
+				Access Mode: RO
+				Desc: Category that contains the Chunk Data control features.
+				Children: 
+					ChunkModeActive
+						Access Mode: RO
+						Desc: Activates the inclusion of Chunk data in the payload of the image
+						Children: 
+							ChunkDataControl_Inq
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							TLParamsLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							ChunkModeActive_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					ChunkSelector
+						Access Mode: RW
+						Desc: Selects which chunk data to enable or control
+						Children: 
+							ChunkDataControl_Inq
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ChunkSelector_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					ChunkEnable
+						Access Mode: RO
+						Desc: Enables the inclusion of the selected Chunk data in the payload of the image.
+						Children: 
+							ChunkDataControl_Inq
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ChunkEnableLocked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									TLParamsLocked
+										Access Mode: RW
+										Desc: 
+										Children: 
+									ChunkSelector_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							ChunkEnable_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					ChunkImage
+						Access Mode: NI
+						Desc: Returns the image payload.
+						Children: 
+							ChunkImageImplemented_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ChunkImage_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									ImagePort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					ChunkCRC
+						Access Mode: NA
+						Desc: Returns the CRC of the image payload.
+						Children: 
+							ChunkCRCImplemented_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ChunkCRC_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									CRCPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					ChunkFrameCounter
+						Access Mode: NA
+						Desc: Returns the image count.
+						Children: 
+							ChunkFrameCounterImplemented_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ChunkFrameCounter_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									FrameCounterPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					ChunkOffsetX
+						Access Mode: NA
+						Desc: Returns the Offset X of the image included in the payload.
+						Children: 
+							ChunkOffsetXImplemented_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ChunkOffsetX_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									OffsetXPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					ChunkOffsetY
+						Access Mode: NA
+						Desc: Returns the Offset Y of the image included in the payload.
+						Children: 
+							ChunkOffsetYImplemented_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ChunkOffsetY_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									OffsetYPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					ChunkWidth
+						Access Mode: NA
+						Desc: Returns the width of the image.
+						Children: 
+							ChunkWidthImplemented_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ChunkWidth_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									WidthPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					ChunkHeight
+						Access Mode: NA
+						Desc: Returns the height of the image.
+						Children: 
+							ChunkHeightImplemented_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ChunkHeight_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									HeightPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					ChunkExposureTime
+						Access Mode: NA
+						Desc: Returns the exposure time used to capture the image.
+						Children: 
+							ChunkExposureTimeImplemented_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ExposureTime_us
+								Access Mode: NA
+								Desc: 
+								Children: 
+									ExposureTime_Reg
+										Access Mode: NA
+										Desc: 
+										Children: 
+											ExposureTimePort
+												Access Mode: NA
+												Desc: 
+												Children: 
+					ChunkGain
+						Access Mode: NA
+						Desc: Returns the gain used to capture the image.
+						Children: 
+							ChunkGainImplemented_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							Gain_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									GainPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					ChunkBlackLevel
+						Access Mode: NA
+						Desc: Returns the black level used to capture the image.
+						Children: 
+							ChunkBlackLevelImplemented_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							BlackLevel_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									BlackLevelPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					ChunkPixelFormat
+						Access Mode: NA
+						Desc: This enumeration lists the pixel formats that can be indicated by the pixel format chunk.
+						Children: 
+							ChunkPixelFormatImplemented_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PixelFormat_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									PixelFormatPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					ChunkPixelDynamicRangeMin
+						Access Mode: NA
+						Desc: Returns the Minimum range of the pixel
+						Children: 
+							ChunkPixRangeMinImplemented_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ChunkPixelDynamicRangeMin_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									PixelDynamicRangeMinPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					ChunkPixelDynamicRangeMax
+						Access Mode: NA
+						Desc: Returns the Maximum range of the pixel
+						Children: 
+							ChunkPixRangeMaxImplemented_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ChunkPixelDynamicRangeMax_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									PixelDynamicRangeMaxPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					ChunkTimestamp
+						Access Mode: NA
+						Desc: Returns the Timestamp of the image.
+						Children: 
+							ChunkTimestampImplemented_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							Timestamp_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									TimestampPort
+										Access Mode: NA
+										Desc: 
+			

@@ -1,0 +1,60 @@
+LineStatus
+				Access Mode: RO
+				Desc: Returns the current status of the selected input or output Line.
+				Children: 
+					GPIOImplemented_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							GPIOPinCount_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					GPIOPinPresInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							GPIOCtrlPinRegBaseAddress
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									LineSelected_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					LineStatusVal_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							GPIOPinVal_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							LineSelected_Int
+								Access Mode: RW
+								Desc: 
+								Children: 

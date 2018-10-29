@@ -1,0 +1,8 @@
+DeviceVendorName
+				Access Mode: RO
+				Desc: Name of the manufacturer of the device.
+				Children: 
+					Device
+						Access Mode: RW
+						Desc: 
+						Children: 

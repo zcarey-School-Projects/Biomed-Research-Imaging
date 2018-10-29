@@ -1,0 +1,12 @@
+Timestamp
+				Access Mode: RO
+				Desc: Reports the current value of the device timestamp counter (ns).
+				Children: 
+					Timestamp_reg
+						Access Mode: RO
+						Desc: 
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

@@ -1,0 +1,16 @@
+TriggerSource
+				Access Mode: RW
+				Desc: Specifies the internal signal or physical input line to use as the trigger source. The selected trigger must have its TriggerMode set to On.
+				Children: 
+					TriggerSourceCtrlVal_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

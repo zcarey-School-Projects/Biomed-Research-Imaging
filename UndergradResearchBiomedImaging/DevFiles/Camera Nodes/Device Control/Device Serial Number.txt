@@ -1,0 +1,8 @@
+DeviceSerialNumber
+				Access Mode: RO
+				Desc: Device serial number. This string is a unique identifier of the device.
+				Children: 
+					Device
+						Access Mode: RW
+						Desc: 
+						Children: 

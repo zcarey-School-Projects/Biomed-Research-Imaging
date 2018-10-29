@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3D158225-E5E8-4868-9386-E50FA01394BA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UndergradResearchBiomedImaging</RootNamespace>
+    <AssemblyName>UndergradResearchBiomedImaging</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Emgu.CV.UI, Version=3.4.3.3016, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMGU.CV.3.4.3.3016\lib\net35\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.World, Version=3.4.3.3016, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMGU.CV.3.4.3.3016\lib\net35\Emgu.CV.World.dll</HintPath>
+    </Reference>
+    <Reference Include="SpinnakerNETd_v140">
+      <HintPath>..\..\..\..\..\..\Program Files\Point Grey Research\Spinnaker\bin64\vs2015\SpinnakerNETd_v140.dll</HintPath>
+    </Reference>
+    <Reference Include="SpinVideoNETd_v140">
+      <HintPath>..\..\..\..\..\..\Program Files\Point Grey Research\Spinnaker\bin64\vs2015\SpinVideoNETd_v140.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=5.1.7.430, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExampleFlir\Acquisition_CSharp.cs" />
+    <Compile Include="ExampleFlir\Enumeration_CSharp.cs" />
+    <Compile Include="ExampleFlir\SaveToAvi_CSharp.cs" />
+    <Compile Include="FlirCameraManager.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RobotHelpers\ControlHelper.cs" />
+    <Compile Include="RobotHelpers\FPSCounter.cs" />
+    <Compile Include="RobotHelpers\InputHandling\CameraInput.cs" />
+    <Compile Include="RobotHelpers\InputHandling\FileInput.cs" />
+    <Compile Include="FlirCameraInput.cs" />
+    <Compile Include="RobotHelpers\InputHandling\ImageInput.cs" />
+    <Compile Include="RobotHelpers\InputHandling\InputHandler.cs" />
+    <Compile Include="RobotHelpers\InputHandling\VideoInput.cs" />
+    <Compile Include="RobotHelpers\Serial\SerialCommand.cs" />
+    <Compile Include="RobotHelpers\Serial\SerialCommunicator.cs" />
+    <Compile Include="RobotHelpers\Serial\SerialResponse.cs" />
+    <Compile Include="RobotHelpers\Serial\SerialUIListener.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Acquisition Frame Count.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Acquisition Frame Rate Auto.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Acquisition Frame Rate Enabled.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Acquisition Frame Rate.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Acquisition Mode.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Acquisition Start.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Acquisition Status Selector.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Acquisition Status.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Acquisition Stop.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Auto Exposre Time Lower Limit.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Auto Exposure Time Upper Limit.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Exposure Auto.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Exposure Mode.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Exposure Time Abs.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Exposure Time.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\New Text Document.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\pgr Auto Exposure Compensation Lower Limit.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\pgr Auto Exposure Compensation Upper Limit.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\pgr Exposure Compensation Auto.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\pgr Exposure Compensation.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Single Frame Acquisition Mode.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Trigger Activation.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Trigger Delay Enabled.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Trigger Delay.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Trigger Mode.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Trigger Overlap.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Trigger Selector.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Trigger Software.txt" />
+    <Content Include="DevFiles\Camera Nodes\Acquisition Control\Trigger Source.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Auto Gain Lower Limit.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Auto Gain Upper Limit.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Balance Ratio Selector.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Balance Ratio.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Balance White Auto.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Black Level Auto.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Black Level Enabled.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Black Level.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Gain Auto.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Gain Selector.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Gain.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Gamma Enabled.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Gamma.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Hue Auto.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Hue Enabled.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Hue.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Saturation Auto.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Saturation Enabled.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Saturation.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Sharpness Auto.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Sharpness Enabled.txt" />
+    <Content Include="DevFiles\Camera Nodes\Analog Control\Sharpness.txt" />
+    <Content Include="DevFiles\Camera Nodes\Chunk Data Control.txt" />
+    <Content Include="DevFiles\Camera Nodes\Data Flash Control\Active Page Number.txt" />
+    <Content Include="DevFiles\Camera Nodes\Data Flash Control\Active Page Offset.txt" />
+    <Content Include="DevFiles\Camera Nodes\Data Flash Control\Active Page Save.txt" />
+    <Content Include="DevFiles\Camera Nodes\Data Flash Control\Active Page Value.txt" />
+    <Content Include="DevFiles\Camera Nodes\Data Flash Control\Data Flash Page Count.txt" />
+    <Content Include="DevFiles\Camera Nodes\Data Flash Control\Data Flash Page Size.txt" />
+    <Content Include="DevFiles\Camera Nodes\DEBUG INFO.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Auto Function AOI Height.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Auto Function AOI Offset X.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Auto Function AOI Offset Y.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Auto Function AOI Width.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Auto Function AOIs Control.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Device Family Name.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Device Firmware Version.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Device Gen Cp Version Major.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Device Gen CP Version Minor.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Device ID.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Device Link Throughput Limit.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Device Max Throughput.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Device Model Name.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Device Reset.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Device Scan Type.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Device Serial Number.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Device SVN Version.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Device Temperature.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Device User ID.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Device Vendor Name.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Device Version.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\pgr Device Power Supply Selector.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\pgr Device Uptime.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\pgr Power Source Present.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\pgr Power Supply Current.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\pgr Power Supply Enable.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\pgr Power Supply Voltage.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\pgrSensorDescription.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Test Pending Ack.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Timestamp Increment.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Timestamp Latch.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\Timestamp.txt" />
+    <Content Include="DevFiles\Camera Nodes\Device Control\U3VDeviceCapability.txt" />
+    <Content Include="DevFiles\Camera Nodes\Digital IO Control\Line Debouncer Time Raw.txt" />
+    <Content Include="DevFiles\Camera Nodes\Digital IO Control\Line Inverter.txt" />
+    <Content Include="DevFiles\Camera Nodes\Digital IO Control\Line Mode.txt" />
+    <Content Include="DevFiles\Camera Nodes\Digital IO Control\Line Selector.txt" />
+    <Content Include="DevFiles\Camera Nodes\Digital IO Control\Line Source.txt" />
+    <Content Include="DevFiles\Camera Nodes\Digital IO Control\Line Status All.txt" />
+    <Content Include="DevFiles\Camera Nodes\Digital IO Control\Line Status.txt" />
+    <Content Include="DevFiles\Camera Nodes\Digital IO Control\Stobe Delay.txt" />
+    <Content Include="DevFiles\Camera Nodes\Digital IO Control\Strobe Duration.txt" />
+    <Content Include="DevFiles\Camera Nodes\Digital IO Control\User Output Selector.txt" />
+    <Content Include="DevFiles\Camera Nodes\Digital IO Control\User Output Value.txt" />
+    <Content Include="DevFiles\Camera Nodes\Event Control\Event Acquisition End Data.txt" />
+    <Content Include="DevFiles\Camera Nodes\Event Control\Event Acquisition Start Data.txt" />
+    <Content Include="DevFiles\Camera Nodes\Event Control\Event Exposure End Data.txt" />
+    <Content Include="DevFiles\Camera Nodes\Event Control\Event Notification.txt" />
+    <Content Include="DevFiles\Camera Nodes\Event Control\Event Selector.txt" />
+    <Content Include="DevFiles\Camera Nodes\Event Control\Event Test Data.txt" />
+    <Content Include="DevFiles\Camera Nodes\Event Control\Trigger Event Test.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Binning Horizontal.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Binning Vertical.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Decimation Horizontal.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Decimation Vertical.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Height Max.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Height.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Offset X.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Offset Y.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\On Board Color Process Enabled.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Pixel Coding.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Pixel Color Filter.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Pixel Defect Control.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Pixel Dynamic Range Max.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Pixel Dynamic Range Min.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Pixel Format.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Pixel Size.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Reverse X.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Sensor Height.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Sensor Width.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Test Image Selector.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Test Pattern.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Video Mode.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Width Max.txt" />
+    <Content Include="DevFiles\Camera Nodes\Image Format Control\Width.txt" />
+    <Content Include="DevFiles\Camera Nodes\LUT Control\LUT Enable.txt" />
+    <Content Include="DevFiles\Camera Nodes\LUT Control\LUT Index.txt" />
+    <Content Include="DevFiles\Camera Nodes\LUT Control\LUT Selector.txt" />
+    <Content Include="DevFiles\Camera Nodes\LUT Control\LUT Value All.txt" />
+    <Content Include="DevFiles\Camera Nodes\LUT Control\LUT Value.txt" />
+    <Content Include="DevFiles\Camera Nodes\Remove Parameter Limits.txt" />
+    <Content Include="DevFiles\Camera Nodes\Root\Acquisition Control.txt" />
+    <Content Include="DevFiles\Camera Nodes\Root\Analog Control.txt" />
+    <Content Include="DevFiles\Camera Nodes\Root\Chunk Data Control.txt" />
+    <Content Include="DevFiles\Camera Nodes\Root\Data Flash Control.txt" />
+    <Content Include="DevFiles\Camera Nodes\Root\Device Control.txt" />
+    <Content Include="DevFiles\Camera Nodes\Root\Digital IO Control.txt" />
+    <Content Include="DevFiles\Camera Nodes\Root\Event Control.txt" />
+    <Content Include="DevFiles\Camera Nodes\Root\Image Format Control.txt" />
+    <Content Include="DevFiles\Camera Nodes\Root\LUT Control.txt" />
+    <Content Include="DevFiles\Camera Nodes\Root\Remove Parameter Limits.txt" />
+    <Content Include="DevFiles\Camera Nodes\Root\Transport Layer Control.txt" />
+    <Content Include="DevFiles\Camera Nodes\Root\User Set Control.txt" />
+    <Content Include="DevFiles\Camera Nodes\Transport Layer Control.txt" />
+    <Content Include="DevFiles\Camera Nodes\User Set Control\User Set Current.txt" />
+    <Content Include="DevFiles\Camera Nodes\User Set Control\User Set Default Selector.txt" />
+    <Content Include="DevFiles\Camera Nodes\User Set Control\User Set Default.txt" />
+    <Content Include="DevFiles\Camera Nodes\User Set Control\User Set Load.txt" />
+    <Content Include="DevFiles\Camera Nodes\User Set Control\User Set Save.txt" />
+    <Content Include="DevFiles\Camera Nodes\User Set Control\User Set Selector.txt" />
+    <Content Include="DevFiles\Ideas.txt" />
+    <Content Include="DevFiles\KnownBugs.txt" />
+    <Content Include="License-LGPL.txt" />
+    <Content Include="DevFiles\RequestedFeatures.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\EMGU.CV.3.4.3.3016\build\EMGU.CV.targets" Condition="Exists('..\packages\EMGU.CV.3.4.3.3016\build\EMGU.CV.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EMGU.CV.3.4.3.3016\build\EMGU.CV.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EMGU.CV.3.4.3.3016\build\EMGU.CV.targets'))" />
+  </Target>
+</Project>

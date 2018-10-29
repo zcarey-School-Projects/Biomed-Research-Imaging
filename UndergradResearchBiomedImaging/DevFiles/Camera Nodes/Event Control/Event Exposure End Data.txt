@@ -1,0 +1,52 @@
+EventExposureEndData
+				Access Mode: RO
+				Desc: Category that contains all the data features related to the ExposureEnd Event.
+				Children: 
+					EventExposureEnd
+						Access Mode: NA
+						Desc: Returns the unique identifier of the ExposureEnd type of Event.
+						Children: 
+							EventControl_Inq
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							EventExposureEnd_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									EventExposureEndPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					EventExposureEndTimestamp
+						Access Mode: NA
+						Desc: Returns the Timestamp of the ExposureEnd Event.
+						Children: 
+							EventExposureEndTimestamp_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									EventExposureEndPort
+										Access Mode: NA
+										Desc: 
+										Children: 
+					EventExposureEndFrameID
+						Access Mode: NA
+						Desc: Returns the unique Identifier of the Frame (or image) that generated the ExposureEnd Event.
+						Children: 
+							EventExposureEndFrameID_Reg
+								Access Mode: NA
+								Desc: 
+								Children: 
+									EventExposureEndPort
+										Access Mode: NA
+										Desc: 
+										Children: 

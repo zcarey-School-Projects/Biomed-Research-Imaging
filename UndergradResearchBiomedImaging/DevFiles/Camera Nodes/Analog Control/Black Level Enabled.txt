@@ -1,0 +1,92 @@
+BlackLevelEnabled
+				Access Mode: RW
+				Desc: Enables/disables black level adjustment.
+				Children: 
+					BlackLevelEnabledImplemented_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							BlackLevelAbsCtrlInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							BlackLevelManualInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							BlackLevelAutoInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					BlackLevelEnabled_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							BlackLevelCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							BlackLevelEnabled_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									BlackLevelCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							BlackLevelEnabled_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									BlackLevelCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 

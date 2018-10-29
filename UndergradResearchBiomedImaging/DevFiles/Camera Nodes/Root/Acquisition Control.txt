@@ -1,0 +1,2524 @@
+AcquisitionControl
+				Access Mode: RO
+				Desc: Category for acquisition and trigger control features.
+				Children: 
+					TriggerSelector
+						Access Mode: RW
+						Desc: Selects the type of trigger to configure.
+						Children: 
+							TriggerPresInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							TriggerSelector_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									TriggerModeCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									TriggerSelector_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											TriggerOverlap_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													TriggerModeCtrlVal_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+													TriggerOverlap_Int_ConvertTo
+														Access Mode: RO
+														Desc: 
+														Children: 
+													TriggerOverlap_Int_ConvertFrom
+														Access Mode: RO
+														Desc: 
+														Children: 
+									TriggerSelector_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											TriggerOverlap_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													TriggerModeCtrlVal_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+													TriggerOverlap_Int_ConvertTo
+														Access Mode: RO
+														Desc: 
+														Children: 
+													TriggerOverlap_Int_ConvertFrom
+														Access Mode: RO
+														Desc: 
+														Children: 
+					TriggerMode
+						Access Mode: RW
+						Desc: Controls whether or not the selected trigger is active.
+						Children: 
+							TriggerOnOffInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							TriggerModeOnOff_Bit
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					TriggerSoftware
+						Access Mode: NA
+						Desc: Generates an internal trigger if Trigger Source is set to Software.
+						Children: 
+							TriggerSourceSwInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							TriggerSoftwareAvailInq_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									TriggerSourceCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									TriggerModeOnOff_Bit
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							TriggerSoftwareCmd_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					TriggerSource
+						Access Mode: RW
+						Desc: Specifies the internal signal or physical input line to use as the trigger source. The selected trigger must have its TriggerMode set to On.
+						Children: 
+							TriggerSourceCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					TriggerActivation
+						Access Mode: RW
+						Desc: Specifies the activation mode of the trigger.
+						Children: 
+							TriggerPolarityInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							TriggerPolarityCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					TriggerOverlap
+						Access Mode: NI
+						Desc: Specifies the type trigger overlap permitted with the previous frame.
+						Children: 
+							TriggerMode14Inq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							TriggerOverlap_Available_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									TriggerSelector_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											TriggerModeCtrlVal_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											TriggerSelector_Int_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+													TriggerOverlap_Int
+														Access Mode: RW
+														Desc: 
+														Children: 
+															TriggerModeCtrlVal_Reg
+																Access Mode: RW
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+															TriggerOverlap_Int_ConvertTo
+																Access Mode: RO
+																Desc: 
+																Children: 
+															TriggerOverlap_Int_ConvertFrom
+																Access Mode: RO
+																Desc: 
+																Children: 
+											TriggerSelector_Int_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+													TriggerOverlap_Int
+														Access Mode: RW
+														Desc: 
+														Children: 
+															TriggerModeCtrlVal_Reg
+																Access Mode: RW
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+															TriggerOverlap_Int_ConvertTo
+																Access Mode: RO
+																Desc: 
+																Children: 
+															TriggerOverlap_Int_ConvertFrom
+																Access Mode: RO
+																Desc: 
+																Children: 
+									TriggerModeOnOff_Bit
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							TriggerOverlap_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									TriggerModeCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									TriggerOverlap_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+									TriggerOverlap_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+					TriggerDelay
+						Access Mode: RW
+						Desc: Specifies the delay (in microseconds) to apply after the trigger reception before activating it.
+						Children: 
+							TriggerDelayPresInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							TriggerDelayValMicrosecs_Float
+								Access Mode: RW
+								Desc: 
+								Children: 
+									TriggerDelayAbsVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									TriggerDelayValMicrosecs_Float_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+									TriggerDelayValMicrosecs_Float_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+							TriggerDelayMinMicrosecs_Float
+								Access Mode: RO
+								Desc: 
+								Children: 
+									TriggerDelayAbsMin_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							TriggerDelayMaxMicrosecs_Float
+								Access Mode: RO
+								Desc: 
+								Children: 
+									TriggerDelayAbsMax_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					TriggerDelayEnabled
+						Access Mode: RW
+						Desc: Specifies whether or not the Trigger Delay is enabled.
+						Children: 
+							TriggerDelayPresInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							TriggerDelayOnOff_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									TriggerDelay_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									TriggerDelayOnOff_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											TriggerDelay_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									TriggerDelayOnOff_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											TriggerDelay_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+					ExposureMode
+						Access Mode: RW
+						Desc: Sets the operation mode of the Exposure (or shutter).
+						Children: 
+							TriggerPresInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ExposureMode_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									TriggerModeCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									ExposureMode_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											TriggerOverlap_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													TriggerModeCtrlVal_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+													TriggerOverlap_Int_ConvertTo
+														Access Mode: RO
+														Desc: 
+														Children: 
+													TriggerOverlap_Int_ConvertFrom
+														Access Mode: RO
+														Desc: 
+														Children: 
+									ExposureMode_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											TriggerOverlap_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													TriggerModeCtrlVal_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+													TriggerOverlap_Int_ConvertTo
+														Access Mode: RO
+														Desc: 
+														Children: 
+													TriggerOverlap_Int_ConvertFrom
+														Access Mode: RO
+														Desc: 
+														Children: 
+					ExposureAuto
+						Access Mode: RW
+						Desc: Sets the automatic exposure mode when Exposure Mode is Timed.
+						Children: 
+							ExposureAutoInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ExposureAutoLock_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ExposureMode_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											TriggerModeCtrlVal_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											ExposureMode_Int_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+													TriggerOverlap_Int
+														Access Mode: RW
+														Desc: 
+														Children: 
+															TriggerModeCtrlVal_Reg
+																Access Mode: RW
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+															TriggerOverlap_Int_ConvertTo
+																Access Mode: RO
+																Desc: 
+																Children: 
+															TriggerOverlap_Int_ConvertFrom
+																Access Mode: RO
+																Desc: 
+																Children: 
+											ExposureMode_Int_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+													TriggerOverlap_Int
+														Access Mode: RW
+														Desc: 
+														Children: 
+															TriggerModeCtrlVal_Reg
+																Access Mode: RW
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+															TriggerOverlap_Int_ConvertTo
+																Access Mode: RO
+																Desc: 
+																Children: 
+															TriggerOverlap_Int_ConvertFrom
+																Access Mode: RO
+																Desc: 
+																Children: 
+							ExposureAutoCtrl_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									ExposureCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									ExposureAutoCtrl_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureCtrl_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									ExposureAutoCtrl_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureCtrl_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+					ExposureTime
+						Access Mode: RO
+						Desc: Exposure time in microseconds when Exposure Mode is Timed and ExposureAuto is Off.
+						Children: 
+							ExposureLocked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ExposureCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									ExposureMode_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											TriggerModeCtrlVal_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											ExposureMode_Int_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+													TriggerOverlap_Int
+														Access Mode: RW
+														Desc: 
+														Children: 
+															TriggerModeCtrlVal_Reg
+																Access Mode: RW
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+															TriggerOverlap_Int_ConvertTo
+																Access Mode: RO
+																Desc: 
+																Children: 
+															TriggerOverlap_Int_ConvertFrom
+																Access Mode: RO
+																Desc: 
+																Children: 
+											ExposureMode_Int_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+													TriggerOverlap_Int
+														Access Mode: RW
+														Desc: 
+														Children: 
+															TriggerModeCtrlVal_Reg
+																Access Mode: RW
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+															TriggerOverlap_Int_ConvertTo
+																Access Mode: RO
+																Desc: 
+																Children: 
+															TriggerOverlap_Int_ConvertFrom
+																Access Mode: RO
+																Desc: 
+																Children: 
+							ExposureUsCtrl_Float
+								Access Mode: RW
+								Desc: 
+								Children: 
+									ExposureAbsValueCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									ExposureUsCtrl_Float_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+									ExposureUsCtrl_Float_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+							ExposureMinAbsVal_Float
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ExposureAutoCtrl_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											ExposureCtrl_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											ExposureAutoCtrl_Int_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ExposureCtrl_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											ExposureAutoCtrl_Int_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ExposureCtrl_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+									ExposureMinUsInq_Float
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureAbsMinInq_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											ExposureMinUsInq_Float_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+											ExposureMinUsInq_Float_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+									AutoExposureLowerLimitVal_Float
+										Access Mode: RW
+										Desc: 
+										Children: 
+											AutoExposureLowerLimitVal_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											AutoExposureLowerLimitVal_Float_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+											AutoExposureLowerLimitVal_Float_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+							ExposureMaxAbsVal_Float
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ExposureAutoCtrl_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											ExposureCtrl_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											ExposureAutoCtrl_Int_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ExposureCtrl_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											ExposureAutoCtrl_Int_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ExposureCtrl_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+									ExposureMaxUsInq_Float
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureAbsMaxInq_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											ExposureMaxUsInq_Float_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+											ExposureMaxUsInq_Float_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+									AutoExposureUpperLimitVal_Float
+										Access Mode: RW
+										Desc: 
+										Children: 
+											AutoExposureUpperLimitVal_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											AutoExposureUpperLimitVal_Float_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+											AutoExposureUpperLimitVal_Float_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+					ExposureTimeAbs
+						Access Mode: RO
+						Desc: Exposure time in microseconds when Exposure Mode is Timed and ExposureAuto is Off.
+						Children: 
+							ExposureLocked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ExposureCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									ExposureMode_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											TriggerModeCtrlVal_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											ExposureMode_Int_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+													TriggerOverlap_Int
+														Access Mode: RW
+														Desc: 
+														Children: 
+															TriggerModeCtrlVal_Reg
+																Access Mode: RW
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+															TriggerOverlap_Int_ConvertTo
+																Access Mode: RO
+																Desc: 
+																Children: 
+															TriggerOverlap_Int_ConvertFrom
+																Access Mode: RO
+																Desc: 
+																Children: 
+											ExposureMode_Int_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+													TriggerOverlap_Int
+														Access Mode: RW
+														Desc: 
+														Children: 
+															TriggerModeCtrlVal_Reg
+																Access Mode: RW
+																Desc: 
+																Children: 
+																	CamRegBaseAddress
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																	Device
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+															TriggerOverlap_Int_ConvertTo
+																Access Mode: RO
+																Desc: 
+																Children: 
+															TriggerOverlap_Int_ConvertFrom
+																Access Mode: RO
+																Desc: 
+																Children: 
+							ExposureUsCtrl_Float
+								Access Mode: RW
+								Desc: 
+								Children: 
+									ExposureAbsValueCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									ExposureUsCtrl_Float_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+									ExposureUsCtrl_Float_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+							ExposureMinAbsVal_Float
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ExposureAutoCtrl_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											ExposureCtrl_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											ExposureAutoCtrl_Int_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ExposureCtrl_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											ExposureAutoCtrl_Int_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ExposureCtrl_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+									ExposureMinUsInq_Float
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureAbsMinInq_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											ExposureMinUsInq_Float_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+											ExposureMinUsInq_Float_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+									AutoExposureLowerLimitVal_Float
+										Access Mode: RW
+										Desc: 
+										Children: 
+											AutoExposureLowerLimitVal_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											AutoExposureLowerLimitVal_Float_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+											AutoExposureLowerLimitVal_Float_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+							ExposureMaxAbsVal_Float
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ExposureAutoCtrl_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+											ExposureCtrl_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											ExposureAutoCtrl_Int_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ExposureCtrl_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											ExposureAutoCtrl_Int_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+													ExposureCtrl_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+									ExposureMaxUsInq_Float
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureAbsMaxInq_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											ExposureMaxUsInq_Float_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+											ExposureMaxUsInq_Float_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+									AutoExposureUpperLimitVal_Float
+										Access Mode: RW
+										Desc: 
+										Children: 
+											AutoExposureUpperLimitVal_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											AutoExposureUpperLimitVal_Float_ConvertTo
+												Access Mode: RO
+												Desc: 
+												Children: 
+											AutoExposureUpperLimitVal_Float_ConvertFrom
+												Access Mode: RO
+												Desc: 
+												Children: 
+					AutoExposureTimeLowerLimit
+						Access Mode: RW
+						Desc: Lower limit of the Auto Exposure (us) parameter
+						Children: 
+							ExposureRangeLocked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ExposureAutoLock_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureMode_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													TriggerModeCtrlVal_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+													ExposureMode_Int_ConvertTo
+														Access Mode: RO
+														Desc: 
+														Children: 
+															TriggerOverlap_Int
+																Access Mode: RW
+																Desc: 
+																Children: 
+																	TriggerModeCtrlVal_Reg
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																			CamRegBaseAddress
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																			Device
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																	TriggerOverlap_Int_ConvertTo
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+																	TriggerOverlap_Int_ConvertFrom
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+													ExposureMode_Int_ConvertFrom
+														Access Mode: RO
+														Desc: 
+														Children: 
+															TriggerOverlap_Int
+																Access Mode: RW
+																Desc: 
+																Children: 
+																	TriggerModeCtrlVal_Reg
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																			CamRegBaseAddress
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																			Device
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																	TriggerOverlap_Int_ConvertTo
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+																	TriggerOverlap_Int_ConvertFrom
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+									ExposureLocked_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureCtrl_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											ExposureMode_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													TriggerModeCtrlVal_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+													ExposureMode_Int_ConvertTo
+														Access Mode: RO
+														Desc: 
+														Children: 
+															TriggerOverlap_Int
+																Access Mode: RW
+																Desc: 
+																Children: 
+																	TriggerModeCtrlVal_Reg
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																			CamRegBaseAddress
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																			Device
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																	TriggerOverlap_Int_ConvertTo
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+																	TriggerOverlap_Int_ConvertFrom
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+													ExposureMode_Int_ConvertFrom
+														Access Mode: RO
+														Desc: 
+														Children: 
+															TriggerOverlap_Int
+																Access Mode: RW
+																Desc: 
+																Children: 
+																	TriggerModeCtrlVal_Reg
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																			CamRegBaseAddress
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																			Device
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																	TriggerOverlap_Int_ConvertTo
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+																	TriggerOverlap_Int_ConvertFrom
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+							AutoExposureLowerLimitVal_Float
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AutoExposureLowerLimitVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AutoExposureLowerLimitVal_Float_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+									AutoExposureLowerLimitVal_Float_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+							AutoExposureRangeMin_Float
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AutoExposureRangeMin_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							AutoExposureUpperLimitVal_Float
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AutoExposureUpperLimitVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AutoExposureUpperLimitVal_Float_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+									AutoExposureUpperLimitVal_Float_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+					AutoExposureTimeUpperLimit
+						Access Mode: RW
+						Desc: Upper limit of the Auto Exposure (us) parameter
+						Children: 
+							ExposureRangeLocked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ExposureAutoLock_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureMode_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													TriggerModeCtrlVal_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+													ExposureMode_Int_ConvertTo
+														Access Mode: RO
+														Desc: 
+														Children: 
+															TriggerOverlap_Int
+																Access Mode: RW
+																Desc: 
+																Children: 
+																	TriggerModeCtrlVal_Reg
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																			CamRegBaseAddress
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																			Device
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																	TriggerOverlap_Int_ConvertTo
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+																	TriggerOverlap_Int_ConvertFrom
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+													ExposureMode_Int_ConvertFrom
+														Access Mode: RO
+														Desc: 
+														Children: 
+															TriggerOverlap_Int
+																Access Mode: RW
+																Desc: 
+																Children: 
+																	TriggerModeCtrlVal_Reg
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																			CamRegBaseAddress
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																			Device
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																	TriggerOverlap_Int_ConvertTo
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+																	TriggerOverlap_Int_ConvertFrom
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+									ExposureLocked_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureCtrl_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+											ExposureMode_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+													TriggerModeCtrlVal_Reg
+														Access Mode: RW
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+													ExposureMode_Int_ConvertTo
+														Access Mode: RO
+														Desc: 
+														Children: 
+															TriggerOverlap_Int
+																Access Mode: RW
+																Desc: 
+																Children: 
+																	TriggerModeCtrlVal_Reg
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																			CamRegBaseAddress
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																			Device
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																	TriggerOverlap_Int_ConvertTo
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+																	TriggerOverlap_Int_ConvertFrom
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+													ExposureMode_Int_ConvertFrom
+														Access Mode: RO
+														Desc: 
+														Children: 
+															TriggerOverlap_Int
+																Access Mode: RW
+																Desc: 
+																Children: 
+																	TriggerModeCtrlVal_Reg
+																		Access Mode: RW
+																		Desc: 
+																		Children: 
+																			CamRegBaseAddress
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																			Device
+																				Access Mode: RW
+																				Desc: 
+																				Children: 
+																	TriggerOverlap_Int_ConvertTo
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+																	TriggerOverlap_Int_ConvertFrom
+																		Access Mode: RO
+																		Desc: 
+																		Children: 
+							AutoExposureUpperLimitVal_Float
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AutoExposureUpperLimitVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AutoExposureUpperLimitVal_Float_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+									AutoExposureUpperLimitVal_Float_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+							AutoExposureLowerLimitVal_Float
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AutoExposureLowerLimitVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AutoExposureLowerLimitVal_Float_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+									AutoExposureLowerLimitVal_Float_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+							AutoExposureRangeMax_Float
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AutoExposureRangeMax_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					pgrExposureCompensationAuto
+						Access Mode: RW
+						Desc: Sets the automatic exposure compensation value mode.
+						Children: 
+							ExposureCompAutoInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ExposureCompAutoCtrl_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									ExposureCompCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									ExposureCompAutoCtrl_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureCompCtrl_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									ExposureCompAutoCtrl_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureCompCtrl_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+					pgrExposureCompensation
+						Access Mode: RO
+						Desc: The measured or target image plane illuminance in EV.
+						Children: 
+							ExposureCompLocked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ExposureCompCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							ExposureCompAbsVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ExposureCompAbsMinInq_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							ExposureCompAbsMaxInq_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					pgrAutoExposureCompensationLowerLimit
+						Access Mode: RW
+						Desc: Lower limit of the auto exposure compensation value(EV) parameter
+						Children: 
+							ExposureCompRangeLocked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ExposureCompLocked_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureCompCtrl_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+							AutoExposureCompLowerLimitVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AutoExposureCompValueRangeMin_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AutoExposureCompUpperLimitVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					pgrAutoExposureCompensationUpperLimit
+						Access Mode: RW
+						Desc: Upper limit of the auto exposure compensation value(EV) parameter
+						Children: 
+							ExposureCompRangeLocked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ExposureCompLocked_Int
+										Access Mode: RO
+										Desc: 
+										Children: 
+											ExposureCompCtrl_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+							AutoExposureCompUpperLimitVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AutoExposureCompLowerLimitVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AutoExposureCompRangeMax_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					AcquisitionMode
+						Access Mode: RW
+						Desc: Sets the acquisition mode of the device.
+						Children: 
+							AcquisitionMode_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					AcquisitionStart
+						Access Mode: WO
+						Desc: Starts the Acquisition of the device.
+						Children: 
+							AcquisitionStart_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					AcquisitionStop
+						Access Mode: WO
+						Desc: Stops the acquisition of the device at the end of the current frame.
+						Children: 
+							AcquisitionStop_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					AcquisitionFrameRateAuto
+						Access Mode: RW
+						Desc: Controls the mode for automatic frame rate adjustment.
+						Children: 
+							AcqFrameRateAutoInq_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AcqFrameRateAutoLocked_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AcqFrameRateEnCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							AcqFrameRateAuto_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AcqFrameRateEnCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AcqFrameRateAuto_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AcqFrameRateEnCtrlVal_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									AcqFrameRateAuto_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AcqFrameRateEnCtrlVal_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+					AcquisitionFrameRateEnabled
+						Access Mode: RW
+						Desc: Enables manual control of the camera frame rate.
+						Children: 
+							AcqFrameRateImplemented_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AcqFrameRatePresInq_Bit
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AcqFrameRateAbsCtrlInq_Bit
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							AcqFrameRateEnAvail_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									TriggerModeOnOff_Bit
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							AcqFrameRateEnCtrlVal_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AcqFrameRateEnCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AcqFrameRateEnCtrlVal_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AcqFrameRateEnCtrlVal_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									AcqFrameRateEnCtrlVal_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AcqFrameRateEnCtrlVal_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+					AcquisitionFrameRate
+						Access Mode: RO
+						Desc: Controls the acquisition rate (in Hertz) at which the frames are captured.
+						Children: 
+							AcqFrameRateImplemented_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AcqFrameRatePresInq_Bit
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AcqFrameRateAbsCtrlInq_Bit
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							AcqFrameRateAvail_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AcqFrameRatePresInq_Bit
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AcqFrameRateAbsCtrlInq_Bit
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AcqFrameRateReadOutInq_Bit
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									TriggerModeOnOff_Bit
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							AcqFrameRateManualCtrlLockedInq_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AcqFrameRateEnCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									TriggerModeOnOff_Bit
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							AcqFrameRateCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AcqFrameRateMinInq_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AcqFrameRateMaxInq_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					AcquisitionFrameCount
+						Access Mode: NA
+						Desc: Number of frames to acquire in multi-frame acquisition mode.
+						Children: 
+							AcquisitionFrameCountAvailableInq_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AcquisitionMode_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							AcquisitionFrameCount_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					AcquisitionStatusSelector
+						Access Mode: RW
+						Desc: Selects the internal acquisition signal to read using AcquisitionStatus.
+						Children: 
+							AcquisitionStatusSelector_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					AcquisitionStatus
+						Access Mode: RO
+						Desc: Reads the state of the internal acquisition signal selected using AcquisitionStatusSelector.
+						Children: 
+							AcquisitionStatus_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AcquisitionStatus_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AcquisitionStatusSelector_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					SingleFrameAcquisitionMode
+						Access Mode: RW
+						Desc: Selects type of single acquisition mode
+						Children: 
+							SingleFrameAcquisitionMode_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+			

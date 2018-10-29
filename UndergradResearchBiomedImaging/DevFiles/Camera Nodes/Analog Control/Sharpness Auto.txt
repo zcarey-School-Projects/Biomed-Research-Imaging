@@ -1,0 +1,80 @@
+SharpnessAuto
+				Access Mode: RW
+				Desc: Controls the mode for automatic sharpness adjustment.
+				Children: 
+					SharpnessAutoInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					SharpnessAutoLocked_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							SharpnessCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					SharpnessAutoCtrl_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							SharpnessCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							SharpnessAutoCtrl_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									SharpnessCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							SharpnessAutoCtrl_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									SharpnessCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 

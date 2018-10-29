@@ -1,0 +1,40 @@
+ActivePageOffset
+				Access Mode: RW
+				Desc: Control the offset of the coefficient to access in the active data flash page.
+				Children: 
+					DataFlashCtrl_Imp
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					ActivePageOffset_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+					ActivePageOffset_Max
+						Access Mode: RO
+						Desc: 
+						Children: 
+							DataFlashPageSize_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									DF_PageSizeDepth_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 

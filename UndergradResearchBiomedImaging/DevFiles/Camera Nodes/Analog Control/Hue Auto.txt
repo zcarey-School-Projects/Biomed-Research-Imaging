@@ -1,0 +1,80 @@
+HueAuto
+				Access Mode: NI
+				Desc: Controls the mode for automatic hue level adjustment. The exact algorithm used to implement this adjustment is device-specific.
+				Children: 
+					HueAutoInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					HueAutoLocked_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							HueCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					HueAuto_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							HueCtrl_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							HueAuto_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									HueCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							HueAuto_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									HueCtrl_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 

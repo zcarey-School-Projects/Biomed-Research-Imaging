@@ -1,0 +1,20 @@
+BalanceRatioSelector
+				Access Mode: RW
+				Desc: Selects a balance ratio to configure. Once a balance ratio control has been selected.
+				Children: 
+					BalanceWhiteAuto_OnOff_InqAvailable
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					BalanceRatioSelector_CtrlValue
+						Access Mode: RW
+						Desc: 
+						Children: 

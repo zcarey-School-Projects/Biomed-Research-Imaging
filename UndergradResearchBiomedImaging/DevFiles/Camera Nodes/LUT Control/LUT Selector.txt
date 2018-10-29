@@ -1,0 +1,68 @@
+LUTSelector
+				Access Mode: RW
+				Desc: This enumeration the lookup table (LUT) to configure. Once a LUT has been selected, all changes to the LUT settings will be applied to the selected LUT.
+				Children: 
+					LUTCtrl_InqPresence_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					LUTSelector_Avl
+						Access Mode: RO
+						Desc: 
+						Children: 
+							PixrlFormat_LUT_Enable
+								Access Mode: RO
+								Desc: 
+								Children: 
+									ColorCodingID_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							LUTCtrl_InqAvailable_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									LUTRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											LUTRegOffset_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					LUTSelector_CtrlValue
+						Access Mode: RW
+						Desc: 
+						Children: 

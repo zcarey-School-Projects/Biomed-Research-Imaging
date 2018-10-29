@@ -1,0 +1,48 @@
+UserSetSave
+				Access Mode: NA
+				Desc: Save the User Set specified by UserSetSelector to the non-volatile memory of the device.
+				Children: 
+					UserSetSaveLock_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							TLParamsLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							UserSetVal_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									MemSaveCh_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									UserSetVal_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+									UserSetVal_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+					MemorySave_Reg
+						Access Mode: RW
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 

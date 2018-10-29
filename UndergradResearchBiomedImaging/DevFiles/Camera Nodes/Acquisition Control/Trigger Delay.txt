@@ -1,0 +1,72 @@
+TriggerDelay
+				Access Mode: RW
+				Desc: Specifies the delay (in microseconds) to apply after the trigger reception before activating it.
+				Children: 
+					TriggerDelayPresInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					TriggerDelayValMicrosecs_Float
+						Access Mode: RW
+						Desc: 
+						Children: 
+							TriggerDelayAbsVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							TriggerDelayValMicrosecs_Float_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+							TriggerDelayValMicrosecs_Float_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+					TriggerDelayMinMicrosecs_Float
+						Access Mode: RO
+						Desc: 
+						Children: 
+							TriggerDelayAbsMin_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					TriggerDelayMaxMicrosecs_Float
+						Access Mode: RO
+						Desc: 
+						Children: 
+							TriggerDelayAbsMax_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children:

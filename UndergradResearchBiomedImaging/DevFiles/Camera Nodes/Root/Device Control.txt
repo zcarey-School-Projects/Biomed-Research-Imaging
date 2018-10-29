@@ -1,0 +1,1512 @@
+DeviceControl
+				Access Mode: RO
+				Desc: Category for device information and control.
+				Children: 
+					DeviceVendorName
+						Access Mode: RO
+						Desc: Name of the manufacturer of the device.
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					DeviceModelName
+						Access Mode: RO
+						Desc: Model name of the device.
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					DeviceVersion
+						Access Mode: RO
+						Desc: Version of the device.
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					DeviceSerialNumber
+						Access Mode: RO
+						Desc: Device serial number. This string is a unique identifier of the device.
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					DeviceID
+						Access Mode: RO
+						Desc: Device identifier (serial number).
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					DeviceUserID
+						Access Mode: RW
+						Desc: User Defined Name.
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					DeviceGenCpVersionMajor
+						Access Mode: RO
+						Desc: Major version of the GenCP protocol supported by the device.
+						Children: 
+							GenCPVersionMajor_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					DeviceGenCPVersionMinor
+						Access Mode: RO
+						Desc: Minor version of the GenCP protocol supported by the device.
+						Children: 
+							GenCPVersionMinor_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					DeviceFamilyName
+						Access Mode: RO
+						Desc: Family name of the device.
+						Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					U3VDeviceCapability
+						Access Mode: RO
+						Desc: Describes Device Capability.
+						Children: 
+							UserNameAvailable
+								Access Mode: RO
+								Desc: Set if User Defined Name available.
+								Children: 
+									UserNameAvailable_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							AccessPrivilegeAvailable
+								Access Mode: RO
+								Desc: Set if Heartbeat/Access Privilege is available.
+								Children: 
+									AccessPrivilegeAvailable_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							MessageChannelSupported
+								Access Mode: RO
+								Desc: Set if the device supports a Message Channel.
+								Children: 
+									MessageChannelSupported_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							TimestampSupported
+								Access Mode: RO
+								Desc: Set if the device supports a timestamp register.
+								Children: 
+									TimestampSupported_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							StringEncoding
+								Access Mode: RO
+								Desc: String Encoding of the BRM.
+								Children: 
+									StringEncoding_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							FamilyRegisterAvailable
+								Access Mode: RO
+								Desc: Set if the device supports the Family Name register.
+								Children: 
+									FamilyRegisterAvailable_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							SBRMSupported
+								Access Mode: RO
+								Desc: Set if the device supports a SBRM.
+								Children: 
+									SBRMSupported_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							EndianessRegistersSupported
+								Access Mode: RO
+								Desc: Set if the device supports the Protocol Endianess and Implementation Endianess registers.
+								Children: 
+									EndianessRegistersSupported_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							WrittenLengthFieldSupported
+								Access Mode: RO
+								Desc: Set to 1 if the device sends the length_written field in the SCD section of the WriteMemAck command.
+								Children: 
+									WrittenLengthFieldSupported_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					Timestamp
+						Access Mode: RO
+						Desc: Reports the current value of the device timestamp counter (ns).
+						Children: 
+							Timestamp_reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					TimestampLatch
+						Access Mode: WO
+						Desc: Latches the curretn device time into the timstamp register.
+						Children: 
+							TimestampLatch_reg
+								Access Mode: WO
+								Desc: 
+								Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					TimestampIncrement
+						Access Mode: RO
+						Desc: Indicates the timestamp increment in ns/tick.
+						Children: 
+							TimestampIncrement_reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					pgrSensorDescription
+						Access Mode: RO
+						Desc: Description of the sensor of the device.
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					DeviceSVNVersion
+						Access Mode: RO
+						Desc: SVN Version of the device.
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					DeviceFirmwareVersion
+						Access Mode: RO
+						Desc: Version of the firmware in the device.
+						Children: 
+							CamRegBaseAddress
+								Access Mode: RW
+								Desc: 
+								Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					DeviceScanType
+						Access Mode: RO
+						Desc: Scan type of the sensor.
+						Children: 
+					DeviceTemperature
+						Access Mode: RO
+						Desc: Device temperature in degrees Celcius (C).
+						Children: 
+							TemperatureC_Float
+								Access Mode: RO
+								Desc: 
+								Children: 
+									Temperature_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					DeviceReset
+						Access Mode: WO
+						Desc: This is a command that immediately resets and reboots the device.
+						Children: 
+							DeviceReset_InqPresenceReg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							DeviceReset_CtrlValueReg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					pgrDeviceUptime
+						Access Mode: RO
+						Desc: Time since the device was powered up.
+						Children: 
+							DeviceUptime_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					AutoFunctionAOIsControl
+						Access Mode: RO
+						Desc: ON or OFF for the feature of the Auto Function AOIs.
+						Children: 
+							AE_AOI_Implemented_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							TLParamsLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							AE_AOI_OnOff_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AE_AOI_Control_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AE_AOI_OnOff_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AE_AOI_Control_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									AE_AOI_OnOff_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AE_AOI_Control_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+					AutoFunctionAOIWidth
+						Access Mode: NA
+						Desc: Width of the auto function area of interest in pixels.
+						Children: 
+							AE_AOI_Implemented_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AE_AOI_OnOff_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AE_AOI_Control_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AE_AOI_OnOff_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AE_AOI_Control_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									AE_AOI_OnOff_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AE_AOI_Control_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+							TLParamsLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							AE_WidthCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AE_AOIRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											AE_AOIRegBaseAddr_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AE_WidthMax_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AE_OffsetXCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											AE_AOIRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													AE_AOIRegBaseAddr_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									WidthMax_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AE_Hunit_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AE_AOIRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													AE_AOIRegBaseAddr_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							AE_WidthInc_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AE_Hunit_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AE_AOIRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													AE_AOIRegBaseAddr_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					AutoFunctionAOIHeight
+						Access Mode: NA
+						Desc: Height of the auto function area of interest in pixels.
+						Children: 
+							AE_AOI_Implemented_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AE_AOI_OnOff_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AE_AOI_Control_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AE_AOI_OnOff_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AE_AOI_Control_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									AE_AOI_OnOff_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AE_AOI_Control_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+							TLParamsLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							AE_HeightCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AE_AOIRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											AE_AOIRegBaseAddr_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AE_HeightMax_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AE_OffsetYCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											AE_AOIRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													AE_AOIRegBaseAddr_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									HeightMax_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AE_Vunit_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AE_AOIRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													AE_AOIRegBaseAddr_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							AE_HeightInc_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AE_Vunit_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AE_AOIRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													AE_AOIRegBaseAddr_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					AutoFunctionAOIOffsetX
+						Access Mode: NA
+						Desc: Vertical offset from the origin to the auto function area of interest in pixels.
+						Children: 
+							AE_AOI_Implemented_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AE_AOI_OnOff_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AE_AOI_Control_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AE_AOI_OnOff_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AE_AOI_Control_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									AE_AOI_OnOff_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AE_AOI_Control_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+							TLParamsLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							AE_OffsetXCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AE_AOIRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											AE_AOIRegBaseAddr_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AE_OffsetXMax_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AE_WidthCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											AE_AOIRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													AE_AOIRegBaseAddr_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									WidthMax_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							AE_OffsetXInc_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AE_Hposunit_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AE_AOIRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													AE_AOIRegBaseAddr_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					AutoFunctionAOIOffsetY
+						Access Mode: NA
+						Desc: Horizontal offset from the origin to the auto function area of interest in pixels.
+						Children: 
+							AE_AOI_Implemented_Bit
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AE_AOI_OnOff_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AE_AOI_Control_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									AE_AOI_OnOff_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AE_AOI_Control_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									AE_AOI_OnOff_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AE_AOI_Control_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+							TLParamsLocked
+								Access Mode: RW
+								Desc: 
+								Children: 
+							AE_OffsetYCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									AE_AOIRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											AE_AOIRegBaseAddr_Reg
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							AE_OffsetYMax_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AE_HeightCtrlVal_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											AE_AOIRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													AE_AOIRegBaseAddr_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									HeightMax_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							AE_OffsetYInc_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									AE_Vposunit_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											AE_AOIRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													AE_AOIRegBaseAddr_Reg
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+															Device
+																Access Mode: RW
+																Desc: 
+																Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					pgrDevicePowerSupplySelector
+						Access Mode: NI
+						Desc: Selects the power supply or source to control or read.
+						Children: 
+							DevicePowerSupply_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PowerSupplySelector_Val
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					pgrPowerSourcePresent
+						Access Mode: NI
+						Desc: Indicates if the selected power source currently has power present.
+						Children: 
+							DevicePowerSupply_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PwrSrc_Present_Available_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PowerSourcePresent_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					pgrPowerSupplyEnable
+						Access Mode: NI
+						Desc: Enables or disables the selected power supply.
+						Children: 
+							DevicePowerSupply_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PwrSrc_Enable_Available_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PowerSupplyEnable_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					pgrPowerSupplyVoltage
+						Access Mode: NI
+						Desc: Indicates the current voltage of the selected power supply.
+						Children: 
+							DevicePowerSupply_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PwrSrc_Voltage_Available_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PowerSupply_VoltVal_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					pgrPowerSupplyCurrent
+						Access Mode: NI
+						Desc: Indicates the output current of the selected power supply.
+						Children: 
+							DevicePowerSupply_Imp
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PwrSrc_Current_Available_Int
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							PowerSupply_CurVal_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					DeviceMaxThroughput
+						Access Mode: RO
+						Desc: Maximum bandwidth of the data  that can be streamed out of the device.
+						Children: 
+							MaxThroughput_Bps
+								Access Mode: RO
+								Desc: 
+								Children: 
+									DeviceThroughputMax_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							MinThroughput_Bps
+								Access Mode: RO
+								Desc: 
+								Children: 
+									DeviceThroughputMin_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					DeviceLinkThroughputLimit
+						Access Mode: RW
+						Desc: Limits the maximum bandwidth of data that will be streamed out by the device.
+						Children: 
+							Bandwidth_Bps_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+									DeviceThroughput_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Bandwidth_Bps_Int_ConvertTo
+										Access Mode: RO
+										Desc: 
+										Children: 
+											DeviceThroughput_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													Fmt7RegBaseAddress
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+									Bandwidth_Bps_Int_ConvertFrom
+										Access Mode: RO
+										Desc: 
+										Children: 
+											DeviceThroughput_Reg
+												Access Mode: RW
+												Desc: 
+												Children: 
+													Fmt7RegBaseAddress
+														Access Mode: RO
+														Desc: 
+														Children: 
+															CamRegBaseAddress
+																Access Mode: RW
+																Desc: 
+																Children: 
+													Device
+														Access Mode: RW
+														Desc: 
+														Children: 
+							MinThroughput_Bps
+								Access Mode: RO
+								Desc: 
+								Children: 
+									DeviceThroughputMin_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							MaxThroughput_Bps
+								Access Mode: RO
+								Desc: 
+								Children: 
+									DeviceThroughputMax_Reg
+										Access Mode: RO
+										Desc: 
+										Children: 
+											Fmt7RegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+					TestPendingAck
+						Access Mode: RW
+						Desc: Test PENDING_ACK feature.
+						Children: 
+							TestPendingAck_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+			

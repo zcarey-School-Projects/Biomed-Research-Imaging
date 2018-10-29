@@ -1,0 +1,184 @@
+LineMode
+				Access Mode: RW
+				Desc: Controls whether the physical Line is used to Input or Output a signal.
+				Children: 
+					GPIOImplemented_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							GPIOPinCount_Reg
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+					GPIOPinPresInq_Bit
+						Access Mode: RO
+						Desc: 
+						Children: 
+							GPIOCtrlPinRegBaseAddress
+								Access Mode: RO
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									LineSelected_Int
+										Access Mode: RW
+										Desc: 
+										Children: 
+							Device
+								Access Mode: RW
+								Desc: 
+								Children: 
+					LineModeLocked_Int
+						Access Mode: RO
+						Desc: 
+						Children: 
+							TriggerSourceCtrlVal_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							TriggerModeOnOff_Bit
+								Access Mode: RW
+								Desc: 
+								Children: 
+									CamRegBaseAddress
+										Access Mode: RW
+										Desc: 
+										Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							LineSelected_Int
+								Access Mode: RW
+								Desc: 
+								Children: 
+					LineMode_Int
+						Access Mode: RW
+						Desc: 
+						Children: 
+							GPIOCtrlPin_Reg
+								Access Mode: RW
+								Desc: 
+								Children: 
+									GPIOCtrlPinRegBaseAddress
+										Access Mode: RO
+										Desc: 
+										Children: 
+											CamRegBaseAddress
+												Access Mode: RW
+												Desc: 
+												Children: 
+											LineSelected_Int
+												Access Mode: RW
+												Desc: 
+												Children: 
+									Device
+										Access Mode: RW
+										Desc: 
+										Children: 
+							LineMode_Int_ConvertTo
+								Access Mode: RO
+								Desc: 
+								Children: 
+									GPIOCtrlPin_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											GPIOCtrlPinRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													LineSelected_Int
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									GPIOPinMode_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											GPIOCtrlPinRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													LineSelected_Int
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+							LineMode_Int_ConvertFrom
+								Access Mode: RO
+								Desc: 
+								Children: 
+									GPIOCtrlPin_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											GPIOCtrlPinRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													LineSelected_Int
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
+									GPIOPinMode_Reg
+										Access Mode: RW
+										Desc: 
+										Children: 
+											GPIOCtrlPinRegBaseAddress
+												Access Mode: RO
+												Desc: 
+												Children: 
+													CamRegBaseAddress
+														Access Mode: RW
+														Desc: 
+														Children: 
+													LineSelected_Int
+														Access Mode: RW
+														Desc: 
+														Children: 
+											Device
+												Access Mode: RW
+												Desc: 
+												Children: 
