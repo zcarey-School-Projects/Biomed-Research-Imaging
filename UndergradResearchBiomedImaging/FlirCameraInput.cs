@@ -116,5 +116,6 @@ namespace RobotHelpers.InputHandling {
 			isStreaming = false;
 			camera.EndAcquisition();
 		}
+
 	}
 }

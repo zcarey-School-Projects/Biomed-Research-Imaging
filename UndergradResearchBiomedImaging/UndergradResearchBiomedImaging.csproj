@@ -86,6 +86,7 @@
     <Compile Include="ExampleFlir\Acquisition_CSharp.cs" />
     <Compile Include="ExampleFlir\Enumeration_CSharp.cs" />
     <Compile Include="ExampleFlir\SaveToAvi_CSharp.cs" />
+    <Compile Include="FlirCamera.cs" />
     <Compile Include="FlirCameraManager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

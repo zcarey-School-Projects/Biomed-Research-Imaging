@@ -119,5 +119,8 @@ namespace UndergradResearchBiomedImaging {
 			}
 		}
 
+		private void test1ToolStripMenuItem_Click(object sender, EventArgs e) {
+
+		}
 	}
 }
