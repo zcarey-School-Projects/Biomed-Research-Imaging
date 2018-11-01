@@ -34,6 +34,7 @@
 			this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.testImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.test1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.test2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.StatusStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).BeginInit();
 			this.MenuStrip.SuspendLayout();
@@ -128,7 +129,8 @@
 			// testImageToolStripMenuItem
 			// 
 			this.testImageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.test1ToolStripMenuItem});
+            this.test1ToolStripMenuItem,
+            this.test2ToolStripMenuItem});
 			this.testImageToolStripMenuItem.Name = "testImageToolStripMenuItem";
 			this.testImageToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
 			this.testImageToolStripMenuItem.Text = "Test Image";
@@ -139,6 +141,13 @@
 			this.test1ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
 			this.test1ToolStripMenuItem.Text = "Test1";
 			this.test1ToolStripMenuItem.Click += new System.EventHandler(this.test1ToolStripMenuItem_Click);
+			// 
+			// test2ToolStripMenuItem
+			// 
+			this.test2ToolStripMenuItem.Name = "test2ToolStripMenuItem";
+			this.test2ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+			this.test2ToolStripMenuItem.Text = "Test2";
+			this.test2ToolStripMenuItem.Click += new System.EventHandler(this.test2ToolStripMenuItem_Click);
 			// 
 			// ControlForm
 			// 
@@ -175,6 +184,7 @@
 		private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem testImageToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem test1ToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem test2ToolStripMenuItem;
 	}
 }
 

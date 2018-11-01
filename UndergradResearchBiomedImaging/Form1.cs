@@ -44,7 +44,6 @@ namespace UndergradResearchBiomedImaging {
 
 		private void ControlForm_Load(object sender, EventArgs e) {
 			streamThread.Start();
-			populatePropertiesList(null, null);
 		}
 
 		private void streamThreadCall() {
@@ -81,46 +80,31 @@ namespace UndergradResearchBiomedImaging {
 			if(cameraManager.NumberOfAvailableCameras() > 0) {
 				string version = cameraManager.GetSpinnakerLibraryVersion();
 				CameraInfo info = cameraManager.GetCameraInformation(0);
-				populatePropertiesList(version, info);
 				lock (inputLock) {
-					input = cameraManager.OpenCamera(0);
+					FlirCamera cam = cameraManager.OpenCamera(0);
+					input = new FlirCameraInput(cam);
 					input.Play();
 				}
 			}
 			
 		}
 
-		private void populatePropertiesList(string version, CameraInfo info) {
-			CameraProperties.Clear();
-			CameraProperties.Columns.Add("Property", CameraProperties.Width / 2, HorizontalAlignment.Left);
-			CameraProperties.Columns.Add("Value", CameraProperties.Width / 2, HorizontalAlignment.Left);
-
-			ListViewItem propItem = CameraProperties.Items.Add("Library Version");
-			propItem.SubItems.Add((version != null) ? version : "N/A");
-			
-			if(info != null) {
-				propItem = CameraProperties.Items.Add("Vendor");
-				propItem.SubItems.Add(info.VendorName);
-
-				propItem = CameraProperties.Items.Add("Device Model");
-				propItem.SubItems.Add(info.DeviceModel);
-
-				foreach(InfoNode node in info.DeviceInformation) {
-					propItem = CameraProperties.Items.Add(node.DisplayName);
-					propItem.SubItems.Add(node.Value);
-				}
-			}
-
-		}
-
-		private void CameraProperties_Resize(object sender, EventArgs e) {
-			foreach(ColumnHeader col in CameraProperties.Columns) {
-				col.Width = CameraProperties.Width / CameraProperties.Columns.Count;
-			}
-		}
-
 		private void test1ToolStripMenuItem_Click(object sender, EventArgs e) {
+			if (input != null && input is FlirCameraInput) {
+				FlirCamera cam = ((FlirCameraInput)input).Camera;
+				//cam.SetTestPatternGeneratorSelector(SpinnakerNET.TestPatternGeneratorSelectorEnums.PipelineStart);
+				//cam.SetTestPattern(SpinnakerNET.TestPatternEnums.Increment);
+				cam.SetTestPattern(SpinnakerNET.TestPatternEnums.Increment);
+			}
+		}
 
+		private void test2ToolStripMenuItem_Click(object sender, EventArgs e) {
+			if (input != null && input is FlirCameraInput) {
+				FlirCamera cam = ((FlirCameraInput)input).Camera;
+				//cam.SetTestPatternGeneratorSelector(SpinnakerNET.TestPatternGeneratorSelectorEnums.PipelineStart);
+				//cam.SetTestPattern(SpinnakerNET.TestPatternEnums.Increment);
+				cam.SetTestPattern(SpinnakerNET.TestPatternEnums.SensorTestPattern);
+			}
 		}
 	}
 }
