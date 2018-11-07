@@ -36,9 +36,18 @@
 			this.autofillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.testPatternStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.autofillToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			this.DeviceName = new System.Windows.Forms.Label();
+			this.VendorName = new System.Windows.Forms.Label();
+			this.DeviceTempSource = new System.Windows.Forms.Label();
+			this.DeviceTemp = new System.Windows.Forms.Label();
 			this.StatusStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).BeginInit();
 			this.MenuStrip.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+			this.splitContainer1.Panel1.SuspendLayout();
+			this.splitContainer1.Panel2.SuspendLayout();
+			this.splitContainer1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// StatusStrip
@@ -75,9 +84,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.CameraFeed.BackColor = System.Drawing.SystemColors.Control;
-			this.CameraFeed.Location = new System.Drawing.Point(12, 31);
+			this.CameraFeed.Location = new System.Drawing.Point(3, 3);
 			this.CameraFeed.Name = "CameraFeed";
-			this.CameraFeed.Size = new System.Drawing.Size(827, 358);
+			this.CameraFeed.Size = new System.Drawing.Size(636, 358);
 			this.CameraFeed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.CameraFeed.TabIndex = 3;
 			this.CameraFeed.TabStop = false;
@@ -153,15 +162,74 @@
 			// autofillToolStripMenuItem1
 			// 
 			this.autofillToolStripMenuItem1.Name = "autofillToolStripMenuItem1";
-			this.autofillToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+			this.autofillToolStripMenuItem1.Size = new System.Drawing.Size(143, 26);
 			this.autofillToolStripMenuItem1.Text = "(Autofill)";
+			// 
+			// splitContainer1
+			// 
+			this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+			this.splitContainer1.Location = new System.Drawing.Point(12, 31);
+			this.splitContainer1.Name = "splitContainer1";
+			// 
+			// splitContainer1.Panel1
+			// 
+			this.splitContainer1.Panel1.Controls.Add(this.CameraFeed);
+			// 
+			// splitContainer1.Panel2
+			// 
+			this.splitContainer1.Panel2.Controls.Add(this.DeviceTemp);
+			this.splitContainer1.Panel2.Controls.Add(this.DeviceTempSource);
+			this.splitContainer1.Panel2.Controls.Add(this.VendorName);
+			this.splitContainer1.Panel2.Controls.Add(this.DeviceName);
+			this.splitContainer1.Size = new System.Drawing.Size(827, 364);
+			this.splitContainer1.SplitterDistance = 642;
+			this.splitContainer1.TabIndex = 5;
+			// 
+			// DeviceName
+			// 
+			this.DeviceName.AutoSize = true;
+			this.DeviceName.Location = new System.Drawing.Point(3, 3);
+			this.DeviceName.Name = "DeviceName";
+			this.DeviceName.Size = new System.Drawing.Size(96, 17);
+			this.DeviceName.TabIndex = 0;
+			this.DeviceName.Text = "Device Name:";
+			// 
+			// VendorName
+			// 
+			this.VendorName.AutoSize = true;
+			this.VendorName.Location = new System.Drawing.Point(3, 20);
+			this.VendorName.Name = "VendorName";
+			this.VendorName.Size = new System.Drawing.Size(99, 17);
+			this.VendorName.TabIndex = 1;
+			this.VendorName.Text = "Vendor Name:";
+			// 
+			// DeviceTempSource
+			// 
+			this.DeviceTempSource.AutoSize = true;
+			this.DeviceTempSource.Location = new System.Drawing.Point(3, 55);
+			this.DeviceTempSource.Name = "DeviceTempSource";
+			this.DeviceTempSource.Size = new System.Drawing.Size(97, 17);
+			this.DeviceTempSource.TabIndex = 2;
+			this.DeviceTempSource.Text = "Temp Source:";
+			// 
+			// DeviceTemp
+			// 
+			this.DeviceTemp.AutoSize = true;
+			this.DeviceTemp.Location = new System.Drawing.Point(5, 72);
+			this.DeviceTemp.Name = "DeviceTemp";
+			this.DeviceTemp.Size = new System.Drawing.Size(94, 17);
+			this.DeviceTemp.TabIndex = 3;
+			this.DeviceTemp.Text = "Temperature:";
 			// 
 			// ControlForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(851, 468);
-			this.Controls.Add(this.CameraFeed);
+			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.ConnectBtn);
 			this.Controls.Add(this.StatusStrip);
 			this.Controls.Add(this.MenuStrip);
@@ -174,6 +242,11 @@
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).EndInit();
 			this.MenuStrip.ResumeLayout(false);
 			this.MenuStrip.PerformLayout();
+			this.splitContainer1.Panel1.ResumeLayout(false);
+			this.splitContainer1.Panel2.ResumeLayout(false);
+			this.splitContainer1.Panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+			this.splitContainer1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -193,6 +266,11 @@
 		private System.Windows.Forms.ToolStripMenuItem autofillToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem testPatternStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem autofillToolStripMenuItem1;
+		private System.Windows.Forms.SplitContainer splitContainer1;
+		private System.Windows.Forms.Label DeviceName;
+		private System.Windows.Forms.Label VendorName;
+		private System.Windows.Forms.Label DeviceTemp;
+		private System.Windows.Forms.Label DeviceTempSource;
 	}
 }
 

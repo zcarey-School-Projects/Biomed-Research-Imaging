@@ -1,5 +1,6 @@
 ﻿using Emgu.CV;
 using Emgu.CV.Structure;
+using RobotArmUR2;
 using RobotHelpers;
 using RobotHelpers.InputHandling;
 using SpinnakerNET;
@@ -25,6 +26,7 @@ namespace UndergradResearchBiomedImaging {
 		private Thread streamThread;
 		private FPSCounter fpsCounter = new FPSCounter();
 		private FlirCameraManager cameraManager = new FlirCameraManager();
+		private EmguPictureBox<Bgr, byte> cameraFeed;
 
 		//private static SaveFileDialog saveDialog;
 		
@@ -38,8 +40,9 @@ namespace UndergradResearchBiomedImaging {
 
 		public ControlForm() {
 			InitializeComponent();
-			fillMenuStripWithValues<TestPatternEnums>(testImageToolStripMenuItem, TestPatternEnums.NUM_TESTPATTERN, TestPattern_MenuItem_Click, true);
-			fillMenuStripWithValues<TestPatternGeneratorSelectorEnums>(testPatternStripMenuItem, TestPatternGeneratorSelectorEnums.NUM_TESTPATTERNGENERATORSELECTOR, TestPatternGenerator_MenuItem_Click, true);
+			cameraFeed = new EmguPictureBox<Bgr, byte>(this, CameraFeed);
+			fillMenuStripWithValues/*<TestPatternEnums>*/(testImageToolStripMenuItem, TestPatternEnums.NUM_TESTPATTERN, TestPattern_MenuItem_Click, true);
+			//fillMenuStripWithValues<TestPatternGeneratorSelectorEnums>(testPatternStripMenuItem, TestPatternGeneratorSelectorEnums.NUM_TESTPATTERNGENERATORSELECTOR, TestPatternGenerator_MenuItem_Click, true);
 
 			streamThread = new Thread(streamThreadCall);
 			streamThread.Name = "Stream Thread";
@@ -56,15 +59,32 @@ namespace UndergradResearchBiomedImaging {
 					if ((input != null) && (input.IsFrameAvailable())) {
 						Image<Bgr, byte> rawImage = input.GetFrame();
 						fpsCounter.Tick();
-						CameraFeed.InvokeIfRequired(pictureBox => { pictureBox.Image = ((rawImage != null) ? rawImage : new Image<Bgr, byte>(1, 1))/*.Resize(newWidth, newHeight, Emgu.CV.CvEnum.Inter.Cubic)*/.Bitmap; });
+						cameraFeed.Image = rawImage;
+
+						if (input is FlirCameraInput) {
+							FlirCamera cam = ((FlirCameraInput)input).Camera;
+
+							//DeviceTemperatureSelectorEnums? source = cam.GetDeviceTemperatureSelector();
+							double? temp = cam.GetDeviceTemperature();
+							BeginInvoke(new Action(() => {
+							//	DeviceTempSource.Text = ((source == null) ? "N/A" : source.ToString());
+								DeviceTemp.Text = "Temperature: " + ((temp == null) ? "N/A" : ((double)temp).ToString("N2"));
+							}));
+						}
 					} else {
 						fpsCounter.Reset();
+						Thread.Sleep(1);
 					}
-				}
 
-				FPSStatusLabel.InvokeIfRequired(this, label => { label.Text = fpsCounter.FPS.ToString("N2"); });
-				Thread.Sleep(1);
+					ASyncUpdateLabels(fpsCounter.FPS);
+				}
 			}
+		}
+
+		private void ASyncUpdateLabels(float fps) {
+			BeginInvoke(new Action(() => {
+				FPSStatusLabel.Text = fps.ToString("N2");
+			}));
 		}
 
 		private void ScreenshotMenuItem_Click(object sender, EventArgs e) {
@@ -85,11 +105,19 @@ namespace UndergradResearchBiomedImaging {
 				string version = cameraManager.GetSpinnakerLibraryVersion();
 				lock (inputLock) {
 					FlirCamera cam = cameraManager.GetCamera(0);
+					cam.Init();
+					FillDeviceInfo(cam);
+					//cam.TrySetDeviceTemperatureSelector(DeviceTemperatureSelectorEnums.Sensor);
 					input = new FlirCameraInput(cam);
 					input.Play();
 				}
 			}
 			
+		}
+
+		private void FillDeviceInfo(FlirCamera cam) {
+			DeviceName.Text = "Device Name: " + cam.GetDeviceName();
+			VendorName.Text = "Vendor Name: " + cam.GetVendorName();
 		}
 
 		#region Auto-fill Menu Item Callbacks
@@ -161,12 +189,18 @@ namespace UndergradResearchBiomedImaging {
 		/// <param name="ignoreCase">The enum type to ignore. Pass null for none.</param>
 		/// <param name="onItemClick">Callback when an item gets clicked.</param>
 		/// <param name="checkItems">If the items should be "checked" when clicked.</param>
-		private static void fillMenuStripWithValues<TEnum>(ToolStripMenuItem menu, TEnum? ignoreCase, EventHandler onItemClick, bool checkItems) where TEnum : struct {
+		private void fillMenuStripWithValues/*<TEnum>*/(ToolStripMenuItem menu, /*TEnum*/TestPatternEnums? ignoreCase, EventHandler onItemClick, bool checkItems) /*where TEnum : struct*/ {
 			menu.DropDownItems.Clear();
-			foreach (TEnum enumVal in GetValues<TEnum>()) {
+			foreach (/*TEnum*/TestPatternEnums enumVal in GetValues</*TEnum*/TestPatternEnums>()) {
 				if (!enumVal.Equals(ignoreCase)) {
 					ToolStripMenuItem item = new ToolStripMenuItem(enumVal.ToString());
-					item.Click += onItemClick;
+					//item.Click += onItemClick;
+					item.Click += (object sender, EventArgs e) => {
+						FlirCamera cam = ((FlirCameraInput)input).Camera;
+						//cam.TrySetTestPattern(enumVal);
+						//cam.camera.TestPattern.Value = enumVal.ToString();
+						cam.camera.TestPattern.Value = TestPatternEnums.Increment.ToString();
+					};
 					item.CheckOnClick = checkItems;
 					if (checkItems) item.CheckedChanged += uncheckOtherItems;
 					menu.DropDownItems.Add(item);
@@ -198,6 +232,5 @@ namespace UndergradResearchBiomedImaging {
 		}
 
 		#endregion
-
 	}
 }

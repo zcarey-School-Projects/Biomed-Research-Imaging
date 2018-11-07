@@ -83,6 +83,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmguPictureBox.cs" />
     <Compile Include="ExampleFlir\Acquisition_CSharp.cs" />
     <Compile Include="ExampleFlir\Enumeration_CSharp.cs" />
     <Compile Include="ExampleFlir\SaveToAvi_CSharp.cs" />
@@ -96,7 +97,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RobotHelpers\ControlHelper.cs" />
     <Compile Include="RobotHelpers\FPSCounter.cs" />
     <Compile Include="RobotHelpers\InputHandling\CameraInput.cs" />
     <Compile Include="RobotHelpers\InputHandling\FileInput.cs" />

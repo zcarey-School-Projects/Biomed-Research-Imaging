@@ -18,7 +18,8 @@ namespace RobotHelpers.InputHandling {
 		public FlirCameraInput(FlirCamera camera) {
 			try {
 				this.Camera = camera;
-				camera.Init();
+				if (!camera.Initialized) throw new SpinnakerException("Not initialized!");
+				//camera.Init();
 
 				if (!camera.TrySetAcquisitionMode(AcquisitionModeEnums.Continuous)) {
 					Console.WriteLine("Could not set acquisition mode.");
@@ -32,6 +33,7 @@ namespace RobotHelpers.InputHandling {
 				camera.Dispose();
 				camera = null;
 				Console.WriteLine("Error: " + ex.Message);
+				Console.WriteLine(ex.StackTrace);
 			}
 		}
 

@@ -16,8 +16,8 @@ namespace UndergradResearchBiomedImaging {
 		public Integer Height { get => camera.Height; set => camera.Height = value; }
 		public bool Streaming { get; private set; }
 
-		private IManagedCamera camera;
-		private bool initialized = false;
+		public IManagedCamera camera; //TODO make private
+		public bool Initialized { get; private set; } = false;
 
 		public FlirCamera(IManagedCamera cam) {
 			this.camera = cam;
@@ -25,14 +25,14 @@ namespace UndergradResearchBiomedImaging {
 
 		public void Dispose() {
 			Streaming = false;
-			initialized = false;
+			Initialized = false;
 			camera.Dispose();
 		}
 
 		public void Init() {
 			camera.Init();
 			if (camera.IsInitialized() && TrySetAcquisitionMode(AcquisitionModeEnums.Continuous)) {
-				initialized = true;
+				Initialized = true;
 				Console.WriteLine("Camera initialized: " + camera.DeviceModelName);
 			} else {
 				Console.WriteLine("Camera could not be initialized.");
@@ -40,7 +40,7 @@ namespace UndergradResearchBiomedImaging {
 		}
 
 		public void StartStream() {
-			if (!initialized) return;
+			if (!Initialized) return;
 			camera.BeginAcquisition();
 			Streaming = true;
 		}
@@ -63,17 +63,32 @@ namespace UndergradResearchBiomedImaging {
 					}
 				} catch (SpinnakerException ex) {
 					Console.WriteLine("Error: " + ex.Message);
+					Console.WriteLine(ex.StackTrace);
 					return null;
 				}
 			}
 		}
 
 		private string convertStringNode(StringNode node) {
+			if (node == null) return "N/A";
 			try {
 				return node;
 			} catch (SpinnakerException) {
 				return "N/A";
 			}
+		}
+
+		private double? convertFloatNode(Float node) {
+			if (node == null) return null;
+			try {
+				return node.Value;
+			} catch (SpinnakerException) {
+				return null;
+			}
+		}
+
+		private void printError(Exception ex) {
+			Console.WriteLine("Flir Camera Error: {0}\n{1}", ex.Message, ex.StackTrace);
 		}
 
 		/////////////////////// PROPERTIES
@@ -89,7 +104,8 @@ namespace UndergradResearchBiomedImaging {
 			try {
 				camera.AcquisitionMode.Value = mode.ToString();
 				return true;
-			} catch (SpinnakerException) {
+			} catch (SpinnakerException ex) {
+				printError(ex);
 				return false;
 			}
 		}
@@ -97,7 +113,8 @@ namespace UndergradResearchBiomedImaging {
 		public AcquisitionModeEnums? GetAcquisitionMode() {
 			try {
 				return (AcquisitionModeEnums)Enum.Parse(typeof(AcquisitionModeEnums), camera.AcquisitionMode.Value.String);
-			} catch (Exception) {
+			} catch (Exception ex) {
+				printError(ex);
 				return null;
 			}
 		}
@@ -106,7 +123,8 @@ namespace UndergradResearchBiomedImaging {
 			try {
 				camera.PixelFormat.Value = format.ToString();
 				return true;
-			} catch (SpinnakerException) {
+			} catch (SpinnakerException ex) {
+				printError(ex);
 				return false;
 			}
 		}
@@ -114,7 +132,8 @@ namespace UndergradResearchBiomedImaging {
 		public PixelFormatEnums? GetPixelFormat() {
 			try {
 				return (PixelFormatEnums)Enum.Parse(typeof(PixelFormatEnums), camera.PixelFormat.Value.String);
-			} catch (Exception) {
+			} catch (Exception ex) {
+				printError(ex);
 				return null;
 			}
 		}
@@ -123,7 +142,8 @@ namespace UndergradResearchBiomedImaging {
 			try {
 				camera.TestPatternGeneratorSelector.Value = selector.ToString();
 				return true;
-			} catch (SpinnakerException) {
+			} catch (SpinnakerException ex) {
+				printError(ex);
 				return false;
 			}
 		}
@@ -131,7 +151,8 @@ namespace UndergradResearchBiomedImaging {
 		public TestPatternGeneratorSelectorEnums? GetTestPatternGeneratorSelector() {
 			try {
 				return (TestPatternGeneratorSelectorEnums)Enum.Parse(typeof(TestPatternGeneratorSelectorEnums), camera.TestPatternGeneratorSelector.Value.String);
-			} catch (Exception) {
+			} catch (Exception ex) {
+				printError(ex);
 				return null;
 			}
 		}
@@ -140,7 +161,8 @@ namespace UndergradResearchBiomedImaging {
 			try {
 				camera.TestPattern.Value = pattern.ToString();
 				return true;
-			} catch (SpinnakerException) {
+			} catch (SpinnakerException ex) {
+				printError(ex);
 				return false;
 			}
 		}
@@ -148,12 +170,40 @@ namespace UndergradResearchBiomedImaging {
 		public TestPatternEnums? GetTestPattern() {
 			try {
 				return (TestPatternEnums)Enum.Parse(typeof(TestPatternEnums), camera.TestPattern.Value.String);
-			} catch (Exception) {
+			} catch (Exception ex) {
+				printError(ex);
 				return null;
 			}
 		}
+
+		public double? GetDeviceTemperature() {
+			try {
+				return convertFloatNode(camera.DeviceTemperature);
+			} catch (Exception ex) {
+				printError(ex);
+				return null;
+			}
+		}
+		public bool TrySetDeviceTemperatureSelector(DeviceTemperatureSelectorEnums selector) {
+			try {
+				camera.DeviceTemperatureSelector.Value = selector.ToString();
+				return true;
+			} catch (SpinnakerException ex) {
+				printError(ex);
+				return false;
+			}
+		}
 	
+		public DeviceTemperatureSelectorEnums? GetDeviceTemperatureSelector() {
+			try {
+				return (DeviceTemperatureSelectorEnums)Enum.Parse(typeof(DeviceTemperatureSelectorEnums), camera.DeviceTemperatureSelector.ToString());
+			} catch (Exception ex) {
+				printError(ex);
+				return null;
+			}
+		}
 	}
+
 
 	//AccessPrivilegeAvailable
 	//AcquisitionFrameCount
@@ -221,7 +271,6 @@ namespace UndergradResearchBiomedImaging {
 	//DeviceScanType
 	//DeviceSerialNumber
 	//DeviceSVNVersion
-	//DeviceTemperature
 	//DeviceUserID
 	//DeviceVendorName
 	//DeviceVersion
