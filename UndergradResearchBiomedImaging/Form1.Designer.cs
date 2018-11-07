@@ -33,8 +33,9 @@
 			this.controlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.testImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.test1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.test2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.autofillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.testPatternStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.autofillToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.StatusStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).BeginInit();
 			this.MenuStrip.SuspendLayout();
@@ -73,7 +74,7 @@
 			this.CameraFeed.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.CameraFeed.BackColor = System.Drawing.Color.Black;
+			this.CameraFeed.BackColor = System.Drawing.SystemColors.Control;
 			this.CameraFeed.Location = new System.Drawing.Point(12, 31);
 			this.CameraFeed.Name = "CameraFeed";
 			this.CameraFeed.Size = new System.Drawing.Size(827, 358);
@@ -121,7 +122,8 @@
 			// testToolStripMenuItem
 			// 
 			this.testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testImageToolStripMenuItem});
+            this.testImageToolStripMenuItem,
+            this.testPatternStripMenuItem});
 			this.testToolStripMenuItem.Name = "testToolStripMenuItem";
 			this.testToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
 			this.testToolStripMenuItem.Text = "Test";
@@ -129,25 +131,30 @@
 			// testImageToolStripMenuItem
 			// 
 			this.testImageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.test1ToolStripMenuItem,
-            this.test2ToolStripMenuItem});
+            this.autofillToolStripMenuItem});
 			this.testImageToolStripMenuItem.Name = "testImageToolStripMenuItem";
-			this.testImageToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+			this.testImageToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
 			this.testImageToolStripMenuItem.Text = "Test Image";
 			// 
-			// test1ToolStripMenuItem
+			// autofillToolStripMenuItem
 			// 
-			this.test1ToolStripMenuItem.Name = "test1ToolStripMenuItem";
-			this.test1ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-			this.test1ToolStripMenuItem.Text = "Test1";
-			this.test1ToolStripMenuItem.Click += new System.EventHandler(this.test1ToolStripMenuItem_Click);
+			this.autofillToolStripMenuItem.Name = "autofillToolStripMenuItem";
+			this.autofillToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
+			this.autofillToolStripMenuItem.Text = "Autofill";
 			// 
-			// test2ToolStripMenuItem
+			// testPatternStripMenuItem
 			// 
-			this.test2ToolStripMenuItem.Name = "test2ToolStripMenuItem";
-			this.test2ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-			this.test2ToolStripMenuItem.Text = "Test2";
-			this.test2ToolStripMenuItem.Click += new System.EventHandler(this.test2ToolStripMenuItem_Click);
+			this.testPatternStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.autofillToolStripMenuItem1});
+			this.testPatternStripMenuItem.Name = "testPatternStripMenuItem";
+			this.testPatternStripMenuItem.Size = new System.Drawing.Size(230, 26);
+			this.testPatternStripMenuItem.Text = "Test Pattern Generator";
+			// 
+			// autofillToolStripMenuItem1
+			// 
+			this.autofillToolStripMenuItem1.Name = "autofillToolStripMenuItem1";
+			this.autofillToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+			this.autofillToolStripMenuItem1.Text = "(Autofill)";
 			// 
 			// ControlForm
 			// 
@@ -183,8 +190,9 @@
 		private System.Windows.Forms.ToolStripMenuItem controlToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem testImageToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem test1ToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem test2ToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem autofillToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem testPatternStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem autofillToolStripMenuItem1;
 	}
 }
 

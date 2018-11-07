@@ -14,17 +14,17 @@ namespace RobotHelpers.InputHandling {
 	public class FlirCameraInput : InputHandler {
 
 		public FlirCamera Camera { get; set; }
-		private bool isStreaming = false;
 
 		public FlirCameraInput(FlirCamera camera) {
 			try {
 				this.Camera = camera;
+				camera.Init();
 
-				if (!camera.SetAcquisitionMode(AcquisitionModeEnums.Continuous)) {
-					throw new SpinnakerException("Unable to set acquisition mode to continuous.");
+				if (!camera.TrySetAcquisitionMode(AcquisitionModeEnums.Continuous)) {
+					Console.WriteLine("Could not set acquisition mode.");
 				}
 
-				if (!camera.SetPixelFormat(PixelFormatEnums.RGB8)) {
+				if (!camera.TrySetPixelFormat(PixelFormatEnums.RGB8)) {
 					Console.WriteLine("Pixel format '{0}' is not available.", PixelFormatEnums.RGB8.ToString());
 				}
 
@@ -43,11 +43,15 @@ namespace RobotHelpers.InputHandling {
 		}
 
 		public override int GetHeight() {
-			throw new NotImplementedException();
+			Integer val = Camera.Height;
+			if (val == null) return 0;
+			else return (int)val;
 		}
 
 		public override int GetWidth() {
-			throw new NotImplementedException();
+			Integer val = Camera.Width;
+			if (val == null) return 0;
+			else return (int)val;
 		}
 
 		protected override int getDelayMS() {
@@ -57,24 +61,21 @@ namespace RobotHelpers.InputHandling {
 		protected override bool isNextFrameAvailable() {
 			//throw new NotImplementedException();
 			//TODO check camera stream
-			return isStreaming;
+			return Camera.Streaming;
 		}
 
 		protected override Image<Bgr, byte> readFrame() {
-			if (!isStreaming) return null;
+			if (!isNextFrameAvailable()) return null;
 			return Camera.GetNextImage();
 		}
 
 		public override void Play() {
 			Camera.StartStream();
-			isStreaming = true;
 			base.Play();
-
 		}
 
 		public override void Pause() {
 			base.Pause();
-			isStreaming = false;
 			Camera.EndStream();
 		}
 

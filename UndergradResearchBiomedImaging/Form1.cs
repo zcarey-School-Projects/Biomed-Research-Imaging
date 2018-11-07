@@ -2,6 +2,7 @@
 using Emgu.CV.Structure;
 using RobotHelpers;
 using RobotHelpers.InputHandling;
+using SpinnakerNET;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,6 +38,9 @@ namespace UndergradResearchBiomedImaging {
 
 		public ControlForm() {
 			InitializeComponent();
+			fillMenuStripWithValues<TestPatternEnums>(testImageToolStripMenuItem, TestPatternEnums.NUM_TESTPATTERN, TestPattern_MenuItem_Click, true);
+			fillMenuStripWithValues<TestPatternGeneratorSelectorEnums>(testPatternStripMenuItem, TestPatternGeneratorSelectorEnums.NUM_TESTPATTERNGENERATORSELECTOR, TestPatternGenerator_MenuItem_Click, true);
+
 			streamThread = new Thread(streamThreadCall);
 			streamThread.Name = "Stream Thread";
 			streamThread.IsBackground = true;
@@ -79,9 +83,8 @@ namespace UndergradResearchBiomedImaging {
 			cameraManager.DetectCameras();
 			if(cameraManager.NumberOfAvailableCameras() > 0) {
 				string version = cameraManager.GetSpinnakerLibraryVersion();
-				CameraInfo info = cameraManager.GetCameraInformation(0);
 				lock (inputLock) {
-					FlirCamera cam = cameraManager.OpenCamera(0);
+					FlirCamera cam = cameraManager.GetCamera(0);
 					input = new FlirCameraInput(cam);
 					input.Play();
 				}
@@ -89,22 +92,112 @@ namespace UndergradResearchBiomedImaging {
 			
 		}
 
-		private void test1ToolStripMenuItem_Click(object sender, EventArgs e) {
-			if (input != null && input is FlirCameraInput) {
+		#region Auto-fill Menu Item Callbacks
+/*
+		private delegate bool TrySetValue<TEnum>(TEnum value) where TEnum : struct;
+		private void TrySetCameraValue<TEnum>(object sender, TrySetValue<TEnum> setValueFunc) where TEnum : struct{
+			if (!(sender is ToolStripMenuItem)) return;
+			ToolStripMenuItem item = (ToolStripMenuItem)sender;
+			TEnum? value = GetEnumValue<TEnum>(item.Text);
+			if((value != null) && (input != null) && (input is FlirCameraInput)) {
 				FlirCamera cam = ((FlirCameraInput)input).Camera;
-				//cam.SetTestPatternGeneratorSelector(SpinnakerNET.TestPatternGeneratorSelectorEnums.PipelineStart);
-				//cam.SetTestPattern(SpinnakerNET.TestPatternEnums.Increment);
-				cam.SetTestPattern(SpinnakerNET.TestPatternEnums.Increment);
+				c
+			}
+		}
+		*/
+		private void TestPattern_MenuItem_Click(object sender, EventArgs e) {
+			if (!(sender is ToolStripMenuItem)) return;
+			ToolStripMenuItem item = (ToolStripMenuItem)sender;
+			TestPatternEnums? value = GetEnumValue<TestPatternEnums>(item.Text);
+			if((value != null) && (input != null) && (input is FlirCameraInput)) {
+				FlirCamera cam = ((FlirCameraInput)input).Camera;
+				cam.TrySetTestPattern((TestPatternEnums)value);
 			}
 		}
 
-		private void test2ToolStripMenuItem_Click(object sender, EventArgs e) {
-			if (input != null && input is FlirCameraInput) {
+		private void TestPatternGenerator_MenuItem_Click(object sender, EventArgs e) {
+			if (!(sender is ToolStripMenuItem)) return;
+			ToolStripMenuItem item = (ToolStripMenuItem)sender;
+			TestPatternGeneratorSelectorEnums? value = GetEnumValue<TestPatternGeneratorSelectorEnums>(item.Text);
+			if ((value != null) && (input != null) && (input is FlirCameraInput)) {
 				FlirCamera cam = ((FlirCameraInput)input).Camera;
-				//cam.SetTestPatternGeneratorSelector(SpinnakerNET.TestPatternGeneratorSelectorEnums.PipelineStart);
-				//cam.SetTestPattern(SpinnakerNET.TestPatternEnums.Increment);
-				cam.SetTestPattern(SpinnakerNET.TestPatternEnums.SensorTestPattern);
+				cam.TrySetTestPatternGeneratorSelector((TestPatternGeneratorSelectorEnums)value);
 			}
 		}
+
+		#endregion
+
+		#region Auto-Fill Menu Lists
+
+		/// <summary>
+		/// Returns all possible enum values.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <returns></returns>
+		private static IEnumerable<T> GetValues<T>() {
+			return Enum.GetValues(typeof(T)).Cast<T>();
+		}
+
+		/// <summary>
+		/// Returns the enum value parsed from a string. Returns null if not found.
+		/// </summary>
+		/// <typeparam name="TEnum"></typeparam>
+		/// <param name="str"></param>
+		/// <returns></returns>
+		private static TEnum? GetEnumValue<TEnum>(string str) where TEnum : struct {
+			TEnum val;
+			if(Enum.TryParse(str, out val)) {
+				return val;
+			} else {
+				return null;
+			}
+		}
+
+		/// <summary>
+		/// Fills a Menu Strip with all values of an Enum type. 
+		/// </summary>
+		/// <typeparam name="TEnum"></typeparam>
+		/// <param name="menu">The menu to be filled with items.</param>
+		/// <param name="ignoreCase">The enum type to ignore. Pass null for none.</param>
+		/// <param name="onItemClick">Callback when an item gets clicked.</param>
+		/// <param name="checkItems">If the items should be "checked" when clicked.</param>
+		private static void fillMenuStripWithValues<TEnum>(ToolStripMenuItem menu, TEnum? ignoreCase, EventHandler onItemClick, bool checkItems) where TEnum : struct {
+			menu.DropDownItems.Clear();
+			foreach (TEnum enumVal in GetValues<TEnum>()) {
+				if (!enumVal.Equals(ignoreCase)) {
+					ToolStripMenuItem item = new ToolStripMenuItem(enumVal.ToString());
+					item.Click += onItemClick;
+					item.CheckOnClick = checkItems;
+					if (checkItems) item.CheckedChanged += uncheckOtherItems;
+					menu.DropDownItems.Add(item);
+				}
+			}
+
+			if (menu.DropDownItems.Count == 0) {
+				ToolStripItem none = new ToolStripMenuItem("(none)");
+				none.Enabled = false;
+				menu.DropDownItems.Add(none);
+			}
+		}
+
+		/// <summary>
+		/// In a list of drop-down items, unchecks all items except the one that was clicked.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private static void uncheckOtherItems(object sender, EventArgs e) {
+			if(sender is ToolStripMenuItem) {
+				ToolStripMenuItem menu = (ToolStripMenuItem)sender;
+				if (menu.Checked == false) return;
+				foreach(ToolStripMenuItem item in menu.GetCurrentParent().Items) {
+					if (item != menu) {
+						item.Checked = false;
+					}
+				}
+			}
+		}
+
+		#endregion
+
 	}
 }
