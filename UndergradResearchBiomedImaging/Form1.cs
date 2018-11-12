@@ -2,6 +2,7 @@
 using Emgu.CV.Structure;
 using RobotHelpers;
 using RobotHelpers.InputHandling;
+using SpinnakerNET;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -89,22 +90,6 @@ namespace UndergradResearchBiomedImaging {
 			
 		}
 
-		private void test1ToolStripMenuItem_Click(object sender, EventArgs e) {
-			if (input != null && input is FlirCameraInput) {
-				FlirCamera cam = ((FlirCameraInput)input).Camera;
-				//cam.SetTestPatternGeneratorSelector(SpinnakerNET.TestPatternGeneratorSelectorEnums.PipelineStart);
-				//cam.SetTestPattern(SpinnakerNET.TestPatternEnums.Increment);
-				cam.SetTestPattern(SpinnakerNET.TestPatternEnums.Increment);
-			}
-		}
-
-		private void test2ToolStripMenuItem_Click(object sender, EventArgs e) {
-			if (input != null && input is FlirCameraInput) {
-				FlirCamera cam = ((FlirCameraInput)input).Camera;
-				//cam.SetTestPatternGeneratorSelector(SpinnakerNET.TestPatternGeneratorSelectorEnums.PipelineStart);
-				//cam.SetTestPattern(SpinnakerNET.TestPatternEnums.Increment);
-				cam.SetTestPattern(SpinnakerNET.TestPatternEnums.SensorTestPattern);
-			}
-		}
+		
 	}
 }

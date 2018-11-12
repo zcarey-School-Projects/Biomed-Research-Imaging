@@ -20,11 +20,11 @@ namespace RobotHelpers.InputHandling {
 			try {
 				this.Camera = camera;
 
-				if (!camera.SetAcquisitionMode(AcquisitionModeEnums.Continuous)) {
+				if (!camera.AcquisitionMode.TrySetValue(AcquisitionModeEnums.Continuous)) { 
 					throw new SpinnakerException("Unable to set acquisition mode to continuous.");
 				}
 
-				if (!camera.SetPixelFormat(PixelFormatEnums.RGB8)) {
+				if (!camera.PixelFormat.TrySetValue(PixelFormatEnums.RGB8)) { 
 					Console.WriteLine("Pixel format '{0}' is not available.", PixelFormatEnums.RGB8.ToString());
 				}
 

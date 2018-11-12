@@ -86,14 +86,18 @@
     <Compile Include="ExampleFlir\Acquisition_CSharp.cs" />
     <Compile Include="ExampleFlir\Enumeration_CSharp.cs" />
     <Compile Include="ExampleFlir\SaveToAvi_CSharp.cs" />
+    <Compile Include="Flir\EnumNode.cs" />
     <Compile Include="Flir\FlirCamera.cs" />
     <Compile Include="Flir\FlirCameraManager.cs" />
     <Compile Include="Flir\FlirSetting.cs" />
+    <Compile Include="Flir\FloatNode.cs" />
+    <Compile Include="Flir\IntegerNode.cs" />
     <Compile Include="Flir\Settings\AcquisitionModeSetting.cs" />
     <Compile Include="Flir\FlirSettings.cs" />
     <Compile Include="Flir\Settings\PixelFormatSetting.cs" />
     <Compile Include="Flir\Settings\TestPatternGeneratorSelectorSetting.cs" />
     <Compile Include="Flir\Settings\TestPatternSetting.cs" />
+    <Compile Include="Flir\StringNode.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
