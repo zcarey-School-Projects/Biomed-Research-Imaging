@@ -13,8 +13,6 @@ using UndergradResearchBiomedImaging.Flir;
 namespace UndergradResearchBiomedImaging {
 	public class FlirCamera : IDisposable{
 
-		public FlirSettings Settings { get; private set; }
-
 		private IManagedCamera camera;
 		private bool initialized = false;
 		private bool streaming = false;
@@ -22,7 +20,6 @@ namespace UndergradResearchBiomedImaging {
 		public FlirCamera(IManagedCamera cam) {
 			this.camera = cam;
 			setProperties();
-			Settings = new FlirSettings(this);
 			camera.Init();
 			if (camera.IsInitialized()) {
 				initialized = true;
