@@ -34,6 +34,8 @@
 			this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.testImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.autoFilledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.StagePosition = new System.Windows.Forms.TextBox();
+			this.MoveStageBtn = new System.Windows.Forms.Button();
 			this.StatusStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).BeginInit();
 			this.MenuStrip.SuspendLayout();
@@ -72,7 +74,7 @@
 			this.CameraFeed.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.CameraFeed.BackColor = System.Drawing.Color.Black;
+			this.CameraFeed.BackColor = System.Drawing.SystemColors.Control;
 			this.CameraFeed.Location = new System.Drawing.Point(12, 31);
 			this.CameraFeed.Name = "CameraFeed";
 			this.CameraFeed.Size = new System.Drawing.Size(827, 358);
@@ -130,21 +132,40 @@
 			this.testImageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.autoFilledToolStripMenuItem});
 			this.testImageToolStripMenuItem.Name = "testImageToolStripMenuItem";
-			this.testImageToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+			this.testImageToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
 			this.testImageToolStripMenuItem.Text = "Test Image";
 			// 
 			// autoFilledToolStripMenuItem
 			// 
 			this.autoFilledToolStripMenuItem.Enabled = false;
 			this.autoFilledToolStripMenuItem.Name = "autoFilledToolStripMenuItem";
-			this.autoFilledToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+			this.autoFilledToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
 			this.autoFilledToolStripMenuItem.Text = "AutoFilled";
+			// 
+			// StagePosition
+			// 
+			this.StagePosition.Location = new System.Drawing.Point(315, 402);
+			this.StagePosition.Name = "StagePosition";
+			this.StagePosition.Size = new System.Drawing.Size(100, 22);
+			this.StagePosition.TabIndex = 5;
+			// 
+			// MoveStageBtn
+			// 
+			this.MoveStageBtn.Location = new System.Drawing.Point(421, 402);
+			this.MoveStageBtn.Name = "MoveStageBtn";
+			this.MoveStageBtn.Size = new System.Drawing.Size(75, 23);
+			this.MoveStageBtn.TabIndex = 6;
+			this.MoveStageBtn.Text = "Move";
+			this.MoveStageBtn.UseVisualStyleBackColor = true;
 			// 
 			// ControlForm
 			// 
+			this.AcceptButton = this.MoveStageBtn;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(851, 468);
+			this.Controls.Add(this.MoveStageBtn);
+			this.Controls.Add(this.StagePosition);
 			this.Controls.Add(this.CameraFeed);
 			this.Controls.Add(this.ConnectBtn);
 			this.Controls.Add(this.StatusStrip);
@@ -175,6 +196,8 @@
 		private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem testImageToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem autoFilledToolStripMenuItem;
+		private System.Windows.Forms.TextBox StagePosition;
+		private System.Windows.Forms.Button MoveStageBtn;
 	}
 }
 

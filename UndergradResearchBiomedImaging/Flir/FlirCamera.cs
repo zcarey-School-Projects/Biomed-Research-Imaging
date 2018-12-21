@@ -66,17 +66,6 @@ namespace UndergradResearchBiomedImaging {
 			return camera.GetNodeMap();
 		}*/
 
-		private bool trySetNodeValue<TEnum>(string nodeName, string nodeValue) where TEnum : struct{
-			try {
-				IEnum node = camera.GetNodeMap().GetNode<IEnum>(nodeName);
-				node.Value = nodeValue;
-				return true;
-			} catch (SpinnakerException e) {
-				Console.WriteLine("Could not set node '{0}' to value '{1}'.", nodeName, nodeValue);
-				return false;
-			}
-		}
-
 		private void setProperties() {
 			PixelFormat = new EnumNode<PixelFormatEnums>(camera, "PixelFormat");
 			AcquisitionMode = new EnumNode<AcquisitionModeEnums>(camera, "AcquisitionNode");
