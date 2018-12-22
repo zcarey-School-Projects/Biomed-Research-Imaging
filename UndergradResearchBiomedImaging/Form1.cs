@@ -14,7 +14,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UndergradResearchBiomedImaging.Flir;
+using UndergradResearchBiomedImaging.Flir.Nodes;
 
 //using Windows.Media.Capture;
 //using System.Windows.Storage;

@@ -8,7 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UndergradResearchBiomedImaging.Flir;
+using UndergradResearchBiomedImaging.Flir.Nodes;
 
 namespace UndergradResearchBiomedImaging {
 	public class FlirCamera : IDisposable{
@@ -65,7 +65,7 @@ namespace UndergradResearchBiomedImaging {
 		public INodeMap GetNodeMap() {
 			return camera.GetNodeMap();
 		}*/
-
+		//TODO stick in properties property
 		private void setProperties() {
 			PixelFormat = new EnumNode<PixelFormatEnums>(camera, "PixelFormat");
 			AcquisitionMode = new EnumNode<AcquisitionModeEnums>(camera, "AcquisitionNode");
@@ -80,15 +80,15 @@ namespace UndergradResearchBiomedImaging {
 			ExposureAuto = new EnumNode<ExposureAutoEnums>(camera, "ExposureAuto");
 			ExposureTime = new FloatNode(camera, "ExposureTime");
 			ExposureTimeAbs = new FloatNode(camera, "ExposureTimeAbs");
-			DeviceVendorName = new Flir.StringNode(camera, "DeviceVendorName");
-			DeviceModelName = new Flir.StringNode(camera, "DeviceModelName");
-			DeviceVersion = new Flir.StringNode(camera, "DeviceVersion");
-			DeviceSerialNumber = new Flir.StringNode(camera, "DeviceSerialNumber");
-			DeviceID = new Flir.StringNode(camera, "DeviceID");
-			DeviceUserID = new Flir.StringNode(camera, "DeviceUserID");
-			DeviceGenCpVersionMajor = new Flir.StringNode(camera, "DeviceGenCpVersionMajor");
-			DeviceGenCPVersionMinor = new Flir.StringNode(camera, "DeviceGenCpVersionMinor");
-			DeviceFamilyName = new Flir.StringNode(camera, "DeviceFamilyName");
+			DeviceVendorName = new Flir.Nodes.StringNode(camera, "DeviceVendorName");
+			DeviceModelName = new Flir.Nodes.StringNode(camera, "DeviceModelName");
+			DeviceVersion = new Flir.Nodes.StringNode(camera, "DeviceVersion");
+			DeviceSerialNumber = new Flir.Nodes.StringNode(camera, "DeviceSerialNumber");
+			DeviceID = new Flir.Nodes.StringNode(camera, "DeviceID");
+			DeviceUserID = new Flir.Nodes.StringNode(camera, "DeviceUserID");
+			DeviceGenCpVersionMajor = new Flir.Nodes.StringNode(camera, "DeviceGenCpVersionMajor");
+			DeviceGenCPVersionMinor = new Flir.Nodes.StringNode(camera, "DeviceGenCpVersionMinor");
+			DeviceFamilyName = new Flir.Nodes.StringNode(camera, "DeviceFamilyName");
 			DeviceTemperatureSelector = new EnumNode<DeviceTemperatureSelectorEnums>(camera, "DeviceTemperatureSelector");
 			DeviceTemperature = new FloatNode(camera, "DeviceTemperature");
 			Width = new IntegerNode(camera, "Width");
@@ -109,15 +109,15 @@ namespace UndergradResearchBiomedImaging {
 		public EnumNode<ExposureAutoEnums> ExposureAuto { get; private set; }
 		public FloatNode ExposureTime { get; private set; } //In Milliseconds
 		public FloatNode ExposureTimeAbs { get; private set; } //In Millisecond
-		public Flir.StringNode DeviceVendorName { get; private set; }
-		public Flir.StringNode DeviceModelName { get; private set; }
-		public Flir.StringNode DeviceVersion { get; private set; }
-		public Flir.StringNode DeviceSerialNumber { get; private set; }
-		public Flir.StringNode DeviceID { get; private set; }
-		public Flir.StringNode DeviceUserID { get; private set; }
-		public Flir.StringNode DeviceGenCpVersionMajor { get; private set; }
-		public Flir.StringNode DeviceGenCPVersionMinor { get; private set; }
-		public Flir.StringNode DeviceFamilyName { get; private set; }
+		public Flir.Nodes.StringNode DeviceVendorName { get; private set; }
+		public Flir.Nodes.StringNode DeviceModelName { get; private set; }
+		public Flir.Nodes.StringNode DeviceVersion { get; private set; }
+		public Flir.Nodes.StringNode DeviceSerialNumber { get; private set; }
+		public Flir.Nodes.StringNode DeviceID { get; private set; }
+		public Flir.Nodes.StringNode DeviceUserID { get; private set; }
+		public Flir.Nodes.StringNode DeviceGenCpVersionMajor { get; private set; }
+		public Flir.Nodes.StringNode DeviceGenCPVersionMinor { get; private set; }
+		public Flir.Nodes.StringNode DeviceFamilyName { get; private set; }
 		public EnumNode<DeviceTemperatureSelectorEnums> DeviceTemperatureSelector { get; private set; }
 		public FloatNode DeviceTemperature { get; private set; }
 		public IntegerNode Width { get; private set; }
