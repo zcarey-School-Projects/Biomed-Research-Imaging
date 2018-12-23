@@ -36,7 +36,7 @@
 			this.autoFilledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.StagePosition = new System.Windows.Forms.TextBox();
 			this.MoveStageBtn = new System.Windows.Forms.Button();
-			this.panel1 = new System.Windows.Forms.Panel();
+			this.SettingsPanel = new System.Windows.Forms.Panel();
 			this.StatusStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).BeginInit();
 			this.MenuStrip.SuspendLayout();
@@ -159,15 +159,15 @@
 			this.MoveStageBtn.Text = "Move";
 			this.MoveStageBtn.UseVisualStyleBackColor = true;
 			// 
-			// panel1
+			// SettingsPanel
 			// 
-			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.SettingsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel1.AutoScroll = true;
-			this.panel1.Location = new System.Drawing.Point(714, 31);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(348, 358);
-			this.panel1.TabIndex = 7;
+			this.SettingsPanel.AutoScroll = true;
+			this.SettingsPanel.Location = new System.Drawing.Point(714, 31);
+			this.SettingsPanel.Name = "SettingsPanel";
+			this.SettingsPanel.Size = new System.Drawing.Size(348, 358);
+			this.SettingsPanel.TabIndex = 7;
 			// 
 			// ControlForm
 			// 
@@ -175,7 +175,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1074, 468);
-			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.SettingsPanel);
 			this.Controls.Add(this.MoveStageBtn);
 			this.Controls.Add(this.StagePosition);
 			this.Controls.Add(this.CameraFeed);
@@ -210,7 +210,7 @@
 		private System.Windows.Forms.ToolStripMenuItem autoFilledToolStripMenuItem;
 		private System.Windows.Forms.TextBox StagePosition;
 		private System.Windows.Forms.Button MoveStageBtn;
-		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel SettingsPanel;
 	}
 }
 

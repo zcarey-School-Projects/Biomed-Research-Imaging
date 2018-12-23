@@ -86,6 +86,7 @@
     <Compile Include="ExampleFlir\Acquisition_CSharp.cs" />
     <Compile Include="ExampleFlir\Enumeration_CSharp.cs" />
     <Compile Include="ExampleFlir\SaveToAvi_CSharp.cs" />
+    <Compile Include="Flir\FlirProperties.cs" />
     <Compile Include="Flir\Nodes\BaseNode.cs" />
     <Compile Include="Flir\Nodes\EnumNode.cs" />
     <Compile Include="Flir\FlirCamera.cs" />

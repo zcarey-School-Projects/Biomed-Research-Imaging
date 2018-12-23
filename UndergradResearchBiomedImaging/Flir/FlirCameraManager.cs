@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging {
+namespace UndergradResearchBiomedImaging.Flir {
 
 	public class FlirCameraManager : IDisposable{
 

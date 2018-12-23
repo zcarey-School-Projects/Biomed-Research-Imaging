@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UndergradResearchBiomedImaging.Flir;
 using UndergradResearchBiomedImaging.Flir.Nodes;
 
 //using Windows.Media.Capture;
@@ -47,7 +48,7 @@ namespace UndergradResearchBiomedImaging {
 		}
 
 		private void initializeMenuStrips() {
-			fillMenuStripWithValues<TestPatternEnums>(nameof(FlirCamera.TestPattern), testImageToolStripMenuItem, TestPatternEnums.NUM_TESTPATTERN, true);
+			fillMenuStripWithValues<TestPatternEnums>(nameof(FlirProperties.TestPattern), testImageToolStripMenuItem, TestPatternEnums.NUM_TESTPATTERN, true);
 		}
 
 		private void ControlForm_Load(object sender, EventArgs e) {
@@ -184,7 +185,7 @@ namespace UndergradResearchBiomedImaging {
 					FlirCameraInput camInput = (FlirCameraInput)input;
 					FlirCamera cam = camInput.Camera;
 					if (cam == null) throw new Exception("Null FlirCamera.");
-					Type type = cam.GetType();
+					Type type = cam.Properties.GetType();
 					if (type == null) throw new Exception("Null type.");
 					PropertyInfo property = type.GetProperty(propertyName);
 					if (property == null) throw new Exception("Could not find property.");

@@ -6,11 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Emgu.CV;
 using Emgu.CV.Structure;
+using RobotHelpers.InputHandling;
 using SpinnakerNET;
 using SpinnakerNET.GenApi;
 using UndergradResearchBiomedImaging;
 
-namespace RobotHelpers.InputHandling {
+namespace UndergradResearchBiomedImaging.Flir {
 	public class FlirCameraInput : InputHandler {
 
 		public FlirCamera Camera { get; set; }
@@ -20,11 +21,11 @@ namespace RobotHelpers.InputHandling {
 			try {
 				this.Camera = camera;
 
-				if (!camera.AcquisitionMode.TrySetValue(AcquisitionModeEnums.Continuous)) { 
+				if (!camera.Properties.AcquisitionMode.TrySetValue(AcquisitionModeEnums.Continuous)) { 
 					throw new SpinnakerException("Unable to set acquisition mode to continuous.");
 				}
 
-				if (!camera.PixelFormat.TrySetValue(PixelFormatEnums.RGB8)) { 
+				if (!camera.Properties.PixelFormat.TrySetValue(PixelFormatEnums.RGB8)) { 
 					Console.WriteLine("Pixel format '{0}' is not available.", PixelFormatEnums.RGB8.ToString());
 				}
 
