@@ -37,9 +37,11 @@
 			this.StagePosition = new System.Windows.Forms.TextBox();
 			this.MoveStageBtn = new System.Windows.Forms.Button();
 			this.SettingsPanel = new System.Windows.Forms.Panel();
+			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
 			this.StatusStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).BeginInit();
 			this.MenuStrip.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// StatusStrip
@@ -169,12 +171,41 @@
 			this.SettingsPanel.Size = new System.Drawing.Size(348, 358);
 			this.SettingsPanel.TabIndex = 7;
 			// 
+			// numericUpDown1
+			// 
+			this.numericUpDown1.DecimalPlaces = 2;
+			this.numericUpDown1.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+			this.numericUpDown1.Location = new System.Drawing.Point(557, 418);
+			this.numericUpDown1.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+			this.numericUpDown1.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+			this.numericUpDown1.Name = "numericUpDown1";
+			this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
+			this.numericUpDown1.TabIndex = 8;
+			this.numericUpDown1.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+			// 
 			// ControlForm
 			// 
 			this.AcceptButton = this.MoveStageBtn;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1074, 468);
+			this.Controls.Add(this.numericUpDown1);
 			this.Controls.Add(this.SettingsPanel);
 			this.Controls.Add(this.MoveStageBtn);
 			this.Controls.Add(this.StagePosition);
@@ -191,6 +222,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).EndInit();
 			this.MenuStrip.ResumeLayout(false);
 			this.MenuStrip.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -211,6 +243,7 @@
 		private System.Windows.Forms.TextBox StagePosition;
 		private System.Windows.Forms.Button MoveStageBtn;
 		private System.Windows.Forms.Panel SettingsPanel;
+		private System.Windows.Forms.NumericUpDown numericUpDown1;
 	}
 }
 

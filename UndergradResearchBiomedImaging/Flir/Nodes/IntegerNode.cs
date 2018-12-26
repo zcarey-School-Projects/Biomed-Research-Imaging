@@ -9,6 +9,36 @@ using System.Threading.Tasks;
 namespace UndergradResearchBiomedImaging.Flir.Nodes {
 	public class IntegerNode : BaseNode<IInteger, long> {
 
+		public long? Increment {
+			get {
+				IInteger node = default(IInteger);
+				if (base.GetNode(ref node)) return node.Increment;
+				else return null;
+			}
+		}
+
+		public long? Minimum {
+			get {
+				IInteger node = default(IInteger);
+				if (GetNode(ref node)) {
+					return node.Min;
+				} else {
+					return null;
+				}
+			}
+		}
+
+		public long? Maximum {
+			get {
+				IInteger node = default(IInteger);
+				if (GetNode(ref node)) {
+					return node.Max;
+				} else {
+					return null;
+				}
+			}
+		}
+
 		public IntegerNode(IManagedCamera cam, string nodeName) : base(cam, nodeName) {
 
 		}

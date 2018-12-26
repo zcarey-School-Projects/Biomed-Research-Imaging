@@ -21,14 +21,9 @@ namespace UndergradResearchBiomedImaging.Flir.Nodes {
 
 		public bool TrySetValue(ValueType value) {
 			try {
-				if (camera == null) throw new SpinnakerException("Camera is null.");
-
-				INodeMap map = camera.GetNodeMap();
-				if (map == null) throw new SpinnakerException("Could not retrieve node map.");
-
-				NodeType node = map.GetNode<NodeType>(NodeName);
-				if (node == null) throw new SpinnakerException("Unable to find node '" + NodeName + "'.");
-				if (!node.IsWritable) throw new SpinnakerException("The node '" + NodeName + "' is not writable. ");
+				NodeType node = default(NodeType);
+				if (!GetNode(ref node)) throw new SpinnakerException("Unable to find node '" + NodeName + "'.");
+				if(!node.IsWritable) throw new SpinnakerException("The node '" + NodeName + "' is not writable. ");
 
 				setNodeValue(node, value);
 				return true;
@@ -45,14 +40,9 @@ namespace UndergradResearchBiomedImaging.Flir.Nodes {
 
 		public bool TryGetValue(ref ValueType value) {
 			try {
-				if (camera == null) throw new SpinnakerException("Camera is null.");
-
-				INodeMap map = camera.GetNodeMap();
-				if (map == null) throw new SpinnakerException("Could not retrieve node map.");
-
-				NodeType node = map.GetNode<NodeType>(NodeName);
-				if (node == null) throw new SpinnakerException("Unable to find node '" + NodeName + "'.");
-				if (!node.IsReadable) throw new SpinnakerException("The node '" + NodeName + "' is not readable. ");
+				NodeType node = default(NodeType);
+				if(!GetNode(ref node)) throw new SpinnakerException("Unable to find node '" + NodeName + "'.");
+				if (!node.IsReadable) throw new SpinnakerException("The node '" + NodeName + "' is not writable. ");
 
 				value = parseNodeValue(node);
 				if (value == null) throw new SpinnakerException("Unable to retrieve the value from node '" + NodeName + "'.");
@@ -62,6 +52,47 @@ namespace UndergradResearchBiomedImaging.Flir.Nodes {
 				Console.WriteLine(e.Message);
 				Console.WriteLine(e.StackTrace);
 				Console.WriteLine();
+				return false;
+			}
+		}
+
+		/// <summary>Throws Spinnaker Exception</summary>
+		/// <returns>The property node.</returns>
+		protected bool GetNode(ref NodeType newNode) {
+			try {
+				if (camera == null) throw new SpinnakerException("Camera is null.");
+
+				INodeMap map = camera.GetNodeMap();
+				if (map == null) throw new SpinnakerException("Could not retrieve node map.");
+
+				newNode = map.GetNode<NodeType>(NodeName);
+
+				return true;
+			}catch(SpinnakerException ex) {
+				Console.Error.WriteLine("Unable to retrieve node: " + ex.Message);
+				return false;
+			}
+		}
+
+		public bool IsAvailable() {
+			NodeType node = default(NodeType);
+			return GetNode(ref node);
+		}
+
+		public bool IsReadable() {
+			NodeType node = default(NodeType);
+			if(GetNode(ref node)) {
+				return ((NodeType)node).IsReadable;
+			} else {
+				return false;
+			}
+		}
+
+		public bool IsWritable() {
+			NodeType node = default(NodeType);
+			if(GetNode(ref node)) {
+				return ((NodeType)node).IsWritable;
+			} else {
 				return false;
 			}
 		}

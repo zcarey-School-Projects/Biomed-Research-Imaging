@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UndergradResearchBiomedImaging.Flir;
 using UndergradResearchBiomedImaging.Flir.Nodes;
+using UndergradResearchBiomedImaging.UI;
 
 //using Windows.Media.Capture;
 //using System.Windows.Storage;
@@ -45,6 +46,8 @@ namespace UndergradResearchBiomedImaging {
 			streamThread = new Thread(streamThreadCall);
 			streamThread.Name = "Stream Thread";
 			streamThread.IsBackground = true;
+
+			new GainUI(/*camera, */SettingsPanel, 0);
 		}
 
 		private void initializeMenuStrips() {
