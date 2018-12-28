@@ -17,6 +17,7 @@ using System.Windows.Forms;
 using UndergradResearchBiomedImaging.Flir;
 using UndergradResearchBiomedImaging.Flir.Nodes;
 using UndergradResearchBiomedImaging.UI;
+using UndergradResearchBiomedImaging.UI.Options;
 
 //using Windows.Media.Capture;
 //using System.Windows.Storage;
@@ -29,6 +30,8 @@ namespace UndergradResearchBiomedImaging {
 		private Thread streamThread;
 		private FPSCounter fpsCounter = new FPSCounter();
 		private FlirCameraManager cameraManager = new FlirCameraManager();
+
+		private CameraOptionsUI cameraOptions;
 
 		//private static SaveFileDialog saveDialog;
 		
@@ -47,7 +50,7 @@ namespace UndergradResearchBiomedImaging {
 			streamThread.Name = "Stream Thread";
 			streamThread.IsBackground = true;
 
-			new GainUI(/*camera, */SettingsPanel, 0);
+			cameraOptions = new CameraOptionsUI(SettingsPanel);
 		}
 
 		private void initializeMenuStrips() {
@@ -96,6 +99,7 @@ namespace UndergradResearchBiomedImaging {
 					FlirCamera cam = cameraManager.OpenCamera(0);
 					input = new FlirCameraInput(cam);
 					input.Play();
+					cameraOptions.InvokeCameraConnected(cam);
 				}
 			}
 			

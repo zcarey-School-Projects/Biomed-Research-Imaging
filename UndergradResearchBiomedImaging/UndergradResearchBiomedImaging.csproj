@@ -114,12 +114,15 @@
     <Compile Include="RobotHelpers\Serial\SerialCommunicator.cs" />
     <Compile Include="RobotHelpers\Serial\SerialResponse.cs" />
     <Compile Include="RobotHelpers\Serial\SerialUIListener.cs" />
-    <Compile Include="UI\FloatEntry.cs" />
+    <Compile Include="UI\CameraOptionsUI.cs" />
+    <Compile Include="UI\Options\EnumEntry.cs" />
+    <Compile Include="UI\Options\FloatEntry.cs" />
     <Compile Include="UI\GainUI.cs" />
-    <Compile Include="UI\OptionEntry.cs" />
-    <Compile Include="UI\IOptionEntry.cs" />
-    <Compile Include="UI\OptionsCategory.cs" />
-    <Compile Include="UI\OptionsPanel.cs" />
+    <Compile Include="UI\Options\IntegerEntry.cs" />
+    <Compile Include="UI\Options\OptionEntry.cs" />
+    <Compile Include="UI\Options\IOptionEntry.cs" />
+    <Compile Include="UI\Options\OptionsCategory.cs" />
+    <Compile Include="UI\Options\OptionsPanel.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

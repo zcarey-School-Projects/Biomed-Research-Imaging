@@ -6,10 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UndergradResearchBiomedImaging.UI {
-	public class FloatEntry : OptionEntry<NumericUpDown> {
+namespace UndergradResearchBiomedImaging.UI.Options {
+	public class IntegerEntry : OptionEntry<NumericUpDown> {
 
-		public FloatEntry(string name) : base(name) {
+		public IntegerEntry(string name) : base(name) {
 
 		}
 
@@ -18,10 +18,10 @@ namespace UndergradResearchBiomedImaging.UI {
 			/*control.Maximum = 0;
 			control.Minimum = 0;
 			control.Value = 0;*/
-			control.DecimalPlaces = 2;
 			control.Location = new Point(xPos, 3);
 
 			return control;
 		}
+
 	}
 }
