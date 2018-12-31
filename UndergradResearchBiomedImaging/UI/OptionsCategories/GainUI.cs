@@ -10,7 +10,7 @@ using UndergradResearchBiomedImaging.Flir;
 using UndergradResearchBiomedImaging.Flir.Nodes;
 using UndergradResearchBiomedImaging.UI.Options;
 
-namespace UndergradResearchBiomedImaging.UI {
+namespace UndergradResearchBiomedImaging.UI.OptionsCategories {
 
 	//TODO for autofilled properties, use isReadable and isWritable for grayed out(not writable) or "-"(not readable)
 	public class GainUI {

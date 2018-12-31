@@ -102,10 +102,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\CameraOptionsUI.cs" />
+    <Compile Include="UI\MenuStrip\EnumMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\MenuStrip\TestPatternMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\OptionsCategories\CameraOptionsUI.cs" />
     <Compile Include="UI\Options\EnumEntry.cs" />
     <Compile Include="UI\Options\FloatEntry.cs" />
-    <Compile Include="UI\GainUI.cs" />
+    <Compile Include="UI\OptionsCategories\GainUI.cs" />
     <Compile Include="UI\Options\IntegerEntry.cs" />
     <Compile Include="UI\Options\OptionEntry.cs" />
     <Compile Include="UI\Options\IOptionEntry.cs" />

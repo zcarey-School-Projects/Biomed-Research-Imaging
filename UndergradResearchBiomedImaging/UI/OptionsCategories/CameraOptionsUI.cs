@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using UndergradResearchBiomedImaging.Flir;
 using UndergradResearchBiomedImaging.UI.Options;
 
-namespace UndergradResearchBiomedImaging.UI {
+namespace UndergradResearchBiomedImaging.UI.OptionsCategories {
 	public class CameraOptionsUI {
 
 		public delegate void CameraConnectionHandler(FlirCamera camera);

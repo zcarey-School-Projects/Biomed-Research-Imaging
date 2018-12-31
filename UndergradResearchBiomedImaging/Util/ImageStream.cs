@@ -93,7 +93,8 @@ namespace UndergradResearchBiomedImaging.Util {
 		private readonly object disposeLock = new object();
 		#endregion
 
-		private FlirCamera camera;
+		public FlirCamera camera { get; set; }
+
 		private VideoCapture capture; //EmguCV class that assists in loading camera/files
 		private Thread grabbingThread; //New thread that continously tries to grab images from the source.
 		private volatile bool exitThread = false; //When set to true, informs grabbingThread to exit

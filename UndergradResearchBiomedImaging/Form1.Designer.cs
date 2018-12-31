@@ -29,16 +29,14 @@
 			this.CameraFeed = new System.Windows.Forms.PictureBox();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ScreenshotMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.MenuStrip = new System.Windows.Forms.MenuStrip();
 			this.controlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.testImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.autoFilledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.TestMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
 			this.StagePosition = new System.Windows.Forms.TextBox();
 			this.MoveStageBtn = new System.Windows.Forms.Button();
 			this.SettingsPanel = new System.Windows.Forms.Panel();
 			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-			this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.StatusStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).BeginInit();
 			this.MenuStrip.SuspendLayout();
@@ -101,9 +99,16 @@
 			this.ScreenshotMenuItem.Name = "ScreenshotMenuItem";
 			this.ScreenshotMenuItem.ShortcutKeyDisplayString = "";
 			this.ScreenshotMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-			this.ScreenshotMenuItem.Size = new System.Drawing.Size(216, 26);
+			this.ScreenshotMenuItem.Size = new System.Drawing.Size(206, 26);
 			this.ScreenshotMenuItem.Text = "Screenshot";
 			this.ScreenshotMenuItem.Click += new System.EventHandler(this.ScreenshotMenuItem_Click);
+			// 
+			// loadToolStripMenuItem
+			// 
+			this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+			this.loadToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+			this.loadToolStripMenuItem.Text = "Load";
+			this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
 			// 
 			// MenuStrip
 			// 
@@ -111,7 +116,7 @@
 			this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.controlToolStripMenuItem,
-            this.testToolStripMenuItem});
+            this.TestMenuStrip});
 			this.MenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.MenuStrip.Name = "MenuStrip";
 			this.MenuStrip.Size = new System.Drawing.Size(1074, 28);
@@ -124,28 +129,11 @@
 			this.controlToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
 			this.controlToolStripMenuItem.Text = "Control";
 			// 
-			// testToolStripMenuItem
+			// TestMenuStrip
 			// 
-			this.testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testImageToolStripMenuItem});
-			this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-			this.testToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
-			this.testToolStripMenuItem.Text = "Test";
-			// 
-			// testImageToolStripMenuItem
-			// 
-			this.testImageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.autoFilledToolStripMenuItem});
-			this.testImageToolStripMenuItem.Name = "testImageToolStripMenuItem";
-			this.testImageToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
-			this.testImageToolStripMenuItem.Text = "Test Image";
-			// 
-			// autoFilledToolStripMenuItem
-			// 
-			this.autoFilledToolStripMenuItem.Enabled = false;
-			this.autoFilledToolStripMenuItem.Name = "autoFilledToolStripMenuItem";
-			this.autoFilledToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
-			this.autoFilledToolStripMenuItem.Text = "AutoFilled";
+			this.TestMenuStrip.Name = "TestMenuStrip";
+			this.TestMenuStrip.Size = new System.Drawing.Size(47, 24);
+			this.TestMenuStrip.Text = "Test";
 			// 
 			// StagePosition
 			// 
@@ -201,13 +189,6 @@
             0,
             0});
 			// 
-			// loadToolStripMenuItem
-			// 
-			this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-			this.loadToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-			this.loadToolStripMenuItem.Text = "Load";
-			this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
-			// 
 			// ControlForm
 			// 
 			this.AcceptButton = this.MoveStageBtn;
@@ -246,9 +227,7 @@
 		private System.Windows.Forms.ToolStripMenuItem ScreenshotMenuItem;
 		private System.Windows.Forms.MenuStrip MenuStrip;
 		private System.Windows.Forms.ToolStripMenuItem controlToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem testImageToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem autoFilledToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem TestMenuStrip;
 		private System.Windows.Forms.TextBox StagePosition;
 		private System.Windows.Forms.Button MoveStageBtn;
 		private System.Windows.Forms.Panel SettingsPanel;
