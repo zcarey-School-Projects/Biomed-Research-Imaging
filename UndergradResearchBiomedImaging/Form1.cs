@@ -1,7 +1,5 @@
 ﻿using Emgu.CV;
 using Emgu.CV.Structure;
-using RobotHelpers;
-using RobotHelpers.InputHandling;
 using SpinnakerNET;
 using System;
 using System.Collections.Generic;
@@ -18,6 +16,7 @@ using UndergradResearchBiomedImaging.Flir;
 using UndergradResearchBiomedImaging.Flir.Nodes;
 using UndergradResearchBiomedImaging.UI;
 using UndergradResearchBiomedImaging.UI.Options;
+using UndergradResearchBiomedImaging.Util;
 
 //using Windows.Media.Capture;
 //using System.Windows.Storage;
@@ -26,11 +25,8 @@ namespace UndergradResearchBiomedImaging {
 	public partial class ControlForm : Form {
 
 		private static readonly object inputLock = new object();
-		private InputHandler input;
-		private Thread streamThread;
-		private FPSCounter fpsCounter = new FPSCounter();
+		private ImageStream input;
 		private FlirCameraManager cameraManager = new FlirCameraManager();
-
 		private CameraOptionsUI cameraOptions;
 
 		//private static SaveFileDialog saveDialog;
@@ -46,11 +42,12 @@ namespace UndergradResearchBiomedImaging {
 		public ControlForm() {
 			InitializeComponent();
 			initializeMenuStrips();
-			streamThread = new Thread(streamThreadCall);
-			streamThread.Name = "Stream Thread";
-			streamThread.IsBackground = true;
 
 			cameraOptions = new CameraOptionsUI(SettingsPanel);
+
+			input = new ImageStream();
+			input.OnNewImage += OnNewImage;
+			input.OnStreamEnded += OnStreamEnded;
 		}
 
 		private void initializeMenuStrips() {
@@ -58,30 +55,24 @@ namespace UndergradResearchBiomedImaging {
 		}
 
 		private void ControlForm_Load(object sender, EventArgs e) {
-			streamThread.Start();
+			
 		}
 
-		private void streamThreadCall() {
-			while (true) {
-				lock (inputLock) {
-					if ((input != null) && (input.IsFrameAvailable())) {
-						Image<Bgr, byte> rawImage = input.GetFrame();
-						fpsCounter.Tick();
-						CameraFeed.InvokeIfRequired(pictureBox => { pictureBox.Image = ((rawImage != null) ? rawImage : new Image<Bgr, byte>(1, 1))/*.Resize(newWidth, newHeight, Emgu.CV.CvEnum.Inter.Cubic)*/.Bitmap; });
-					} else {
-						fpsCounter.Reset();
-					}
-				}
+		private void OnNewImage(ImageStream sender, Bitmap image) {
+			this.BeginInvoke(new Action(() => { CameraFeed.Image = image; }));
+			float FPS = sender.FPS;
+			this.BeginInvoke(new Action(() => { FPSStatusLabel.Text = FPS.ToString("N2"); }));
+		}
 
-				FPSStatusLabel.InvokeIfRequired(this, label => { label.Text = fpsCounter.FPS.ToString("N2"); });
-				Thread.Sleep(1);
-			}
+		private void OnStreamEnded(ImageStream sender) {
+			this.BeginInvoke(new Action(() => { CameraFeed.Image = null; }));
+			this.BeginInvoke(new Action(() => { FPSStatusLabel.Text = "0"; }));
 		}
 
 		private void ScreenshotMenuItem_Click(object sender, EventArgs e) {
 			lock (inputLock) {
 				if (input != null) {
-					input.UserPromptSaveScreenshot();
+					input.PromptUserSaveScreenshot();
 				}
 			}
 		}
@@ -97,7 +88,7 @@ namespace UndergradResearchBiomedImaging {
 				CameraInfo info = cameraManager.GetCameraInformation(0);
 				lock (inputLock) {
 					FlirCamera cam = cameraManager.OpenCamera(0);
-					input = new FlirCameraInput(cam);
+					input.SelectCamera(cam);
 					input.Play();
 					cameraOptions.InvokeCameraConnected(cam);
 				}
@@ -187,6 +178,8 @@ namespace UndergradResearchBiomedImaging {
 			
 			public void onClick(object sender, EventArgs e) {
 				try {
+					//TODO menu items
+					/*
 					InputHandler input = form.input;
 					if (!(input is FlirCameraInput)) throw new Exception("Could not find FlirCameraInput.");
 					FlirCameraInput camInput = (FlirCameraInput)input;
@@ -203,7 +196,7 @@ namespace UndergradResearchBiomedImaging {
 					EnumNode<TEnum> node = (EnumNode<TEnum>)value;
 					if (!node.TrySetValue(this.value)) {
 						Console.WriteLine("Was unable to set enum value.");
-					}
+					}*/
 				}catch (Exception ex) {
 					Console.WriteLine("\nCould not set value: '" + propertyName + "'.");
 					Console.WriteLine(ex.Message);
@@ -215,5 +208,9 @@ namespace UndergradResearchBiomedImaging {
 
 		#endregion
 
+		private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
+			input.PromptUserLoadFile();
+			input.Play();
+		}
 	}
 }

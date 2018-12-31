@@ -1,5 +1,4 @@
-﻿using RobotHelpers.InputHandling;
-using SpinnakerNET;
+﻿using SpinnakerNET;
 using SpinnakerNET.GenApi;
 using System;
 using System.Collections;

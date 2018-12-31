@@ -102,18 +102,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RobotHelpers\ControlHelper.cs" />
-    <Compile Include="RobotHelpers\FPSCounter.cs" />
-    <Compile Include="RobotHelpers\InputHandling\CameraInput.cs" />
-    <Compile Include="RobotHelpers\InputHandling\FileInput.cs" />
-    <Compile Include="Flir\FlirCameraInput.cs" />
-    <Compile Include="RobotHelpers\InputHandling\ImageInput.cs" />
-    <Compile Include="RobotHelpers\InputHandling\InputHandler.cs" />
-    <Compile Include="RobotHelpers\InputHandling\VideoInput.cs" />
-    <Compile Include="RobotHelpers\Serial\SerialCommand.cs" />
-    <Compile Include="RobotHelpers\Serial\SerialCommunicator.cs" />
-    <Compile Include="RobotHelpers\Serial\SerialResponse.cs" />
-    <Compile Include="RobotHelpers\Serial\SerialUIListener.cs" />
     <Compile Include="UI\CameraOptionsUI.cs" />
     <Compile Include="UI\Options\EnumEntry.cs" />
     <Compile Include="UI\Options\FloatEntry.cs" />
@@ -123,6 +111,9 @@
     <Compile Include="UI\Options\IOptionEntry.cs" />
     <Compile Include="UI\Options\OptionsCategory.cs" />
     <Compile Include="UI\Options\OptionsPanel.cs" />
+    <Compile Include="Util\FPSCounter.cs" />
+    <Compile Include="Util\ImageStream.cs" />
+    <Compile Include="Util\InputRotation.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

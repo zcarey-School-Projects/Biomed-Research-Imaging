@@ -38,6 +38,7 @@
 			this.MoveStageBtn = new System.Windows.Forms.Button();
 			this.SettingsPanel = new System.Windows.Forms.Panel();
 			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+			this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.StatusStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).BeginInit();
 			this.MenuStrip.SuspendLayout();
@@ -89,7 +90,8 @@
 			// fileToolStripMenuItem
 			// 
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ScreenshotMenuItem});
+            this.ScreenshotMenuItem,
+            this.loadToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
 			this.fileToolStripMenuItem.Text = "File";
@@ -99,7 +101,7 @@
 			this.ScreenshotMenuItem.Name = "ScreenshotMenuItem";
 			this.ScreenshotMenuItem.ShortcutKeyDisplayString = "";
 			this.ScreenshotMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-			this.ScreenshotMenuItem.Size = new System.Drawing.Size(206, 26);
+			this.ScreenshotMenuItem.Size = new System.Drawing.Size(216, 26);
 			this.ScreenshotMenuItem.Text = "Screenshot";
 			this.ScreenshotMenuItem.Click += new System.EventHandler(this.ScreenshotMenuItem_Click);
 			// 
@@ -199,6 +201,13 @@
             0,
             0});
 			// 
+			// loadToolStripMenuItem
+			// 
+			this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+			this.loadToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+			this.loadToolStripMenuItem.Text = "Load";
+			this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
+			// 
 			// ControlForm
 			// 
 			this.AcceptButton = this.MoveStageBtn;
@@ -244,6 +253,7 @@
 		private System.Windows.Forms.Button MoveStageBtn;
 		private System.Windows.Forms.Panel SettingsPanel;
 		private System.Windows.Forms.NumericUpDown numericUpDown1;
+		private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
 	}
 }
 

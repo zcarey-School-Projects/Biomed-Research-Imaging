@@ -42,18 +42,18 @@ namespace UndergradResearchBiomedImaging.Flir {
 			camera.EndAcquisition();
 		}
 
-		public Image<Bgr, byte> GetNextImage() {
+		public bool GetNextImage(out Bitmap image) {
+			image = null;
 			using (IManagedImage rawImage = camera.GetNextImage()) {
 				try {
-					if (rawImage.IsIncomplete) return null;
+					if (rawImage.IsIncomplete) return false;
 					using (IManagedImage deepCopy = rawImage.Convert(PixelFormatEnums.BGR8)) {
-						Bitmap img = deepCopy.bitmap;
-						if (img == null) return null;
-						return new Image<Bgr, byte>(img);
+						image = deepCopy.bitmap;
+						return true;
 					}
 				} catch (SpinnakerException ex) {
 					Console.WriteLine("Error: " + ex.Message);
-					return null;
+					return false;
 				}
 			}
 		}
