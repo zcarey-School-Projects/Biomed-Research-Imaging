@@ -46,12 +46,11 @@ namespace UndergradResearchBiomedImaging {
 			InitializeComponent();
 			initializeMenuStrips();
 
-			cameraOptions = new CameraOptionsUI(SettingsPanel);
-
 			input = new ImageStream();
 			input.OnNewImage += OnNewImage;
 			input.OnStreamEnded += OnStreamEnded;
-			input.OnSourceChanged += OnStreamSourceChanged;
+
+			cameraOptions = new CameraOptionsUI(SettingsPanel, input);
 		}
 
 		private void initializeMenuStrips() {
@@ -71,10 +70,6 @@ namespace UndergradResearchBiomedImaging {
 		private void OnStreamEnded(ImageStream sender) {
 			this.BeginInvoke(new Action(() => { CameraFeed.Image = null; }));
 			this.BeginInvoke(new Action(() => { FPSStatusLabel.Text = "0"; }));
-		}
-
-		private void OnStreamSourceChanged(ImageStream sender, StreamType source) {
-			//TODO implement
 		}
 
 		private void ScreenshotMenuItem_Click(object sender, EventArgs e) {
@@ -98,7 +93,6 @@ namespace UndergradResearchBiomedImaging {
 					FlirCamera cam = cameraManager.OpenCamera(0);
 					input.SelectCamera(cam);
 					input.Play();
-					cameraOptions.InvokeCameraConnected(cam);
 				}
 			}
 			

@@ -6,31 +6,40 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UndergradResearchBiomedImaging.Flir;
 using UndergradResearchBiomedImaging.UI.Options;
+using UndergradResearchBiomedImaging.Util;
+using static UndergradResearchBiomedImaging.Util.ImageStream;
+using UndergradResearchBiomedImaging.UI.OptionsCategories.Options;
 
 namespace UndergradResearchBiomedImaging.UI.OptionsCategories {
 	public class CameraOptionsUI {
-
+/*
 		public delegate void CameraConnectionHandler(FlirCamera camera);
 		public event CameraConnectionHandler OnCameraConnected;
 		public event CameraConnectionHandler OnCameraDisconnected;
-		
+		*/
+		public FlirProperties FakeProperties { get; } = new FlirProperties(null);
 		public FlirCamera Camera { get; private set; }
+		public ImageStream Input { get; private set; }
 		private OptionsPanel panel;
 
-		private GainUI gain;
+		private List<IOptionsUI> options = new List<IOptionsUI>();
 
-		public CameraOptionsUI(Panel Panel) {
+		public CameraOptionsUI(Panel Panel, ImageStream input) {
 			this.panel = new OptionsPanel(Panel);
-			gain = new GainUI(this, panel);
+			this.Input = input;
+
+			options.Add(new GainUI(this, panel));
+
+			input.OnSourceChanged += onSourceChanged;
+			input.OnStreamEnded += onStreamEnded;
 		}
 
-		public void InvokeCameraConnected(FlirCamera camera) {
-			Camera = camera;
-			OnCameraConnected?.Invoke(camera);
+		private void onSourceChanged(ImageStream sender, StreamType newSource) {
+			panel.Update();
 		}
 
-		public void InvokeCameraDisconnected(FlirCamera camera) {
-			OnCameraDisconnected?.Invoke(camera);
+		private void onStreamEnded(ImageStream sender) {
+			panel.Update();
 		}
 
 	}

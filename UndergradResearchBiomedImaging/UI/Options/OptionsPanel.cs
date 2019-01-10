@@ -24,6 +24,12 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 			//LOL!
 		}
 
+		public override void Update() {
+			foreach(IOptionEntry entry in GetChildren()) {
+				entry.Update();
+			}
+		}
+
 		public override void DrawControls(int yPos) {
 			Height = 0;
 			foreach (IOptionEntry entry in base.GetChildren()) {

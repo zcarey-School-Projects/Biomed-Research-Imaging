@@ -46,6 +46,12 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 			endBevel.Location = new Point(3, 38); //36 + 2
 		}
 
+		public override void Update() {
+			foreach(IOptionEntry entry in base.GetChildren()) {
+				entry.Update();
+			}
+		}
+
 		public override void DrawControls(int yPos) {
 			categoryName.Location = new Point(categoryName.Location.X, yPos + 5);
 			titleBevel.Location = new Point(titleBevel.Location.X, yPos + 30);

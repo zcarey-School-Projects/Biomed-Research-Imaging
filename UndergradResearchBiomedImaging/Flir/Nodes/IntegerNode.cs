@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace UndergradResearchBiomedImaging.Flir.Nodes {
-	public class IntegerNode : BaseNode<IInteger, long> {
+	public class IntegerNode : NumericalNode<IInteger, long> {
 
 		public long? Increment {
 			get {
@@ -17,26 +17,12 @@ namespace UndergradResearchBiomedImaging.Flir.Nodes {
 			}
 		}
 
-		public long? Minimum {
-			get {
-				IInteger node = default(IInteger);
-				if (GetNode(ref node)) {
-					return node.Min;
-				} else {
-					return null;
-				}
-			}
+		protected override long getMinimum(IInteger node) {
+			return node.Min;
 		}
 
-		public long? Maximum {
-			get {
-				IInteger node = default(IInteger);
-				if (GetNode(ref node)) {
-					return node.Max;
-				} else {
-					return null;
-				}
-			}
+		protected override long getMaximum(IInteger node) {
+			return node.Max;
 		}
 
 		public IntegerNode(IManagedCamera cam, string nodeName) : base(cam, nodeName) {

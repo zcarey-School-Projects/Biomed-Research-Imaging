@@ -42,6 +42,8 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 
 		public abstract void DrawControls(int yPos);
 
+		public abstract void Update();
+
 		public abstract int Height { get; protected set; }
 
 		public int Y {get; set;}

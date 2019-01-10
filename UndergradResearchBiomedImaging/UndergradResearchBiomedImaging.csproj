@@ -93,6 +93,7 @@
     <Compile Include="Flir\FlirCameraManager.cs" />
     <Compile Include="Flir\Nodes\FloatNode.cs" />
     <Compile Include="Flir\Nodes\IntegerNode.cs" />
+    <Compile Include="Flir\Nodes\NumericalNode.cs" />
     <Compile Include="Flir\Nodes\StringNode.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -109,10 +110,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\OptionsCategories\CameraOptionsUI.cs" />
+    <Compile Include="UI\OptionsCategories\Options\GainUI.cs" />
+    <Compile Include="UI\OptionsCategories\Options\IOptionsUI.cs" />
     <Compile Include="UI\Options\EnumEntry.cs" />
     <Compile Include="UI\Options\FloatEntry.cs" />
-    <Compile Include="UI\OptionsCategories\GainUI.cs" />
     <Compile Include="UI\Options\IntegerEntry.cs" />
+    <Compile Include="UI\Options\NumericalEntry.cs" />
     <Compile Include="UI\Options\OptionEntry.cs" />
     <Compile Include="UI\Options\IOptionEntry.cs" />
     <Compile Include="UI\Options\OptionsCategory.cs" />
@@ -120,6 +123,7 @@
     <Compile Include="Util\FPSCounter.cs" />
     <Compile Include="Util\ImageStream.cs" />
     <Compile Include="Util\InputRotation.cs" />
+    <Compile Include="Util\Property.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

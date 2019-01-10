@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace UndergradResearchBiomedImaging.Flir.Nodes {
-	public class FloatNode : BaseNode<IFloat, double>{
+	public class FloatNode : NumericalNode<IFloat, double>{
 
 		public string Unit {
 			get {
@@ -17,26 +17,12 @@ namespace UndergradResearchBiomedImaging.Flir.Nodes {
 			}
 		}
 
-		public double? Minimum {
-			get {
-				IFloat node = default(IFloat);
-				if (GetNode(ref node)) {
-					return node.Min;
-				} else {
-					return null;
-				}
-			}
+		protected override double getMinimum(IFloat node) {
+			return node.Min;
 		}
 
-		public double? Maximum {
-			get {
-				IFloat node = default(IFloat);
-				if (GetNode(ref node)) {
-					return node.Max;
-				} else {
-					return null;
-				}
-			}
+		protected override double getMaximum(IFloat node) {
+			return node.Max;
 		}
 
 		public FloatNode(IManagedCamera cam, string nodeName) : base(cam, nodeName) {
