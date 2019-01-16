@@ -43,18 +43,19 @@ namespace UndergradResearchBiomedImaging.Flir {
 
 		public bool GetNextImage(out Bitmap image) {
 			image = null;
+			if (!IsStreaming) return false;
 			try {
 				using (IManagedImage rawImage = camera.GetNextImage()) {
-					if(rawImage == null) {
+					if(rawImage == null) { //TODO throw SpinnakerException?
 						Console.WriteLine("Raw image null.");
 						return false;
 					}else if (rawImage.IsIncomplete) {
 						Console.WriteLine("Raw image incomplete with image status {0}...", rawImage.ImageStatus);
 						return false;
 					} else {
-						uint width = rawImage.Width;
-						uint height = rawImage.Height;
-						using (IManagedImage convertedImage = rawImage.Convert(PixelFormatEnums.RGB8)) { //TODO make this match whatever is saved!
+						//uint width = rawImage.Width;
+						//uint height = rawImage.Height;
+						using (IManagedImage convertedImage = rawImage.Convert(PixelFormatEnums.BGR8)) { 
 							if(convertedImage == null) {
 								Console.WriteLine("Converted iamge null.");
 								return false;
@@ -68,9 +69,10 @@ namespace UndergradResearchBiomedImaging.Flir {
 								Console.WriteLine("Bitmap was null.");
 								return false;
 							}
+							
 							image = new Bitmap(imgBitmap);
+							return true;
 						}
-						return true;
 					}
 				}
 			} catch (SpinnakerException ex) {

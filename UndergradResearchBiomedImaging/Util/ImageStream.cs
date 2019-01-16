@@ -298,8 +298,9 @@ namespace UndergradResearchBiomedImaging.Util {
 									newImage = imageBuffer;
 								}
 							}else if(StreamSource == StreamType.Camera) {
+								if (!camera.IsStreaming) camera.StartStream();
 								if (camera.GetNextImage(out newImage)) effectiveSource = StreamType.Camera;
-								else newImage = null;//endStream();
+								else endStream();
 							} else { //Attempt to grab a frame from the source.
 								Mat temp = new Mat(); //Give a place for the grabbed image to go.
 								if (grabImage(temp)) {
@@ -428,7 +429,6 @@ namespace UndergradResearchBiomedImaging.Util {
 					this.camera = camera;
 					if (!setupCapture(true)) return false;
 					StreamSource = StreamType.Camera;
-					if (!camera.IsStreaming) camera.StartStream(); 
 					OnSourceChanged?.Invoke(this, StreamType.Camera);
 					return true;
 				}

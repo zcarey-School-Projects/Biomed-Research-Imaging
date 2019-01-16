@@ -28,7 +28,8 @@ namespace UndergradResearchBiomedImaging {
 	public partial class ControlForm : Form {
 
 		private static readonly object inputLock = new object();
-		private ImageStream input;
+		//private ImageStream input;
+		private FlirCameraStream stream;
 		private FlirCameraManager cameraManager = new FlirCameraManager();
 		private CameraOptionsUI cameraOptions;
 		private bool initialized = false;
@@ -48,17 +49,20 @@ namespace UndergradResearchBiomedImaging {
 				InitializeComponent();
 				initializeMenuStrips();
 
-				input = new ImageStream();
+				/*input = new ImageStream();
 				input.OnNewImage += OnNewImage;
-				input.OnStreamEnded += OnStreamEnded;
+				input.OnStreamEnded += OnStreamEnded;*/
+				stream = new FlirCameraStream();
+				stream.OnNewImage += OnNewImage;
+				//stream.OnSourceChanged += OnSourceChanged;
 
-				cameraOptions = new CameraOptionsUI(SettingsPanel, input);
+				//TODO cameraOptions = new CameraOptionsUI(SettingsPanel, input);
 				initialized = true;
 			}
 		}
 
 		private void initializeMenuStrips() {
-			TestMenuStrip.DropDownItems.Add(new TestPatternMenuStrip(input));
+			//TODO TestMenuStrip.DropDownItems.Add(new TestPatternMenuStrip(input));
 		}
 
 		private void ControlForm_Load(object sender, EventArgs e) {
@@ -66,22 +70,48 @@ namespace UndergradResearchBiomedImaging {
 		}
 
 		private void ControlForm_FormClosing(object sender, FormClosingEventArgs e) {
-			lock (this) {
+			//lock (this) {
 				initialized = false;
-				input.Stop();
-			}
+				stream.Dispose();
+				//input.Stop();
+			//}
 		}
-
+		/*
 		private void OnNewImage(ImageStream sender, Bitmap image) {
 			lock (this) {
 				if (!initialized) return;
-				Action setCameraFeed = new Action(() => { CameraFeed.Image = image; });
+				Action setCameraFeed = new Action(() => {
+					Image old = CameraFeed.Image;
+					if (old != null) {
+						CameraFeed.Image = null; //TODO Is this needed?
+						old.Dispose();
+					}
+					CameraFeed.Image = image;
+				});
 				Action setFPSLabel = new Action(() => { FPSStatusLabel.Text = sender.FPS.ToString("N2"); });
-				if (CameraFeed.InvokeRequired) CameraFeed.BeginInvoke(setCameraFeed);
+				if (CameraFeed.InvokeRequired) CameraFeed.Invoke(setCameraFeed);
 				else setCameraFeed();
 				setFPSLabel(); //TODO Is this needed?
 				//this.BeginInvoke(new Action(() => { CameraFeed.Image = image; }));
 				//this.BeginInvoke(new Action(() => { FPSStatusLabel.Text = FPS.ToString("N2"); }));
+			}
+		}*/
+
+		private void OnNewImage(FlirCameraStream sender, Bitmap NewImage) {
+			Action setCameraFeed = new Action(() => {
+				Image old = CameraFeed.Image;
+				if(old != null) {
+					CameraFeed.Image = null; //TODO is this needed?
+					old.Dispose();
+				}
+				CameraFeed.Image = NewImage;
+			});
+
+			lock (this) {
+				if (CameraFeed.InvokeRequired) CameraFeed.Invoke(setCameraFeed);
+				else setCameraFeed();
+
+				FPSStatusLabel.Text = sender.FPS.ToString("N2");
 			}
 		}
 
@@ -94,9 +124,10 @@ namespace UndergradResearchBiomedImaging {
 
 		private void ScreenshotMenuItem_Click(object sender, EventArgs e) {
 			lock (inputLock) {
-				if (input != null) {
+				/*if (input != null) {
 					input.PromptUserSaveScreenshot();
-				}
+				}*/
+				//TODO screenshot
 			}
 		}
 
@@ -111,16 +142,18 @@ namespace UndergradResearchBiomedImaging {
 				CameraInfo info = cameraManager.GetCameraInformation(0);
 				lock (inputLock) {
 					FlirCamera cam = cameraManager.OpenCamera(0);
-					input.SelectCamera(cam);
-					input.Play();
+					stream.SelectCamera(cam);
+					//input.SelectCamera(cam);
+					//input.Play();
 				}
 			}
 			
 		}
 
 		private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
-			input.PromptUserLoadFile();
-			input.Play();
+			/*input.PromptUserLoadFile();
+			input.Play();*/
+			//TODO load files
 		}
 
 		private void NumericStagePosition_ValueChanged(object sender, EventArgs e) {
