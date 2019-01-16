@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging {
+namespace UndergradResearchBiomedImaging.Flir {
 
 	public class FlirCameraManager : IDisposable{
 
@@ -39,8 +39,10 @@ namespace UndergradResearchBiomedImaging {
 		}
 
 		public int DetectCameras() {
+			spinnaker.UpdateCameras();
 			cameras = spinnaker.GetCameras();
 			if (cameras == null) cameras = new List<IManagedCamera>();
+			Console.WriteLine("{0} Flir camera{1} detected.", cameras.Count, (cameras.Count > 1) ? "s were" : " was");
 			return cameras.Count;
 		}
 
@@ -53,9 +55,9 @@ namespace UndergradResearchBiomedImaging {
 			return new CameraInfo(cameras[index]);
 		}
 
-		public FlirCameraInput OpenCamera(int index) {
+		public FlirCamera OpenCamera(int index) {
 			if (index < 0 || index >= cameras.Count) return null;
-			return new FlirCameraInput(cameras[index]);
+			return new FlirCamera(cameras[index]);
 		}
 
 	}

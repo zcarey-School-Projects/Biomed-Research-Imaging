@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UndergradResearchBiomedImaging.Flir;
 
 //using Windows.Media.Capture;
 //using System.Windows.Storage;
@@ -44,7 +45,7 @@ namespace UndergradResearchBiomedImaging {
 
 		private void ControlForm_Load(object sender, EventArgs e) {
 			streamThread.Start();
-			populatePropertiesList(null, null);
+			//TODO populatePropertiesList(null, null);
 		}
 
 		private void streamThreadCall() {
@@ -80,16 +81,16 @@ namespace UndergradResearchBiomedImaging {
 			cameraManager.DetectCameras();
 			if(cameraManager.NumberOfAvailableCameras() > 0) {
 				string version = cameraManager.GetSpinnakerLibraryVersion();
-				CameraInfo info = cameraManager.GetCameraInformation(0);
-				populatePropertiesList(version, info);
+				//CameraInfo info = cameraManager.GetCameraInformation(0);
+				//populatePropertiesList(version, info);
 				lock (inputLock) {
-					input = cameraManager.OpenCamera(0);
+					input = new FlirCameraInput(cameraManager.OpenCamera(0));
 					input.Play();
 				}
 			}
 			
 		}
-
+		/*
 		private void populatePropertiesList(string version, CameraInfo info) {
 			CameraProperties.Clear();
 			CameraProperties.Columns.Add("Property", CameraProperties.Width / 2, HorizontalAlignment.Left);
@@ -112,7 +113,7 @@ namespace UndergradResearchBiomedImaging {
 			}
 
 		}
-
+		*/
 		private void CameraProperties_Resize(object sender, EventArgs e) {
 			foreach(ColumnHeader col in CameraProperties.Columns) {
 				col.Width = CameraProperties.Width / CameraProperties.Columns.Count;

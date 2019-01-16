@@ -40,6 +40,7 @@
 			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			this.SettingsPanel = new System.Windows.Forms.Panel();
 			this.StatusStrip.SuspendLayout();
 			this.MenuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).BeginInit();
@@ -54,7 +55,7 @@
 			this.StatusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FPSStatusLabel});
-			this.StatusStrip.Location = new System.Drawing.Point(0, 443);
+			this.StatusStrip.Location = new System.Drawing.Point(0, 584);
 			this.StatusStrip.Name = "StatusStrip";
 			this.StatusStrip.Size = new System.Drawing.Size(851, 25);
 			this.StatusStrip.TabIndex = 1;
@@ -97,7 +98,7 @@
 			// ConnectBtn
 			// 
 			this.ConnectBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.ConnectBtn.Location = new System.Drawing.Point(15, 401);
+			this.ConnectBtn.Location = new System.Drawing.Point(15, 542);
 			this.ConnectBtn.Name = "ConnectBtn";
 			this.ConnectBtn.Size = new System.Drawing.Size(75, 23);
 			this.ConnectBtn.TabIndex = 4;
@@ -113,7 +114,7 @@
 			this.CameraFeed.BackColor = System.Drawing.Color.Black;
 			this.CameraFeed.Location = new System.Drawing.Point(3, 3);
 			this.CameraFeed.Name = "CameraFeed";
-			this.CameraFeed.Size = new System.Drawing.Size(527, 358);
+			this.CameraFeed.Size = new System.Drawing.Size(536, 325);
 			this.CameraFeed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.CameraFeed.TabIndex = 3;
 			this.CameraFeed.TabStop = false;
@@ -140,7 +141,7 @@
             listViewItem4});
 			this.CameraProperties.Location = new System.Drawing.Point(3, 3);
 			this.CameraProperties.Name = "CameraProperties";
-			this.CameraProperties.Size = new System.Drawing.Size(284, 358);
+			this.CameraProperties.Size = new System.Drawing.Size(280, 325);
 			this.CameraProperties.TabIndex = 6;
 			this.CameraProperties.UseCompatibleStateImageBehavior = false;
 			this.CameraProperties.View = System.Windows.Forms.View.Details;
@@ -156,8 +157,7 @@
 			// 
 			// splitContainer1
 			// 
-			this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+			this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
 			this.splitContainer1.Location = new System.Drawing.Point(12, 31);
@@ -170,15 +170,24 @@
 			// splitContainer1.Panel2
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.CameraProperties);
-			this.splitContainer1.Size = new System.Drawing.Size(827, 364);
-			this.splitContainer1.SplitterDistance = 533;
+			this.splitContainer1.Size = new System.Drawing.Size(827, 331);
+			this.splitContainer1.SplitterDistance = 537;
 			this.splitContainer1.TabIndex = 8;
+			// 
+			// SettingsPanel
+			// 
+			this.SettingsPanel.AutoScroll = true;
+			this.SettingsPanel.Location = new System.Drawing.Point(552, 368);
+			this.SettingsPanel.Name = "SettingsPanel";
+			this.SettingsPanel.Size = new System.Drawing.Size(287, 197);
+			this.SettingsPanel.TabIndex = 9;
 			// 
 			// ControlForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(851, 468);
+			this.ClientSize = new System.Drawing.Size(851, 609);
+			this.Controls.Add(this.SettingsPanel);
 			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.ConnectBtn);
 			this.Controls.Add(this.StatusStrip);
@@ -213,6 +222,7 @@
 		private System.Windows.Forms.ColumnHeader columnHeader1;
 		private System.Windows.Forms.ColumnHeader columnHeader2;
 		private System.Windows.Forms.SplitContainer splitContainer1;
+		private System.Windows.Forms.Panel SettingsPanel;
 	}
 }
 
