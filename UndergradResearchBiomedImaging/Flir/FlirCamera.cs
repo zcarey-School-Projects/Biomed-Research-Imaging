@@ -39,37 +39,12 @@ namespace UndergradResearchBiomedImaging.Flir {
 			INodeMap node = camera.GetNodeMap();
 
 			// Set acquisition mode to continuous
-			/*IEnum iAcquisitionMode = node.GetNode<IEnum>("AcquisitionMode");
-			if (iAcquisitionMode == null || !iAcquisitionMode.IsWritable) {
-				throw new SpinnakerException("Unable to set acquisition mode to continuous(node retrieval).");
-			}
-
-			IEnumEntry iAcquisitionModeContinuous = iAcquisitionMode.GetEntryByName("Continuous");
-			if (iAcquisitionModeContinuous == null || !iAcquisitionMode.IsReadable) {
-				throw new SpinnakerException("Unable to set acquisition mode to continuous(entry retrieval).");
-			}
-
-			iAcquisitionMode.Value = iAcquisitionModeContinuous.Value;
-			*/
 			if (!Properties.AcquisitionMode.TrySetValue(AcquisitionModeEnums.Continuous)) {
 				throw new SpinnakerException("Unable to set acquisition mode to continuous.");
 			}
 			Console.WriteLine("Acquisition mode set to continuous...");
 
 			//Set camera to color mode
-			/*IEnum pixelFormat = node.GetNode<IEnum>("PixelFormat");
-
-			if (pixelFormat != null && pixelFormat.IsWritable) {
-				IEnumEntry pixelFormatBgr8 = pixelFormat.GetEntryByName("RGB8");
-				if (pixelFormatBgr8 != null && pixelFormatBgr8.IsReadable) {
-					pixelFormat.Value = pixelFormatBgr8.Value;
-					Console.WriteLine("Pixel format set to {0}...", pixelFormat.Value.String);
-				} else {
-					Console.WriteLine("Pixel format '{0}' is not available.", ((pixelFormatBgr8 != null) ? pixelFormatBgr8.ToString() : "???"));
-				}
-			} else {
-				Console.WriteLine("Pixel format is not available.");
-			}*/
 			if (!Properties.PixelFormat.TrySetValue(PixelFormatEnums.RGB8)) {
 				throw new SpinnakerException("Could not set PixelFormat to RGB");
 			} else {
@@ -80,7 +55,7 @@ namespace UndergradResearchBiomedImaging.Flir {
 		}
 
 		public void ResumeAcquisition() {
-		//	if(camera.IsStreaming()) camera.BeginAcquisition();
+		//TODO stuff	if(camera.IsStreaming()) camera.BeginAcquisition();
 		}
 
 		public void EndAcquisition() {
