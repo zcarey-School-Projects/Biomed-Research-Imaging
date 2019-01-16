@@ -88,6 +88,13 @@
     <Compile Include="ExampleFlir\SaveToAvi_CSharp.cs" />
     <Compile Include="Flir\FlirCamera.cs" />
     <Compile Include="Flir\FlirCameraManager.cs" />
+    <Compile Include="Flir\FlirProperties.cs" />
+    <Compile Include="Flir\Nodes\BaseNode.cs" />
+    <Compile Include="Flir\Nodes\EnumNode.cs" />
+    <Compile Include="Flir\Nodes\FloatNode.cs" />
+    <Compile Include="Flir\Nodes\IntegerNode.cs" />
+    <Compile Include="Flir\Nodes\NumericalNode.cs" />
+    <Compile Include="Flir\Nodes\StringNode.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -13,13 +13,13 @@ namespace UndergradResearchBiomedImaging.Flir {
 	public class FlirCamera : IDisposable {
 
 		private IManagedCamera camera;
-		//public FlirProperties Properties { get; private set; }
+		public FlirProperties Properties { get; private set; }
 		private bool initialized = false;
 		public bool IsStreaming { get => camera.IsStreaming(); }
 
 		public FlirCamera(IManagedCamera cam) {
 			this.camera = cam;
-			//this.Properties = new FlirProperties(cam);
+			this.Properties = new FlirProperties(cam);
 			camera.Init();
 			if (camera.IsInitialized()) {
 				initialized = true;
@@ -39,7 +39,7 @@ namespace UndergradResearchBiomedImaging.Flir {
 			INodeMap node = camera.GetNodeMap();
 
 			// Set acquisition mode to continuous
-			IEnum iAcquisitionMode = node.GetNode<IEnum>("AcquisitionMode");
+			/*IEnum iAcquisitionMode = node.GetNode<IEnum>("AcquisitionMode");
 			if (iAcquisitionMode == null || !iAcquisitionMode.IsWritable) {
 				throw new SpinnakerException("Unable to set acquisition mode to continuous(node retrieval).");
 			}
@@ -50,14 +50,14 @@ namespace UndergradResearchBiomedImaging.Flir {
 			}
 
 			iAcquisitionMode.Value = iAcquisitionModeContinuous.Value;
-
+			*/
+			if (!Properties.AcquisitionMode.TrySetValue(AcquisitionModeEnums.Continuous)) {
+				throw new SpinnakerException("Unable to set acquisition mode to continuous.");
+			}
 			Console.WriteLine("Acquisition mode set to continuous...");
 
 			//Set camera to color mode
-			IEnum pixelFormat = node.GetNode<IEnum>("PixelFormat");
-			foreach (IEnumEntry entry in pixelFormat.Entries) {
-				//Console.WriteLine(entry.DisplayName);
-			}
+			/*IEnum pixelFormat = node.GetNode<IEnum>("PixelFormat");
 
 			if (pixelFormat != null && pixelFormat.IsWritable) {
 				IEnumEntry pixelFormatBgr8 = pixelFormat.GetEntryByName("RGB8");
@@ -69,6 +69,11 @@ namespace UndergradResearchBiomedImaging.Flir {
 				}
 			} else {
 				Console.WriteLine("Pixel format is not available.");
+			}*/
+			if (!Properties.PixelFormat.TrySetValue(PixelFormatEnums.RGB8)) {
+				throw new SpinnakerException("Could not set PixelFormat to RGB");
+			} else {
+				Console.WriteLine("Pixel format set to RGB.");
 			}
 
 			camera.BeginAcquisition();
