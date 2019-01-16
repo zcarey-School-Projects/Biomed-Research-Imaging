@@ -117,6 +117,7 @@
     <Compile Include="RobotHelpers\Serial\SerialUIListener.cs" />
     <Compile Include="UI\OptionsCategories\CameraOptionsUI.cs" />
     <Compile Include="UI\OptionsCategories\Options\CameraInfoUI.cs" />
+    <Compile Include="UI\OptionsCategories\Options\GainUI.cs" />
     <Compile Include="UI\OptionsCategories\Options\IOptionsUI.cs" />
     <Compile Include="UI\Options\EnumEntry.cs" />
     <Compile Include="UI\Options\FloatEntry.cs" />

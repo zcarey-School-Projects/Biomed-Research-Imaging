@@ -23,12 +23,6 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Item 1",
-            "Lol"}, -1);
-			System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Item 2");
-			System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Item 3");
-			System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Item 4");
 			this.StatusStrip = new System.Windows.Forms.StatusStrip();
 			this.FPSStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.MenuStrip = new System.Windows.Forms.MenuStrip();
@@ -36,9 +30,6 @@
 			this.ScreenshotMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ConnectBtn = new System.Windows.Forms.Button();
 			this.CameraFeed = new System.Windows.Forms.PictureBox();
-			this.CameraProperties = new System.Windows.Forms.ListView();
-			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.SettingsPanel = new System.Windows.Forms.Panel();
 			this.StatusStrip.SuspendLayout();
@@ -55,7 +46,7 @@
 			this.StatusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FPSStatusLabel});
-			this.StatusStrip.Location = new System.Drawing.Point(0, 584);
+			this.StatusStrip.Location = new System.Drawing.Point(0, 426);
 			this.StatusStrip.Name = "StatusStrip";
 			this.StatusStrip.Size = new System.Drawing.Size(851, 25);
 			this.StatusStrip.TabIndex = 1;
@@ -98,7 +89,7 @@
 			// ConnectBtn
 			// 
 			this.ConnectBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.ConnectBtn.Location = new System.Drawing.Point(15, 542);
+			this.ConnectBtn.Location = new System.Drawing.Point(15, 384);
 			this.ConnectBtn.Name = "ConnectBtn";
 			this.ConnectBtn.Size = new System.Drawing.Size(75, 23);
 			this.ConnectBtn.TabIndex = 4;
@@ -120,44 +111,10 @@
 			this.CameraFeed.TabStop = false;
 			this.CameraFeed.Resize += new System.EventHandler(this.CameraFeed_Resize);
 			// 
-			// CameraProperties
-			// 
-			this.CameraProperties.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.CameraProperties.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-			this.CameraProperties.FullRowSelect = true;
-			this.CameraProperties.GridLines = true;
-			listViewItem1.StateImageIndex = 0;
-			listViewItem2.StateImageIndex = 0;
-			listViewItem3.StateImageIndex = 0;
-			listViewItem4.StateImageIndex = 0;
-			this.CameraProperties.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4});
-			this.CameraProperties.Location = new System.Drawing.Point(3, 3);
-			this.CameraProperties.Name = "CameraProperties";
-			this.CameraProperties.Size = new System.Drawing.Size(280, 325);
-			this.CameraProperties.TabIndex = 6;
-			this.CameraProperties.UseCompatibleStateImageBehavior = false;
-			this.CameraProperties.View = System.Windows.Forms.View.Details;
-			this.CameraProperties.Resize += new System.EventHandler(this.CameraProperties_Resize);
-			// 
-			// columnHeader1
-			// 
-			this.columnHeader1.Text = "Col1";
-			// 
-			// columnHeader2
-			// 
-			this.columnHeader2.Text = "Col2";
-			// 
 			// splitContainer1
 			// 
-			this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
 			this.splitContainer1.Location = new System.Drawing.Point(12, 31);
@@ -169,7 +126,7 @@
 			// 
 			// splitContainer1.Panel2
 			// 
-			this.splitContainer1.Panel2.Controls.Add(this.CameraProperties);
+			this.splitContainer1.Panel2.Controls.Add(this.SettingsPanel);
 			this.splitContainer1.Size = new System.Drawing.Size(827, 331);
 			this.splitContainer1.SplitterDistance = 537;
 			this.splitContainer1.TabIndex = 8;
@@ -177,17 +134,16 @@
 			// SettingsPanel
 			// 
 			this.SettingsPanel.AutoScroll = true;
-			this.SettingsPanel.Location = new System.Drawing.Point(552, 368);
+			this.SettingsPanel.Location = new System.Drawing.Point(4, 3);
 			this.SettingsPanel.Name = "SettingsPanel";
-			this.SettingsPanel.Size = new System.Drawing.Size(287, 197);
+			this.SettingsPanel.Size = new System.Drawing.Size(279, 325);
 			this.SettingsPanel.TabIndex = 9;
 			// 
 			// ControlForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(851, 609);
-			this.Controls.Add(this.SettingsPanel);
+			this.ClientSize = new System.Drawing.Size(851, 451);
 			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.ConnectBtn);
 			this.Controls.Add(this.StatusStrip);
@@ -218,9 +174,6 @@
 		private System.Windows.Forms.ToolStripMenuItem ScreenshotMenuItem;
 		private System.Windows.Forms.Button ConnectBtn;
 		private System.Windows.Forms.PictureBox CameraFeed;
-		private System.Windows.Forms.ListView CameraProperties;
-		private System.Windows.Forms.ColumnHeader columnHeader1;
-		private System.Windows.Forms.ColumnHeader columnHeader2;
 		private System.Windows.Forms.SplitContainer splitContainer1;
 		private System.Windows.Forms.Panel SettingsPanel;
 	}

@@ -119,11 +119,8 @@ namespace UndergradResearchBiomedImaging {
 
 		}
 		*/
-		private void CameraProperties_Resize(object sender, EventArgs e) {
-			foreach(ColumnHeader col in CameraProperties.Columns) {
-				col.Width = CameraProperties.Width / CameraProperties.Columns.Count;
-			}
-		}
+
+		//TODO make reset buttons for options to set to defaults.
 
 	}
 }
