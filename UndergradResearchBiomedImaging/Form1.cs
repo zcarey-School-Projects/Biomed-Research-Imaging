@@ -99,16 +99,16 @@ namespace UndergradResearchBiomedImaging {
 
 		private void OnNewImage(FlirCameraStream sender, Bitmap NewImage) {
 			Action setCameraFeed = new Action(() => {
-				Image old = CameraFeed.Image;
+				/*Image old = CameraFeed.Image;
 				if(old != null) {
 					CameraFeed.Image = null; //TODO is this needed?
 					old.Dispose();
-				}
+				}*/
 				CameraFeed.Image = NewImage;
 			});
 
 			lock (this) {
-				if (CameraFeed.InvokeRequired) CameraFeed.Invoke(setCameraFeed);
+				if (CameraFeed.InvokeRequired) CameraFeed.BeginInvoke(setCameraFeed);
 				else setCameraFeed();
 
 				FPSStatusLabel.Text = sender.FPS.ToString("N2");
