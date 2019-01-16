@@ -17,9 +17,9 @@ namespace UndergradResearchBiomedImaging.Flir {
 		private bool initialized = false;
 		public bool IsStreaming { get => camera.IsStreaming(); }
 
-		public FlirCamera(IManagedCamera cam) {
+		public FlirCamera(FlirCameraManager manager, IManagedCamera cam) {
 			this.camera = cam;
-			this.Properties = new FlirProperties(cam);
+			this.Properties = new FlirProperties(manager.GetSpinnakerLibraryVersion(), cam);
 			camera.Init();
 			if (camera.IsInitialized()) {
 				initialized = true;
@@ -60,6 +60,11 @@ namespace UndergradResearchBiomedImaging.Flir {
 
 		public void EndAcquisition() {
 			if(initialized && camera.IsStreaming()) camera.EndAcquisition();
+			//TODO crash report
+			/*
+			 System.ObjectDisposedException: 'Cannot access a disposed object.
+				Object name: 'SpinnakerNET.ManagedCamera'.'
+			 */
 		}
 
 		public Image<Bgr, byte> GrabImage() {

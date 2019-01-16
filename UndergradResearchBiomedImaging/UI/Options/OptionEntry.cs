@@ -20,13 +20,13 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 		private ControlType entryControl;
 		private bool ignoreValueChanged = false;
 
-		private Property<FlirCamera, TNode> cameraProperty;
+		private Property<FlirProperties, TNode> cameraProperty;
 
-		private ImageStream input;
+		private FlirCameraInput input;
 
 		public override int Height { get; protected set; } = 28;
 
-		public OptionEntry(string name, Property<FlirCamera, TNode> property, ImageStream input) {
+		public OptionEntry(string name, Property<FlirProperties, TNode> property, FlirCameraInput input) {
 			this.input = input;
 			this.cameraProperty = property;
 
@@ -119,10 +119,10 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 		private TNode getNode() {
 			lock (ControlLock) {
 				if (input == null) return null;
-				FlirCamera camera = input.camera;
+				FlirCamera camera = input.Camera;
 				if (camera == null) return null;
 				object val = null;
-				if (!cameraProperty.TryGet(camera, ref val)) return null;
+				if (!cameraProperty.TryGet(camera.Properties, ref val)) return null;
 				if (val == null) return null;
 				if (!(val is TNode)) return null;
 

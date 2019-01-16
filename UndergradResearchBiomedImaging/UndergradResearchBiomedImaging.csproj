@@ -126,6 +126,8 @@
     <Compile Include="UI\Options\OptionEntry.cs" />
     <Compile Include="UI\Options\OptionsCategory.cs" />
     <Compile Include="UI\Options\OptionsPanel.cs" />
+    <Compile Include="UI\Options\StringEntry.cs" />
+    <Compile Include="Util\Property.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

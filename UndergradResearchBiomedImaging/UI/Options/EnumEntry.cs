@@ -17,7 +17,7 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 		private EnumType defaultValue;
 		private Dictionary<int, EnumType> listValues = new Dictionary<int, EnumType>();
 
-		public EnumEntry(string name, EnumType DefaultValue, EnumType? IgnoreCase, Property<FlirCamera, EnumNode<EnumType>> property, ImageStream input) : base(name, property, input) {
+		public EnumEntry(string name, EnumType DefaultValue, EnumType? IgnoreCase, Property<FlirProperties, EnumNode<EnumType>> property, FlirCameraInput input) : base(name, property, input) {
 			defaultValue = DefaultValue;
 			ignoreCase = IgnoreCase;
 		}

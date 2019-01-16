@@ -13,6 +13,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UndergradResearchBiomedImaging.Flir;
+using UndergradResearchBiomedImaging.UI.OptionsCategories;
 
 //using Windows.Media.Capture;
 //using System.Windows.Storage;
@@ -21,10 +22,11 @@ namespace UndergradResearchBiomedImaging {
 	public partial class ControlForm : Form {
 
 		private static readonly object inputLock = new object();
-		private InputHandler input;
+		private readonly FlirCameraInput input = new FlirCameraInput();
 		private Thread streamThread;
 		private FPSCounter fpsCounter = new FPSCounter();
 		private FlirCameraManager cameraManager = new FlirCameraManager();
+		private CameraOptionsUI cameraOptions;
 
 		//private static SaveFileDialog saveDialog;
 		
@@ -41,6 +43,8 @@ namespace UndergradResearchBiomedImaging {
 			streamThread = new Thread(streamThreadCall);
 			streamThread.Name = "Stream Thread";
 			streamThread.IsBackground = true;
+
+			cameraOptions = new CameraOptionsUI(SettingsPanel, input);
 		}
 
 		private void ControlForm_Load(object sender, EventArgs e) {
@@ -80,12 +84,13 @@ namespace UndergradResearchBiomedImaging {
 		private void ConnectBtn_Click(object sender, EventArgs e) {
 			cameraManager.DetectCameras();
 			if(cameraManager.NumberOfAvailableCameras() > 0) {
-				string version = cameraManager.GetSpinnakerLibraryVersion();
+				//string version = cameraManager.GetSpinnakerLibraryVersion();
 				//CameraInfo info = cameraManager.GetCameraInformation(0);
 				//populatePropertiesList(version, info);
 				lock (inputLock) {
-					input = new FlirCameraInput(cameraManager.OpenCamera(0));
+					input.SetCamera(cameraManager.OpenCamera(0));
 					input.Play();
+					cameraOptions.Update();
 				}
 			}
 			

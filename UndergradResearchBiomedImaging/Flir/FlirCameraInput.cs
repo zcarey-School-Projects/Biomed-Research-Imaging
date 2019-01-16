@@ -13,33 +13,47 @@ using SpinnakerNET.GenApi;
 namespace UndergradResearchBiomedImaging.Flir {
 	public class FlirCameraInput : InputHandler {
 
-		private FlirCamera camera;
+		public FlirCamera Camera { get; private set; }
 		//private INodeMap node;
 		private bool isStreaming = false;
 
+		public FlirCameraInput() {
+
+		}
+
 		public FlirCameraInput(FlirCamera camera) {
-			try {
-				this.camera = camera;
-				camera.BeginAcquisition(); 
-			} catch(SpinnakerException ex) {
-				camera = null;
-				//node = null;
-				Console.WriteLine("Error: " + ex.Message);
+			SetCamera(camera);
+		}
+
+		public void SetCamera(FlirCamera camera) {
+			lock (inputLock) {
+				Dispose();
+				try {
+					this.Camera = camera;
+					camera.BeginAcquisition();
+				} catch (SpinnakerException ex) {
+					camera = null;
+					//node = null;
+					Console.WriteLine("Error: " + ex.Message);
+				}
 			}
+			
 		}
 
 		protected override void onDispose() {
-			if (camera != null) {
-				camera.EndAcquisition();
-				camera.Dispose();
+			if (Camera != null) {
+				Camera.EndAcquisition();
+				//Camera.Dispose();
 			}
 		}
 
 		public override int GetHeight() {
+			//TODO height
 			throw new NotImplementedException();
 		}
 
 		public override int GetWidth() {
+			//TODO wifth
 			throw new NotImplementedException();
 		}
 
@@ -50,24 +64,29 @@ namespace UndergradResearchBiomedImaging.Flir {
 		protected override bool isNextFrameAvailable() {
 			//throw new NotImplementedException();
 			//TODO check camera stream
-			return isStreaming;
+			return (Camera != null) && isStreaming;
 		}
 
 		protected override Image<Bgr, byte> readFrame() {
-			return camera.GrabImage();
+			if (Camera != null) return Camera.GrabImage();
+
+			return null;
 		}
 
 		public override void Play() {
-			camera.ResumeAcquisition();
-			isStreaming = true;
-			base.Play();
-
+			lock (inputLock) {
+				Camera.ResumeAcquisition();
+				isStreaming = true;
+				base.Play();
+			}
 		}
 
 		public override void Pause() {
-			base.Pause();
-			isStreaming = false;
-			camera.EndAcquisition();
+			lock (inputLock) {
+				base.Pause();
+				isStreaming = false;
+				Camera.EndAcquisition();
+			}
 		}
 	}
 }

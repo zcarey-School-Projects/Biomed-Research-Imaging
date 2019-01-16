@@ -15,7 +15,7 @@ namespace UndergradResearchBiomedImaging.UI.OptionsCategories {
 				public event CameraConnectionHandler OnCameraConnected;
 				public event CameraConnectionHandler OnCameraDisconnected;
 				*/
-		public FlirProperties FakeProperties { get; } = new FlirProperties(null);
+		public FlirProperties FakeProperties { get; } = new FlirProperties("null", null);
 		public FlirCamera Camera { get; private set; }
 		public FlirCameraInput Input { get; private set; }
 		private OptionsPanel panel;
@@ -26,19 +26,23 @@ namespace UndergradResearchBiomedImaging.UI.OptionsCategories {
 			this.panel = new OptionsPanel(Panel);
 			this.Input = input;
 
-			options.Add(new GainUI(this, panel));
+			options.Add(new CameraInfoUI(this, panel));
 
-			input.OnSourceChanged += onSourceChanged;
-			input.OnStreamEnded += onStreamEnded;
+			//TODO add events from stream input.on
+			//input.OnStreamEnded += onStreamEnded;
 		}
 
-		private void onSourceChanged(ImageStream sender, StreamType newSource) {
+		public void Update() {
+			panel.Update();
+		}
+		/*
+		private void onSourceChanged(FlirCameraInput sender, FlirCamera NewSource) {
 			panel.Update();
 		}
 
 		private void onStreamEnded(ImageStream sender) {
 			panel.Update();
 		}
-
+		*/
 	}
 }

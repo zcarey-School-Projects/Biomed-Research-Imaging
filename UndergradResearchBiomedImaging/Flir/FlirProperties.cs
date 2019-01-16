@@ -8,7 +8,9 @@ using UndergradResearchBiomedImaging.Flir.Nodes;
 
 namespace UndergradResearchBiomedImaging.Flir {
 
-	public class FlirProperties {
+	public class FlirProperties { 
+
+		public string SpinnakerLibraryVersion { get; private set; }
 
 		public EnumNode<PixelFormatEnums> PixelFormat { get; private set; }
 		public EnumNode<AcquisitionModeEnums> AcquisitionMode { get; private set; }
@@ -37,7 +39,9 @@ namespace UndergradResearchBiomedImaging.Flir {
 		public IntegerNode Width { get; private set; }
 		public IntegerNode Height { get; private set; }
 
-		public FlirProperties(IManagedCamera camera) {
+		public FlirProperties(string spinnakerLibraryVersion, IManagedCamera camera) {
+			SpinnakerLibraryVersion = spinnakerLibraryVersion;
+
 			PixelFormat = new EnumNode<PixelFormatEnums>(camera, "PixelFormat");
 			AcquisitionMode = new EnumNode<AcquisitionModeEnums>(camera, "AcquisitionMode");
 			TestPattern = new EnumNode<TestPatternEnums>(camera, "TestPattern");
