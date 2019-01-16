@@ -299,7 +299,7 @@ namespace UndergradResearchBiomedImaging.Util {
 								}
 							}else if(StreamSource == StreamType.Camera) {
 								if (camera.GetNextImage(out newImage)) effectiveSource = StreamType.Camera;
-								else endStream();
+								else newImage = null;//endStream();
 							} else { //Attempt to grab a frame from the source.
 								Mat temp = new Mat(); //Give a place for the grabbed image to go.
 								if (grabImage(temp)) {
@@ -318,7 +318,14 @@ namespace UndergradResearchBiomedImaging.Util {
 						//Appropriately set the TargetFPS, and if needed, calculate the estimated FPS
 						if (effectiveSource == StreamType.None) TargetFPS = 0;
 						else {
-							TargetFPS = (effectiveSource == StreamType.Image) ? imageFPS : (float)capture.GetCaptureProperty(CapProp.Fps);
+							if (effectiveSource == StreamType.Image) {
+								TargetFPS = imageFPS;
+							} else if(capture != null) {
+								TargetFPS = (float)capture.GetCaptureProperty(CapProp.Fps);
+							} else {
+								//In the case of a camera, for example
+								TargetFPS = 0;
+							}
 							FPS = fpsCounter.Tick();
 						}
 
@@ -330,7 +337,10 @@ namespace UndergradResearchBiomedImaging.Util {
 
 					if (effectiveSource == StreamType.None) delayMS = 1; //If there is no stream, we want a small wait to look for a new input.
 					else {
-						OnNewImage?.Invoke(this, newImage); //If there is a stream, we want to invoke the new image grabbed, even if it was empty or null.
+						if(OnNewImage != null) {
+							OnNewImage(this, newImage);
+						}
+						//OnNewImage?.Invoke(this, newImage); //If there is a stream, we want to invoke the new image grabbed, even if it was empty or null.
 						if (effectiveSource != StreamType.Camera) delayMS = (int)(1000 / TargetFPS); //Calculate the ms each frame should last
 					}
 
@@ -371,6 +381,7 @@ namespace UndergradResearchBiomedImaging.Util {
 				}
 
 				if (capture != null) capture.Dispose();
+				if (camera != null) camera.EndStream();
 				camera = null;
 				capture = null;
 				imageBuffer = null;
@@ -417,6 +428,7 @@ namespace UndergradResearchBiomedImaging.Util {
 					this.camera = camera;
 					if (!setupCapture(true)) return false;
 					StreamSource = StreamType.Camera;
+					if (!camera.IsStreaming) camera.StartStream(); 
 					OnSourceChanged?.Invoke(this, StreamType.Camera);
 					return true;
 				}

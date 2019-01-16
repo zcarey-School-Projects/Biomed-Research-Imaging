@@ -31,6 +31,7 @@ namespace UndergradResearchBiomedImaging {
 		private ImageStream input;
 		private FlirCameraManager cameraManager = new FlirCameraManager();
 		private CameraOptionsUI cameraOptions;
+		private bool initialized = false;
 
 		//private static SaveFileDialog saveDialog;
 		
@@ -43,14 +44,17 @@ namespace UndergradResearchBiomedImaging {
 		}*/
 
 		public ControlForm() {
-			InitializeComponent();
-			initializeMenuStrips();
+			lock (this) {
+				InitializeComponent();
+				initializeMenuStrips();
 
-			input = new ImageStream();
-			input.OnNewImage += OnNewImage;
-			input.OnStreamEnded += OnStreamEnded;
+				input = new ImageStream();
+				input.OnNewImage += OnNewImage;
+				input.OnStreamEnded += OnStreamEnded;
 
-			cameraOptions = new CameraOptionsUI(SettingsPanel, input);
+				cameraOptions = new CameraOptionsUI(SettingsPanel, input);
+				initialized = true;
+			}
 		}
 
 		private void initializeMenuStrips() {
@@ -61,13 +65,29 @@ namespace UndergradResearchBiomedImaging {
 			
 		}
 
+		private void ControlForm_FormClosing(object sender, FormClosingEventArgs e) {
+			lock (this) {
+				initialized = false;
+				input.Stop();
+			}
+		}
+
 		private void OnNewImage(ImageStream sender, Bitmap image) {
-			this.BeginInvoke(new Action(() => { CameraFeed.Image = image; }));
-			float FPS = sender.FPS;
-			this.BeginInvoke(new Action(() => { FPSStatusLabel.Text = FPS.ToString("N2"); }));
+			lock (this) {
+				if (!initialized) return;
+				Action setCameraFeed = new Action(() => { CameraFeed.Image = image; });
+				Action setFPSLabel = new Action(() => { FPSStatusLabel.Text = sender.FPS.ToString("N2"); });
+				if (CameraFeed.InvokeRequired) CameraFeed.BeginInvoke(setCameraFeed);
+				else setCameraFeed();
+				setFPSLabel(); //TODO Is this needed?
+				//this.BeginInvoke(new Action(() => { CameraFeed.Image = image; }));
+				//this.BeginInvoke(new Action(() => { FPSStatusLabel.Text = FPS.ToString("N2"); }));
+			}
 		}
 
 		private void OnStreamEnded(ImageStream sender) {
+			if (!initialized) return;
+			//TODO beginInvoke is bad practice
 			this.BeginInvoke(new Action(() => { CameraFeed.Image = null; }));
 			this.BeginInvoke(new Action(() => { FPSStatusLabel.Text = "0"; }));
 		}
@@ -102,5 +122,10 @@ namespace UndergradResearchBiomedImaging {
 			input.PromptUserLoadFile();
 			input.Play();
 		}
+
+		private void NumericStagePosition_ValueChanged(object sender, EventArgs e) {
+			
+		}
+
 	}
 }
