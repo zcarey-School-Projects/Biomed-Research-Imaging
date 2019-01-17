@@ -14,6 +14,13 @@ namespace UndergradResearchBiomedImaging.Util {
 			property = parsePropertyFromName(SettingName);
 		}
 
+		public bool IsReadable {
+			get {
+				if (property == null) return false;
+				return property.CanRead;
+			}
+		}
+
 		public bool TryGet(ClassType obj, ref object readValue) {
 			if (property == null) return false;
 			try {
@@ -35,6 +42,13 @@ namespace UndergradResearchBiomedImaging.Util {
 			} catch (Exception e) {
 				Console.Error.WriteLine("ERROR: Could not get property '" + property.Name + "': " + e.Message);
 				return false;
+			}
+		}
+
+		public bool IsWritable {
+			get {
+				if (property == null) return false;
+				return property.CanWrite;
 			}
 		}
 

@@ -115,10 +115,13 @@
     <Compile Include="RobotHelpers\Serial\SerialCommunicator.cs" />
     <Compile Include="RobotHelpers\Serial\SerialResponse.cs" />
     <Compile Include="RobotHelpers\Serial\SerialUIListener.cs" />
+    <Compile Include="UI\MenuStrip\EnumMenuStrip.cs" />
+    <Compile Include="UI\MenuStrip\TestPatternMenu.cs" />
     <Compile Include="UI\OptionsCategories\CameraOptionsUI.cs" />
     <Compile Include="UI\OptionsCategories\Options\CameraInfoUI.cs" />
     <Compile Include="UI\OptionsCategories\Options\GainUI.cs" />
-    <Compile Include="UI\OptionsCategories\Options\IOptionsUI.cs" />
+    <Compile Include="UI\OptionsCategories\IOptionsUI.cs" />
+    <Compile Include="UI\Options\ConstantValueEntry.cs" />
     <Compile Include="UI\Options\EnumEntry.cs" />
     <Compile Include="UI\Options\FloatEntry.cs" />
     <Compile Include="UI\Options\IntegerEntry.cs" />
@@ -320,6 +323,7 @@
     <Content Include="License-LGPL.txt" />
     <Content Include="DevFiles\RequestedFeatures.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\EMGU.CV.3.4.3.3016\build\EMGU.CV.targets" Condition="Exists('..\packages\EMGU.CV.3.4.3.3016\build\EMGU.CV.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

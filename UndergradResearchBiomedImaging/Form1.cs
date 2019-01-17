@@ -13,6 +13,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UndergradResearchBiomedImaging.Flir;
+using UndergradResearchBiomedImaging.UI.MenuStrip;
 using UndergradResearchBiomedImaging.UI.OptionsCategories;
 
 //using Windows.Media.Capture;
@@ -40,11 +41,13 @@ namespace UndergradResearchBiomedImaging {
 
 		public ControlForm() {
 			InitializeComponent();
+			new TestPatternMenu(TestPatternMenuItem, input);
+
 			streamThread = new Thread(streamThreadCall);
 			streamThread.Name = "Stream Thread";
 			streamThread.IsBackground = true;
 
-			cameraOptions = new CameraOptionsUI(SettingsPanel, input);
+			cameraOptions = new CameraOptionsUI(SettingsPanel, input, cameraManager.GetSpinnakerLibraryVersion());
 		}
 
 		private void ControlForm_Load(object sender, EventArgs e) {

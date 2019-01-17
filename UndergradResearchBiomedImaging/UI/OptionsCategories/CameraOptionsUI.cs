@@ -22,11 +22,11 @@ namespace UndergradResearchBiomedImaging.UI.OptionsCategories {
 
 		private List<IOptionsUI> options = new List<IOptionsUI>();
 
-		public CameraOptionsUI(Panel Panel, FlirCameraInput input) {
+		public CameraOptionsUI(Panel Panel, FlirCameraInput input, string libraryVersion) {
 			this.panel = new OptionsPanel(Panel);
 			this.Input = input;
 
-			options.Add(new CameraInfoUI(this, panel));
+			options.Add(new CameraInfoUI(this, panel, libraryVersion));
 			options.Add(new GainUI(this, panel));
 
 			//TODO add events from stream input.on

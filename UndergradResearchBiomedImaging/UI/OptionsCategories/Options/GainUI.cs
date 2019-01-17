@@ -12,10 +12,10 @@ using UndergradResearchBiomedImaging.Util;
 namespace UndergradResearchBiomedImaging.UI.OptionsCategories.Options {
 	public class GainUI : IOptionsUI{
 
-		public GainUI(CameraOptionsUI options, OptionsPanel panel) : base(options, panel) {
+		public GainUI(CameraOptionsUI options, OptionsPanel panel) : base(options, panel, null) {
 		}
 
-		protected override List<IOptionEntry> generateEntries(CameraOptionsUI options) {
+		protected override List<IOptionEntry> generateEntries(CameraOptionsUI options, string libraryVersion) {
 			List<IOptionEntry> entries = new List<IOptionEntry>();
 
 			OptionsCategory GainCategory = new OptionsCategory("Gain");

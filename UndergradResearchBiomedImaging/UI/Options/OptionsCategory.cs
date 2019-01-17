@@ -43,7 +43,7 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 			endBevel.AutoSize = false;
 			endBevel.Height = 2;
 			endBevel.BorderStyle = BorderStyle.Fixed3D;
-			endBevel.Location = new Point(3, 38); //36 + 2
+			endBevel.Location = new Point(3, 45); //36 + 7
 		}
 
 		public override void Update() {
@@ -62,7 +62,7 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 				yPos += child.Height;
 				Height += child.Height;
 			}
-			endBevel.Location = new Point(endBevel.Location.X, yPos);
+			endBevel.Location = new Point(endBevel.Location.X, yPos + 5);
 			Height += 28;
 		}
 

@@ -28,6 +28,8 @@
 			this.MenuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ScreenshotMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.TestMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.TestPatternMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ConnectBtn = new System.Windows.Forms.Button();
 			this.CameraFeed = new System.Windows.Forms.PictureBox();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -46,9 +48,9 @@
 			this.StatusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FPSStatusLabel});
-			this.StatusStrip.Location = new System.Drawing.Point(0, 426);
+			this.StatusStrip.Location = new System.Drawing.Point(0, 421);
 			this.StatusStrip.Name = "StatusStrip";
-			this.StatusStrip.Size = new System.Drawing.Size(851, 25);
+			this.StatusStrip.Size = new System.Drawing.Size(836, 25);
 			this.StatusStrip.TabIndex = 1;
 			this.StatusStrip.Text = "statusStrip1";
 			// 
@@ -62,10 +64,11 @@
 			// 
 			this.MenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.TestMenuItem});
 			this.MenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.MenuStrip.Name = "MenuStrip";
-			this.MenuStrip.Size = new System.Drawing.Size(851, 28);
+			this.MenuStrip.Size = new System.Drawing.Size(836, 28);
 			this.MenuStrip.TabIndex = 2;
 			this.MenuStrip.Text = "menuStrip1";
 			// 
@@ -86,10 +89,24 @@
 			this.ScreenshotMenuItem.Text = "Screenshot";
 			this.ScreenshotMenuItem.Click += new System.EventHandler(this.ScreenshotMenuItem_Click);
 			// 
+			// TestMenuItem
+			// 
+			this.TestMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TestPatternMenuItem});
+			this.TestMenuItem.Name = "TestMenuItem";
+			this.TestMenuItem.Size = new System.Drawing.Size(47, 24);
+			this.TestMenuItem.Text = "Test";
+			// 
+			// TestPatternMenuItem
+			// 
+			this.TestPatternMenuItem.Name = "TestPatternMenuItem";
+			this.TestPatternMenuItem.Size = new System.Drawing.Size(160, 26);
+			this.TestPatternMenuItem.Text = "Test Pattern";
+			// 
 			// ConnectBtn
 			// 
 			this.ConnectBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.ConnectBtn.Location = new System.Drawing.Point(15, 384);
+			this.ConnectBtn.Location = new System.Drawing.Point(15, 379);
 			this.ConnectBtn.Name = "ConnectBtn";
 			this.ConnectBtn.Size = new System.Drawing.Size(75, 23);
 			this.ConnectBtn.TabIndex = 4;
@@ -105,7 +122,7 @@
 			this.CameraFeed.BackColor = System.Drawing.Color.Black;
 			this.CameraFeed.Location = new System.Drawing.Point(3, 3);
 			this.CameraFeed.Name = "CameraFeed";
-			this.CameraFeed.Size = new System.Drawing.Size(536, 325);
+			this.CameraFeed.Size = new System.Drawing.Size(525, 320);
 			this.CameraFeed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.CameraFeed.TabIndex = 3;
 			this.CameraFeed.TabStop = false;
@@ -127,23 +144,26 @@
 			// splitContainer1.Panel2
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.SettingsPanel);
-			this.splitContainer1.Size = new System.Drawing.Size(827, 331);
-			this.splitContainer1.SplitterDistance = 537;
+			this.splitContainer1.Size = new System.Drawing.Size(812, 326);
+			this.splitContainer1.SplitterDistance = 526;
 			this.splitContainer1.TabIndex = 8;
 			// 
 			// SettingsPanel
 			// 
+			this.SettingsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.SettingsPanel.AutoScroll = true;
 			this.SettingsPanel.Location = new System.Drawing.Point(4, 3);
 			this.SettingsPanel.Name = "SettingsPanel";
-			this.SettingsPanel.Size = new System.Drawing.Size(279, 325);
+			this.SettingsPanel.Size = new System.Drawing.Size(275, 320);
 			this.SettingsPanel.TabIndex = 9;
 			// 
 			// ControlForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(851, 451);
+			this.ClientSize = new System.Drawing.Size(836, 446);
 			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.ConnectBtn);
 			this.Controls.Add(this.StatusStrip);
@@ -176,6 +196,8 @@
 		private System.Windows.Forms.PictureBox CameraFeed;
 		private System.Windows.Forms.SplitContainer splitContainer1;
 		private System.Windows.Forms.Panel SettingsPanel;
+		private System.Windows.Forms.ToolStripMenuItem TestMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem TestPatternMenuItem;
 	}
 }
 

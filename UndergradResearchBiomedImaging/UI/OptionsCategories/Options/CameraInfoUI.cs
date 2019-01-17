@@ -11,18 +11,18 @@ using UndergradResearchBiomedImaging.Util;
 namespace UndergradResearchBiomedImaging.UI.OptionsCategories.Options {
 	public class CameraInfoUI : IOptionsUI {
 
-		public CameraInfoUI(CameraOptionsUI options, OptionsPanel panel) : base(options, panel) {
+		public CameraInfoUI(CameraOptionsUI options, OptionsPanel panel, string libraryVersion) : base(options, panel, libraryVersion) { //TODO version is hacky
 
 		}
 
-		protected override List<IOptionEntry> generateEntries(CameraOptionsUI options) {
+		protected override List<IOptionEntry> generateEntries(CameraOptionsUI options, string libraryVersion) {
 			List<IOptionEntry> entries = new List<IOptionEntry>();
 
 			OptionsCategory InfoCategory = new OptionsCategory("Info");
 			entries.Add(InfoCategory);
 
-			//TODO version LibraryVersionEntry = new StringEntry("Library Version", new Property<FlirProperties, string>(nameof(options.FakeProperties.SpinnakerLibraryVersion)), options.Input);
-			//LibraryVersionEntry.Parent = InfoCategory;
+			ConstantValueEntry LibraryVersionEntry = new ConstantValueEntry("Library Version", libraryVersion);
+			LibraryVersionEntry.Parent = InfoCategory;
 
 			StringEntry VendorNameEntry = new StringEntry("Vendor Name", new Property<FlirProperties, StringNode>(nameof(options.FakeProperties.DeviceVendorName)), options.Input);
 			VendorNameEntry.Parent = InfoCategory;
