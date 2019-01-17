@@ -9,7 +9,7 @@ using UndergradResearchBiomedImaging.Flir;
 namespace UndergradResearchBiomedImaging.UI.MenuStrip {
 	public abstract class EnumMenuStrip<TEnum> where TEnum : struct {
 
-		private FlirCameraInput stream;
+		private FlirCameraStream stream;
 		private ToolStripMenuItem baseMenu;
 		private ToolStripMenuItem checkedItem = null;
 		public ToolStripMenuItem CheckedItem {
@@ -22,7 +22,7 @@ namespace UndergradResearchBiomedImaging.UI.MenuStrip {
 		}
 		private bool checkItems;
 
-		public EnumMenuStrip(ToolStripMenuItem BaseMenu, FlirCameraInput stream, TEnum? IgnoreCase, bool checkItems = true) {
+		public EnumMenuStrip(ToolStripMenuItem BaseMenu, FlirCameraStream stream, TEnum? IgnoreCase, bool checkItems = true) {
 			this.baseMenu = BaseMenu;
 			this.stream = stream;
 			this.checkItems = checkItems;
@@ -41,7 +41,7 @@ namespace UndergradResearchBiomedImaging.UI.MenuStrip {
 
 		private bool SetValue(TEnum value) {
 			if (stream == null) return false;
-			FlirCamera camera = stream.Camera;
+			FlirCamera camera = stream.SourceCamera;
 			if (camera == null) return false;
 			return setProperty(camera, value);
 		}

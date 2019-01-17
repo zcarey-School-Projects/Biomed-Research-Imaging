@@ -12,7 +12,7 @@ using UndergradResearchBiomedImaging.Util;
 namespace UndergradResearchBiomedImaging.UI.Options {
 	public class StringEntry : OptionEntry<TextBox, Flir.Nodes.StringNode, IString, string> {
 
-		public StringEntry(string name, Property<FlirProperties, Flir.Nodes.StringNode> property, FlirCameraInput input) : base(name, property, input) {
+		public StringEntry(string name, Property<FlirProperties, Flir.Nodes.StringNode> property, FlirCameraStream stream) : base(name, property, stream) {
 		}
 
 		protected override void addValueChangedEvent(TextBox entryControl, EventHandler eventHandler) {

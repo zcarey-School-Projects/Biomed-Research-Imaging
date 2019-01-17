@@ -68,7 +68,7 @@ namespace UndergradResearchBiomedImaging.Flir {
 		}
 
 		protected override Image<Bgr, byte> readFrame() {
-			if (Camera != null) return Camera.GrabImage();
+			//TODO if kept, uncomment - if (Camera != null) return Camera.GrabImage();
 
 			return null;
 		}

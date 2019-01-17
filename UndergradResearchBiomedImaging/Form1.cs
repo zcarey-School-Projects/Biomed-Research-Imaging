@@ -22,10 +22,10 @@ using UndergradResearchBiomedImaging.UI.OptionsCategories;
 namespace UndergradResearchBiomedImaging {
 	public partial class ControlForm : Form {
 
-		private static readonly object inputLock = new object();
-		private readonly FlirCameraInput input = new FlirCameraInput();
-		private Thread streamThread;
-		private FPSCounter fpsCounter = new FPSCounter();
+		//private static readonly object inputLock = new object();
+		private readonly FlirCameraStream stream = new FlirCameraStream();
+		//private Thread streamThread;
+		//private FPSCounter fpsCounter = new FPSCounter();
 		private FlirCameraManager cameraManager = new FlirCameraManager();
 		private CameraOptionsUI cameraOptions;
 
@@ -41,27 +41,27 @@ namespace UndergradResearchBiomedImaging {
 
 		public ControlForm() {
 			InitializeComponent();
-			new TestPatternMenu(TestPatternMenuItem, input);
-
+			new TestPatternMenu(TestPatternMenuItem, stream);
+/*
 			streamThread = new Thread(streamThreadCall);
 			streamThread.Name = "Stream Thread";
 			streamThread.IsBackground = true;
-
-			cameraOptions = new CameraOptionsUI(SettingsPanel, input, cameraManager.GetSpinnakerLibraryVersion());
+			*/
+			cameraOptions = new CameraOptionsUI(SettingsPanel, stream, cameraManager.GetSpinnakerLibraryVersion());
 		}
 
 		private void ControlForm_Load(object sender, EventArgs e) {
-			streamThread.Start();
+		//	streamThread.Start();
 			//TODO populatePropertiesList(null, null);
 		}
-
+		/*
 		private void streamThreadCall() {
 			while (true) {
 				lock (inputLock) {
 					if ((input != null) && (input.IsFrameAvailable())) {
 						Image<Bgr, byte> rawImage = input.GetFrame();
 						fpsCounter.Tick();
-						CameraFeed.InvokeIfRequired(pictureBox => { pictureBox.Image = ((rawImage != null) ? rawImage : new Image<Bgr, byte>(1, 1))/*.Resize(newWidth, newHeight, Emgu.CV.CvEnum.Inter.Cubic)*/.Bitmap; });
+						CameraFeed.InvokeIfRequired(pictureBox => { pictureBox.Image = ((rawImage != null) ? rawImage : new Image<Bgr, byte>(1, 1)).Bitmap; });
 					} else {
 						fpsCounter.Reset();
 					}
@@ -71,13 +71,14 @@ namespace UndergradResearchBiomedImaging {
 				Thread.Sleep(1);
 			}
 		}
-
+	*/
 		private void ScreenshotMenuItem_Click(object sender, EventArgs e) {
-			lock (inputLock) {
+			/*lock (inputLock) {
 				if (input != null) {
 					input.UserPromptSaveScreenshot();
 				}
-			}
+			}*/
+			//TODO screenshot
 		}
 
 		private void CameraFeed_Resize(object sender, EventArgs e) {
@@ -90,11 +91,12 @@ namespace UndergradResearchBiomedImaging {
 				//string version = cameraManager.GetSpinnakerLibraryVersion();
 				//CameraInfo info = cameraManager.GetCameraInformation(0);
 				//populatePropertiesList(version, info);
-				lock (inputLock) {
-					input.SetCamera(cameraManager.OpenCamera(0));
-					input.Play();
-					cameraOptions.Update();
-				}
+				//lock (inputLock) {
+				//input.SetCamera(cameraManager.OpenCamera(0));
+				//input.Play();
+				stream.SourceCamera = cameraManager.OpenCamera(0);
+					cameraOptions.Update(); //TODO put in event
+				//}
 			}
 			
 		}

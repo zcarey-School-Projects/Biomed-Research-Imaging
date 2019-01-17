@@ -59,7 +59,9 @@ namespace UndergradResearchBiomedImaging.Flir {
 		}
 
 		public void EndAcquisition() {
-			if(initialized && camera.IsStreaming()) camera.EndAcquisition();
+			if (initialized && camera.IsStreaming()) {
+				camera.EndAcquisition();
+			}
 			//TODO crash report
 			/*
 			 System.ObjectDisposedException: 'Cannot access a disposed object.
@@ -67,19 +69,22 @@ namespace UndergradResearchBiomedImaging.Flir {
 			 */
 		}
 
-		public Image<Bgr, byte> GrabImage() {
-			if (!initialized || !camera.IsStreaming()) return null;
+		public bool GrabImage(out Image<Bgr, byte> GrabbedImage) {
+			GrabbedImage = null;
+			if (!initialized || !camera.IsStreaming()) return false;
 			using (IManagedImage rawImage = camera.GetNextImage()) {
 				try {
 					if (rawImage.IsIncomplete) throw new SpinnakerException("Image incomplete with image status " + rawImage.ImageStatus);
 					using (IManagedImage deepCopy = rawImage.Convert(PixelFormatEnums.BGR8)) {
 						Bitmap img = deepCopy.bitmap;
-						if (img == null) return null;
-						return new Image<Bgr, byte>(img);
+						if (img == null) throw new SpinnakerException("Image bitmap was null.");
+						GrabbedImage = new Image<Bgr, byte>(img);
+						return true;
 					}
 				} catch (SpinnakerException ex) {
 					Console.WriteLine("Error: " + ex.Message);
-					return null;
+					EndAcquisition();
+					return false;
 				}
 			}
 		}

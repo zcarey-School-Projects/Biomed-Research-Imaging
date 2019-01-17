@@ -88,6 +88,7 @@
     <Compile Include="ExampleFlir\SaveToAvi_CSharp.cs" />
     <Compile Include="Flir\FlirCamera.cs" />
     <Compile Include="Flir\FlirCameraManager.cs" />
+    <Compile Include="Flir\FlirCameraStream.cs" />
     <Compile Include="Flir\FlirProperties.cs" />
     <Compile Include="Flir\Nodes\BaseNode.cs" />
     <Compile Include="Flir\Nodes\EnumNode.cs" />
@@ -131,6 +132,7 @@
     <Compile Include="UI\Options\OptionsCategory.cs" />
     <Compile Include="UI\Options\OptionsPanel.cs" />
     <Compile Include="UI\Options\StringEntry.cs" />
+    <Compile Include="Util\FPSCounter.cs" />
     <Compile Include="Util\Property.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

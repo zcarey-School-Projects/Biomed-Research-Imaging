@@ -13,7 +13,7 @@ using UndergradResearchBiomedImaging.Util;
 namespace UndergradResearchBiomedImaging.UI.Options {
 	public abstract class NumericalEntry<TNode, NodeType, ValueType> : OptionEntry<NumericUpDown, TNode, NodeType, ValueType> where TNode : NumericalNode<NodeType, ValueType> where NodeType : INode where ValueType : struct {
 
-		public NumericalEntry(string name, Property<FlirProperties, TNode> property, FlirCameraInput input) : base(name, property, input) {
+		public NumericalEntry(string name, Property<FlirProperties, TNode> property, FlirCameraStream stream) : base(name, property, stream) {
 
 		}
 

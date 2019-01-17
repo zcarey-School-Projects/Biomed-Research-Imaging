@@ -22,12 +22,12 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 
 		private Property<FlirProperties, TNode> cameraProperty;
 
-		private FlirCameraInput input;
+		private FlirCameraStream stream;
 
 		public override int Height { get; protected set; } = 28;
 
-		public OptionEntry(string name, Property<FlirProperties, TNode> property, FlirCameraInput input) {
-			this.input = input;
+		public OptionEntry(string name, Property<FlirProperties, TNode> property, FlirCameraStream stream) {
+			this.stream = stream;
 			this.cameraProperty = property;
 
 			entryLabel = new Label();
@@ -118,8 +118,8 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 
 		private TNode getNode() {
 			lock (ControlLock) {
-				if (input == null) return null;
-				FlirCamera camera = input.Camera;
+				if (stream == null) return null;
+				FlirCamera camera = stream.SourceCamera;
 				if (camera == null) return null;
 				object val = null;
 				if (!cameraProperty.TryGet(camera.Properties, ref val)) return null;

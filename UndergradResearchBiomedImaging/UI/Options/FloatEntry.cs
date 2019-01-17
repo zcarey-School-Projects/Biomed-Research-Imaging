@@ -15,7 +15,7 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 
 		private Label unitLabel;
 
-		public FloatEntry(string name, Property<FlirProperties, FloatNode> property, FlirCameraInput input) : base(name, property, input) {
+		public FloatEntry(string name, Property<FlirProperties, FloatNode> property, FlirCameraStream stream) : base(name, property, stream) {
 
 		}
 

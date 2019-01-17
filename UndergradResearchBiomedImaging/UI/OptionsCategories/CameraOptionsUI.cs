@@ -16,15 +16,15 @@ namespace UndergradResearchBiomedImaging.UI.OptionsCategories {
 				public event CameraConnectionHandler OnCameraDisconnected;
 				*/
 		public FlirProperties FakeProperties { get; } = new FlirProperties("null", null);
-		public FlirCamera Camera { get; private set; }
-		public FlirCameraInput Input { get; private set; }
+		//public FlirCamera Camera { get; private set; }
+		public FlirCameraStream Stream { get; private set; }
 		private OptionsPanel panel;
 
 		private List<IOptionsUI> options = new List<IOptionsUI>();
 
-		public CameraOptionsUI(Panel Panel, FlirCameraInput input, string libraryVersion) {
+		public CameraOptionsUI(Panel Panel, FlirCameraStream stream, string libraryVersion) {
 			this.panel = new OptionsPanel(Panel);
-			this.Input = input;
+			this.Stream = stream;
 
 			options.Add(new CameraInfoUI(this, panel, libraryVersion));
 			options.Add(new GainUI(this, panel));

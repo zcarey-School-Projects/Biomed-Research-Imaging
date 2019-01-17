@@ -10,7 +10,7 @@ using UndergradResearchBiomedImaging.Flir;
 namespace UndergradResearchBiomedImaging.UI.MenuStrip {
 	public class TestPatternMenu : EnumMenuStrip<TestPatternEnums>{
 
-		public TestPatternMenu(ToolStripMenuItem BaseMenu, FlirCameraInput stream) : base(BaseMenu, stream, TestPatternEnums.NUM_TESTPATTERN, true) {
+		public TestPatternMenu(ToolStripMenuItem BaseMenu, FlirCameraStream stream) : base(BaseMenu, stream, TestPatternEnums.NUM_TESTPATTERN, true) {
 
 		}
 

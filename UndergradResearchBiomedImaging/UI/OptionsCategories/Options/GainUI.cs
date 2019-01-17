@@ -21,16 +21,16 @@ namespace UndergradResearchBiomedImaging.UI.OptionsCategories.Options {
 			OptionsCategory GainCategory = new OptionsCategory("Gain");
 			entries.Add(GainCategory);
 
-			FloatEntry GainEntry = new FloatEntry("Gain", new Property<FlirProperties, FloatNode>(nameof(options.FakeProperties.Gain)), options.Input);
+			FloatEntry GainEntry = new FloatEntry("Gain", new Property<FlirProperties, FloatNode>(nameof(options.FakeProperties.Gain)), options.Stream);
 			GainEntry.Parent = GainCategory;
 
-			EnumEntry<GainAutoEnums> AutoGainEntry = new EnumEntry<GainAutoEnums>("Auto Gain", GainAutoEnums.Off, GainAutoEnums.NUM_GAINAUTO, new Property<FlirProperties, EnumNode<GainAutoEnums>>(nameof(options.FakeProperties.GainAuto)), options.Input);
+			EnumEntry<GainAutoEnums> AutoGainEntry = new EnumEntry<GainAutoEnums>("Auto Gain", GainAutoEnums.Off, GainAutoEnums.NUM_GAINAUTO, new Property<FlirProperties, EnumNode<GainAutoEnums>>(nameof(options.FakeProperties.GainAuto)), options.Stream);
 			AutoGainEntry.Parent = GainCategory;
 
-			FloatEntry UpperGainEntry = new FloatEntry("  - Upper Limit", new Property<FlirProperties, FloatNode>(nameof(options.FakeProperties.AutoGainUpperLimit)), options.Input);
+			FloatEntry UpperGainEntry = new FloatEntry("  - Upper Limit", new Property<FlirProperties, FloatNode>(nameof(options.FakeProperties.AutoGainUpperLimit)), options.Stream);
 			UpperGainEntry.Parent = GainCategory;
 
-			FloatEntry LowerGainEntry = new FloatEntry("  - Lower Limit", new Property<FlirProperties, FloatNode>(nameof(options.FakeProperties.AutoGainLowerLimit)), options.Input);
+			FloatEntry LowerGainEntry = new FloatEntry("  - Lower Limit", new Property<FlirProperties, FloatNode>(nameof(options.FakeProperties.AutoGainLowerLimit)), options.Stream);
 			LowerGainEntry.Parent = GainCategory;
 
 			return entries;

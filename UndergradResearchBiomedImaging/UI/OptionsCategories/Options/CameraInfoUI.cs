@@ -24,10 +24,10 @@ namespace UndergradResearchBiomedImaging.UI.OptionsCategories.Options {
 			ConstantValueEntry LibraryVersionEntry = new ConstantValueEntry("Library Version", libraryVersion);
 			LibraryVersionEntry.Parent = InfoCategory;
 
-			StringEntry VendorNameEntry = new StringEntry("Vendor Name", new Property<FlirProperties, StringNode>(nameof(options.FakeProperties.DeviceVendorName)), options.Input);
+			StringEntry VendorNameEntry = new StringEntry("Vendor Name", new Property<FlirProperties, StringNode>(nameof(options.FakeProperties.DeviceVendorName)), options.Stream);
 			VendorNameEntry.Parent = InfoCategory;
 
-			StringEntry ModelName = new StringEntry("Model Name", new Property<FlirProperties, StringNode>(nameof(options.FakeProperties.DeviceModelName)), options.Input);
+			StringEntry ModelName = new StringEntry("Model Name", new Property<FlirProperties, StringNode>(nameof(options.FakeProperties.DeviceModelName)), options.Stream);
 			ModelName.Parent = InfoCategory;
 
 			return entries;
