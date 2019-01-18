@@ -104,14 +104,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RobotHelpers\ControlHelper.cs" />
-    <Compile Include="RobotHelpers\FPSCounter.cs" />
-    <Compile Include="RobotHelpers\InputHandling\CameraInput.cs" />
-    <Compile Include="RobotHelpers\InputHandling\FileInput.cs" />
-    <Compile Include="Flir\FlirCameraInput.cs" />
-    <Compile Include="RobotHelpers\InputHandling\ImageInput.cs" />
-    <Compile Include="RobotHelpers\InputHandling\InputHandler.cs" />
-    <Compile Include="RobotHelpers\InputHandling\VideoInput.cs" />
     <Compile Include="RobotHelpers\Serial\SerialCommand.cs" />
     <Compile Include="RobotHelpers\Serial\SerialCommunicator.cs" />
     <Compile Include="RobotHelpers\Serial\SerialResponse.cs" />

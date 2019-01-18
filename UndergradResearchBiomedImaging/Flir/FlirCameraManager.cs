@@ -1,5 +1,4 @@
-﻿using RobotHelpers.InputHandling;
-using SpinnakerNET;
+﻿using SpinnakerNET;
 using SpinnakerNET.GenApi;
 using System;
 using System.Collections;
@@ -51,6 +50,7 @@ namespace UndergradResearchBiomedImaging.Flir {
 		}
 
 		public FlirCamera OpenCamera(int index) {
+			DetectCameras();
 			if (index < 0 || index >= cameras.Count) return null;
 			return new FlirCamera(this, cameras[index]);
 		}

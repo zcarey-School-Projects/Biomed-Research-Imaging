@@ -126,7 +126,6 @@
 			this.CameraFeed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.CameraFeed.TabIndex = 3;
 			this.CameraFeed.TabStop = false;
-			this.CameraFeed.Resize += new System.EventHandler(this.CameraFeed_Resize);
 			// 
 			// splitContainer1
 			// 

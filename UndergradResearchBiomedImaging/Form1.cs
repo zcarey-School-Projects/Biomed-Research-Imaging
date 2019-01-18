@@ -1,7 +1,6 @@
 ﻿using Emgu.CV;
 using Emgu.CV.Structure;
 using RobotHelpers;
-using RobotHelpers.InputHandling;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,56 +21,42 @@ using UndergradResearchBiomedImaging.UI.OptionsCategories;
 namespace UndergradResearchBiomedImaging {
 	public partial class ControlForm : Form {
 
-		//private static readonly object inputLock = new object();
 		private readonly FlirCameraStream stream = new FlirCameraStream();
-		//private Thread streamThread;
-		//private FPSCounter fpsCounter = new FPSCounter();
 		private FlirCameraManager cameraManager = new FlirCameraManager();
 		private CameraOptionsUI cameraOptions;
 
-		//private static SaveFileDialog saveDialog;
-		
-		/*static ControlForm() {
-			saveDialog = new SaveFileDialog();
-			saveDialog.AddExtension = true;
-			saveDialog.RestoreDirectory = true;
-			saveDialog.Title = "Save Screenshot";
-			saveDialog.Filter = "";
-		}*/
-
 		public ControlForm() {
 			InitializeComponent();
+
+			//Generate drop-down menus
 			new TestPatternMenu(TestPatternMenuItem, stream);
-/*
-			streamThread = new Thread(streamThreadCall);
-			streamThread.Name = "Stream Thread";
-			streamThread.IsBackground = true;
-			*/
+
+			//Generate Camera Options UI
 			cameraOptions = new CameraOptionsUI(SettingsPanel, stream, cameraManager.GetSpinnakerLibraryVersion());
+
+			//Set listeners for camera stream
+			stream.OnNewImage += FlirCameraStream_OnNewImage;
+			stream.OnSourceChanged += FlirCameraStream_OnSourceChanged;
 		}
 
 		private void ControlForm_Load(object sender, EventArgs e) {
-		//	streamThread.Start();
-			//TODO populatePropertiesList(null, null);
+			stream.SourceCamera = cameraManager.OpenCamera(0); //Attempts to load a camera on start-up
 		}
-		/*
-		private void streamThreadCall() {
-			while (true) {
-				lock (inputLock) {
-					if ((input != null) && (input.IsFrameAvailable())) {
-						Image<Bgr, byte> rawImage = input.GetFrame();
-						fpsCounter.Tick();
-						CameraFeed.InvokeIfRequired(pictureBox => { pictureBox.Image = ((rawImage != null) ? rawImage : new Image<Bgr, byte>(1, 1)).Bitmap; });
-					} else {
-						fpsCounter.Reset();
-					}
-				}
 
-				FPSStatusLabel.InvokeIfRequired(this, label => { label.Text = fpsCounter.FPS.ToString("N2"); });
-				Thread.Sleep(1);
-			}
+		private void FlirCameraStream_OnNewImage(FlirCameraStream sender, Image<Bgr, byte> Image) {
+			CameraFeed.Invoke(new Action(() => { CameraFeed.Image = (Image == null) ? null : Image.Bitmap; }));
+			FPSStatusLabel.Text = sender.FPS.ToString("N2").PadLeft(3) + " FPS";
 		}
-	*/
+
+		private void FlirCameraStream_OnSourceChanged(FlirCameraStream sender, FlirCamera Source) {
+			if (Source == null) {
+				CameraFeed.Invoke(new Action(() => { CameraFeed.Image = null; }));
+				FPSStatusLabel.Text = ((int)0).ToString("N2").PadLeft(3) + " FPS";
+			}
+
+			cameraOptions.Update();
+		}
+
 		private void ScreenshotMenuItem_Click(object sender, EventArgs e) {
 			/*lock (inputLock) {
 				if (input != null) {
@@ -81,49 +66,13 @@ namespace UndergradResearchBiomedImaging {
 			//TODO screenshot
 		}
 
-		private void CameraFeed_Resize(object sender, EventArgs e) {
-			
-		}
-
 		private void ConnectBtn_Click(object sender, EventArgs e) {
 			cameraManager.DetectCameras();
 			if(cameraManager.NumberOfAvailableCameras() > 0) {
-				//string version = cameraManager.GetSpinnakerLibraryVersion();
-				//CameraInfo info = cameraManager.GetCameraInformation(0);
-				//populatePropertiesList(version, info);
-				//lock (inputLock) {
-				//input.SetCamera(cameraManager.OpenCamera(0));
-				//input.Play();
 				stream.SourceCamera = cameraManager.OpenCamera(0);
-					cameraOptions.Update(); //TODO put in event
-				//}
 			}
 			
 		}
-		/*
-		private void populatePropertiesList(string version, CameraInfo info) {
-			CameraProperties.Clear();
-			CameraProperties.Columns.Add("Property", CameraProperties.Width / 2, HorizontalAlignment.Left);
-			CameraProperties.Columns.Add("Value", CameraProperties.Width / 2, HorizontalAlignment.Left);
-
-			ListViewItem propItem = CameraProperties.Items.Add("Library Version");
-			propItem.SubItems.Add((version != null) ? version : "N/A");
-			
-			if(info != null) {
-				propItem = CameraProperties.Items.Add("Vendor");
-				propItem.SubItems.Add(info.VendorName);
-
-				propItem = CameraProperties.Items.Add("Device Model");
-				propItem.SubItems.Add(info.DeviceModel);
-
-				foreach(InfoNode node in info.DeviceInformation) {
-					propItem = CameraProperties.Items.Add(node.DisplayName);
-					propItem.SubItems.Add(node.Value);
-				}
-			}
-
-		}
-		*/
 
 		//TODO make reset buttons for options to set to defaults.
 
