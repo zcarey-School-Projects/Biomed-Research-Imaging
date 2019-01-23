@@ -32,6 +32,7 @@ namespace UndergradResearchBiomedImaging {
 
 		public ControlForm() {
 			InitializeComponent();
+			CameraFeed.Image = null; //Clears the test image.
 
 			//Generate drop-down menus
 			new TestPatternMenu(TestPatternMenuItem, stream);
@@ -116,10 +117,10 @@ namespace UndergradResearchBiomedImaging {
 		private void OnRecordingChanged(FastRecorder recorder, bool IsRecording) {
 			//Whenever a recording starts or stops...
 			if (IsRecording) {
-				RecordingBorderPanel.BackColor = Color.Red;
-				SettingsPanel.BackColor = Panel.DefaultBackColor;
+				RecordingBorder.BackColor = Color.Red;
+				//SettingsPanel.BackColor = Panel.DefaultBackColor;
 			} else {
-				RecordingBorderPanel.BackColor = Color.FromArgb(0, 0, 0, 0);
+				RecordingBorder.BackColor = Color.FromArgb(0, 0, 0, 0);
 			}
 		}
 

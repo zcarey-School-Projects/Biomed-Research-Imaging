@@ -23,6 +23,7 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlForm));
 			this.StatusStrip = new System.Windows.Forms.StatusStrip();
 			this.FPSStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.MenuStrip = new System.Windows.Forms.MenuStrip();
@@ -32,18 +33,15 @@
 			this.TestPatternMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ConnectBtn = new System.Windows.Forms.Button();
 			this.CameraFeed = new System.Windows.Forms.PictureBox();
-			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.SettingsPanel = new System.Windows.Forms.Panel();
 			this.Record = new System.Windows.Forms.Button();
-			this.RecordingBorderPanel = new System.Windows.Forms.Panel();
+			this.RecordingBorder = new System.Windows.Forms.Panel();
+			this.ConstantBackground = new System.Windows.Forms.Panel();
 			this.StatusStrip.SuspendLayout();
 			this.MenuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-			this.splitContainer1.Panel1.SuspendLayout();
-			this.splitContainer1.Panel2.SuspendLayout();
-			this.splitContainer1.SuspendLayout();
-			this.RecordingBorderPanel.SuspendLayout();
+			this.RecordingBorder.SuspendLayout();
+			this.ConstantBackground.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// StatusStrip
@@ -53,7 +51,7 @@
             this.FPSStatusLabel});
 			this.StatusStrip.Location = new System.Drawing.Point(0, 425);
 			this.StatusStrip.Name = "StatusStrip";
-			this.StatusStrip.Size = new System.Drawing.Size(839, 25);
+			this.StatusStrip.Size = new System.Drawing.Size(931, 25);
 			this.StatusStrip.TabIndex = 1;
 			this.StatusStrip.Text = "statusStrip1";
 			// 
@@ -71,7 +69,7 @@
             this.TestMenuItem});
 			this.MenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.MenuStrip.Name = "MenuStrip";
-			this.MenuStrip.Size = new System.Drawing.Size(839, 28);
+			this.MenuStrip.Size = new System.Drawing.Size(931, 28);
 			this.MenuStrip.TabIndex = 2;
 			this.MenuStrip.Text = "menuStrip1";
 			// 
@@ -123,48 +121,28 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.CameraFeed.BackColor = System.Drawing.Color.Black;
+			this.CameraFeed.Image = ((System.Drawing.Image)(resources.GetObject("CameraFeed.Image")));
 			this.CameraFeed.Location = new System.Drawing.Point(3, 3);
 			this.CameraFeed.Name = "CameraFeed";
-			this.CameraFeed.Size = new System.Drawing.Size(528, 324);
+			this.CameraFeed.Size = new System.Drawing.Size(536, 330);
 			this.CameraFeed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.CameraFeed.TabIndex = 3;
 			this.CameraFeed.TabStop = false;
 			// 
-			// splitContainer1
-			// 
-			this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-			this.splitContainer1.Location = new System.Drawing.Point(12, 3);
-			this.splitContainer1.Name = "splitContainer1";
-			// 
-			// splitContainer1.Panel1
-			// 
-			this.splitContainer1.Panel1.Controls.Add(this.CameraFeed);
-			// 
-			// splitContainer1.Panel2
-			// 
-			this.splitContainer1.Panel2.Controls.Add(this.SettingsPanel);
-			this.splitContainer1.Size = new System.Drawing.Size(815, 330);
-			this.splitContainer1.SplitterDistance = 529;
-			this.splitContainer1.TabIndex = 8;
-			// 
 			// SettingsPanel
 			// 
-			this.SettingsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+			this.SettingsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.SettingsPanel.AutoScroll = true;
-			this.SettingsPanel.Location = new System.Drawing.Point(4, 3);
+			this.SettingsPanel.Location = new System.Drawing.Point(545, 3);
 			this.SettingsPanel.Name = "SettingsPanel";
-			this.SettingsPanel.Size = new System.Drawing.Size(275, 324);
+			this.SettingsPanel.Size = new System.Drawing.Size(349, 330);
 			this.SettingsPanel.TabIndex = 9;
 			// 
 			// Record
 			// 
 			this.Record.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.Record.Location = new System.Drawing.Point(744, 383);
+			this.Record.Location = new System.Drawing.Point(836, 383);
 			this.Record.Name = "Record";
 			this.Record.Size = new System.Drawing.Size(83, 23);
 			this.Record.TabIndex = 9;
@@ -172,29 +150,41 @@
 			this.Record.UseVisualStyleBackColor = true;
 			this.Record.Click += new System.EventHandler(this.Record_Click);
 			// 
-			// RecordingBorderPanel
+			// RecordingBorder
 			// 
-			this.RecordingBorderPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.RecordingBorder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.RecordingBorderPanel.BackColor = System.Drawing.SystemColors.Control;
-			this.RecordingBorderPanel.Controls.Add(this.splitContainer1);
-			this.RecordingBorderPanel.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.RecordingBorderPanel.Location = new System.Drawing.Point(0, 31);
-			this.RecordingBorderPanel.Name = "RecordingBorderPanel";
-			this.RecordingBorderPanel.Size = new System.Drawing.Size(839, 346);
-			this.RecordingBorderPanel.TabIndex = 10;
+			this.RecordingBorder.BackColor = System.Drawing.Color.Red;
+			this.RecordingBorder.Controls.Add(this.ConstantBackground);
+			this.RecordingBorder.Location = new System.Drawing.Point(12, 31);
+			this.RecordingBorder.Name = "RecordingBorder";
+			this.RecordingBorder.Size = new System.Drawing.Size(907, 346);
+			this.RecordingBorder.TabIndex = 11;
+			// 
+			// ConstantBackground
+			// 
+			this.ConstantBackground.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.ConstantBackground.BackColor = System.Drawing.SystemColors.Control;
+			this.ConstantBackground.Controls.Add(this.CameraFeed);
+			this.ConstantBackground.Controls.Add(this.SettingsPanel);
+			this.ConstantBackground.Location = new System.Drawing.Point(5, 5);
+			this.ConstantBackground.Name = "ConstantBackground";
+			this.ConstantBackground.Size = new System.Drawing.Size(897, 336);
+			this.ConstantBackground.TabIndex = 0;
 			// 
 			// ControlForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(839, 450);
+			this.ClientSize = new System.Drawing.Size(931, 450);
+			this.Controls.Add(this.RecordingBorder);
 			this.Controls.Add(this.Record);
 			this.Controls.Add(this.ConnectBtn);
 			this.Controls.Add(this.StatusStrip);
 			this.Controls.Add(this.MenuStrip);
-			this.Controls.Add(this.RecordingBorderPanel);
 			this.MainMenuStrip = this.MenuStrip;
 			this.Name = "ControlForm";
 			this.Text = "Form1";
@@ -204,11 +194,8 @@
 			this.MenuStrip.ResumeLayout(false);
 			this.MenuStrip.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).EndInit();
-			this.splitContainer1.Panel1.ResumeLayout(false);
-			this.splitContainer1.Panel2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-			this.splitContainer1.ResumeLayout(false);
-			this.RecordingBorderPanel.ResumeLayout(false);
+			this.RecordingBorder.ResumeLayout(false);
+			this.ConstantBackground.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -222,12 +209,12 @@
 		private System.Windows.Forms.ToolStripMenuItem ScreenshotMenuItem;
 		private System.Windows.Forms.Button ConnectBtn;
 		private System.Windows.Forms.PictureBox CameraFeed;
-		private System.Windows.Forms.SplitContainer splitContainer1;
 		private System.Windows.Forms.Panel SettingsPanel;
 		private System.Windows.Forms.ToolStripMenuItem TestMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem TestPatternMenuItem;
 		private System.Windows.Forms.Button Record;
-		private System.Windows.Forms.Panel RecordingBorderPanel;
+		private System.Windows.Forms.Panel RecordingBorder;
+		private System.Windows.Forms.Panel ConstantBackground;
 	}
 }
 
