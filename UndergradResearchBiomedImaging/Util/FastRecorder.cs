@@ -21,8 +21,10 @@ namespace UndergradResearchBiomedImaging.Util {
 
 		private Thread savingThread;
 		private ConcurrentQueue<Image<Bgr, byte>> imageBuffer = new ConcurrentQueue<Image<Bgr, byte>>();
+		private volatile bool markedDead = false;
 
 		public FastRecorder(string filepath) {
+			if (filepath == null) filepath = @"TempVideo.avi";
 			this.filepath = filepath;
 
 			savingThread = new Thread(ThreadLoop);
@@ -32,17 +34,34 @@ namespace UndergradResearchBiomedImaging.Util {
 		}
 
 		public void Dispose() {
-			//TODO end thread
+			lock (this) {
+				savingThread.Abort();
+			}
+			closeWriterSafely();
 		}
 
 		private void ThreadLoop() {
 			while (true) {
 				lock (this) {
 					if((writer != null) && (writer.IsOpened)) {
-						Image<Bgr, byte> temp; //TODO save in chunks if possible?
-						if(imageBuffer.TryDequeue(out temp)) {
-							writer.Write(temp.Mat);
+						if (imageBuffer.Count >= Max_Image_Buffer_Count) {
+							//This is a problem, the recording can't keep up.
+							if (stream != null) stream.OnNewImage -= NewImageGrabbed;
+							return; //Will end the thread, will will prevent any events to close themselves.
 						}
+
+						//Save any images in the queue. Limit to 3 at a time juat in case we can't save fast enough.
+						Image<Bgr, byte> frame;
+						for(int i = 0; i < 3; i++) {
+							if(imageBuffer.TryDequeue(out frame)) {
+								writer.Write(frame.Mat);
+							} else {
+								break;
+							}
+						}
+					}else if (imageBuffer.Count >= Max_Image_Buffer_Count) {
+						//We must be closing, just let the "NewImageGrabbed" method close itself, and keep the buffer clean.
+						imageBuffer = new ConcurrentQueue<Image<Bgr, byte>>();
 					}
 				}
 				Thread.Sleep(1);
@@ -50,50 +69,74 @@ namespace UndergradResearchBiomedImaging.Util {
 		}
 
 		private void NewImageGrabbed(FlirCameraStream sender, Image<Bgr, byte> image) {
-			if(imageBuffer.Count >= Max_Image_Buffer_Count) {
-				Stop();
-				Console.WriteLine("Too many images in queue! Assuming can't keep up, so stopped recording.");//TODO send event.
-																											 //TODO Blow up! too many images!
-				MessageBox.Show("Too many images!");
-
-			} else {
+			if (savingThread.IsAlive) {
 				imageBuffer.Enqueue(image);
+			} else {
+				sender.OnNewImage -= NewImageGrabbed;
+				lock (this) {
+					if (!markedDead) {
+						markedDead = true;
+						closeWriterSafely();
+						//TODO event OnForceClose;
+					}
+				}
 			}
 		}
 
 		public bool Start(FlirCameraStream stream) {
-			this.stream = stream;
-			FlirCamera camera = stream.SourceCamera;
-			if (camera == null) return false;
-			long width = 0;
-			long height = 0;
-			if (!camera.Properties.Width.TryGetValue(ref width) || !camera.Properties.Height.TryGetValue(ref height)) return false;
-			VideoWriter newWriter = new VideoWriter(filepath, VideoWriter.Fourcc('M', 'P', '4', '2'), 60, new Size((int)width, (int)height), true);
-			if (newWriter.IsOpened) {
-				writer = newWriter;
-				stream.OnNewImage += NewImageGrabbed;
+			lock (this) {
+				if (((writer != null) && (writer.IsOpened)) || !savingThread.IsAlive) return false;
+				FlirCamera camera = stream.SourceCamera;
+				if (camera == null) return false;
+				long width = 0;
+				long height = 0;
+				if (!camera.Properties.Width.TryGetValue(ref width) || !camera.Properties.Height.TryGetValue(ref height)) return false;
+				writer = new VideoWriter(filepath, VideoWriter.Fourcc('M', 'P', '4', '2'), 48, new Size((int)width, (int)height), true);
+				if (writer.IsOpened) {
+					this.stream = stream;
+					imageBuffer = new ConcurrentQueue<Image<Bgr, byte>>();
+					stream.OnNewImage += NewImageGrabbed;
+					return true;
+				} else {
+					writer.Dispose();
+					writer = null;
+					return false;
+				}
+			}
+			
+		}
+
+		private bool closeWriterSafely() {
+			if ((writer != null) && (writer.IsOpened)) {
+				stream.OnNewImage -= NewImageGrabbed;
+				stream = null;
+
+				Image<Bgr, byte> frame = null;
+				while (imageBuffer.TryDequeue(out frame)) {
+					//Empty the queue, saving any frames to the file
+					writer.Write(frame.Mat);
+				}
+
+				writer.Dispose();
+				writer = null;
 				return true;
 			} else {
-				newWriter.Dispose();
+				//Something may have happened, but this isn't a successful stop, so just try and clean up what we can.
+				if (writer != null) writer.Dispose();
+				writer = null;
+				if (stream != null) stream.OnNewImage -= NewImageGrabbed;
+				stream = null;
 				return false;
 			}
 		}
 
-		public void Stop() {
-			VideoWriter oldWriter;
+		public bool Stop() {
 			lock (this) {
-				oldWriter = writer;
-				writer = null;
-			}
-			if(stream != null) stream.OnNewImage -= NewImageGrabbed;
-			stream = null; //TODO thead safe please
-			if (oldWriter != null) {
-				oldWriter.Dispose();
-			}
-			//TODO write remaining images.
-			Image<Bgr, byte> temp;
-			while (imageBuffer.TryDequeue(out temp)) {
-
+				if (closeWriterSafely()) {
+					return true;
+				} else {
+					return false; //TODO events
+				}
 			}
 		}
 
