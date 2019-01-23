@@ -23,6 +23,14 @@ namespace UndergradResearchBiomedImaging.Util {
 		private ConcurrentQueue<Image<Bgr, byte>> imageBuffer = new ConcurrentQueue<Image<Bgr, byte>>();
 		private volatile bool markedDead = false;
 
+		/// <summary> Fired when the recording is forced closed because it can't keep up. </summary>
+		public event ForcedClosedHandler OnRecordingForcedClosed;
+		public delegate void ForcedClosedHandler(FastRecorder sender);
+
+		/// <summary>Fires when the cording starts or stops. </summary>
+		public event RecordingStateChangedHandler OnRecordingChanged;
+		public delegate void RecordingStateChangedHandler(FastRecorder sender, bool IsRecording);
+
 		public FastRecorder(string filepath) {
 			if (filepath == null) filepath = @"TempVideo.avi";
 			this.filepath = filepath;
@@ -77,7 +85,7 @@ namespace UndergradResearchBiomedImaging.Util {
 					if (!markedDead) {
 						markedDead = true;
 						closeWriterSafely();
-						//TODO event OnForceClose;
+						OnRecordingForcedClosed?.Invoke(this);
 					}
 				}
 			}
@@ -96,6 +104,7 @@ namespace UndergradResearchBiomedImaging.Util {
 					this.stream = stream;
 					imageBuffer = new ConcurrentQueue<Image<Bgr, byte>>();
 					stream.OnNewImage += NewImageGrabbed;
+					OnRecordingChanged?.Invoke(this, true);
 					return true;
 				} else {
 					writer.Dispose();
@@ -133,9 +142,10 @@ namespace UndergradResearchBiomedImaging.Util {
 		public bool Stop() {
 			lock (this) {
 				if (closeWriterSafely()) {
+					OnRecordingChanged?.Invoke(this, false);
 					return true;
 				} else {
-					return false; //TODO events
+					return false; 
 				}
 			}
 		}
