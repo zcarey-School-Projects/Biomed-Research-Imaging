@@ -15,7 +15,7 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 
 		private const int ControlXPos = 114;
 
-		private readonly object ControlLock = new object();
+		//private readonly object ControlLock = new object();
 		private Label entryLabel;
 		private ControlType entryControl;
 		private bool ignoreValueChanged = false;
@@ -45,31 +45,31 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 		protected abstract ControlType generateControl(int xPos);
 
 		public override void DrawControls(int yPos) {
-			lock (ControlLock) {
+			//lock (ControlLock) {
 				invokeAction(new Action(() => {
 					entryLabel.Location = new Point(entryLabel.Location.X, yPos + 5);
 					entryControl.Location = new Point(entryControl.Location.X, yPos + 3);
 				}));
-			}
+			//}
 		}
 
 		protected override void OnPanelChanged(OptionsPanel newPanel) {
-			lock (ControlLock) {
+			//lock (ControlLock) {
 				invokeAction(new Action(() => {
 					entryLabel.Parent = newPanel.getPanel();
 					entryControl.Parent = newPanel.getPanel();
 					entryControl.BringToFront();
 				}));
-			}
+			//}
 		}
 
 		protected abstract void addValueChangedEvent(ControlType entryControl, EventHandler eventHandler);
 
 		private void OnValueChangedEvent(object sender, EventArgs args) {
-			lock (ControlLock) {
+			//lock (ControlLock) { //MainThread stuck here
 				if (ignoreValueChanged) return;
 				SetValue(getCurrentValue(entryControl));
-			}
+			//}
 		}
 
 		protected abstract ValueType getCurrentValue(ControlType entryControl); //Usually called by OnValueChangedEvent to get the new, updated value.
@@ -77,18 +77,18 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 		protected abstract void SetControlValue(ControlType entryControl, ValueType newValue); //Sets the controls value/selection to the given value
 
 		private void SetValue(ValueType newValue) {
-			lock (ControlLock) {
+			//lock (ControlLock) {
 				TNode node = getNode();
 				if (node == null || !node.TrySetValue(newValue)) {
 					Enabled = false;
 				}
 
 				GetValue(); //Attemps to read the value and display it.
-			}
+			//}
 		}
 
 		private void GetValue() { //Reads and displays current value from the camera.
-			lock (ControlLock) {
+			//lock (ControlLock) {
 				TNode node = getNode();
 				ValueType value = default(ValueType);
 				if (node != null && node.TryGetValue(ref value)) {
@@ -104,20 +104,20 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 				} else {
 					Enabled = false;
 				}
-			}
+			//}
 
 		}
 
 		protected abstract void checkValueLimits(ControlType entryControl, TNode node);
 
 		public override void Update() {
-			lock (ControlLock) {
+			//lock (ControlLock) {
 				GetValue();
-			}
+			//}
 		}
 
 		private TNode getNode() {
-			lock (ControlLock) {
+			//lock (ControlLock) {
 				if (stream == null) return null;
 				FlirCamera camera = stream.SourceCamera;
 				if (camera == null) return null;
@@ -127,7 +127,7 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 				if (!(val is TNode)) return null;
 
 				return (TNode)val;
-			}
+			//}
 		}
 
 		private bool Enabled { get => entryControl.Enabled; set => invokeAction(new Action(() => { entryControl.Enabled = value; })); }
@@ -140,7 +140,7 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 
 		private void invokeAction(Action act) {
 			if (entryControl.InvokeRequired) {
-				entryControl.Invoke(act);
+				entryControl.Invoke(act); //Camera stuck here
 			} else {
 				act();
 			}

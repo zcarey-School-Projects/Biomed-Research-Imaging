@@ -35,23 +35,26 @@ namespace UndergradResearchBiomedImaging.Flir {
 		}
 
 		//TODO simplify
-		public void BeginAcquisition() {
+		public bool BeginAcquisition() {
 			INodeMap node = camera.GetNodeMap();
 
 			// Set acquisition mode to continuous
 			if (!Properties.AcquisitionMode.TrySetValue(AcquisitionModeEnums.Continuous)) {
-				throw new SpinnakerException("Unable to set acquisition mode to continuous.");
+				//throw new SpinnakerException("Unable to set acquisition mode to continuous.");
+				return false;
 			}
 			Console.WriteLine("Acquisition mode set to continuous...");
 
 			//Set camera to color mode
 			if (!Properties.PixelFormat.TrySetValue(PixelFormatEnums.RGB8)) {
-				throw new SpinnakerException("Could not set PixelFormat to RGB");
+				//throw new SpinnakerException("Could not set PixelFormat to RGB");
+				return false;
 			} else {
 				Console.WriteLine("Pixel format set to RGB.");
 			}
 
 			camera.BeginAcquisition();
+			return true;
 		}
 
 		public void ResumeAcquisition() {

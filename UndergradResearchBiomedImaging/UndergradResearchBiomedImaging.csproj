@@ -124,6 +124,7 @@
     <Compile Include="UI\Options\OptionsCategory.cs" />
     <Compile Include="UI\Options\OptionsPanel.cs" />
     <Compile Include="UI\Options\StringEntry.cs" />
+    <Compile Include="Util\FastRecorder.cs" />
     <Compile Include="Util\FPSCounter.cs" />
     <Compile Include="Util\Property.cs" />
     <EmbeddedResource Include="Form1.resx">

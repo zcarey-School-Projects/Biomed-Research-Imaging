@@ -23,8 +23,20 @@ namespace UndergradResearchBiomedImaging.Flir {
 					//width
 					//height
 					imageBuffer = null;
-					camera = value;
-					OnSourceChanged?.Invoke(this, value);
+					if (value != null) {
+						if (value.BeginAcquisition()) {
+							camera = value;
+							OnSourceChanged?.Invoke(this, value);
+						} else {
+							if(camera != null) {
+								camera = null;
+								OnSourceChanged?.Invoke(this, null);
+							}
+						}
+					} else {
+						camera = null;
+						OnSourceChanged?.Invoke(this, null);
+					}
 				}
 			}
 		}
@@ -88,7 +100,7 @@ namespace UndergradResearchBiomedImaging.Flir {
 						}
 					}
 				}
-				Thread.Sleep(1);
+				Thread.Sleep(1); 
 			}
 		}
 
