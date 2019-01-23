@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -22,10 +23,12 @@ using UndergradResearchBiomedImaging.Util;
 namespace UndergradResearchBiomedImaging {
 	public partial class ControlForm : Form {
 
+		private const string TempVideoFile = @"TempRecording.avi";
+
 		private readonly FlirCameraStream stream = new FlirCameraStream();
 		private FlirCameraManager cameraManager = new FlirCameraManager();
 		private CameraOptionsUI cameraOptions;
-		private FastRecorder videoWriter; //TODO naming
+		private FastRecorder videoWriter;
 
 		public ControlForm() {
 			InitializeComponent();
@@ -39,7 +42,12 @@ namespace UndergradResearchBiomedImaging {
 			//Set listeners for camera stream
 			stream.OnNewImage += FlirCameraStream_OnNewImage;
 			stream.OnSourceChanged += FlirCameraStream_OnSourceChanged;
-			videoWriter = new FastRecorder(@"temp.avi");
+
+			//If a temp file already exists, delete it.
+			if (File.Exists(TempVideoFile)) {
+				File.Delete(TempVideoFile);
+			}
+			OnRecordingClosed(null); //Will actually initialize a new video writer for us.
 		}
 
 		private void ControlForm_Load(object sender, EventArgs e) {
@@ -75,49 +83,59 @@ namespace UndergradResearchBiomedImaging {
 		}
 
 		private void ConnectBtn_Click(object sender, EventArgs e) {
-			//cameraManager.DetectCameras();
-			//if(cameraManager.NumberOfAvailableCameras() > 0) {
-				stream.SourceCamera = cameraManager.OpenCamera(0);
-			//}
-			
+			stream.SourceCamera = cameraManager.OpenCamera(0);
 		}
 
 		private void Record_Click(object sender, EventArgs e) {
 			if (Record.Text == "Record") {
-				/*	if (stream == null) return;
-					FlirCamera camera = stream.SourceCamera;
-					if (camera == null) return;
-					//new VideoWriter(Name, fps, size, isColor);
-					//new VideoWriter(Name, compressionCode, fps, size, isColor);
-					long width = 0;
-					long height = 0;
-					if(!camera.Properties.Width.TryGetValue(ref width) || !camera.Properties.Height.TryGetValue(ref height)) return;
-					lock (this) {
-						VideoW = new VideoWriter(@"temp.avi", VideoWriter.Fourcc('M', 'P', '4', '2'), 60, new Size((int)width, (int)height), true);
-						if (!VideoW.IsOpened) {
-							VideoW.Dispose();
-							VideoW = null;
-						} else {
-							Record.Text = "Stop";
-						}
-					}*/
 				if (videoWriter.Start(stream)) {
 					Record.Text = "Stop";
 				}
 			} else {
-				videoWriter.Stop();
 				Record.Text = "Record";
-				/*lock (this) {
-					if((VideoW != null) && (VideoW.IsOpened)) { //TODO can we set the FPS on the fly?
-						VideoW.Dispose();
-						VideoW = null;
+				if (videoWriter.Stop()) {
+					//Stopped successfully.
+					//TODO make cleaner
+					if (!File.Exists(TempVideoFile)) return;
+					SaveFileDialog dialog = new SaveFileDialog();
+					dialog.AddExtension = true;
+					dialog.Filter = "AVI (*.avi)|*.avi";
+					dialog.OverwritePrompt = true;
+					dialog.RestoreDirectory = true;
+					dialog.Title = "Save Video";
+					if(dialog.ShowDialog() == DialogResult.OK) {
+						if (File.Exists(dialog.FileName)) {
+							File.Delete(dialog.FileName);
+						}
+						File.Copy(TempVideoFile, dialog.FileName);
 					}
-					Record.Text = "Record";
-				}*/
+				}
 			}
 		}
 
-		//TODO make reset buttons for options to set to defaults.
+		private void OnRecordingChanged(FastRecorder recorder, bool IsRecording) {
+			//Whenever a recording starts or stops...
+			if (IsRecording) {
+				RecordingBorderPanel.BackColor = Color.Red;
+				SettingsPanel.BackColor = Panel.DefaultBackColor;
+			} else {
+				RecordingBorderPanel.BackColor = Color.FromArgb(0, 0, 0, 0);
+			}
+		}
 
+		private void OnRecordingClosed(FastRecorder recorder) {
+			//When the recording is forced closed...
+			OnRecordingChanged(recorder, false);
+			if (videoWriter != null) {
+				videoWriter.OnRecordingChanged -= OnRecordingChanged;
+				videoWriter.OnRecordingForcedClosed -= OnRecordingClosed;
+			}
+			videoWriter = new FastRecorder(TempVideoFile); //Create a new video writer.
+			videoWriter.OnRecordingChanged += OnRecordingChanged;
+			videoWriter.OnRecordingForcedClosed += OnRecordingClosed;
+		}
+
+		//TODO make reset buttons for options to set to defaults.
+		//TODO camera feed gets covered up?
 	}
 }

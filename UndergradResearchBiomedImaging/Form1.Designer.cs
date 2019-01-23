@@ -35,6 +35,7 @@
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.SettingsPanel = new System.Windows.Forms.Panel();
 			this.Record = new System.Windows.Forms.Button();
+			this.RecordingBorderPanel = new System.Windows.Forms.Panel();
 			this.StatusStrip.SuspendLayout();
 			this.MenuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).BeginInit();
@@ -42,6 +43,7 @@
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
+			this.RecordingBorderPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// StatusStrip
@@ -49,9 +51,9 @@
 			this.StatusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FPSStatusLabel});
-			this.StatusStrip.Location = new System.Drawing.Point(0, 421);
+			this.StatusStrip.Location = new System.Drawing.Point(0, 425);
 			this.StatusStrip.Name = "StatusStrip";
-			this.StatusStrip.Size = new System.Drawing.Size(836, 25);
+			this.StatusStrip.Size = new System.Drawing.Size(839, 25);
 			this.StatusStrip.TabIndex = 1;
 			this.StatusStrip.Text = "statusStrip1";
 			// 
@@ -69,7 +71,7 @@
             this.TestMenuItem});
 			this.MenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.MenuStrip.Name = "MenuStrip";
-			this.MenuStrip.Size = new System.Drawing.Size(836, 28);
+			this.MenuStrip.Size = new System.Drawing.Size(839, 28);
 			this.MenuStrip.TabIndex = 2;
 			this.MenuStrip.Text = "menuStrip1";
 			// 
@@ -107,7 +109,7 @@
 			// ConnectBtn
 			// 
 			this.ConnectBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.ConnectBtn.Location = new System.Drawing.Point(15, 379);
+			this.ConnectBtn.Location = new System.Drawing.Point(12, 383);
 			this.ConnectBtn.Name = "ConnectBtn";
 			this.ConnectBtn.Size = new System.Drawing.Size(75, 23);
 			this.ConnectBtn.TabIndex = 4;
@@ -123,7 +125,7 @@
 			this.CameraFeed.BackColor = System.Drawing.Color.Black;
 			this.CameraFeed.Location = new System.Drawing.Point(3, 3);
 			this.CameraFeed.Name = "CameraFeed";
-			this.CameraFeed.Size = new System.Drawing.Size(525, 320);
+			this.CameraFeed.Size = new System.Drawing.Size(528, 324);
 			this.CameraFeed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.CameraFeed.TabIndex = 3;
 			this.CameraFeed.TabStop = false;
@@ -134,7 +136,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-			this.splitContainer1.Location = new System.Drawing.Point(12, 31);
+			this.splitContainer1.Location = new System.Drawing.Point(12, 3);
 			this.splitContainer1.Name = "splitContainer1";
 			// 
 			// splitContainer1.Panel1
@@ -144,8 +146,8 @@
 			// splitContainer1.Panel2
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.SettingsPanel);
-			this.splitContainer1.Size = new System.Drawing.Size(812, 326);
-			this.splitContainer1.SplitterDistance = 526;
+			this.splitContainer1.Size = new System.Drawing.Size(815, 330);
+			this.splitContainer1.SplitterDistance = 529;
 			this.splitContainer1.TabIndex = 8;
 			// 
 			// SettingsPanel
@@ -156,12 +158,13 @@
 			this.SettingsPanel.AutoScroll = true;
 			this.SettingsPanel.Location = new System.Drawing.Point(4, 3);
 			this.SettingsPanel.Name = "SettingsPanel";
-			this.SettingsPanel.Size = new System.Drawing.Size(275, 320);
+			this.SettingsPanel.Size = new System.Drawing.Size(275, 324);
 			this.SettingsPanel.TabIndex = 9;
 			// 
 			// Record
 			// 
-			this.Record.Location = new System.Drawing.Point(738, 395);
+			this.Record.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.Record.Location = new System.Drawing.Point(744, 383);
 			this.Record.Name = "Record";
 			this.Record.Size = new System.Drawing.Size(83, 23);
 			this.Record.TabIndex = 9;
@@ -169,16 +172,29 @@
 			this.Record.UseVisualStyleBackColor = true;
 			this.Record.Click += new System.EventHandler(this.Record_Click);
 			// 
+			// RecordingBorderPanel
+			// 
+			this.RecordingBorderPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.RecordingBorderPanel.BackColor = System.Drawing.SystemColors.Control;
+			this.RecordingBorderPanel.Controls.Add(this.splitContainer1);
+			this.RecordingBorderPanel.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.RecordingBorderPanel.Location = new System.Drawing.Point(0, 31);
+			this.RecordingBorderPanel.Name = "RecordingBorderPanel";
+			this.RecordingBorderPanel.Size = new System.Drawing.Size(839, 346);
+			this.RecordingBorderPanel.TabIndex = 10;
+			// 
 			// ControlForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(836, 446);
+			this.ClientSize = new System.Drawing.Size(839, 450);
 			this.Controls.Add(this.Record);
-			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.ConnectBtn);
 			this.Controls.Add(this.StatusStrip);
 			this.Controls.Add(this.MenuStrip);
+			this.Controls.Add(this.RecordingBorderPanel);
 			this.MainMenuStrip = this.MenuStrip;
 			this.Name = "ControlForm";
 			this.Text = "Form1";
@@ -192,6 +208,7 @@
 			this.splitContainer1.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
+			this.RecordingBorderPanel.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -210,6 +227,7 @@
 		private System.Windows.Forms.ToolStripMenuItem TestMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem TestPatternMenuItem;
 		private System.Windows.Forms.Button Record;
+		private System.Windows.Forms.Panel RecordingBorderPanel;
 	}
 }
 
