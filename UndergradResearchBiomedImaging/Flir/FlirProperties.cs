@@ -18,11 +18,13 @@ namespace UndergradResearchBiomedImaging.Flir {
 		public EnumNode<TestPatternGeneratorSelectorEnums> TestPatternGeneratorSelector { get; private set; }
 		public EnumNode<GainSelectorEnums> GainSelector { get; private set; }
 		public EnumNode<GainAutoEnums> GainAuto { get; private set; }
-		public FloatNode AutoGainUpperLimit { get; set; }
-		public FloatNode AutoGainLowerLimit { get; set; }
+		public FloatNode AutoGainUpperLimit { get; private set; }
+		public FloatNode AutoGainLowerLimit { get; private set; }
 		public FloatNode Gain { get; private set; }
 		public EnumNode<ExposureModeEnums> ExposureMode { get; private set; }
 		public EnumNode<ExposureAutoEnums> ExposureAuto { get; private set; }
+		public FloatNode ExposureAutoUpperLimit { get; private set; }
+		public FloatNode ExposureAutoLowerLimit { get; private set; }
 		public FloatNode ExposureTime { get; private set; } //In Milliseconds
 		public FloatNode ExposureTimeAbs { get; private set; } //In Millisecond
 		public StringNode DeviceVendorName { get; private set; }
@@ -53,6 +55,8 @@ namespace UndergradResearchBiomedImaging.Flir {
 			Gain = new FloatNode(camera, "Gain");
 			ExposureMode = new EnumNode<ExposureModeEnums>(camera, "ExposureMode");
 			ExposureAuto = new EnumNode<ExposureAutoEnums>(camera, "ExposureAuto");
+			ExposureAutoUpperLimit = new FloatNode(camera, "AutoExposureTimeUpperLimit");
+			ExposureAutoLowerLimit = new FloatNode(camera, "AutoExposureTimeLowerLimit");
 			ExposureTime = new FloatNode(camera, "ExposureTime");
 			ExposureTimeAbs = new FloatNode(camera, "ExposureTimeAbs");
 			DeviceVendorName = new Flir.Nodes.StringNode(camera, "DeviceVendorName");
@@ -73,8 +77,6 @@ namespace UndergradResearchBiomedImaging.Flir {
 	}
 
 	//TODO properties
-	//AutoExposureTimeLowerLimit
-	//AutoExposureTimeUpperLimit
 	//BlackLevel
 	//BlackLevelEnabled
 	//BlackLevelAuto
@@ -89,7 +91,7 @@ namespace UndergradResearchBiomedImaging.Flir {
 	//Saturation
 	//SaturationEnabled
 	//SaturationAuto
-	//BalanceWhiteAuto
+	//BalanceWhiteAuto-------------------------------------------------------------------------------
 	//BalanceRatioSelector
 	//BalanceRatio
 	//U3VDeviceCapability
@@ -141,7 +143,7 @@ namespace UndergradResearchBiomedImaging.Flir {
 	//AcquisitionStop
 	//AcquisitionFrameRateAuto
 	//AcquisitionFrameRateEnabled
-	//AcquisitionFrameRate
+	//AcquisitionFrameRate-------------------------------------------------------------------------------
 	//AcquisitionFrameCount
 	//AcquisitionStatusSelector
 	//AcquisitionStatus

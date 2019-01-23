@@ -28,6 +28,7 @@ namespace UndergradResearchBiomedImaging.UI.OptionsCategories {
 
 			options.Add(new CameraInfoUI(this, panel, libraryVersion));
 			options.Add(new GainUI(this, panel));
+			options.Add(new ExposureUI(this, panel));
 
 			//TODO add events from stream input.on
 			//input.OnStreamEnded += onStreamEnded;

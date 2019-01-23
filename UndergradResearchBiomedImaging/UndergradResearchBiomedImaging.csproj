@@ -112,6 +112,7 @@
     <Compile Include="UI\MenuStrip\TestPatternMenu.cs" />
     <Compile Include="UI\OptionsCategories\CameraOptionsUI.cs" />
     <Compile Include="UI\OptionsCategories\Options\CameraInfoUI.cs" />
+    <Compile Include="UI\OptionsCategories\Options\ExposureUI.cs" />
     <Compile Include="UI\OptionsCategories\Options\GainUI.cs" />
     <Compile Include="UI\OptionsCategories\IOptionsUI.cs" />
     <Compile Include="UI\Options\ConstantValueEntry.cs" />
