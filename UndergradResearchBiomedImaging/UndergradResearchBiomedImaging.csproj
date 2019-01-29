@@ -83,6 +83,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CameraOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CameraOptionsForm.Designer.cs">
+      <DependentUpon>CameraOptionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExampleFlir\Acquisition_CSharp.cs" />
     <Compile Include="ExampleFlir\Enumeration_CSharp.cs" />
     <Compile Include="ExampleFlir\SaveToAvi_CSharp.cs" />
@@ -96,18 +102,43 @@
     <Compile Include="Flir\Nodes\IntegerNode.cs" />
     <Compile Include="Flir\Nodes\NumericalNode.cs" />
     <Compile Include="Flir\Nodes\StringNode.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MotorizedStage\Commands\Acceleration.cs" />
+    <Compile Include="MotorizedStage\Commands\Position.cs" />
+    <Compile Include="MotorizedStage\Commands\Status.cs" />
+    <Compile Include="MotorizedStage\Commands\Deceleration.cs" />
+    <Compile Include="MotorizedStage\Commands\EmergencyStop.cs" />
+    <Compile Include="MotorizedStage\Commands\FeedbackMode.cs" />
+    <Compile Include="MotorizedStage\Commands\FirmwareVersion.cs" />
+    <Compile Include="MotorizedStage\Commands\Home.cs" />
+    <Compile Include="MotorizedStage\Commands\Jog.cs" />
+    <Compile Include="MotorizedStage\Commands\JogAcceleration.cs" />
+    <Compile Include="MotorizedStage\Commands\MaxAcceleration.cs" />
+    <Compile Include="MotorizedStage\Commands\MaxVelocity.cs" />
+    <Compile Include="MotorizedStage\Commands\MoveAbsolute.cs" />
+    <Compile Include="MotorizedStage\Commands\MoveRelative.cs" />
+    <Compile Include="MotorizedStage\Commands\ReadAndClearErrors.cs" />
+    <Compile Include="MotorizedStage\Commands\SoftLimitNegative.cs" />
+    <Compile Include="MotorizedStage\Commands\SoftLimitPositive.cs" />
+    <Compile Include="MotorizedStage\Commands\StopMotion.cs" />
+    <Compile Include="MotorizedStage\Commands\TravelVelocity.cs" />
+    <Compile Include="MotorizedStage\Commands\ZeroPosition.cs" />
+    <Compile Include="MotorizedStage\IStageCommand.cs" />
+    <Compile Include="MotorizedStage\StageController.cs" />
+    <Compile Include="MotorizedStage\StageError.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RobotHelpers\Serial\SerialCommand.cs" />
-    <Compile Include="RobotHelpers\Serial\SerialCommunicator.cs" />
-    <Compile Include="RobotHelpers\Serial\SerialResponse.cs" />
-    <Compile Include="RobotHelpers\Serial\SerialUIListener.cs" />
+    <Compile Include="StageOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StageOptionsForm.Designer.cs">
+      <DependentUpon>StageOptionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\MenuStrip\EnumMenuStrip.cs" />
     <Compile Include="UI\MenuStrip\TestPatternMenu.cs" />
     <Compile Include="UI\OptionsCategories\CameraOptionsUI.cs" />
@@ -128,8 +159,11 @@
     <Compile Include="Util\FastRecorder.cs" />
     <Compile Include="Util\FPSCounter.cs" />
     <Compile Include="Util\Property.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="CameraOptionsForm.resx">
+      <DependentUpon>CameraOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -140,6 +174,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StageOptionsForm.resx">
+      <DependentUpon>StageOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

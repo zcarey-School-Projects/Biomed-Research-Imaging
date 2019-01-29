@@ -1,6 +1,5 @@
 ﻿using Emgu.CV;
 using Emgu.CV.Structure;
-using RobotHelpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,20 +24,22 @@ namespace UndergradResearchBiomedImaging {
 
 		private const string TempVideoFile = @"TempRecording.avi";
 
+		private readonly CameraOptionsForm cameraOptionsForm;
+
 		private readonly FlirCameraStream stream = new FlirCameraStream();
 		private FlirCameraManager cameraManager = new FlirCameraManager();
-		private CameraOptionsUI cameraOptions;
+		
 		private FastRecorder videoWriter;
 
 		public ControlForm() {
 			InitializeComponent();
 			CameraFeed.Image = null; //Clears the test image.
+			ScreenshotViewer.Image = null;
+
+			cameraOptionsForm = new CameraOptionsForm(cameraManager, stream);
 
 			//Generate drop-down menus
 			new TestPatternMenu(TestPatternMenuItem, stream);
-
-			//Generate Camera Options UI
-			cameraOptions = new CameraOptionsUI(SettingsPanel, stream, cameraManager.GetSpinnakerLibraryVersion());
 
 			//Set listeners for camera stream
 			stream.OnNewImage += FlirCameraStream_OnNewImage;
@@ -53,6 +54,10 @@ namespace UndergradResearchBiomedImaging {
 
 		private void ControlForm_Load(object sender, EventArgs e) {
 			//stream.SourceCamera = cameraManager.OpenCamera(0); //Attempts to load a camera on start-up
+		}
+
+		private void ControlForm_FormClosing(object sender, FormClosingEventArgs e) {
+			cameraOptionsForm.Close();
 		}
 
 		int count = 0;
@@ -70,24 +75,13 @@ namespace UndergradResearchBiomedImaging {
 				CameraFeed.Invoke(new Action(() => { CameraFeed.Image = null; }));
 				FPSStatusLabel.Text = ((int)0).ToString("N2").PadLeft(3) + " FPS";
 			}
-
-			cameraOptions.Update();
 		}
 
-		private void ScreenshotMenuItem_Click(object sender, EventArgs e) {
-			/*lock (inputLock) {
-				if (input != null) {
-					input.UserPromptSaveScreenshot();
-				}
-			}*/
-			//TODO screenshot
-		}
-
-		private void ConnectBtn_Click(object sender, EventArgs e) {
+		private void Control_ConnectToCamera(object sender, EventArgs e) {
 			stream.SourceCamera = cameraManager.OpenCamera(0);
 		}
 
-		private void Record_Click(object sender, EventArgs e) {
+		private void Control_Record(object sender, EventArgs e) {
 			if (Record.Text == "Record") {
 				if (videoWriter.Start(stream)) {
 					Record.Text = "Stop";
@@ -136,7 +130,21 @@ namespace UndergradResearchBiomedImaging {
 			videoWriter.OnRecordingForcedClosed += OnRecordingClosed;
 		}
 
-		//TODO make reset buttons for options to set to defaults.
-		//TODO camera feed gets covered up?
+		private void Menu_CameraOptions_Click(object sender, EventArgs e) {
+			cameraOptionsForm.Show();
+		}
+
+		private void Control_TakeScreenshot(object sender, EventArgs e) {
+			/*lock (inputLock) {
+				if (input != null) {
+					input.UserPromptSaveScreenshot();
+				}
+			}*/
+			//TODO screenshot
+		}
+
+		private void Control_SaveScreenshot(object sender, EventArgs e) {
+			//TODO save screenshot
+		}
 	}
 }
