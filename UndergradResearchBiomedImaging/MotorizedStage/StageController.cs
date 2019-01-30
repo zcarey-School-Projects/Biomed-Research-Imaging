@@ -132,18 +132,6 @@ Receiving each line of data is followed by [\n] and final line ends in [\n\r]
 		}
 		#endregion
 
-		/// <summary>Reads and displays any errors via Message boxes</summary>
-		public bool DisplayErrors() {
-			IStageCommand command = new Commands.ReadAndClearErrors(1);
-			StageError[] errors;
-			if (!TrySendCommand(command, out errors)) return false;
-			foreach(StageError error in errors) {
-				MessageBox.Show("ERROR: " + error.Name + "; " + error.ShortDescription);
-			}
-
-			return true;
-		}
-
 		#region Homing
 		public HomingStatus FindHome() {
 			lock (this) {
@@ -218,7 +206,6 @@ Receiving each line of data is followed by [\n] and final line ends in [\n\r]
 							if (TrySendCommand(versionCommand, out version)) { //Gurantees non-null
 								if (version.ToUpper().StartsWith("MMC-200")) {
 									Console.WriteLine("SUCCESS!: Version: {0}", version);
-									DisplayErrors();
 									return true;
 								}
 							}

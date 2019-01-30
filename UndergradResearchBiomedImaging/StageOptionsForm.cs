@@ -13,5 +13,20 @@ namespace UndergradResearchBiomedImaging {
 		public StageOptionsForm() {
 			InitializeComponent();
 		}
+
+		private void StageOptionsForm_Load(object sender, EventArgs e) {
+
+		}
+
+		private void StageOptionsForm_FormClosing(object sender, FormClosingEventArgs e) {
+			if(e.CloseReason == CloseReason.UserClosing) {
+				e.Cancel = true;
+				this.Hide();
+			}
+		}
+
+		private void StageOptionsForm_Shown(object sender, EventArgs e) {
+
+		}
 	}
 }

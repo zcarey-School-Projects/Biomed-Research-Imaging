@@ -47,7 +47,7 @@ namespace UndergradResearchBiomedImaging.Util {
 			}
 			closeWriterSafely();
 		}
-
+		//TODO every X number of frames, save the current data in a seperate thread and open a new writer to help save memory.
 		private void ThreadLoop() {
 			while (true) {
 				lock (this) {
@@ -57,7 +57,7 @@ namespace UndergradResearchBiomedImaging.Util {
 							if (stream != null) stream.OnNewImage -= NewImageGrabbed;
 							return; //Will end the thread, will will prevent any events to close themselves.
 						}
-
+						
 						//Save any images in the queue. Limit to 3 at a time juat in case we can't save fast enough.
 						Image<Bgr, byte> frame;
 						for(int i = 0; i < 3; i++) {

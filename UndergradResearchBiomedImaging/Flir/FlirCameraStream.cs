@@ -22,7 +22,7 @@ namespace UndergradResearchBiomedImaging.Flir {
 					fpsCounter.Reset();
 					//width
 					//height
-					imageBuffer = null;
+					Image = imageBuffer = null;
 					if (value != null) {
 						if (value.BeginAcquisition()) {
 							camera = value;
@@ -44,6 +44,7 @@ namespace UndergradResearchBiomedImaging.Flir {
 		private Thread grabbingThread;
 		private volatile bool exitThread = false;
 		private Image<Bgr, byte> imageBuffer;
+		public Image<Bgr, byte> Image { get; private set; }
 		private FPSCounter fpsCounter = new FPSCounter();
 
 		public delegate void NewImageHandler(FlirCameraStream sender, Image<Bgr, byte> image);
@@ -94,6 +95,7 @@ namespace UndergradResearchBiomedImaging.Flir {
 						if (camera.GrabImage(out imageBuffer)) {
 							fpsCounter.Tick();
 							//We all good
+							Image = imageBuffer;
 							OnNewImage?.Invoke(this, imageBuffer);
 						} else {
 							endStream();
@@ -107,7 +109,7 @@ namespace UndergradResearchBiomedImaging.Flir {
 		private void endStream() {
 			bool shouldInvoke = (camera != null);
 			camera = null;
-			imageBuffer = null;
+			Image = imageBuffer = null;
 			if(shouldInvoke) OnSourceChanged?.Invoke(this, null);
 			fpsCounter.Reset();
 			//Width = 0;
