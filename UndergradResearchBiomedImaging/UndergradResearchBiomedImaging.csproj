@@ -128,7 +128,7 @@
     <Compile Include="MotorizedStage\Commands\StopMotion.cs" />
     <Compile Include="MotorizedStage\Commands\TravelVelocity.cs" />
     <Compile Include="MotorizedStage\Commands\ZeroPosition.cs" />
-    <Compile Include="MotorizedStage\IStageCommand.cs" />
+    <Compile Include="MotorizedStage\StageCommand.cs" />
     <Compile Include="MotorizedStage\StageController.cs" />
     <Compile Include="MotorizedStage\StageError.cs" />
     <Compile Include="Program.cs" />
