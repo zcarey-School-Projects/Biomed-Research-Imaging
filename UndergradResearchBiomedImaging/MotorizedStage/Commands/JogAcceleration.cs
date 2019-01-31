@@ -9,6 +9,9 @@ namespace UndergradResearchBiomedImaging.MotorizedStage.Commands {
 	/// <summary>Sets the acceleration and deceleration for jogging on an axis. Must be less than Max Acceleration (AMX).</summary>
 	public class JogAcceleration : IStageCommand {
 
+		public static decimal MinimumValue { get; } = 0.001M;
+		public static decimal MaximumValue { get; } = 500.0M;
+
 		public override string Command { get; protected set; }
 
 		public override bool CanSetDuringMotion => false;

@@ -9,6 +9,9 @@ namespace UndergradResearchBiomedImaging.MotorizedStage.Commands {
 	/// <summary>Sets or reads the deceleration value (slowing down) of an axis.</summary>
 	public class Deceleration : IStageCommand {
 
+		public static decimal MinimumValue { get; } = 0.001M;
+		public static decimal MaximumValue { get; } = 500.000M;
+
 		public override string Command { get; protected set; }
 
 		public override bool CanSetDuringMotion => false;

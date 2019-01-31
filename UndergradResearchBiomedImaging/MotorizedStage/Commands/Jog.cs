@@ -9,6 +9,9 @@ namespace UndergradResearchBiomedImaging.MotorizedStage.Commands {
 	/// <summary>Continuously moves (or stops) the stage in a direction until stopped.</summary>
 	public class Jog : IStageCommand {
 
+		public static decimal MinimumValue { get; } = -100.0M;
+		public static decimal MaximumValue { get; } = 100.0M;
+
 		public override string Command { get; protected set; }
 
 		public override bool CanSetDuringMotion => true;

@@ -9,6 +9,9 @@ namespace UndergradResearchBiomedImaging.MotorizedStage.Commands {
 	/// <summary>Sets the velocity of an axis. Must be less than the maximum velocity (VMX).</summary>
 	public class TravelVelocity : IStageCommand {
 
+		public static decimal MinimumValue { get; } = 0.001M;
+		public static decimal MaximumValue { get; } = 999.999M;
+
 		public override string Command { get; protected set; }
 
 		public override bool CanSetDuringMotion => true;
@@ -43,7 +46,7 @@ namespace UndergradResearchBiomedImaging.MotorizedStage.Commands {
 
 		/// <summary>Sets the axis (1 to 99) velocity (000.001 to VMX(999.999 mm/s)) to the specified value.</summary>
 		public TravelVelocity(byte axis, decimal velocity) {
-			Command = axis + "VEL" + velocity.ToString("N6");
+			Command = axis + "VEL" + velocity.ToString("N3");
 		}
 
 		/// <summary>Reads the velocity (type 'decimal') from the specified axis (1 to 99).</summary>

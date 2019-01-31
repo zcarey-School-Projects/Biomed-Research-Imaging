@@ -53,7 +53,7 @@ namespace UndergradResearchBiomedImaging {
 			ImageExtensions.Add(5, ImageFormat.Exif);
 			ImageExtensions.Add(6, ImageFormat.Icon);
 			ImageExtensions.Add(7, ImageFormat.Tiff);
-
+			//Text files (*.txt)|*.txt|All files (*.*)|*.*
 			string filter = "";
 			for(int i = 0; i < ImageExtensions.Count; i++) {
 				ImageFormat format;
@@ -62,7 +62,7 @@ namespace UndergradResearchBiomedImaging {
 				}
 			}
 
-			SaveScreenshotDialog.Filter = filter.TrimEnd(';');
+			SaveScreenshotDialog.Filter = filter.TrimEnd('|');
 		}
 
 		private readonly CameraOptionsForm cameraOptionsForm;
@@ -80,7 +80,7 @@ namespace UndergradResearchBiomedImaging {
 			ScreenshotViewer.Image = null;
 
 			cameraOptionsForm = new CameraOptionsForm(cameraManager, stream);
-			stageOptionsForm = new StageOptionsForm();
+			stageOptionsForm = new StageOptionsForm(this, stage);
 
 			//Generate drop-down menus
 			new TestPatternMenu(TestPatternMenuItem, stream);
@@ -254,8 +254,26 @@ namespace UndergradResearchBiomedImaging {
 		private void Control_ConnectToStage(object sender, EventArgs e) {
 			if (stage.TryAutoConnect()) {
 				DisplayStageErrors();
+				bool homed;
+				if (stage.TrySendCommand(new MotorizedStage.Commands.Home(1, true), out homed)) {
+					DisplayStageErrors();
+					if (homed == false) {
+						stageOptionsForm.UpdateAllValues();
+						//Hasn't been homed, ask user if they wish to home.
+						if (MessageBox.Show("Stage has not been homed yet, would you like to home it now?", "Stage Not Homed", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+							if (stage.FindHome() == HomingStatus.Initiated) {
+								MessageBox.Show("Homed successfully!");
+							} else {
+								MessageBox.Show("Something went wrong.");
+							}
+							return; //No matter what happenes, the user already knowns it was connected, so dont prompt again.
+						}
+					}
+				}
+
+				MessageBox.Show("Connected!");
 			} else {
-				MessageBox.Show("Could not connect to stage.");
+				MessageBox.Show("Unable to connect.");
 			}
 		}
 
