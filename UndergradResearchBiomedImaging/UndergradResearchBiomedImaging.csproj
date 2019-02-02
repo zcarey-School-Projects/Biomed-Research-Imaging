@@ -133,6 +133,12 @@
     <Compile Include="MotorizedStage\StageError.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScreenshotViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScreenshotViewer.Designer.cs">
+      <DependentUpon>ScreenshotViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="StageOptionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,7 @@
     <Compile Include="UI\Options\OptionsCategory.cs" />
     <Compile Include="UI\Options\OptionsPanel.cs" />
     <Compile Include="UI\Options\StringEntry.cs" />
+    <Compile Include="Util\ExtensionMethods\ControlEventExtensions.cs" />
     <Compile Include="Util\FastRecorder.cs" />
     <Compile Include="Util\FPSCounter.cs" />
     <Compile Include="Util\Property.cs" />
@@ -174,6 +181,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ScreenshotViewer.resx">
+      <DependentUpon>ScreenshotViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StageOptionsForm.resx">
       <DependentUpon>StageOptionsForm.cs</DependentUpon>
     </EmbeddedResource>

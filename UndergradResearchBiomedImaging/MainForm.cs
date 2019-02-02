@@ -27,8 +27,7 @@ namespace UndergradResearchBiomedImaging {
 		private const string TempVideoFile = @"TempRecording.avi";
 
 		private static SaveFileDialog SaveVideoDialog;
-		private static SaveFileDialog SaveScreenshotDialog;//TODO read framerate from camera for video
-		private static Dictionary<int, ImageFormat> ImageExtensions = new Dictionary<int, ImageFormat>();
+		//TODO read framerate from camera for video
 		
 		/// <summary>Initializes file dialogs</summary>
 		static ControlForm() {
@@ -38,31 +37,6 @@ namespace UndergradResearchBiomedImaging {
 			SaveVideoDialog.OverwritePrompt = true;
 			SaveVideoDialog.RestoreDirectory = true;
 			SaveVideoDialog.Title = "Save Video";
-
-			SaveScreenshotDialog = new SaveFileDialog();
-			SaveScreenshotDialog.AddExtension = true;
-			SaveScreenshotDialog.OverwritePrompt = true;
-			SaveScreenshotDialog.RestoreDirectory = true;
-			SaveScreenshotDialog.Title = "Save Screenshot";
-
-			ImageExtensions.Add(0, ImageFormat.Png);
-			ImageExtensions.Add(1, ImageFormat.Jpeg);
-			ImageExtensions.Add(2, ImageFormat.Gif);
-			ImageExtensions.Add(3, ImageFormat.Bmp);
-			ImageExtensions.Add(4, ImageFormat.Emf);
-			ImageExtensions.Add(5, ImageFormat.Exif);
-			ImageExtensions.Add(6, ImageFormat.Icon);
-			ImageExtensions.Add(7, ImageFormat.Tiff);
-			//Text files (*.txt)|*.txt|All files (*.*)|*.*
-			string filter = "";
-			for(int i = 0; i < ImageExtensions.Count; i++) {
-				ImageFormat format;
-				if (ImageExtensions.TryGetValue(i, out format)) {
-					filter += format.ToString() + " (*." + format.ToString().ToLower() + ")|*." + format.ToString().ToLower() + "|";
-				}
-			}
-
-			SaveScreenshotDialog.Filter = filter.TrimEnd('|');
 		}
 
 		private readonly CameraOptionsForm cameraOptionsForm;
@@ -77,7 +51,6 @@ namespace UndergradResearchBiomedImaging {
 		public ControlForm() {
 			InitializeComponent();
 			CameraFeed.Image = null; //Clears the test image.
-			ScreenshotViewer.Image = null;
 
 			cameraOptionsForm = new CameraOptionsForm(cameraManager, stream);
 			stageOptionsForm = new StageOptionsForm(this, stage);
@@ -228,27 +201,14 @@ namespace UndergradResearchBiomedImaging {
 		private void Control_TakeScreenshot(object sender, EventArgs e) {
 			if (stream != null) {
 				Image<Bgr, byte> screenshot = stream.Image;
-				ScreenshotViewer.Image = ((screenshot == null) ? null : screenshot.Bitmap);
+				if (screenshot != null) {
+					ScreenshotViewer.Show(screenshot.Bitmap);
+				}
 			}
 		}
 
 		private void Control_SaveScreenshot(object sender, EventArgs e) {
-			Image screenshot = ScreenshotViewer.Image;
-			if(screenshot != null) {
-				if(SaveScreenshotDialog.ShowDialog() == DialogResult.OK) {
-					ImageFormat format;
-					if (ImageExtensions.TryGetValue(SaveScreenshotDialog.FilterIndex, out format)) {
-						try {
-							screenshot.Save(SaveScreenshotDialog.FileName, format);
-						}catch(Exception ex) {
-							Console.WriteLine("Error writing file: " + ex.Message);
-							MessageBox.Show("Error saving file.");
-						}
-					} else { 
-						MessageBox.Show("Error finding format.");
-					}
-				}
-			}
+			
 		}
 
 		private void Control_ConnectToStage(object sender, EventArgs e) {
@@ -334,6 +294,5 @@ namespace UndergradResearchBiomedImaging {
 		}
 
 		#endregion
-
 	}
 }
