@@ -58,30 +58,30 @@
 			this.PositionTimer = new System.Windows.Forms.Timer(this.components);
 			this.StageTabs = new System.Windows.Forms.TabControl();
 			this.Tab_StageControls = new System.Windows.Forms.TabPage();
-			this.Tab_StageSettings = new System.Windows.Forms.TabPage();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-			this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-			this.label3 = new System.Windows.Forms.Label();
+			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.label6 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.Numeric_JogVelocityPercent = new System.Windows.Forms.NumericUpDown();
+			this.Numeric_JogVelocityActual = new System.Windows.Forms.NumericUpDown();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.Tab_StageSettings = new System.Windows.Forms.TabPage();
+			this.Btn_Home = new System.Windows.Forms.Button();
+			this.Btn_ViewErrors = new System.Windows.Forms.Button();
+			this.groupBox8 = new System.Windows.Forms.GroupBox();
+			this.label10 = new System.Windows.Forms.Label();
+			this.Numeric_JogAcceleration = new System.Windows.Forms.NumericUpDown();
+			this.groupBox7 = new System.Windows.Forms.GroupBox();
+			this.label9 = new System.Windows.Forms.Label();
+			this.Numeric_Deceleration = new System.Windows.Forms.NumericUpDown();
+			this.groupBox6 = new System.Windows.Forms.GroupBox();
+			this.label8 = new System.Windows.Forms.Label();
+			this.Numeric_Acceleration = new System.Windows.Forms.NumericUpDown();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.Numeric_TravelVelocity = new System.Windows.Forms.NumericUpDown();
-			this.groupBox6 = new System.Windows.Forms.GroupBox();
-			this.label8 = new System.Windows.Forms.Label();
-			this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-			this.groupBox7 = new System.Windows.Forms.GroupBox();
-			this.label9 = new System.Windows.Forms.Label();
-			this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-			this.groupBox8 = new System.Windows.Forms.GroupBox();
-			this.label10 = new System.Windows.Forms.Label();
-			this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-			this.Btn_Home = new System.Windows.Forms.Button();
-			this.Btn_ViewErrors = new System.Windows.Forms.Button();
+			this.label2 = new System.Windows.Forms.Label();
 			this.StatusStrip.SuspendLayout();
 			this.MenuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).BeginInit();
@@ -91,21 +91,21 @@
 			((System.ComponentModel.ISupportInitialize)(this.Numeric_Relative)).BeginInit();
 			this.StageTabs.SuspendLayout();
 			this.Tab_StageControls.SuspendLayout();
-			this.Tab_StageSettings.SuspendLayout();
-			this.groupBox1.SuspendLayout();
-			this.groupBox2.SuspendLayout();
-			this.groupBox3.SuspendLayout();
 			this.groupBox4.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+			this.groupBox3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.Numeric_JogVelocityPercent)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.Numeric_JogVelocityActual)).BeginInit();
+			this.groupBox2.SuspendLayout();
+			this.groupBox1.SuspendLayout();
+			this.Tab_StageSettings.SuspendLayout();
+			this.groupBox8.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.Numeric_JogAcceleration)).BeginInit();
+			this.groupBox7.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.Numeric_Deceleration)).BeginInit();
+			this.groupBox6.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.Numeric_Acceleration)).BeginInit();
 			this.groupBox5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Numeric_TravelVelocity)).BeginInit();
-			this.groupBox6.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-			this.groupBox7.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-			this.groupBox8.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// StatusStrip
@@ -194,8 +194,7 @@
 			// 
 			// Btn_ConnectCamera
 			// 
-			this.Btn_ConnectCamera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.Btn_ConnectCamera.Location = new System.Drawing.Point(49, 34);
+			this.Btn_ConnectCamera.Location = new System.Drawing.Point(119, 34);
 			this.Btn_ConnectCamera.Name = "Btn_ConnectCamera";
 			this.Btn_ConnectCamera.Size = new System.Drawing.Size(75, 23);
 			this.Btn_ConnectCamera.TabIndex = 4;
@@ -466,6 +465,123 @@
 			this.Tab_StageControls.Text = "Controls";
 			this.Tab_StageControls.UseVisualStyleBackColor = true;
 			// 
+			// groupBox4
+			// 
+			this.groupBox4.Controls.Add(this.Btn_WalkPositive);
+			this.groupBox4.Controls.Add(this.Btn_WalkNegative);
+			this.groupBox4.Location = new System.Drawing.Point(6, 267);
+			this.groupBox4.Name = "groupBox4";
+			this.groupBox4.Size = new System.Drawing.Size(308, 50);
+			this.groupBox4.TabIndex = 16;
+			this.groupBox4.TabStop = false;
+			this.groupBox4.Text = "Manual Control";
+			// 
+			// groupBox3
+			// 
+			this.groupBox3.Controls.Add(this.label6);
+			this.groupBox3.Controls.Add(this.label3);
+			this.groupBox3.Controls.Add(this.Numeric_JogVelocityPercent);
+			this.groupBox3.Controls.Add(this.Numeric_JogVelocityActual);
+			this.groupBox3.Controls.Add(this.Btn_JogNegative);
+			this.groupBox3.Controls.Add(this.Btn_JogPositive);
+			this.groupBox3.Location = new System.Drawing.Point(6, 190);
+			this.groupBox3.Name = "groupBox3";
+			this.groupBox3.Size = new System.Drawing.Size(308, 77);
+			this.groupBox3.TabIndex = 15;
+			this.groupBox3.TabStop = false;
+			this.groupBox3.Text = "Jog";
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(283, 23);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(20, 17);
+			this.label6.TabIndex = 15;
+			this.label6.Text = "%";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(142, 23);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(41, 17);
+			this.label3.TabIndex = 9;
+			this.label3.Text = "mm/s";
+			// 
+			// Numeric_JogVelocityPercent
+			// 
+			this.Numeric_JogVelocityPercent.DecimalPlaces = 3;
+			this.Numeric_JogVelocityPercent.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
+			this.Numeric_JogVelocityPercent.Location = new System.Drawing.Point(189, 21);
+			this.Numeric_JogVelocityPercent.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
+			this.Numeric_JogVelocityPercent.Name = "Numeric_JogVelocityPercent";
+			this.Numeric_JogVelocityPercent.Size = new System.Drawing.Size(88, 22);
+			this.Numeric_JogVelocityPercent.TabIndex = 14;
+			this.Numeric_JogVelocityPercent.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
+			this.Numeric_JogVelocityPercent.ValueChanged += new System.EventHandler(this.Numeric_JogVelocityPercent_ValueChanged);
+			// 
+			// Numeric_JogVelocityActual
+			// 
+			this.Numeric_JogVelocityActual.DecimalPlaces = 6;
+			this.Numeric_JogVelocityActual.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            393216});
+			this.Numeric_JogVelocityActual.Location = new System.Drawing.Point(6, 21);
+			this.Numeric_JogVelocityActual.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+			this.Numeric_JogVelocityActual.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            -2147483648});
+			this.Numeric_JogVelocityActual.Name = "Numeric_JogVelocityActual";
+			this.Numeric_JogVelocityActual.Size = new System.Drawing.Size(130, 22);
+			this.Numeric_JogVelocityActual.TabIndex = 9;
+			this.Numeric_JogVelocityActual.ValueChanged += new System.EventHandler(this.Numeric_JogVelocityActual_ValueChanged);
+			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.Numeric_Absolute);
+			this.groupBox2.Controls.Add(this.label5);
+			this.groupBox2.Controls.Add(this.Btn_Absolute);
+			this.groupBox2.Location = new System.Drawing.Point(6, 107);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(308, 77);
+			this.groupBox2.TabIndex = 1;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "Absolute";
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.Btn_RelativeNegative);
+			this.groupBox1.Controls.Add(this.Numeric_Relative);
+			this.groupBox1.Controls.Add(this.Btn_RelativePositive);
+			this.groupBox1.Controls.Add(this.label4);
+			this.groupBox1.Location = new System.Drawing.Point(6, 23);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(308, 78);
+			this.groupBox1.TabIndex = 0;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Relative";
+			// 
 			// Tab_StageSettings
 			// 
 			this.Tab_StageSettings.AutoScroll = true;
@@ -483,130 +599,157 @@
 			this.Tab_StageSettings.Text = "Settings";
 			this.Tab_StageSettings.UseVisualStyleBackColor = true;
 			// 
-			// groupBox1
+			// Btn_Home
 			// 
-			this.groupBox1.Controls.Add(this.Btn_RelativeNegative);
-			this.groupBox1.Controls.Add(this.Numeric_Relative);
-			this.groupBox1.Controls.Add(this.Btn_RelativePositive);
-			this.groupBox1.Controls.Add(this.label4);
-			this.groupBox1.Location = new System.Drawing.Point(6, 23);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(308, 78);
-			this.groupBox1.TabIndex = 0;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Relative";
+			this.Btn_Home.Location = new System.Drawing.Point(6, 230);
+			this.Btn_Home.Name = "Btn_Home";
+			this.Btn_Home.Size = new System.Drawing.Size(96, 23);
+			this.Btn_Home.TabIndex = 22;
+			this.Btn_Home.Text = "Home";
+			this.Btn_Home.UseVisualStyleBackColor = true;
+			this.Btn_Home.Click += new System.EventHandler(this.Btn_Home_Click);
 			// 
-			// groupBox2
+			// Btn_ViewErrors
 			// 
-			this.groupBox2.Controls.Add(this.Numeric_Absolute);
-			this.groupBox2.Controls.Add(this.label5);
-			this.groupBox2.Controls.Add(this.Btn_Absolute);
-			this.groupBox2.Location = new System.Drawing.Point(6, 107);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(308, 77);
-			this.groupBox2.TabIndex = 1;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Absolute";
+			this.Btn_ViewErrors.Location = new System.Drawing.Point(6, 259);
+			this.Btn_ViewErrors.Name = "Btn_ViewErrors";
+			this.Btn_ViewErrors.Size = new System.Drawing.Size(96, 23);
+			this.Btn_ViewErrors.TabIndex = 21;
+			this.Btn_ViewErrors.Text = "View Errors";
+			this.Btn_ViewErrors.UseVisualStyleBackColor = true;
+			this.Btn_ViewErrors.Click += new System.EventHandler(this.Btn_ViewErrors_Click);
 			// 
-			// groupBox3
+			// groupBox8
 			// 
-			this.groupBox3.Controls.Add(this.label6);
-			this.groupBox3.Controls.Add(this.label3);
-			this.groupBox3.Controls.Add(this.numericUpDown2);
-			this.groupBox3.Controls.Add(this.numericUpDown1);
-			this.groupBox3.Controls.Add(this.Btn_JogNegative);
-			this.groupBox3.Controls.Add(this.Btn_JogPositive);
-			this.groupBox3.Location = new System.Drawing.Point(6, 190);
-			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(308, 77);
-			this.groupBox3.TabIndex = 15;
-			this.groupBox3.TabStop = false;
-			this.groupBox3.Text = "Jog";
+			this.groupBox8.Controls.Add(this.label10);
+			this.groupBox8.Controls.Add(this.Numeric_JogAcceleration);
+			this.groupBox8.Location = new System.Drawing.Point(6, 174);
+			this.groupBox8.Name = "groupBox8";
+			this.groupBox8.Size = new System.Drawing.Size(308, 50);
+			this.groupBox8.TabIndex = 19;
+			this.groupBox8.TabStop = false;
+			this.groupBox8.Text = "Jog Acceleration";
 			// 
-			// groupBox4
+			// label10
 			// 
-			this.groupBox4.Controls.Add(this.Btn_WalkPositive);
-			this.groupBox4.Controls.Add(this.Btn_WalkNegative);
-			this.groupBox4.Location = new System.Drawing.Point(6, 267);
-			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(308, 50);
-			this.groupBox4.TabIndex = 16;
-			this.groupBox4.TabStop = false;
-			this.groupBox4.Text = "Manual Control";
+			this.label10.AutoSize = true;
+			this.label10.Location = new System.Drawing.Point(142, 23);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(56, 17);
+			this.label10.TabIndex = 18;
+			this.label10.Text = "mm/s^2";
 			// 
-			// label2
+			// Numeric_JogAcceleration
 			// 
-			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(557, 37);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(101, 17);
-			this.label2.TabIndex = 20;
-			this.label2.Text = "Stage Controls";
-			// 
-			// numericUpDown1
-			// 
-			this.numericUpDown1.DecimalPlaces = 6;
-			this.numericUpDown1.Increment = new decimal(new int[] {
-            1,
+			this.Numeric_JogAcceleration.DecimalPlaces = 3;
+			this.Numeric_JogAcceleration.Location = new System.Drawing.Point(6, 21);
+			this.Numeric_JogAcceleration.Maximum = new decimal(new int[] {
+            999999,
             0,
             0,
-            393216});
-			this.numericUpDown1.Location = new System.Drawing.Point(6, 21);
-			this.numericUpDown1.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-			this.numericUpDown1.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            -2147483648});
-			this.numericUpDown1.Name = "numericUpDown1";
-			this.numericUpDown1.Size = new System.Drawing.Size(130, 22);
-			this.numericUpDown1.TabIndex = 9;
-			// 
-			// numericUpDown2
-			// 
-			this.numericUpDown2.DecimalPlaces = 3;
-			this.numericUpDown2.Increment = new decimal(new int[] {
+            196608});
+			this.Numeric_JogAcceleration.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             196608});
-			this.numericUpDown2.Location = new System.Drawing.Point(189, 21);
-			this.numericUpDown2.Minimum = new decimal(new int[] {
+			this.Numeric_JogAcceleration.Name = "Numeric_JogAcceleration";
+			this.Numeric_JogAcceleration.Size = new System.Drawing.Size(130, 22);
+			this.Numeric_JogAcceleration.TabIndex = 17;
+			this.Numeric_JogAcceleration.Value = new decimal(new int[] {
             1,
             0,
             0,
             196608});
-			this.numericUpDown2.Name = "numericUpDown2";
-			this.numericUpDown2.Size = new System.Drawing.Size(88, 22);
-			this.numericUpDown2.TabIndex = 14;
-			this.numericUpDown2.Value = new decimal(new int[] {
+			this.Numeric_JogAcceleration.ValueChanged += new System.EventHandler(this.Numeric_JogAcceleration_ValueChanged);
+			// 
+			// groupBox7
+			// 
+			this.groupBox7.Controls.Add(this.label9);
+			this.groupBox7.Controls.Add(this.Numeric_Deceleration);
+			this.groupBox7.Location = new System.Drawing.Point(6, 118);
+			this.groupBox7.Name = "groupBox7";
+			this.groupBox7.Size = new System.Drawing.Size(308, 50);
+			this.groupBox7.TabIndex = 19;
+			this.groupBox7.TabStop = false;
+			this.groupBox7.Text = "Deceleration";
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Location = new System.Drawing.Point(142, 23);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(56, 17);
+			this.label9.TabIndex = 18;
+			this.label9.Text = "mm/s^2";
+			// 
+			// Numeric_Deceleration
+			// 
+			this.Numeric_Deceleration.DecimalPlaces = 3;
+			this.Numeric_Deceleration.Location = new System.Drawing.Point(6, 21);
+			this.Numeric_Deceleration.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            196608});
+			this.Numeric_Deceleration.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             196608});
+			this.Numeric_Deceleration.Name = "Numeric_Deceleration";
+			this.Numeric_Deceleration.Size = new System.Drawing.Size(130, 22);
+			this.Numeric_Deceleration.TabIndex = 17;
+			this.Numeric_Deceleration.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
+			this.Numeric_Deceleration.ValueChanged += new System.EventHandler(this.Numeric_Deceleration_ValueChanged);
 			// 
-			// label3
+			// groupBox6
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(142, 23);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(41, 17);
-			this.label3.TabIndex = 9;
-			this.label3.Text = "mm/s";
+			this.groupBox6.Controls.Add(this.label8);
+			this.groupBox6.Controls.Add(this.Numeric_Acceleration);
+			this.groupBox6.Location = new System.Drawing.Point(6, 62);
+			this.groupBox6.Name = "groupBox6";
+			this.groupBox6.Size = new System.Drawing.Size(308, 50);
+			this.groupBox6.TabIndex = 19;
+			this.groupBox6.TabStop = false;
+			this.groupBox6.Text = "Acceleration";
 			// 
-			// label6
+			// label8
 			// 
-			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(283, 23);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(20, 17);
-			this.label6.TabIndex = 15;
-			this.label6.Text = "%";
+			this.label8.AutoSize = true;
+			this.label8.Location = new System.Drawing.Point(142, 23);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(56, 17);
+			this.label8.TabIndex = 18;
+			this.label8.Text = "mm/s^2";
+			// 
+			// Numeric_Acceleration
+			// 
+			this.Numeric_Acceleration.DecimalPlaces = 3;
+			this.Numeric_Acceleration.Location = new System.Drawing.Point(6, 21);
+			this.Numeric_Acceleration.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            196608});
+			this.Numeric_Acceleration.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
+			this.Numeric_Acceleration.Name = "Numeric_Acceleration";
+			this.Numeric_Acceleration.Size = new System.Drawing.Size(130, 22);
+			this.Numeric_Acceleration.TabIndex = 17;
+			this.Numeric_Acceleration.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
+			this.Numeric_Acceleration.ValueChanged += new System.EventHandler(this.Numeric_Acceleration_ValueChanged);
 			// 
 			// groupBox5
 			// 
@@ -650,153 +793,17 @@
             0,
             0,
             196608});
+			this.Numeric_TravelVelocity.ValueChanged += new System.EventHandler(this.Numeric_TravelVelocity_ValueChanged);
 			// 
-			// groupBox6
+			// label2
 			// 
-			this.groupBox6.Controls.Add(this.label8);
-			this.groupBox6.Controls.Add(this.numericUpDown3);
-			this.groupBox6.Location = new System.Drawing.Point(6, 62);
-			this.groupBox6.Name = "groupBox6";
-			this.groupBox6.Size = new System.Drawing.Size(308, 50);
-			this.groupBox6.TabIndex = 19;
-			this.groupBox6.TabStop = false;
-			this.groupBox6.Text = "Acceleration";
-			// 
-			// label8
-			// 
-			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(142, 23);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(41, 17);
-			this.label8.TabIndex = 18;
-			this.label8.Text = "mm/s";
-			// 
-			// numericUpDown3
-			// 
-			this.numericUpDown3.DecimalPlaces = 3;
-			this.numericUpDown3.Location = new System.Drawing.Point(6, 21);
-			this.numericUpDown3.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            196608});
-			this.numericUpDown3.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
-			this.numericUpDown3.Name = "numericUpDown3";
-			this.numericUpDown3.Size = new System.Drawing.Size(130, 22);
-			this.numericUpDown3.TabIndex = 17;
-			this.numericUpDown3.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
-			// 
-			// groupBox7
-			// 
-			this.groupBox7.Controls.Add(this.label9);
-			this.groupBox7.Controls.Add(this.numericUpDown4);
-			this.groupBox7.Location = new System.Drawing.Point(6, 118);
-			this.groupBox7.Name = "groupBox7";
-			this.groupBox7.Size = new System.Drawing.Size(308, 50);
-			this.groupBox7.TabIndex = 19;
-			this.groupBox7.TabStop = false;
-			this.groupBox7.Text = "Deceleration";
-			// 
-			// label9
-			// 
-			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(142, 23);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(41, 17);
-			this.label9.TabIndex = 18;
-			this.label9.Text = "mm/s";
-			// 
-			// numericUpDown4
-			// 
-			this.numericUpDown4.DecimalPlaces = 3;
-			this.numericUpDown4.Location = new System.Drawing.Point(6, 21);
-			this.numericUpDown4.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            196608});
-			this.numericUpDown4.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
-			this.numericUpDown4.Name = "numericUpDown4";
-			this.numericUpDown4.Size = new System.Drawing.Size(130, 22);
-			this.numericUpDown4.TabIndex = 17;
-			this.numericUpDown4.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
-			// 
-			// groupBox8
-			// 
-			this.groupBox8.Controls.Add(this.label10);
-			this.groupBox8.Controls.Add(this.numericUpDown5);
-			this.groupBox8.Location = new System.Drawing.Point(6, 174);
-			this.groupBox8.Name = "groupBox8";
-			this.groupBox8.Size = new System.Drawing.Size(308, 50);
-			this.groupBox8.TabIndex = 19;
-			this.groupBox8.TabStop = false;
-			this.groupBox8.Text = "Jog Acceleration";
-			// 
-			// label10
-			// 
-			this.label10.AutoSize = true;
-			this.label10.Location = new System.Drawing.Point(142, 23);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(41, 17);
-			this.label10.TabIndex = 18;
-			this.label10.Text = "mm/s";
-			// 
-			// numericUpDown5
-			// 
-			this.numericUpDown5.DecimalPlaces = 3;
-			this.numericUpDown5.Location = new System.Drawing.Point(6, 21);
-			this.numericUpDown5.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            196608});
-			this.numericUpDown5.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
-			this.numericUpDown5.Name = "numericUpDown5";
-			this.numericUpDown5.Size = new System.Drawing.Size(130, 22);
-			this.numericUpDown5.TabIndex = 17;
-			this.numericUpDown5.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
-			// 
-			// Btn_Home
-			// 
-			this.Btn_Home.Location = new System.Drawing.Point(6, 230);
-			this.Btn_Home.Name = "Btn_Home";
-			this.Btn_Home.Size = new System.Drawing.Size(96, 23);
-			this.Btn_Home.TabIndex = 22;
-			this.Btn_Home.Text = "Home";
-			this.Btn_Home.UseVisualStyleBackColor = true;
-			// 
-			// Btn_ViewErrors
-			// 
-			this.Btn_ViewErrors.Location = new System.Drawing.Point(6, 259);
-			this.Btn_ViewErrors.Name = "Btn_ViewErrors";
-			this.Btn_ViewErrors.Size = new System.Drawing.Size(96, 23);
-			this.Btn_ViewErrors.TabIndex = 21;
-			this.Btn_ViewErrors.Text = "View Errors";
-			this.Btn_ViewErrors.UseVisualStyleBackColor = true;
+			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(557, 37);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(101, 17);
+			this.label2.TabIndex = 20;
+			this.label2.Text = "Stage Controls";
 			// 
 			// ControlForm
 			// 
@@ -830,28 +837,28 @@
 			this.StageTabs.ResumeLayout(false);
 			this.Tab_StageControls.ResumeLayout(false);
 			this.Tab_StageControls.PerformLayout();
-			this.Tab_StageSettings.ResumeLayout(false);
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
-			this.groupBox2.ResumeLayout(false);
-			this.groupBox2.PerformLayout();
+			this.groupBox4.ResumeLayout(false);
 			this.groupBox3.ResumeLayout(false);
 			this.groupBox3.PerformLayout();
-			this.groupBox4.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.Numeric_JogVelocityPercent)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.Numeric_JogVelocityActual)).EndInit();
+			this.groupBox2.ResumeLayout(false);
+			this.groupBox2.PerformLayout();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
+			this.Tab_StageSettings.ResumeLayout(false);
+			this.groupBox8.ResumeLayout(false);
+			this.groupBox8.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.Numeric_JogAcceleration)).EndInit();
+			this.groupBox7.ResumeLayout(false);
+			this.groupBox7.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.Numeric_Deceleration)).EndInit();
+			this.groupBox6.ResumeLayout(false);
+			this.groupBox6.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.Numeric_Acceleration)).EndInit();
 			this.groupBox5.ResumeLayout(false);
 			this.groupBox5.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Numeric_TravelVelocity)).EndInit();
-			this.groupBox6.ResumeLayout(false);
-			this.groupBox6.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-			this.groupBox7.ResumeLayout(false);
-			this.groupBox7.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-			this.groupBox8.ResumeLayout(false);
-			this.groupBox8.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -899,20 +906,20 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.NumericUpDown numericUpDown2;
-		private System.Windows.Forms.NumericUpDown numericUpDown1;
+		private System.Windows.Forms.NumericUpDown Numeric_JogVelocityPercent;
+		private System.Windows.Forms.NumericUpDown Numeric_JogVelocityActual;
 		private System.Windows.Forms.GroupBox groupBox5;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.NumericUpDown Numeric_TravelVelocity;
 		private System.Windows.Forms.GroupBox groupBox7;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.NumericUpDown numericUpDown4;
+		private System.Windows.Forms.NumericUpDown Numeric_Deceleration;
 		private System.Windows.Forms.GroupBox groupBox6;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.NumericUpDown numericUpDown3;
+		private System.Windows.Forms.NumericUpDown Numeric_Acceleration;
 		private System.Windows.Forms.GroupBox groupBox8;
 		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.NumericUpDown numericUpDown5;
+		private System.Windows.Forms.NumericUpDown Numeric_JogAcceleration;
 		private System.Windows.Forms.Button Btn_Home;
 		private System.Windows.Forms.Button Btn_ViewErrors;
 	}

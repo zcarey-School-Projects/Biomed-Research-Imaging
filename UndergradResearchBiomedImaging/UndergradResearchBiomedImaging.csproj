@@ -139,12 +139,6 @@
     <Compile Include="ScreenshotViewer.Designer.cs">
       <DependentUpon>ScreenshotViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="StageOptionsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StageOptionsForm.Designer.cs">
-      <DependentUpon>StageOptionsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\MenuStrip\EnumMenuStrip.cs" />
     <Compile Include="UI\MenuStrip\TestPatternMenu.cs" />
     <Compile Include="UI\OptionsCategories\CameraOptionsUI.cs" />
@@ -183,9 +177,6 @@
     </Compile>
     <EmbeddedResource Include="ScreenshotViewer.resx">
       <DependentUpon>ScreenshotViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StageOptionsForm.resx">
-      <DependentUpon>StageOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
