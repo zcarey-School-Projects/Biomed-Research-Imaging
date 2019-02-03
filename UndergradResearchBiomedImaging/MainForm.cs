@@ -17,6 +17,7 @@ using UndergradResearchBiomedImaging.MotorizedStage;
 using UndergradResearchBiomedImaging.UI.MenuStrip;
 using UndergradResearchBiomedImaging.UI.OptionsCategories;
 using UndergradResearchBiomedImaging.Util;
+using UndergradResearchBiomedImaging.Util.ExtensionMethods;
 
 //using Windows.Media.Capture;
 //using System.Windows.Storage;
@@ -40,12 +41,10 @@ namespace UndergradResearchBiomedImaging {
 		}
 
 		private readonly CameraOptionsForm cameraOptionsForm;
-		private readonly StageOptionsForm stageOptionsForm;
 
 		private readonly FlirCameraStream stream = new FlirCameraStream();
 		private FlirCameraManager cameraManager = new FlirCameraManager();
 		private StageController stage = new StageController();
-		
 		private FastRecorder videoWriter;
 
 		public ControlForm() {
@@ -53,7 +52,6 @@ namespace UndergradResearchBiomedImaging {
 			CameraFeed.Image = null; //Clears the test image.
 
 			cameraOptionsForm = new CameraOptionsForm(cameraManager, stream);
-			stageOptionsForm = new StageOptionsForm(this, stage);
 
 			//Generate drop-down menus
 			new TestPatternMenu(TestPatternMenuItem, stream);
@@ -63,10 +61,8 @@ namespace UndergradResearchBiomedImaging {
 			stream.OnSourceChanged += FlirCameraStream_OnSourceChanged;
 
 			//If a temp file already exists, delete it.
-			if (File.Exists(TempVideoFile)) {
-				File.Delete(TempVideoFile);
-			}
 			OnRecordingClosed(null); //Will actually initialize a new video writer for us.
+			setEnableStageControls(false);
 		}
 
 		private void ControlForm_Load(object sender, EventArgs e) {
@@ -76,7 +72,6 @@ namespace UndergradResearchBiomedImaging {
 		private void ControlForm_FormClosing(object sender, FormClosingEventArgs e) {
 			PositionTimer.Enabled = false;
 			cameraOptionsForm.Close();
-			stageOptionsForm.Close();
 		}
 
 		#region Events
@@ -124,10 +119,6 @@ namespace UndergradResearchBiomedImaging {
 			cameraOptionsForm.Show();
 		}
 
-		private void Menu_StageOptions_Click(object sender, EventArgs e) {
-			stageOptionsForm.Show();
-		}
-
 		private void PositionTimer_Tick(object sender, EventArgs e) {
 			if (stage != null) {
 				decimal position;
@@ -137,6 +128,19 @@ namespace UndergradResearchBiomedImaging {
 					//TODO can confirm, no stage connected!
 					Label_CurrentPosition.Text = "Current Position:  0.000000 mm";
 				}
+			}
+		}
+
+		private void setEnableStageControls(bool isEnabled) {
+			setEnableForChildren(Tab_StageControls, isEnabled);
+			setEnableForChildren(Tab_StageSettings, isEnabled);
+			//setEnableForChildren(StageTabs, isEnabled);
+		}
+
+		private void setEnableForChildren(Control container, bool isEnabled) {
+			foreach(Control control in container.Controls) {
+				if(!(control is GroupBox) || !(control is TabPage)) control.Enabled = isEnabled;
+				setEnableForChildren(control, isEnabled);
 			}
 		}
 
@@ -218,7 +222,7 @@ namespace UndergradResearchBiomedImaging {
 				if (stage.TrySendCommand(new MotorizedStage.Commands.Home(1, true), out homed)) {
 					DisplayStageErrors();
 					if (homed == false) {
-						stageOptionsForm.UpdateAllValues();
+						UpdateAllStageValues();
 						//Hasn't been homed, ask user if they wish to home.
 						if (MessageBox.Show("Stage has not been homed yet, would you like to home it now?", "Stage Not Homed", MessageBoxButtons.YesNo) == DialogResult.Yes) {
 							if (stage.FindHome() == HomingStatus.Initiated) {
@@ -322,15 +326,13 @@ namespace UndergradResearchBiomedImaging {
 			if (stage.TrySendCommand(new MotorizedStage.Commands.TravelVelocity(1, value))) {
 				decimal read;
 				if (stage.TrySendCommand(new MotorizedStage.Commands.TravelVelocity(1, true), out read)) {
-					Numeric_TravelVelocity.ValueChanged -= Numeric_TravelVelocity_ValueChanged;
-					Numeric_TravelVelocity.Value = read;
-					Numeric_TravelVelocity.ValueChanged += Numeric_TravelVelocity_ValueChanged;
-					Numeric_JogVelocityPercentage_ValueChanged(null, null);
+					Numeric_TravelVelocity.ChangeValueWithoutEvent(read, Numeric_TravelVelocity_ValueChanged);
+					Numeric_JogVelocityPercent_ValueChanged(null, null);
 					return;
 				}
 			}
 
-			Numeric_JogVelocityPercentage_ValueChanged(null, null);
+			Numeric_JogVelocityPercent_ValueChanged(null, null);
 			stageError();
 		}
 
@@ -361,7 +363,7 @@ namespace UndergradResearchBiomedImaging {
 			if (successful &= stage.TrySendCommand(new MotorizedStage.Commands.Deceleration(1, true), out currentDeceleration)) Numeric_Deceleration.Value = currentDeceleration;
 
 			Numeric_JogVelocityActual.Maximum = Numeric_TravelVelocity.Value;
-			Numeric_JogVelocityActual.Value = Numeric_TravelVelocity.Value * Numeric_JogVelocityPercentage.Value / 100.0M;
+			Numeric_JogVelocityActual.Value = Numeric_TravelVelocity.Value * Numeric_JogVelocityPercent.Value / 100.0M;
 
 			Numeric_JogAcceleration.Maximum = (readAccel) ? maxAcceleration : MotorizedStage.Commands.JogAcceleration.MaximumValue;
 			decimal jogAccel;
@@ -375,14 +377,9 @@ namespace UndergradResearchBiomedImaging {
 		}
 
 		private void Numeric_JogVelocityPercent_ValueChanged(object sender, EventArgs e) {
-			decimal value = constrain(Numeric_JogVelocityPercentage.Value, MotorizedStage.Commands.Jog.MinimumValue, MotorizedStage.Commands.Jog.MaximumValue);
-			Numeric_JogVelocityPercentage.ValueChanged -= Numeric_JogVelocityPercentage_ValueChanged;
-			Numeric_JogVelocityPercentage.Value = value;
-			Numeric_JogVelocityPercentage.ValueChanged += Numeric_JogVelocityPercentage_ValueChanged;
-
-			Numeric_JogVelocityActual.ValueChanged -= Numeric_JogVelocityActual_ValueChanged;
-			Numeric_JogVelocityActual.Value = Numeric_TravelVelocity.Value * value;
-			Numeric_JogVelocityActual.ValueChanged += Numeric_JogVelocityActual_ValueChanged;
+			decimal value = constrain(Numeric_JogVelocityPercent.Value, MotorizedStage.Commands.Jog.MinimumValue, MotorizedStage.Commands.Jog.MaximumValue);
+			Numeric_JogVelocityPercent.ChangeValueWithoutEvent(value, Numeric_JogVelocityPercent_ValueChanged);
+			Numeric_JogVelocityActual.ChangeValueWithoutEvent(Numeric_TravelVelocity.Value * value, Numeric_JogVelocityActual_ValueChanged);
 		}
 
 		private void Numeric_Acceleration_ValueChanged(object sender, EventArgs e) {
@@ -390,9 +387,7 @@ namespace UndergradResearchBiomedImaging {
 			if (stage.TrySendCommand(new MotorizedStage.Commands.Acceleration(1, value))) {
 				decimal read;
 				if (stage.TrySendCommand(new MotorizedStage.Commands.Acceleration(1, true), out read)) {
-					Numeric_Acceleration.ValueChanged -= Numeric_Acceleration_ValueChanged;
-					Numeric_Acceleration.Value = read;
-					Numeric_Acceleration.ValueChanged += Numeric_Acceleration_ValueChanged;
+					Numeric_Acceleration.ChangeValueWithoutEvent(read, Numeric_Acceleration_ValueChanged);
 					return;
 				}
 			}
@@ -405,9 +400,7 @@ namespace UndergradResearchBiomedImaging {
 			if (stage.TrySendCommand(new MotorizedStage.Commands.Deceleration(1, value))) {
 				decimal read;
 				if (stage.TrySendCommand(new MotorizedStage.Commands.Deceleration(1, true), out read)) {
-					Numeric_Deceleration.ValueChanged -= Numeric_Deceleration_ValueChanged;
-					Numeric_Deceleration.Value = read;
-					Numeric_Deceleration.ValueChanged += Numeric_Deceleration_ValueChanged;
+					Numeric_Deceleration.ChangeValueWithoutEvent(read, Numeric_Deceleration_ValueChanged);
 					return;
 				}
 			}
@@ -420,14 +413,13 @@ namespace UndergradResearchBiomedImaging {
 			if (stage.TrySendCommand(new MotorizedStage.Commands.JogAcceleration(1, value))) {
 				decimal read;
 				if (stage.TrySendCommand(new MotorizedStage.Commands.JogAcceleration(1, true), out read)) {
-					Numeric_JogAcceleration.ValueChanged -= Numeric_JogAcceleration_ValueChanged;
-					Numeric_JogAcceleration.Value = read;
-					Numeric_JogAcceleration.ValueChanged += Numeric_JogAcceleration_ValueChanged;
+					Numeric_JogAcceleration.ChangeValueWithoutEvent(read, Numeric_JogAcceleration_ValueChanged);
 					return;
 				}
 			}
 
 			stageError();
 		}
+
 	}
 }

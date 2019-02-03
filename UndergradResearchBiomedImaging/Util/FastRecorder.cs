@@ -4,6 +4,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -98,8 +99,16 @@ namespace UndergradResearchBiomedImaging.Util {
 				if (camera == null) return false;
 				long width = 0;
 				long height = 0;
+				
 				if (!camera.Properties.Width.TryGetValue(ref width) || !camera.Properties.Height.TryGetValue(ref height)) return false;
-				writer = new VideoWriter(filepath, VideoWriter.Fourcc('M', 'P', '4', '2'), 48, new Size((int)width, (int)height), true);
+				double FPS = 0D;
+				if(!camera.Properties.FPS.TryGetValue(ref FPS)) FPS = 48D;
+				if (FPS == 0) FPS = 48;
+				Console.WriteLine("Detected Camera FPS: {0}", FPS);
+				if (File.Exists(filepath)) {
+					File.Delete(filepath);
+				}
+				writer = new VideoWriter(filepath, VideoWriter.Fourcc('M', 'P', '4', '2'), FPS, new Size((int)width, (int)height), true);
 				if (writer.IsOpened) {
 					this.stream = stream;
 					imageBuffer = new ConcurrentQueue<Image<Bgr, byte>>();

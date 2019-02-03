@@ -32,9 +32,6 @@
 			this.ScreenshotMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.Menu_Options = new System.Windows.Forms.ToolStripMenuItem();
 			this.Menu_CameraOptions = new System.Windows.Forms.ToolStripMenuItem();
-			this.Menu_StageOptions = new System.Windows.Forms.ToolStripMenuItem();
-			this.TestMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.TestPatternMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.Btn_ConnectCamera = new System.Windows.Forms.Button();
 			this.CameraFeed = new System.Windows.Forms.PictureBox();
 			this.Btn_Record = new System.Windows.Forms.Button();
@@ -82,6 +79,7 @@
 			this.label7 = new System.Windows.Forms.Label();
 			this.Numeric_TravelVelocity = new System.Windows.Forms.NumericUpDown();
 			this.label2 = new System.Windows.Forms.Label();
+			this.TestPatternMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.StatusStrip.SuspendLayout();
 			this.MenuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).BeginInit();
@@ -130,8 +128,7 @@
 			this.MenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.Menu_Options,
-            this.TestMenuItem});
+            this.Menu_Options});
 			this.MenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.MenuStrip.Name = "MenuStrip";
 			this.MenuStrip.Size = new System.Drawing.Size(923, 28);
@@ -151,7 +148,7 @@
 			this.ScreenshotMenuItem.Name = "ScreenshotMenuItem";
 			this.ScreenshotMenuItem.ShortcutKeyDisplayString = "";
 			this.ScreenshotMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-			this.ScreenshotMenuItem.Size = new System.Drawing.Size(206, 26);
+			this.ScreenshotMenuItem.Size = new System.Drawing.Size(216, 26);
 			this.ScreenshotMenuItem.Text = "Screenshot";
 			this.ScreenshotMenuItem.Click += new System.EventHandler(this.Control_TakeScreenshot);
 			// 
@@ -159,7 +156,7 @@
 			// 
 			this.Menu_Options.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menu_CameraOptions,
-            this.Menu_StageOptions});
+            this.TestPatternMenuItem});
 			this.Menu_Options.Name = "Menu_Options";
 			this.Menu_Options.Size = new System.Drawing.Size(73, 24);
 			this.Menu_Options.Text = "Options";
@@ -167,30 +164,9 @@
 			// Menu_CameraOptions
 			// 
 			this.Menu_CameraOptions.Name = "Menu_CameraOptions";
-			this.Menu_CameraOptions.Size = new System.Drawing.Size(191, 26);
+			this.Menu_CameraOptions.Size = new System.Drawing.Size(216, 26);
 			this.Menu_CameraOptions.Text = "Camera Options";
 			this.Menu_CameraOptions.Click += new System.EventHandler(this.Menu_CameraOptions_Click);
-			// 
-			// Menu_StageOptions
-			// 
-			this.Menu_StageOptions.Name = "Menu_StageOptions";
-			this.Menu_StageOptions.Size = new System.Drawing.Size(191, 26);
-			this.Menu_StageOptions.Text = "Stage Options";
-			this.Menu_StageOptions.Click += new System.EventHandler(this.Menu_StageOptions_Click);
-			// 
-			// TestMenuItem
-			// 
-			this.TestMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TestPatternMenuItem});
-			this.TestMenuItem.Name = "TestMenuItem";
-			this.TestMenuItem.Size = new System.Drawing.Size(47, 24);
-			this.TestMenuItem.Text = "Test";
-			// 
-			// TestPatternMenuItem
-			// 
-			this.TestPatternMenuItem.Name = "TestPatternMenuItem";
-			this.TestPatternMenuItem.Size = new System.Drawing.Size(160, 26);
-			this.TestPatternMenuItem.Text = "Test Pattern";
 			// 
 			// Btn_ConnectCamera
 			// 
@@ -805,6 +781,12 @@
 			this.label2.TabIndex = 20;
 			this.label2.Text = "Stage Controls";
 			// 
+			// TestPatternMenuItem
+			// 
+			this.TestPatternMenuItem.Name = "TestPatternMenuItem";
+			this.TestPatternMenuItem.Size = new System.Drawing.Size(216, 26);
+			this.TestPatternMenuItem.Text = "Test Pattern";
+			// 
 			// ControlForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -872,14 +854,11 @@
 		private System.Windows.Forms.ToolStripMenuItem ScreenshotMenuItem;
 		private System.Windows.Forms.Button Btn_ConnectCamera;
 		private System.Windows.Forms.PictureBox CameraFeed;
-		private System.Windows.Forms.ToolStripMenuItem TestMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem TestPatternMenuItem;
 		private System.Windows.Forms.Button Btn_Record;
 		private System.Windows.Forms.Panel RecordingBorder;
 		private System.Windows.Forms.Panel ConstantBackground;
 		private System.Windows.Forms.ToolStripMenuItem Menu_Options;
 		private System.Windows.Forms.ToolStripMenuItem Menu_CameraOptions;
-		private System.Windows.Forms.ToolStripMenuItem Menu_StageOptions;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button Btn_TakeScreenshot;
 		private System.Windows.Forms.Button Btn_ConnectStage;
@@ -922,6 +901,7 @@
 		private System.Windows.Forms.NumericUpDown Numeric_JogAcceleration;
 		private System.Windows.Forms.Button Btn_Home;
 		private System.Windows.Forms.Button Btn_ViewErrors;
+		private System.Windows.Forms.ToolStripMenuItem TestPatternMenuItem;
 	}
 }
 

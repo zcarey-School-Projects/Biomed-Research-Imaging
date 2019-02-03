@@ -40,38 +40,40 @@ namespace UndergradResearchBiomedImaging.Flir {
 		public FloatNode DeviceTemperature { get; private set; }
 		public IntegerNode Width { get; private set; }
 		public IntegerNode Height { get; private set; }
+		public FloatNode FPS { get; private set; }
 
 		public FlirProperties(string spinnakerLibraryVersion, IManagedCamera camera) {
 			SpinnakerLibraryVersion = spinnakerLibraryVersion;
 
-			PixelFormat = new EnumNode<PixelFormatEnums>(camera, "PixelFormat");
-			AcquisitionMode = new EnumNode<AcquisitionModeEnums>(camera, "AcquisitionMode");
-			TestPattern = new EnumNode<TestPatternEnums>(camera, "TestPattern");
-			TestPatternGeneratorSelector = new EnumNode<TestPatternGeneratorSelectorEnums>(camera, "TestPatternGeneratorSelector");
-			GainSelector = new EnumNode<GainSelectorEnums>(camera, "GainSelector");
-			GainAuto = new EnumNode<GainAutoEnums>(camera, "GainAuto");
-			AutoGainUpperLimit = new FloatNode(camera, "AutoGainUpperLimit");
-			AutoGainLowerLimit = new FloatNode(camera, "AutoGainLowerLimit");
-			Gain = new FloatNode(camera, "Gain");
-			ExposureMode = new EnumNode<ExposureModeEnums>(camera, "ExposureMode");
-			ExposureAuto = new EnumNode<ExposureAutoEnums>(camera, "ExposureAuto");
-			ExposureAutoUpperLimit = new FloatNode(camera, "AutoExposureTimeUpperLimit");
-			ExposureAutoLowerLimit = new FloatNode(camera, "AutoExposureTimeLowerLimit");
-			ExposureTime = new FloatNode(camera, "ExposureTime");
-			ExposureTimeAbs = new FloatNode(camera, "ExposureTimeAbs");
-			DeviceVendorName = new Flir.Nodes.StringNode(camera, "DeviceVendorName");
-			DeviceModelName = new Flir.Nodes.StringNode(camera, "DeviceModelName");
-			DeviceVersion = new Flir.Nodes.StringNode(camera, "DeviceVersion");
-			DeviceSerialNumber = new Flir.Nodes.StringNode(camera, "DeviceSerialNumber");
-			DeviceID = new Flir.Nodes.StringNode(camera, "DeviceID");
-			DeviceUserID = new Flir.Nodes.StringNode(camera, "DeviceUserID");
-			DeviceGenCpVersionMajor = new Flir.Nodes.StringNode(camera, "DeviceGenCpVersionMajor");
-			DeviceGenCPVersionMinor = new Flir.Nodes.StringNode(camera, "DeviceGenCpVersionMinor");
-			DeviceFamilyName = new Flir.Nodes.StringNode(camera, "DeviceFamilyName");
-			DeviceTemperatureSelector = new EnumNode<DeviceTemperatureSelectorEnums>(camera, "DeviceTemperatureSelector");
-			DeviceTemperature = new FloatNode(camera, "DeviceTemperature");
-			Width = new IntegerNode(camera, "Width");
-			Height = new IntegerNode(camera, "Height");
+			PixelFormat = new EnumNode<PixelFormatEnums>(camera, nameof(camera.PixelFormat));
+			AcquisitionMode = new EnumNode<AcquisitionModeEnums>(camera, nameof(camera.AcquisitionMode));
+			TestPattern = new EnumNode<TestPatternEnums>(camera, nameof(camera.TestPattern));
+			TestPatternGeneratorSelector = new EnumNode<TestPatternGeneratorSelectorEnums>(camera, nameof(camera.TestPatternGeneratorSelector));
+			GainSelector = new EnumNode<GainSelectorEnums>(camera, nameof(camera.GainSelector));
+			GainAuto = new EnumNode<GainAutoEnums>(camera, nameof(camera.GainAuto));
+			AutoGainUpperLimit = new FloatNode(camera, "AutoGainUpperLimit"); //todo nameof
+			AutoGainLowerLimit = new FloatNode(camera, "AutoGainLowerLimit"); //todo nameof
+			Gain = new FloatNode(camera, nameof(camera.Gain));
+			ExposureMode = new EnumNode<ExposureModeEnums>(camera, nameof(camera.ExposureMode));
+			ExposureAuto = new EnumNode<ExposureAutoEnums>(camera, nameof(camera.ExposureAuto));
+			ExposureAutoUpperLimit = new FloatNode(camera, nameof(camera.AutoExposureExposureTimeUpperLimit));
+			ExposureAutoLowerLimit = new FloatNode(camera, nameof(camera.AutoExposureExposureTimeLowerLimit));
+			ExposureTime = new FloatNode(camera, nameof(camera.ExposureTime));
+			ExposureTimeAbs = new FloatNode(camera, "ExposureTimeAbs"); //todo abs
+			DeviceVendorName = new Flir.Nodes.StringNode(camera, nameof(camera.DeviceVendorName));
+			DeviceModelName = new Flir.Nodes.StringNode(camera, nameof(camera.DeviceModelName));
+			DeviceVersion = new Flir.Nodes.StringNode(camera, nameof(camera.DeviceVersion));
+			DeviceSerialNumber = new Flir.Nodes.StringNode(camera, nameof(camera.DeviceSerialNumber));
+			DeviceID = new Flir.Nodes.StringNode(camera, nameof(camera.DeviceID));
+			DeviceUserID = new Flir.Nodes.StringNode(camera, nameof(camera.DeviceUserID));
+			DeviceGenCpVersionMajor = new Flir.Nodes.StringNode(camera, nameof(camera.DeviceGenCPVersionMajor));
+			DeviceGenCPVersionMinor = new Flir.Nodes.StringNode(camera, nameof(camera.DeviceGenCPVersionMinor));
+			DeviceFamilyName = new Flir.Nodes.StringNode(camera, nameof(camera.DeviceFamilyName));
+			DeviceTemperatureSelector = new EnumNode<DeviceTemperatureSelectorEnums>(camera, nameof(camera.DeviceTemperatureSelector));
+			DeviceTemperature = new FloatNode(camera, nameof(camera.DeviceTemperature));
+			Width = new IntegerNode(camera, nameof(camera.Width));
+			Height = new IntegerNode(camera, nameof(camera.Height));
+			FPS = new FloatNode(camera, nameof(camera.AcquisitionFrameRate));
 		}
 
 	}
