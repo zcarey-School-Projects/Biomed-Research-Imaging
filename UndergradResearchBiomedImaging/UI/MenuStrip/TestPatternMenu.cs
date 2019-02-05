@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UndergradResearchBiomedImaging.Flir;
+using UndergradResearch.Flir;
 
-namespace UndergradResearchBiomedImaging.UI.MenuStrip {
+namespace UndergradResearch.UI.MenuStrip {
 	public class TestPatternMenu : EnumMenuStrip<TestPatternEnums>{
 
 		public TestPatternMenu(ToolStripMenuItem BaseMenu, FlirCameraStream stream) : base(BaseMenu, stream, TestPatternEnums.NUM_TESTPATTERN, true) {

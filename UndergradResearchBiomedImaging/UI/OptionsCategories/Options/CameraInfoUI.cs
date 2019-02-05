@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UndergradResearchBiomedImaging.Flir;
-using UndergradResearchBiomedImaging.Flir.Nodes;
-using UndergradResearchBiomedImaging.UI.Options;
-using UndergradResearchBiomedImaging.Util;
+using UndergradResearch.Flir;
+using UndergradResearch.Flir.Nodes;
+using UndergradResearch.UI.Options;
+using UndergradResearch.Util;
 
-namespace UndergradResearchBiomedImaging.UI.OptionsCategories.Options {
+namespace UndergradResearch.UI.OptionsCategories.Options {
 	public class CameraInfoUI : IOptionsUI {
 
 		public CameraInfoUI(CameraOptionsUI options, OptionsPanel panel, string libraryVersion) : base(options, panel, libraryVersion) { //TODO version is hacky

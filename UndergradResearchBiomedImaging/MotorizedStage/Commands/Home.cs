@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.MotorizedStage.Commands {
+namespace UndergradResearch.MotorizedStage.Commands {
 
 	/// <summary>Finds the zero position of the stage (usually in the center). Buffers commands until finished.</summary>
 	public class Home : IStageCommand {

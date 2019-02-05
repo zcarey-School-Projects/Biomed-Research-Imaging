@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.MotorizedStage.Commands {
+namespace UndergradResearch.MotorizedStage.Commands {
 
 	/// <summary>This command is used to read and clear pending errors. Return type is 'StageError[]'</summary>
 	public class ReadAndClearErrors : IStageCommand {

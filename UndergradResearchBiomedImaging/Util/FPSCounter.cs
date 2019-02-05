@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace UndergradResearchBiomedImaging.Util {
+namespace UndergradResearch.Util {
 
 	/// <summary>Estimates the Frames Per Second being achieved, averaged across a given number of frames.
 	/// MUST call Tick() every single frame, or else will not return accurate result.</summary>

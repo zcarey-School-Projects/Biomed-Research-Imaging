@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.Flir.Nodes {
+namespace UndergradResearch.Flir.Nodes {
 	public abstract class BaseNode<NodeType, ValueType> where NodeType : INode {
 
 		private IManagedCamera camera;

@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UndergradResearchBiomedImaging {
+namespace UndergradResearch {
 	public partial class ScreenshotViewer : Form {
 
 		private static SaveFileDialog SaveScreenshotDialog;

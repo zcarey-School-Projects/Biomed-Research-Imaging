@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UndergradResearchBiomedImaging.Flir;
-using UndergradResearchBiomedImaging.UI.OptionsCategories;
+using UndergradResearch.Flir;
+using UndergradResearch.UI.OptionsCategories;
 
-namespace UndergradResearchBiomedImaging {
+namespace UndergradResearch {
 	public partial class CameraOptionsForm : Form {
 
 		private CameraOptionsUI cameraOptions;

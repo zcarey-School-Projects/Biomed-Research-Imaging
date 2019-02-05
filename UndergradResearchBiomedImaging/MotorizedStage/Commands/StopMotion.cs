@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.MotorizedStage.Commands {
+namespace UndergradResearch.MotorizedStage.Commands {
 
 	/// <summary>Stops all motion on the specified axis.</summary>
 	public class StopMotion : IStageCommand {

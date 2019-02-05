@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.MotorizedStage.Commands {
+namespace UndergradResearch.MotorizedStage.Commands {
 
 	/// <summary>Moves an axis to an absolute position. Moves outside soft limits are ignored.</summary>
 	public class MoveAbsolute : IStageCommand {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.MotorizedStage.Commands {
+namespace UndergradResearch.MotorizedStage.Commands {
 
 	/// <summary>Stops the specified axis using the maximum allowed acceleration.</summary>
 	public class EmergencyStop : IStageCommand {

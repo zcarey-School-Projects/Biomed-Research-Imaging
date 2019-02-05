@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UndergradResearchBiomedImaging.Flir;
-using UndergradResearchBiomedImaging.Util;
+using UndergradResearch.Flir;
+using UndergradResearch.Util;
 
-namespace UndergradResearchBiomedImaging.UI.Options {
+namespace UndergradResearch.UI.Options {
 	public class StringEntry : OptionEntry<TextBox, Flir.Nodes.StringNode, IString, string> {
 
 		public StringEntry(string name, Property<FlirProperties, Flir.Nodes.StringNode> property, FlirCameraStream stream) : base(name, property, stream) {

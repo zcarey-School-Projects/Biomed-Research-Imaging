@@ -12,17 +12,17 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UndergradResearchBiomedImaging.Flir;
-using UndergradResearchBiomedImaging.MotorizedStage;
-using UndergradResearchBiomedImaging.UI.MenuStrip;
-using UndergradResearchBiomedImaging.UI.OptionsCategories;
-using UndergradResearchBiomedImaging.Util;
-using UndergradResearchBiomedImaging.Util.ExtensionMethods;
+using UndergradResearch.Flir;
+using UndergradResearch.MotorizedStage;
+using UndergradResearch.UI.MenuStrip;
+using UndergradResearch.UI.OptionsCategories;
+using UndergradResearch.Util;
+using UndergradResearch.Util.ExtensionMethods;
 
 //using Windows.Media.Capture;
 //using System.Windows.Storage;
 
-namespace UndergradResearchBiomedImaging {
+namespace UndergradResearch {
 	public partial class ControlForm : Form {
 
 		private const string TempVideoFile = @"TempRecording.avi";
@@ -435,6 +435,5 @@ namespace UndergradResearchBiomedImaging {
 
 			stageError();
 		}
-
 	}
 }

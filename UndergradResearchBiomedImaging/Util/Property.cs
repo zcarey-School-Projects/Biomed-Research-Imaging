@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.Util {
+namespace UndergradResearch.Util {
 	public class Property<ClassType, DataType> where ClassType : class {
 
 		private PropertyInfo property;

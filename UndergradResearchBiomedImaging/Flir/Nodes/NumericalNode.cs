@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.Flir.Nodes {
+namespace UndergradResearch.Flir.Nodes {
 	public abstract class NumericalNode<NodeType, ValueType> : BaseNode<NodeType, ValueType> where NodeType : INode where ValueType : struct {
 
 		public ValueType? Minimum {

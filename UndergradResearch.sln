@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UndergradResearchBiomedImaging", "UndergradResearchBiomedImaging\UndergradResearchBiomedImaging.csproj", "{3D158225-E5E8-4868-9386-E50FA01394BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UndergradResearch", "UndergradResearchBiomedImaging\UndergradResearch.csproj", "{3D158225-E5E8-4868-9386-E50FA01394BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

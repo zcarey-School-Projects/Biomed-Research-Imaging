@@ -1,4 +1,4 @@
-﻿namespace UndergradResearchBiomedImaging {
+﻿namespace UndergradResearch {
 	partial class CameraOptionsForm {
 		/// <summary>
 		/// Required designer variable.

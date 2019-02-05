@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.MotorizedStage.Commands {
+namespace UndergradResearch.MotorizedStage.Commands {
 
 	/// <summary>Sets or reads the feedback mode for a specified axis. Return type for reading is 'StageFeedbackMode'.</summary>
 	public class FeedbackMode : IStageCommand {

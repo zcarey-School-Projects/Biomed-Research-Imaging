@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UndergradResearchBiomedImaging.Util;
+using UndergradResearch.Util;
 
-namespace UndergradResearchBiomedImaging.Flir {
+namespace UndergradResearch.Flir {
 
 	public class FlirCameraStream : IDisposable{
 

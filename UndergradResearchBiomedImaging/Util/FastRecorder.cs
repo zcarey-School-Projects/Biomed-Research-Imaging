@@ -10,9 +10,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UndergradResearchBiomedImaging.Flir;
+using UndergradResearch.Flir;
 
-namespace UndergradResearchBiomedImaging.Util {
+namespace UndergradResearch.Util {
 	public class FastRecorder : IDisposable {
 		private const int Max_Image_Buffer_Count = 60;
 

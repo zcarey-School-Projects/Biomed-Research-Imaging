@@ -1,4 +1,4 @@
-﻿namespace UndergradResearchBiomedImaging {
+﻿namespace UndergradResearch {
 	partial class ControlForm {
 		/// <summary>
 		/// Required designer variable.
@@ -56,8 +56,10 @@
 			this.PositionTimer = new System.Windows.Forms.Timer(this.components);
 			this.StageTabs = new System.Windows.Forms.TabControl();
 			this.Tab_StageControls = new System.Windows.Forms.TabPage();
+			this.Label_PositionEncoder = new System.Windows.Forms.Label();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.Btn_StopJog = new System.Windows.Forms.Button();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.Numeric_JogVelocityPercent = new System.Windows.Forms.NumericUpDown();
@@ -80,8 +82,6 @@
 			this.label7 = new System.Windows.Forms.Label();
 			this.Numeric_TravelVelocity = new System.Windows.Forms.NumericUpDown();
 			this.label2 = new System.Windows.Forms.Label();
-			this.Btn_StopJog = new System.Windows.Forms.Button();
-			this.Label_PositionEncoder = new System.Windows.Forms.Label();
 			this.StatusStrip.SuspendLayout();
 			this.MenuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).BeginInit();
@@ -450,6 +450,15 @@
 			this.Tab_StageControls.Text = "Controls";
 			this.Tab_StageControls.UseVisualStyleBackColor = true;
 			// 
+			// Label_PositionEncoder
+			// 
+			this.Label_PositionEncoder.AutoSize = true;
+			this.Label_PositionEncoder.Location = new System.Drawing.Point(9, 20);
+			this.Label_PositionEncoder.Name = "Label_PositionEncoder";
+			this.Label_PositionEncoder.Size = new System.Drawing.Size(233, 17);
+			this.Label_PositionEncoder.TabIndex = 17;
+			this.Label_PositionEncoder.Text = "Encoder Position:     10.000000 mm";
+			// 
 			// groupBox4
 			// 
 			this.groupBox4.Controls.Add(this.Btn_WalkPositive);
@@ -476,6 +485,16 @@
 			this.groupBox3.TabIndex = 15;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Jog";
+			// 
+			// Btn_StopJog
+			// 
+			this.Btn_StopJog.Location = new System.Drawing.Point(178, 48);
+			this.Btn_StopJog.Name = "Btn_StopJog";
+			this.Btn_StopJog.Size = new System.Drawing.Size(80, 23);
+			this.Btn_StopJog.TabIndex = 16;
+			this.Btn_StopJog.Text = "Stop";
+			this.Btn_StopJog.UseVisualStyleBackColor = true;
+			this.Btn_StopJog.Click += new System.EventHandler(this.Btn_StopJog_Click);
 			// 
 			// label6
 			// 
@@ -585,7 +604,7 @@
 			this.Tab_StageSettings.Location = new System.Drawing.Point(4, 25);
 			this.Tab_StageSettings.Name = "Tab_StageSettings";
 			this.Tab_StageSettings.Padding = new System.Windows.Forms.Padding(3);
-			this.Tab_StageSettings.Size = new System.Drawing.Size(347, 323);
+			this.Tab_StageSettings.Size = new System.Drawing.Size(347, 336);
 			this.Tab_StageSettings.TabIndex = 1;
 			this.Tab_StageSettings.Text = "Settings";
 			this.Tab_StageSettings.UseVisualStyleBackColor = true;
@@ -815,25 +834,6 @@
 			this.label2.Size = new System.Drawing.Size(101, 17);
 			this.label2.TabIndex = 20;
 			this.label2.Text = "Stage Controls";
-			// 
-			// Btn_StopJog
-			// 
-			this.Btn_StopJog.Location = new System.Drawing.Point(178, 48);
-			this.Btn_StopJog.Name = "Btn_StopJog";
-			this.Btn_StopJog.Size = new System.Drawing.Size(80, 23);
-			this.Btn_StopJog.TabIndex = 16;
-			this.Btn_StopJog.Text = "Stop";
-			this.Btn_StopJog.UseVisualStyleBackColor = true;
-			this.Btn_StopJog.Click += new System.EventHandler(this.Btn_StopJog_Click);
-			// 
-			// Label_PositionEncoder
-			// 
-			this.Label_PositionEncoder.AutoSize = true;
-			this.Label_PositionEncoder.Location = new System.Drawing.Point(9, 20);
-			this.Label_PositionEncoder.Name = "Label_PositionEncoder";
-			this.Label_PositionEncoder.Size = new System.Drawing.Size(233, 17);
-			this.Label_PositionEncoder.TabIndex = 17;
-			this.Label_PositionEncoder.Text = "Encoder Position:     10.000000 mm";
 			// 
 			// ControlForm
 			// 

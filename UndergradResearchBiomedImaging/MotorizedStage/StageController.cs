@@ -8,7 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UndergradResearchBiomedImaging.MotorizedStage {
+namespace UndergradResearch.MotorizedStage {
 	public class StageController {
 
 		/*

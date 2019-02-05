@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UndergradResearchBiomedImaging.Flir;
-using UndergradResearchBiomedImaging.Flir.Nodes;
-using UndergradResearchBiomedImaging.Util;
+using UndergradResearch.Flir;
+using UndergradResearch.Flir.Nodes;
+using UndergradResearch.Util;
 
-namespace UndergradResearchBiomedImaging.UI.Options {
+namespace UndergradResearch.UI.Options {
 	public class EnumEntry<EnumType> : OptionEntry<ComboBox, EnumNode<EnumType>, IEnum, EnumType> where EnumType : struct {
 
 		private EnumType? ignoreCase;

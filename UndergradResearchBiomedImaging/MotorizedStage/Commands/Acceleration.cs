@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.MotorizedStage.Commands {
+namespace UndergradResearch.MotorizedStage.Commands {
 	/// <summary>Sets and reads the acceleration. Return type is 'decimal'</summary>
 	public class Acceleration : IStageCommand {
 

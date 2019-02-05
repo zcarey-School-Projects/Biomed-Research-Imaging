@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UndergradResearchBiomedImaging.Flir;
-using UndergradResearchBiomedImaging.Flir.Nodes;
-using UndergradResearchBiomedImaging.Util;
+using UndergradResearch.Flir;
+using UndergradResearch.Flir.Nodes;
+using UndergradResearch.Util;
 
-namespace UndergradResearchBiomedImaging.UI.Options {
+namespace UndergradResearch.UI.Options {
 	public abstract class NumericalEntry<TNode, NodeType, ValueType> : OptionEntry<NumericUpDown, TNode, NodeType, ValueType> where TNode : NumericalNode<NodeType, ValueType> where NodeType : INode where ValueType : struct {
 
 		public NumericalEntry(string name, Property<FlirProperties, TNode> property, FlirCameraStream stream) : base(name, property, stream) {

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.Flir.Nodes {
+namespace UndergradResearch.Flir.Nodes {
 	public class FloatNode : NumericalNode<IFloat, double> {
 
 		public string Unit {

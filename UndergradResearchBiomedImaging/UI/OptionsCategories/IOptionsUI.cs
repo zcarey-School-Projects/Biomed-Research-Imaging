@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UndergradResearchBiomedImaging.UI.Options;
+using UndergradResearch.UI.Options;
 
-namespace UndergradResearchBiomedImaging.UI.OptionsCategories {
+namespace UndergradResearch.UI.OptionsCategories {
 	public abstract class IOptionsUI {
 
 		private List<IOptionEntry> entries;

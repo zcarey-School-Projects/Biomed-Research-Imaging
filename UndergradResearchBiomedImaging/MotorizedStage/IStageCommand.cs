@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.MotorizedStage {
+namespace UndergradResearch.MotorizedStage {
 	public abstract class IStageCommand {
 
 		/// <summary>A 3-char long command, may also add a '?' for reading. </summary>

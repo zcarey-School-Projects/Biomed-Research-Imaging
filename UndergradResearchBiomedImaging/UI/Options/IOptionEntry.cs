@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.UI.Options {
+namespace UndergradResearch.UI.Options {
 	public abstract class IOptionEntry {
 
 		private List<IOptionEntry> children = new List<IOptionEntry>();

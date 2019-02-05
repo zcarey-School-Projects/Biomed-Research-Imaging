@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UndergradResearchBiomedImaging.UI.Options {
+namespace UndergradResearch.UI.Options {
 	public class OptionsCategory : IOptionEntry {
 
 		private Label categoryName;

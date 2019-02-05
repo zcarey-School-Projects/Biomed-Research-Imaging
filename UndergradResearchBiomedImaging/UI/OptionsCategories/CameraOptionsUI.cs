@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UndergradResearchBiomedImaging.Flir;
-using UndergradResearchBiomedImaging.UI.Options;
-using UndergradResearchBiomedImaging.UI.OptionsCategories.Options;
+using UndergradResearch.Flir;
+using UndergradResearch.UI.Options;
+using UndergradResearch.UI.OptionsCategories.Options;
 
-namespace UndergradResearchBiomedImaging.UI.OptionsCategories {
+namespace UndergradResearch.UI.OptionsCategories {
 	public class CameraOptionsUI {
 		/*
 				public delegate void CameraConnectionHandler(FlirCamera camera);

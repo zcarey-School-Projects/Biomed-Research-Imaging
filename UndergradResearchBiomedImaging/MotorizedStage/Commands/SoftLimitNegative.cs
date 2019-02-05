@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.MotorizedStage.Commands {
+namespace UndergradResearch.MotorizedStage.Commands {
 	
 	/// <summary>Gets or sets the negative software limit of an axis.
 	/// The software limit will prevent the axis from moving past that point.</summary>

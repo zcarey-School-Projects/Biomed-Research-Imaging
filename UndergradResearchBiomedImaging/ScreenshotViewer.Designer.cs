@@ -1,4 +1,4 @@
-﻿namespace UndergradResearchBiomedImaging {
+﻿namespace UndergradResearch {
 	partial class ScreenshotViewer {
 		/// <summary>
 		/// Required designer variable.

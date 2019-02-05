@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UndergradResearchBiomedImaging.Flir.Nodes;
+using UndergradResearch.Flir.Nodes;
 
-namespace UndergradResearchBiomedImaging.Flir {
+namespace UndergradResearch.Flir {
 
 	public class FlirProperties { 
 

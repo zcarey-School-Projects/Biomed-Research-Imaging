@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UndergradResearchBiomedImaging.Flir;
+using UndergradResearch.Flir;
 
-namespace UndergradResearchBiomedImaging.UI.MenuStrip {
+namespace UndergradResearch.UI.MenuStrip {
 	public abstract class EnumMenuStrip<TEnum> where TEnum : struct {
 
 		private FlirCameraStream stream;

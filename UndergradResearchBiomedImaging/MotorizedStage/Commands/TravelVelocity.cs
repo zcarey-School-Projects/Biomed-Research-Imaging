@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.MotorizedStage.Commands {
+namespace UndergradResearch.MotorizedStage.Commands {
 
 	/// <summary>Sets the velocity of an axis. Must be less than the maximum velocity (VMX).</summary>
 	public class TravelVelocity : IStageCommand {

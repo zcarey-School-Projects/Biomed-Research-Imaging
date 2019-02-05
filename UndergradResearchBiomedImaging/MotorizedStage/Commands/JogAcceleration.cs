@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.MotorizedStage.Commands {
+namespace UndergradResearch.MotorizedStage.Commands {
 
 	/// <summary>Sets the acceleration and deceleration for jogging on an axis. Must be less than Max Acceleration (AMX).</summary>
 	public class JogAcceleration : IStageCommand {

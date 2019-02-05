@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.MotorizedStage {
+namespace UndergradResearch.MotorizedStage {
 	public class StageError {
 
 		public byte ID { get; private set; }

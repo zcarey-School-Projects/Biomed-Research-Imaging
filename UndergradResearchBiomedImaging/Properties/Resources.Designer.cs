@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UndergradResearchBiomedImaging.Properties {
+namespace UndergradResearch.Properties {
 
 
 	/// <summary>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UndergradResearchBiomedImaging.MotorizedStage.Commands {
+namespace UndergradResearch.MotorizedStage.Commands {
 
 	/// <summary>Moves the stage relative to its current position. If outside of soft limits, command is ignored. </summary>
 	public class MoveRelative : IStageCommand {
