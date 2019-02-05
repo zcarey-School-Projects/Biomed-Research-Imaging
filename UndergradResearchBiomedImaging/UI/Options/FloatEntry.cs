@@ -41,9 +41,15 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 		protected override double getCurrentValue(NumericUpDown control) {
 			return decimal.ToDouble(control.Value);
 		}
-
+		//TODO make disconnect button.
 		protected override void SetControlValue(NumericUpDown control, double newValue) {
-			control.Value = (decimal)newValue;
+			decimal value = (decimal)newValue;
+			try {
+				control.Value = (decimal)newValue;
+			}catch(ArgumentOutOfRangeException e) {
+				Console.WriteLine("WARNING: Float value outside of range: {0}, [{1}, {2}], given {3}.", EntryName, control.Minimum, control.Maximum, value);
+				control.Value = Math.Max(control.Minimum, Math.Min(control.Maximum, value));
+			}
 		}
 
 		protected override void checkValueLimits(NumericUpDown control, FloatNode node) {

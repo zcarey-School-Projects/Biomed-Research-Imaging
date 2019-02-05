@@ -50,7 +50,9 @@ namespace UndergradResearchBiomedImaging.MotorizedStage {
 		private static Dictionary<byte, StageError> AllErrors = new Dictionary<byte, StageError>();
 
 		public static StageError GetError(byte id) {
-			return AllErrors[id];
+			StageError error;
+			if (AllErrors.TryGetValue(id, out error)) return error;
+			else return UnknownError;
 		}
 
 		private static void addError(StageError error) {
@@ -58,7 +60,10 @@ namespace UndergradResearchBiomedImaging.MotorizedStage {
 			AllErrors.Add(error.ID, error);
 		}
 
+		private static StageError UnknownError;
+
 		static StageError() {
+			UnknownError = new StageError(255, "Error Unknown: not listed in datasheet", ShortExplanationType.Unknown, "The documentation did not list what error just occured.");
 			addError(new StageError(10, "Receive Buffer Overrun", ShortExplanationType.Runtime, "The Receive Buffer has reached or exceeded maximum capacity."));
 			addError(new StageError(11, "Motor Disabled", ShortExplanationType.SillyZack, "The command that triggered this error was trying to move the servo while it was disabled."));
 			addError(new StageError(12, "No Encoder Detected", ShortExplanationType.Hardware, "The command that triggered this error was trying to access encoder data when no encoder was attached."));

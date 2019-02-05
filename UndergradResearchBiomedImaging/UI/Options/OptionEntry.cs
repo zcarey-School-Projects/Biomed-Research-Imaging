@@ -23,12 +23,14 @@ namespace UndergradResearchBiomedImaging.UI.Options {
 		private Property<FlirProperties, TNode> cameraProperty;
 
 		private FlirCameraStream stream;
+		protected string EntryName { get; private set; }
 
 		public override int Height { get; protected set; } = 28;
 
 		public OptionEntry(string name, Property<FlirProperties, TNode> property, FlirCameraStream stream) {
 			this.stream = stream;
 			this.cameraProperty = property;
+			this.EntryName = name;
 
 			entryLabel = new Label();
 			entryLabel.Text = name + ": ";

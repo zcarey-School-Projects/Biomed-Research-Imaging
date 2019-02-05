@@ -48,7 +48,7 @@ namespace UndergradResearchBiomedImaging.Flir.Nodes {
 				if (value == null) throw new SpinnakerException("Unable to retrieve the value from node '" + NodeName + "'.");
 				return true;
 			} catch (SpinnakerException e) {
-				Console.WriteLine("\nCould not retrieve value from node '{1}'.", NodeName);
+				Console.WriteLine("\nCould not retrieve value from node '{0}'.", NodeName);
 				Console.WriteLine(e.Message);
 				Console.WriteLine(e.StackTrace);
 				Console.WriteLine();

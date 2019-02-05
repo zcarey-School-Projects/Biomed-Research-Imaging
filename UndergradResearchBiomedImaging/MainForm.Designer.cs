@@ -32,6 +32,7 @@
 			this.ScreenshotMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.Menu_Options = new System.Windows.Forms.ToolStripMenuItem();
 			this.Menu_CameraOptions = new System.Windows.Forms.ToolStripMenuItem();
+			this.TestPatternMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.Btn_ConnectCamera = new System.Windows.Forms.Button();
 			this.CameraFeed = new System.Windows.Forms.PictureBox();
 			this.Btn_Record = new System.Windows.Forms.Button();
@@ -39,7 +40,7 @@
 			this.ConstantBackground = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
 			this.Btn_TakeScreenshot = new System.Windows.Forms.Button();
-			this.Label_CurrentPosition = new System.Windows.Forms.Label();
+			this.Label_PositionTheory = new System.Windows.Forms.Label();
 			this.Btn_JogNegative = new System.Windows.Forms.Button();
 			this.Btn_WalkPositive = new System.Windows.Forms.Button();
 			this.Btn_JogPositive = new System.Windows.Forms.Button();
@@ -79,7 +80,8 @@
 			this.label7 = new System.Windows.Forms.Label();
 			this.Numeric_TravelVelocity = new System.Windows.Forms.NumericUpDown();
 			this.label2 = new System.Windows.Forms.Label();
-			this.TestPatternMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.Btn_StopJog = new System.Windows.Forms.Button();
+			this.Label_PositionEncoder = new System.Windows.Forms.Label();
 			this.StatusStrip.SuspendLayout();
 			this.MenuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CameraFeed)).BeginInit();
@@ -148,7 +150,7 @@
 			this.ScreenshotMenuItem.Name = "ScreenshotMenuItem";
 			this.ScreenshotMenuItem.ShortcutKeyDisplayString = "";
 			this.ScreenshotMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-			this.ScreenshotMenuItem.Size = new System.Drawing.Size(216, 26);
+			this.ScreenshotMenuItem.Size = new System.Drawing.Size(206, 26);
 			this.ScreenshotMenuItem.Text = "Screenshot";
 			this.ScreenshotMenuItem.Click += new System.EventHandler(this.Control_TakeScreenshot);
 			// 
@@ -164,9 +166,15 @@
 			// Menu_CameraOptions
 			// 
 			this.Menu_CameraOptions.Name = "Menu_CameraOptions";
-			this.Menu_CameraOptions.Size = new System.Drawing.Size(216, 26);
+			this.Menu_CameraOptions.Size = new System.Drawing.Size(191, 26);
 			this.Menu_CameraOptions.Text = "Camera Options";
 			this.Menu_CameraOptions.Click += new System.EventHandler(this.Menu_CameraOptions_Click);
+			// 
+			// TestPatternMenuItem
+			// 
+			this.TestPatternMenuItem.Name = "TestPatternMenuItem";
+			this.TestPatternMenuItem.Size = new System.Drawing.Size(191, 26);
+			this.TestPatternMenuItem.Text = "Test Pattern";
 			// 
 			// Btn_ConnectCamera
 			// 
@@ -247,14 +255,14 @@
 			this.Btn_TakeScreenshot.UseVisualStyleBackColor = true;
 			this.Btn_TakeScreenshot.Click += new System.EventHandler(this.Control_TakeScreenshot);
 			// 
-			// Label_CurrentPosition
+			// Label_PositionTheory
 			// 
-			this.Label_CurrentPosition.AutoSize = true;
-			this.Label_CurrentPosition.Location = new System.Drawing.Point(9, 3);
-			this.Label_CurrentPosition.Name = "Label_CurrentPosition";
-			this.Label_CurrentPosition.Size = new System.Drawing.Size(211, 17);
-			this.Label_CurrentPosition.TabIndex = 14;
-			this.Label_CurrentPosition.Text = "Current Position: 10.000000 mm";
+			this.Label_PositionTheory.AutoSize = true;
+			this.Label_PositionTheory.Location = new System.Drawing.Point(9, 3);
+			this.Label_PositionTheory.Name = "Label_PositionTheory";
+			this.Label_PositionTheory.Size = new System.Drawing.Size(235, 17);
+			this.Label_PositionTheory.TabIndex = 14;
+			this.Label_PositionTheory.Text = "Theoretical Position: 10.000000 mm";
 			// 
 			// Btn_JogNegative
 			// 
@@ -422,21 +430,22 @@
 			this.StageTabs.Location = new System.Drawing.Point(556, 60);
 			this.StageTabs.Name = "StageTabs";
 			this.StageTabs.SelectedIndex = 0;
-			this.StageTabs.Size = new System.Drawing.Size(355, 352);
+			this.StageTabs.Size = new System.Drawing.Size(355, 365);
 			this.StageTabs.TabIndex = 19;
 			// 
 			// Tab_StageControls
 			// 
 			this.Tab_StageControls.AutoScroll = true;
+			this.Tab_StageControls.Controls.Add(this.Label_PositionEncoder);
 			this.Tab_StageControls.Controls.Add(this.groupBox4);
 			this.Tab_StageControls.Controls.Add(this.groupBox3);
-			this.Tab_StageControls.Controls.Add(this.Label_CurrentPosition);
+			this.Tab_StageControls.Controls.Add(this.Label_PositionTheory);
 			this.Tab_StageControls.Controls.Add(this.groupBox2);
 			this.Tab_StageControls.Controls.Add(this.groupBox1);
 			this.Tab_StageControls.Location = new System.Drawing.Point(4, 25);
 			this.Tab_StageControls.Name = "Tab_StageControls";
 			this.Tab_StageControls.Padding = new System.Windows.Forms.Padding(3);
-			this.Tab_StageControls.Size = new System.Drawing.Size(347, 323);
+			this.Tab_StageControls.Size = new System.Drawing.Size(347, 336);
 			this.Tab_StageControls.TabIndex = 0;
 			this.Tab_StageControls.Text = "Controls";
 			this.Tab_StageControls.UseVisualStyleBackColor = true;
@@ -445,7 +454,7 @@
 			// 
 			this.groupBox4.Controls.Add(this.Btn_WalkPositive);
 			this.groupBox4.Controls.Add(this.Btn_WalkNegative);
-			this.groupBox4.Location = new System.Drawing.Point(6, 267);
+			this.groupBox4.Location = new System.Drawing.Point(6, 282);
 			this.groupBox4.Name = "groupBox4";
 			this.groupBox4.Size = new System.Drawing.Size(308, 50);
 			this.groupBox4.TabIndex = 16;
@@ -454,13 +463,14 @@
 			// 
 			// groupBox3
 			// 
+			this.groupBox3.Controls.Add(this.Btn_StopJog);
 			this.groupBox3.Controls.Add(this.label6);
 			this.groupBox3.Controls.Add(this.label3);
 			this.groupBox3.Controls.Add(this.Numeric_JogVelocityPercent);
 			this.groupBox3.Controls.Add(this.Numeric_JogVelocityActual);
 			this.groupBox3.Controls.Add(this.Btn_JogNegative);
 			this.groupBox3.Controls.Add(this.Btn_JogPositive);
-			this.groupBox3.Location = new System.Drawing.Point(6, 190);
+			this.groupBox3.Location = new System.Drawing.Point(6, 205);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(308, 77);
 			this.groupBox3.TabIndex = 15;
@@ -503,34 +513,39 @@
 			this.Numeric_JogVelocityPercent.Size = new System.Drawing.Size(88, 22);
 			this.Numeric_JogVelocityPercent.TabIndex = 14;
 			this.Numeric_JogVelocityPercent.Value = new decimal(new int[] {
-            1,
+            100,
             0,
             0,
-            196608});
+            0});
 			this.Numeric_JogVelocityPercent.ValueChanged += new System.EventHandler(this.Numeric_JogVelocityPercent_ValueChanged);
 			// 
 			// Numeric_JogVelocityActual
 			// 
-			this.Numeric_JogVelocityActual.DecimalPlaces = 6;
+			this.Numeric_JogVelocityActual.DecimalPlaces = 3;
 			this.Numeric_JogVelocityActual.Increment = new decimal(new int[] {
             1,
             0,
             0,
-            393216});
+            196608});
 			this.Numeric_JogVelocityActual.Location = new System.Drawing.Point(6, 21);
 			this.Numeric_JogVelocityActual.Maximum = new decimal(new int[] {
-            5,
+            999999,
             0,
             0,
-            0});
+            196608});
 			this.Numeric_JogVelocityActual.Minimum = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
-            -2147483648});
+            524288});
 			this.Numeric_JogVelocityActual.Name = "Numeric_JogVelocityActual";
 			this.Numeric_JogVelocityActual.Size = new System.Drawing.Size(130, 22);
 			this.Numeric_JogVelocityActual.TabIndex = 9;
+			this.Numeric_JogVelocityActual.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
 			this.Numeric_JogVelocityActual.ValueChanged += new System.EventHandler(this.Numeric_JogVelocityActual_ValueChanged);
 			// 
 			// groupBox2
@@ -538,7 +553,7 @@
 			this.groupBox2.Controls.Add(this.Numeric_Absolute);
 			this.groupBox2.Controls.Add(this.label5);
 			this.groupBox2.Controls.Add(this.Btn_Absolute);
-			this.groupBox2.Location = new System.Drawing.Point(6, 107);
+			this.groupBox2.Location = new System.Drawing.Point(6, 122);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(308, 77);
 			this.groupBox2.TabIndex = 1;
@@ -551,7 +566,7 @@
 			this.groupBox1.Controls.Add(this.Numeric_Relative);
 			this.groupBox1.Controls.Add(this.Btn_RelativePositive);
 			this.groupBox1.Controls.Add(this.label4);
-			this.groupBox1.Location = new System.Drawing.Point(6, 23);
+			this.groupBox1.Location = new System.Drawing.Point(6, 38);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(308, 78);
 			this.groupBox1.TabIndex = 0;
@@ -618,6 +633,11 @@
 			// Numeric_JogAcceleration
 			// 
 			this.Numeric_JogAcceleration.DecimalPlaces = 3;
+			this.Numeric_JogAcceleration.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
 			this.Numeric_JogAcceleration.Location = new System.Drawing.Point(6, 21);
 			this.Numeric_JogAcceleration.Maximum = new decimal(new int[] {
             999999,
@@ -662,6 +682,11 @@
 			// Numeric_Deceleration
 			// 
 			this.Numeric_Deceleration.DecimalPlaces = 3;
+			this.Numeric_Deceleration.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
 			this.Numeric_Deceleration.Location = new System.Drawing.Point(6, 21);
 			this.Numeric_Deceleration.Maximum = new decimal(new int[] {
             999999,
@@ -706,6 +731,11 @@
 			// Numeric_Acceleration
 			// 
 			this.Numeric_Acceleration.DecimalPlaces = 3;
+			this.Numeric_Acceleration.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
 			this.Numeric_Acceleration.Location = new System.Drawing.Point(6, 21);
 			this.Numeric_Acceleration.Maximum = new decimal(new int[] {
             999999,
@@ -750,6 +780,11 @@
 			// Numeric_TravelVelocity
 			// 
 			this.Numeric_TravelVelocity.DecimalPlaces = 3;
+			this.Numeric_TravelVelocity.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
 			this.Numeric_TravelVelocity.Location = new System.Drawing.Point(6, 21);
 			this.Numeric_TravelVelocity.Maximum = new decimal(new int[] {
             999999,
@@ -781,11 +816,24 @@
 			this.label2.TabIndex = 20;
 			this.label2.Text = "Stage Controls";
 			// 
-			// TestPatternMenuItem
+			// Btn_StopJog
 			// 
-			this.TestPatternMenuItem.Name = "TestPatternMenuItem";
-			this.TestPatternMenuItem.Size = new System.Drawing.Size(216, 26);
-			this.TestPatternMenuItem.Text = "Test Pattern";
+			this.Btn_StopJog.Location = new System.Drawing.Point(178, 48);
+			this.Btn_StopJog.Name = "Btn_StopJog";
+			this.Btn_StopJog.Size = new System.Drawing.Size(80, 23);
+			this.Btn_StopJog.TabIndex = 16;
+			this.Btn_StopJog.Text = "Stop";
+			this.Btn_StopJog.UseVisualStyleBackColor = true;
+			this.Btn_StopJog.Click += new System.EventHandler(this.Btn_StopJog_Click);
+			// 
+			// Label_PositionEncoder
+			// 
+			this.Label_PositionEncoder.AutoSize = true;
+			this.Label_PositionEncoder.Location = new System.Drawing.Point(9, 20);
+			this.Label_PositionEncoder.Name = "Label_PositionEncoder";
+			this.Label_PositionEncoder.Size = new System.Drawing.Size(233, 17);
+			this.Label_PositionEncoder.TabIndex = 17;
+			this.Label_PositionEncoder.Text = "Encoder Position:     10.000000 mm";
 			// 
 			// ControlForm
 			// 
@@ -873,7 +921,7 @@
 		private System.Windows.Forms.NumericUpDown Numeric_Relative;
 		private System.Windows.Forms.Button Btn_JogNegative;
 		private System.Windows.Forms.Button Btn_WalkPositive;
-		private System.Windows.Forms.Label Label_CurrentPosition;
+		private System.Windows.Forms.Label Label_PositionTheory;
 		private System.Windows.Forms.Timer PositionTimer;
 		private System.Windows.Forms.TabControl StageTabs;
 		private System.Windows.Forms.TabPage Tab_StageControls;
@@ -902,6 +950,8 @@
 		private System.Windows.Forms.Button Btn_Home;
 		private System.Windows.Forms.Button Btn_ViewErrors;
 		private System.Windows.Forms.ToolStripMenuItem TestPatternMenuItem;
+		private System.Windows.Forms.Button Btn_StopJog;
+		private System.Windows.Forms.Label Label_PositionEncoder;
 	}
 }
 

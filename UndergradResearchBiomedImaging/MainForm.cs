@@ -121,12 +121,14 @@ namespace UndergradResearchBiomedImaging {
 
 		private void PositionTimer_Tick(object sender, EventArgs e) {
 			if (stage != null) {
-				decimal position;
+				MotorizedStage.Commands.StagePosition position;
 				if (stage.TrySendCommand(new MotorizedStage.Commands.Position(1), out position)) {
-					Label_CurrentPosition.Text = "Current Position: " + position.ToString("N6").PadLeft(9) + " mm";
+					Label_PositionTheory.Text =  "Theoretical Position: " + position.Theoretical.ToString("N6").PadLeft(9) + " mm";
+					Label_PositionEncoder.Text = "Encoder Position:     " + position.Encoder.ToString("N6").PadLeft(9) + " mm";
 				} else {
 					//TODO can confirm, no stage connected!
-					Label_CurrentPosition.Text = "Current Position:  0.000000 mm";
+					Label_PositionTheory.Text =  "Theoretical Position:  0.000000 mm";
+					Label_PositionEncoder.Text = "Encoder Position:      0.000000 mm";
 				}
 			}
 		}
@@ -218,11 +220,15 @@ namespace UndergradResearchBiomedImaging {
 		private void Control_ConnectToStage(object sender, EventArgs e) {
 			if (stage.TryAutoConnect()) {
 				DisplayStageErrors();
+
+				//Show buttons
+				setEnableStageControls(true);
+				UpdateAllStageValues();
+
 				bool homed;
 				if (stage.TrySendCommand(new MotorizedStage.Commands.Home(1, true), out homed)) {
 					DisplayStageErrors();
 					if (homed == false) {
-						UpdateAllStageValues();
 						//Hasn't been homed, ask user if they wish to home.
 						if (MessageBox.Show("Stage has not been homed yet, would you like to home it now?", "Stage Not Homed", MessageBoxButtons.YesNo) == DialogResult.Yes) {
 							if (stage.FindHome() == HomingStatus.Initiated) {
@@ -284,14 +290,21 @@ namespace UndergradResearchBiomedImaging {
 		}
 
 		private void Control_JogPositive(object sender, EventArgs e) {
-			IStageCommand jog = new MotorizedStage.Commands.Jog(1, 100); //TODO implement adjustagle speed
+			IStageCommand jog = new MotorizedStage.Commands.Jog(1, Numeric_JogVelocityPercent.Value);
 			if (stage.TrySendCommand(jog)) {
 				DisplayStageErrors();
 			}
 		}
 
 		private void Control_JogNegative(object sender, EventArgs e) {
-			IStageCommand jog = new MotorizedStage.Commands.Jog(1, -100); //TODO implement adjustable speed
+			IStageCommand jog = new MotorizedStage.Commands.Jog(1, -Numeric_JogVelocityPercent.Value);
+			if (stage.TrySendCommand(jog)) {
+				DisplayStageErrors();
+			}
+		}
+
+		private void Btn_StopJog_Click(object sender, EventArgs e) {
+			IStageCommand jog = new MotorizedStage.Commands.Jog(1);
 			if (stage.TrySendCommand(jog)) {
 				DisplayStageErrors();
 			}
@@ -350,36 +363,38 @@ namespace UndergradResearchBiomedImaging {
 			decimal maxVelocity;
 			Numeric_TravelVelocity.Maximum = (successful &= stage.TrySendCommand(new MotorizedStage.Commands.MaxVelocity(1), out maxVelocity)) ? maxVelocity : MotorizedStage.Commands.TravelVelocity.MaximumValue;
 			decimal currentVelocity;
-			if (successful &= stage.TrySendCommand(new MotorizedStage.Commands.TravelVelocity(1, true), out currentVelocity)) Numeric_TravelVelocity.Value = currentVelocity;
+			if (successful &= stage.TrySendCommand(new MotorizedStage.Commands.TravelVelocity(1, true), out currentVelocity)) Numeric_TravelVelocity.ChangeValueWithoutEvent(currentVelocity, Numeric_TravelVelocity_ValueChanged);
 
 			decimal maxAcceleration;
 			bool readAccel = stage.TrySendCommand(new MotorizedStage.Commands.MaxAcceleration(1, true), out maxAcceleration);
 			Numeric_Acceleration.Maximum = (successful &= readAccel) ? maxAcceleration : MotorizedStage.Commands.Acceleration.MaximumValue;
 			decimal currentAcceleration;
-			if (successful &= stage.TrySendCommand(new MotorizedStage.Commands.Acceleration(1, true), out currentAcceleration)) Numeric_Acceleration.Value = currentAcceleration;
+			if (successful &= stage.TrySendCommand(new MotorizedStage.Commands.Acceleration(1, true), out currentAcceleration)) Numeric_Acceleration.ChangeValueWithoutEvent(currentAcceleration, Numeric_Acceleration_ValueChanged);
 
 			Numeric_Deceleration.Maximum = (successful &= readAccel) ? maxAcceleration : MotorizedStage.Commands.Deceleration.MaximumValue;
 			decimal currentDeceleration;
-			if (successful &= stage.TrySendCommand(new MotorizedStage.Commands.Deceleration(1, true), out currentDeceleration)) Numeric_Deceleration.Value = currentDeceleration;
+			if (successful &= stage.TrySendCommand(new MotorizedStage.Commands.Deceleration(1, true), out currentDeceleration)) Numeric_Deceleration.ChangeValueWithoutEvent(currentDeceleration, Numeric_Deceleration_ValueChanged);
 
 			Numeric_JogVelocityActual.Maximum = Numeric_TravelVelocity.Value;
-			Numeric_JogVelocityActual.Value = Numeric_TravelVelocity.Value * Numeric_JogVelocityPercent.Value / 100.0M;
+			Numeric_JogVelocityPercent_ValueChanged(null, null); //Sets the "JogVelocityActual" value.
+			//Numeric_JogVelocityActual.Value = Numeric_TravelVelocity.Value * Numeric_JogVelocityPercent.Value / 100.0M;
 
 			Numeric_JogAcceleration.Maximum = (readAccel) ? maxAcceleration : MotorizedStage.Commands.JogAcceleration.MaximumValue;
 			decimal jogAccel;
-			if (successful &= stage.TrySendCommand(new MotorizedStage.Commands.JogAcceleration(1, true), out jogAccel)) Numeric_JogAcceleration.Value = jogAccel;
+			if (successful &= stage.TrySendCommand(new MotorizedStage.Commands.JogAcceleration(1, true), out jogAccel)) Numeric_JogAcceleration.ChangeValueWithoutEvent(jogAccel, Numeric_JogAcceleration_ValueChanged);
 
 			return successful;
 		}
 
 		private void Numeric_JogVelocityActual_ValueChanged(object sender, EventArgs e) {
-			Numeric_JogVelocityPercent.Value = Numeric_JogVelocityActual.Value / Numeric_TravelVelocity.Value;
+			decimal percentage = Numeric_JogVelocityActual.Value / Numeric_TravelVelocity.Value * 100.0M;
+			Numeric_JogVelocityPercent.Value = constrain(percentage, Numeric_JogVelocityPercent.Minimum, Numeric_JogVelocityPercent.Maximum);//TODO contrain can take in the numeric up/down
 		}
 
 		private void Numeric_JogVelocityPercent_ValueChanged(object sender, EventArgs e) {
 			decimal value = constrain(Numeric_JogVelocityPercent.Value, MotorizedStage.Commands.Jog.MinimumValue, MotorizedStage.Commands.Jog.MaximumValue);
 			Numeric_JogVelocityPercent.ChangeValueWithoutEvent(value, Numeric_JogVelocityPercent_ValueChanged);
-			Numeric_JogVelocityActual.ChangeValueWithoutEvent(Numeric_TravelVelocity.Value * value, Numeric_JogVelocityActual_ValueChanged);
+			Numeric_JogVelocityActual.ChangeValueWithoutEvent(Numeric_TravelVelocity.Value * value / 100, Numeric_JogVelocityActual_ValueChanged);
 		}
 
 		private void Numeric_Acceleration_ValueChanged(object sender, EventArgs e) {

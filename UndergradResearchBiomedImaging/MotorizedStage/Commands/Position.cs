@@ -47,7 +47,7 @@ namespace UndergradResearchBiomedImaging.MotorizedStage.Commands {
 		}
 	}
 
-	public struct StagePosition { //TODO use struct for errors as well?
+	public struct StagePosition {
 		public decimal Theoretical;
 		public decimal Encoder;
 
