@@ -50,8 +50,8 @@ namespace UndergradResearch.MotorizedStage.Commands {
 		}
 
 		/// <summary>Sets all axes positive soft limit to the specified value (Negative Soft Limit to 999.999999).</summary>
-		public SoftLimitPositive(decimal position) {
-			Command = "0TLP" + position.ToString("N6");
+		public SoftLimitPositive(decimal position) : this(0, position) {
+			
 		}
 
 		/// <summary>Sets the current position of the specified axis (1 to 99) as its positive soft limit.</summary>

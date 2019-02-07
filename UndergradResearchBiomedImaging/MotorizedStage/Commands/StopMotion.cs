@@ -23,10 +23,11 @@ namespace UndergradResearch.MotorizedStage.Commands {
 
 		public override bool CanSetGlobal => true;
 
-		public override bool ExpectResponse { get => false; protected set => throw new InvalidOperationException("You can't read this command."); } //TODO make string constants for these in base class.
+		public override bool ExpectResponse { get => false; protected set => base.ThrowWriteOnlyException(); }
 
 		public override object ParseResponse(string response) {
-			throw new InvalidOperationException(); //TODO use this exception instead
+			base.ThrowWriteOnlyException();
+			return null;
 		}
 
 		/// <summary>Stops motion on the specified axis (1 to 99).</summary>

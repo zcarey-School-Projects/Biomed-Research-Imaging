@@ -9,7 +9,7 @@ namespace UndergradResearch.MotorizedStage.Commands {
 	/// <summary>Stops the specified axis using the maximum allowed acceleration.</summary>
 	public class EmergencyStop : IStageCommand {
 
-		public override string Command { get => throw new NotImplementedException(); protected set => throw new NotImplementedException(); }
+		public override string Command { get; protected set; }
 
 		public override bool CanSetDuringMotion => true;
 
@@ -23,10 +23,11 @@ namespace UndergradResearch.MotorizedStage.Commands {
 
 		public override bool CanSetGlobal => true;
 
-		public override bool ExpectResponse { get => false; protected set => throw new InvalidOperationException("Can't read."); }
+		public override bool ExpectResponse { get => false; protected set => base.ThrowWriteOnlyException(); }
 
 		public override object ParseResponse(string response) {
-			throw new InvalidOperationException();
+			base.ThrowWriteOnlyException();
+			return null;
 		}
 
 		/// <summary>Performs an eStop for the specified axis (1 to 99) at max acceleration (AMX).</summary>

@@ -23,16 +23,17 @@ namespace UndergradResearch.MotorizedStage.Commands {
 
 		public override bool CanSetGlobal => true;
 
-		public override bool ExpectResponse { get; protected set; } = false;
+		public override bool ExpectResponse { get => false; protected set => base.ThrowWriteOnlyException(); }
 
 		public override object ParseResponse(string response) {
-			throw new NotImplementedException();
+			base.ThrowWriteOnlyException();
+			return null;
 		}
 
 		/// <summary>Moves all axes toe specified distance.
 		/// Distance is (+-)0.000001 to 999.999999 mm.</summary>
-		public MoveRelative(decimal distance) { //TODO range checks
-			Command = "0MVR" + distance.ToString("N6");
+		public MoveRelative(decimal distance) : this(0, distance){ //TODO range checks
+			
 		}
 
 		/// <summary>Moves the specified axis the specified distance.

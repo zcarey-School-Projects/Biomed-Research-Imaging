@@ -23,7 +23,7 @@ namespace UndergradResearch.MotorizedStage.Commands {
 
 		public override bool CanSetGlobal => false;
 
-		public override bool ExpectResponse { get => true; protected set => throw new InvalidOperationException("This is a read-only command."); } //TODO do this with other commands.
+		public override bool ExpectResponse { get => true; protected set => base.ThrowReadOnlyException(); }
 
 		public override object ParseResponse(string response) {
 			if (response.StartsWith("#MMC-200")) {

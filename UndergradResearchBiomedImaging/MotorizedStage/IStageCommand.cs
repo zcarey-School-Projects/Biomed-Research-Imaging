@@ -21,5 +21,11 @@ namespace UndergradResearch.MotorizedStage {
 
 		public abstract object ParseResponse(string response);
 
+		/// <exception cref="InvalidOperationException">Throws exception with message "This command is write-only and can't be set to read."</exception>
+		protected void ThrowWriteOnlyException() { throw new InvalidOperationException("This command is write-only and can't be set to read."); }
+
+		/// <exception cref="InvalidOperationException">"This command is read-only and can't be set to write."</exception>
+		protected void ThrowReadOnlyException() { throw new InvalidOperationException("This command is read-only and can't be set to write."); }
+
 	}
 }

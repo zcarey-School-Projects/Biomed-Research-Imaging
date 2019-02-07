@@ -23,10 +23,11 @@ namespace UndergradResearch.MotorizedStage.Commands {
 
 		public override bool CanSetGlobal => true;
 
-		public override bool ExpectResponse { get; protected set; } = false;
+		public override bool ExpectResponse { get => false; protected set => base.ThrowWriteOnlyException(); }
 
 		public override object ParseResponse(string response) {
-			throw new NotImplementedException();
+			base.ThrowWriteOnlyException();
+			return null;
 		}
 
 		/// <summary>Axis is from (1 to 99)</summary>

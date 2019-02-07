@@ -23,10 +23,11 @@ namespace UndergradResearch.MotorizedStage.Commands {
 
 		public override bool CanSetGlobal => true;
 
-		public override bool ExpectResponse { get; protected set; } = false;
+		public override bool ExpectResponse { get => false; protected set => base.ThrowWriteOnlyException(); }
 
 		public override object ParseResponse(string response) {
-			throw new NotImplementedException();
+			base.ThrowWriteOnlyException();
+			return null;
 		}
 
 		/// <summary>Moves the axis (1 to 99) to the specified position (-999.999999 to 999.999999 mm).
@@ -37,8 +38,8 @@ namespace UndergradResearch.MotorizedStage.Commands {
 
 		/// <summary>Moves all axes to the specified position (-999.999999 to 999.999999 mm).
 		/// If the position is outside of the soft limits, the command will be ignored.</summary>
-		public MoveAbsolute(decimal position) {
-			Command = "0MVA" + position.ToString("N6");
+		public MoveAbsolute(decimal position) : this(0, position){
+			
 		}
 	}
 
