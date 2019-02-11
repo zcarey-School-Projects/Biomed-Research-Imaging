@@ -15,7 +15,6 @@ namespace UndergradResearch.UI.Options {
 			set {
 				panel = value;
 				OnPanelChanged(value);
-				//TODO set controls parent
 				foreach (IOptionEntry child in children) {
 					child.Panel = value;
 				}

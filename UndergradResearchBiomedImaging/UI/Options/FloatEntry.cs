@@ -41,7 +41,7 @@ namespace UndergradResearch.UI.Options {
 		protected override double getCurrentValue(NumericUpDown control) {
 			return decimal.ToDouble(control.Value);
 		}
-		//TODO make disconnect button.
+		
 		protected override void SetControlValue(NumericUpDown control, double newValue) {
 			decimal value = (decimal)newValue;
 			try {
@@ -54,15 +54,13 @@ namespace UndergradResearch.UI.Options {
 
 		protected override void checkValueLimits(NumericUpDown control, FloatNode node) {
 			if (node.Minimum == null) {
-				double lowest = double.MinValue;
-				control.Minimum = (decimal)lowest;
+				control.Minimum = decimal.MinValue;
 			} else {
 				control.Minimum = (decimal)((double)node.Minimum);
 			}
 
 			if (node.Maximum == null) {
-				double highest = double.MaxValue;
-				control.Maximum = (decimal)highest;
+				control.Maximum = decimal.MaxValue;
 			} else {
 				control.Maximum = (decimal)((double)node.Maximum);
 			}

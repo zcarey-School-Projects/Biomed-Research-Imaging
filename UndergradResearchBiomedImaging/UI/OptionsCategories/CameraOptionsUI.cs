@@ -30,21 +30,13 @@ namespace UndergradResearch.UI.OptionsCategories {
 			options.Add(new GainUI(this, panel));
 			options.Add(new ExposureUI(this, panel));
 
-			//TODO add events from stream input.on
-			//input.OnStreamEnded += onStreamEnded;
-		}
-
-		public void Update() {
-			panel.Update();
+			stream.OnSourceChanged += (FlirCameraStream strm, FlirCamera source) => {
+				panel.Update();
+			};
 		}
 		/*
-		private void onSourceChanged(FlirCameraInput sender, FlirCamera NewSource) {
+		public void Update() {
 			panel.Update();
-		}
-
-		private void onStreamEnded(ImageStream sender) {
-			panel.Update();
-		}
-		*/
+		}*/
 	}
 }

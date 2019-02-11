@@ -91,23 +91,24 @@ namespace UndergradResearch.UI.Options {
 
 		private void GetValue() { //Reads and displays current value from the camera.
 			//lock (ControlLock) {
-				TNode node = getNode();
-				ValueType value = default(ValueType);
-				if (node != null && node.TryGetValue(ref value)) {
+			TNode node = getNode();
+			ValueType value = default(ValueType);
+			if (node != null) {
+				invokeAction(new Action(() => { checkValueLimits(entryControl, node); }));
+				if (node.TryGetValue(ref value)) {
 					ignoreValueChanged = true;
 					invokeAction(new Action(() => { this.SetControlValue(entryControl, value); }));
 					ignoreValueChanged = false;
 				} else {
 					ClearText(); //Clears text, indicating no value to read.
 				}
-				if (node != null && node.IsWritable()) {
-					invokeAction(new Action(() => { checkValueLimits(entryControl, node); }));
+				if (node.IsWritable()) {
 					Enabled = true;
 				} else {
 					Enabled = false;
 				}
+			}
 			//}
-
 		}
 
 		protected abstract void checkValueLimits(ControlType entryControl, TNode node);

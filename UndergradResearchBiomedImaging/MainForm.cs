@@ -28,7 +28,6 @@ namespace UndergradResearch {
 		private const string TempVideoFile = @"TempRecording.avi";
 
 		private static SaveFileDialog SaveVideoDialog;
-		//TODO read framerate from camera for video
 		
 		/// <summary>Initializes file dialogs</summary>
 		static ControlForm() {

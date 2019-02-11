@@ -48,7 +48,7 @@ namespace UndergradResearch.Util {
 			}
 			closeWriterSafely();
 		}
-		//TODO every X number of frames, save the current data in a seperate thread and open a new writer to help save memory.
+		
 		private void ThreadLoop() {
 			while (true) {
 				lock (this) {

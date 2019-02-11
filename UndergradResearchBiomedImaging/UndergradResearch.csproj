@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3D158225-E5E8-4868-9386-E50FA01394BA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>UndergradResearchBiomedImaging</RootNamespace>
-    <AssemblyName>UndergradResearchBiomedImaging</AssemblyName>
+    <RootNamespace>UndergradResearch</RootNamespace>
+    <AssemblyName>UndergradResearch</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -69,7 +69,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>UndergradResearchBiomedImaging.Program</StartupObject>
+    <StartupObject>UndergradResearch.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Emgu.CV.UI, Version=3.4.3.3016, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
@@ -139,6 +139,7 @@
     <Compile Include="Flir\FlirCameraStream.cs" />
     <Compile Include="Flir\FlirProperties.cs" />
     <Compile Include="Flir\Nodes\BaseNode.cs" />
+    <Compile Include="Flir\Nodes\BoolNode.cs" />
     <Compile Include="Flir\Nodes\EnumNode.cs" />
     <Compile Include="Flir\Nodes\FloatNode.cs" />
     <Compile Include="Flir\Nodes\IntegerNode.cs" />
@@ -151,6 +152,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MotorizedStage\Commands\Acceleration.cs" />
+    <Compile Include="MotorizedStage\Commands\SetAxisNumber.cs" />
     <Compile Include="MotorizedStage\Commands\Position.cs" />
     <Compile Include="MotorizedStage\Commands\Status.cs" />
     <Compile Include="MotorizedStage\Commands\Deceleration.cs" />
@@ -216,6 +218,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ScreenshotViewer.resx">
       <DependentUpon>ScreenshotViewer.cs</DependentUpon>

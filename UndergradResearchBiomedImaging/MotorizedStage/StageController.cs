@@ -43,7 +43,7 @@ Receiving each line of data is followed by [\n] and final line ends in [\n\r]
 		}
 
 		/// <summary>Internal method that simply sends a command, no checks.</summary>
-		private bool sendCommand(IStageCommand command) { //TODO implement in other methods
+		private bool sendCommand(IStageCommand command) {
 			try {
 				serial.WriteLine(command.Command);
 				return true;
@@ -54,7 +54,7 @@ Receiving each line of data is followed by [\n] and final line ends in [\n\r]
 		}
 
 		/// <summary>Internal method to read serial without checks.</summary>
-		private bool readLine(out string response) { //TODO implement in other methods
+		private bool readLine(out string response) {
 			response = null;
 			try {
 				response = serial.ReadLine();
@@ -98,7 +98,7 @@ Receiving each line of data is followed by [\n] and final line ends in [\n\r]
 			}
 		}
 
-		#region WaitForStatus
+		#region WaitForStop
 		public bool WaitForStop() {
 			if (!serial.IsOpen || isHoming) return false;
 			while (true) {

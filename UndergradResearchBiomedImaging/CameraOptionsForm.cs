@@ -22,7 +22,7 @@ namespace UndergradResearch {
 		}
 
 		private void CameraOptionsForm_Load(object sender, EventArgs e) {
-			//TODO make reset buttons for options to set to defaults.
+			
 		}
 
 		private void CameraOptionsForm_FormClosing(object sender, FormClosingEventArgs e) {
@@ -33,7 +33,7 @@ namespace UndergradResearch {
 		}
 
 		private void CameraStream_OnSourceChanged(FlirCameraStream sender, FlirCamera source) {
-			cameraOptions.Update();
+			//Why am i here?
 		}
 
 	}

@@ -1,1 +1,1 @@
-﻿
+﻿//TODO make reset buttons in camera options for options to set to defaults.

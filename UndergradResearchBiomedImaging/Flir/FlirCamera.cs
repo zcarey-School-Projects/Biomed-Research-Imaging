@@ -34,42 +34,33 @@ namespace UndergradResearch.Flir {
 			camera.Dispose();
 		}
 
-		//TODO simplify
 		public bool BeginAcquisition() {
 			INodeMap node = camera.GetNodeMap();
 
 			// Set acquisition mode to continuous
-			if (!Properties.AcquisitionMode.TrySetValue(AcquisitionModeEnums.Continuous)) {
-				//throw new SpinnakerException("Unable to set acquisition mode to continuous.");
+			if (!Properties.AcquisitionMode.TrySetValue(AcquisitionModeEnums.Continuous)) { 
 				return false;
 			}
 			Console.WriteLine("Acquisition mode set to continuous...");
 
 			//Set camera to color mode
 			if (!Properties.PixelFormat.TrySetValue(PixelFormatEnums.RGB8)) {
-				//throw new SpinnakerException("Could not set PixelFormat to RGB");
 				return false;
-			} else {
-				Console.WriteLine("Pixel format set to RGB.");
 			}
+			Console.WriteLine("Pixel format set to RGB.");
 
 			camera.BeginAcquisition();
 			return true;
 		}
 
-		public void ResumeAcquisition() {
-		//TODO stuff	if(camera.IsStreaming()) camera.BeginAcquisition();
-		}
-
 		public void EndAcquisition() {
-			if (initialized && camera.IsStreaming()) {
-				camera.EndAcquisition();
+			try {
+				if (initialized && camera.IsStreaming()) {
+					camera.EndAcquisition();
+				}
+			} catch (ObjectDisposedException) {
+				Console.WriteLine("Camera was already disposed.");
 			}
-			//TODO crash report
-			/*
-			 System.ObjectDisposedException: 'Cannot access a disposed object.
-				Object name: 'SpinnakerNET.ManagedCamera'.'
-			 */
 		}
 
 		public bool GrabImage(out Image<Bgr, byte> GrabbedImage) {

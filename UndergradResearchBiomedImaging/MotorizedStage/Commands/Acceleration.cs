@@ -51,7 +51,7 @@ namespace UndergradResearch.MotorizedStage.Commands {
 		}
 
 		/// <summary>Sets the acceleration of all axes to the specified value (000.001 to AMX(500.000 mm/s2)).</summary>
-		public Acceleration(decimal acceleration) : this(0, acceleration) { //TODO other commands like this
+		public Acceleration(decimal acceleration) : this(0, acceleration) { 
 
 		}
 

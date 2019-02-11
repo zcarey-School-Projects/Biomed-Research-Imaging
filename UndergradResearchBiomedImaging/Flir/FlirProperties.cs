@@ -41,25 +41,26 @@ namespace UndergradResearch.Flir {
 		public IntegerNode Width { get; private set; }
 		public IntegerNode Height { get; private set; }
 		public FloatNode FPS { get; private set; }
+		public BoolNode ManualFPS { get; private set; }
 
 		public FlirProperties(string spinnakerLibraryVersion, IManagedCamera camera) {
 			SpinnakerLibraryVersion = spinnakerLibraryVersion;
-
+		
 			PixelFormat = new EnumNode<PixelFormatEnums>(camera, nameof(camera.PixelFormat));
 			AcquisitionMode = new EnumNode<AcquisitionModeEnums>(camera, nameof(camera.AcquisitionMode));
 			TestPattern = new EnumNode<TestPatternEnums>(camera, nameof(camera.TestPattern));
 			TestPatternGeneratorSelector = new EnumNode<TestPatternGeneratorSelectorEnums>(camera, nameof(camera.TestPatternGeneratorSelector));
 			GainSelector = new EnumNode<GainSelectorEnums>(camera, nameof(camera.GainSelector));
 			GainAuto = new EnumNode<GainAutoEnums>(camera, nameof(camera.GainAuto));
-			AutoGainUpperLimit = new FloatNode(camera, "AutoGainUpperLimit"); //todo nameof
-			AutoGainLowerLimit = new FloatNode(camera, "AutoGainLowerLimit"); //todo nameof
+			AutoGainUpperLimit = new FloatNode(camera, "AutoGainUpperLimit"); 
+			AutoGainLowerLimit = new FloatNode(camera, "AutoGainLowerLimit"); 
 			Gain = new FloatNode(camera, nameof(camera.Gain));
 			ExposureMode = new EnumNode<ExposureModeEnums>(camera, nameof(camera.ExposureMode));
 			ExposureAuto = new EnumNode<ExposureAutoEnums>(camera, nameof(camera.ExposureAuto));
-			ExposureAutoUpperLimit = new FloatNode(camera, nameof(camera.AutoExposureExposureTimeUpperLimit));
-			ExposureAutoLowerLimit = new FloatNode(camera, nameof(camera.AutoExposureExposureTimeLowerLimit));
+			ExposureAutoUpperLimit = new FloatNode(camera, "AutoExposureTimeUpperLimit");
+			ExposureAutoLowerLimit = new FloatNode(camera, "AutoExposureTimeLowerLimit");
 			ExposureTime = new FloatNode(camera, nameof(camera.ExposureTime));
-			ExposureTimeAbs = new FloatNode(camera, "ExposureTimeAbs"); //todo abs
+			ExposureTimeAbs = new FloatNode(camera, "ExposureTimeAbs");
 			DeviceVendorName = new Flir.Nodes.StringNode(camera, nameof(camera.DeviceVendorName));
 			DeviceModelName = new Flir.Nodes.StringNode(camera, nameof(camera.DeviceModelName));
 			DeviceVersion = new Flir.Nodes.StringNode(camera, nameof(camera.DeviceVersion));
@@ -74,11 +75,12 @@ namespace UndergradResearch.Flir {
 			Width = new IntegerNode(camera, nameof(camera.Width));
 			Height = new IntegerNode(camera, nameof(camera.Height));
 			FPS = new FloatNode(camera, nameof(camera.AcquisitionFrameRate));
+			//ManualFPS = new BoolNode(camera, "AcquisitionFrameRateEnabled");
 		}
 
 	}
 
-	//TODO properties
+	//TODO more properties
 	//BlackLevel
 	//BlackLevelEnabled
 	//BlackLevelAuto

@@ -71,6 +71,21 @@ namespace UndergradResearch.Flir.Nodes {
 			} catch (SpinnakerException ex) {
 				Console.Error.WriteLine("Unable to retrieve node: " + ex.Message);
 				return false;
+			}catch(InvalidCastException ex) {
+				Console.Error.WriteLine("Incorrect node type: \"{0}\", {1}", this.NodeName, ex.Message);
+				TryPrintMoreInfo();
+				return false;
+			}
+		}
+
+		private void TryPrintMoreInfo() {
+			try {
+				INodeMap map = camera.GetNodeMap();
+				INode node = map.GetNode<INode>(NodeName);
+				Type t = typeof(Node);
+				Console.WriteLine("Possible type: {0}", t.Name);
+			} catch (Exception) {
+
 			}
 		}
 

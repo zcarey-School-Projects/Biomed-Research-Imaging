@@ -21,7 +21,7 @@ namespace UndergradResearch.MotorizedStage.Commands {
 
 		public override bool CanSetGlobal => false;
 
-		public override bool ExpectResponse { get => true; protected set => base.ThrowReadOnlyException(); };
+		public override bool ExpectResponse { get => true; protected set => base.ThrowReadOnlyException(); }
 
 		public override string Command { get; protected set; }
 

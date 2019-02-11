@@ -67,7 +67,7 @@ namespace UndergradResearch.UI.MenuStrip {
 			}
 
 			private void OnClick(object sender, EventArgs e) {
-				if (parent.SetValue(value)) { //TODO set value
+				if (parent.SetValue(value)) { 
 					parent.CheckedItem = this;
 				} else {
 					parent.CheckedItem = null;
